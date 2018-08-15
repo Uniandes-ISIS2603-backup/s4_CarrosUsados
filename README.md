@@ -16,6 +16,7 @@ Obs: los modulos del pom principal corresponden a sus carpetas.
 persistence-unit con mayuscula (linea 5), jta-data-source (linea 7), javax.persistence.jdbc.url (linea 15)
 5 Cambiar el persistence.xml de los test - En netbeans: Other Test Sources / src/test/resources/Meta-INF/persistence 
 persistence-unit con mayuscula (linea 5), javax.persistence.jdbc.url (linea 13)
+
 6. Cambiar los paquetes - Click derecho en cada uno - Refactor - Rename (Si cambian el nombre de la carpeta toca cambiar el package en cada clase.)
 
 # API
