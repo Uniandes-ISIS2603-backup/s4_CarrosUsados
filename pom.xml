@@ -5,14 +5,14 @@
     <modelVersion>4.0.0</modelVersion>
     
     <groupId>co.edu.uniandes.csw</groupId>
-    <artifactId>sX_nombre</artifactId>
+    <artifactId>s4_carTeam</artifactId>
     <version>1.0</version>
     <packaging>pom</packaging>
-    <name>sX_nombre</name>
+    <name>s4_carTeam</name>
  
     <modules>
-        <module>sX_palabraclave-api</module>
-        <module>sX_palabraclave-back</module>
+        <module>s4_CarrosUsados-back</module>
+        <module>s4_CarrosUsados-api</module>
     </modules>
     
     <repositories>
