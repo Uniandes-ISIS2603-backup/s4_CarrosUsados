@@ -6,8 +6,12 @@
 package co.edu.uniandes.csw.carrosUsados.resources;
 
 import co.edu.uniandes.csw.carrosUsados.ejb.ModeloLogic;
+import co.edu.uniandes.csw.carrosUsados.exceptions.BusinessLogicException;
 import java.util.logging.Logger;
 
+import co.edu.uniandes.csw.carrosUsados.dtos.ModeloDTO;
+import javax.enterprise.context.RequestScoped;
+import javax.ws.rs.*;
 /**
  *
  * @author na.morenoe
@@ -19,19 +23,17 @@ import java.util.logging.Logger;
 @RequestScoped
 public class ModeloResource {
     
-    @Inject
-    ModeloLogic modeloLogic;
-    
+
     private final static Logger LOGGER = Logger.getLogger(ModeloResource.class.getName());
     
     @GET
     public ModeloDTO getModelo () throws BusinessLogicException {
-        return new ModeloDTO modelo;
+        return new ModeloDTO();
     }
     
     @POST
     public ModeloDTO createModelo(ModeloDTO modelo) throws BusinessLogicException {
-        return new ModeloDTO modelo;
+        return new ModeloDTO();
     }
     
     
