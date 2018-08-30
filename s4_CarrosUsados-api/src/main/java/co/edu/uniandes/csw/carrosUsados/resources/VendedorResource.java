@@ -21,7 +21,7 @@ import javax.ws.rs.*;
 @RequestScoped
 
 public class VendedorResource {
-    private final static Logger LOGGER = Logger.getLogger(AdministradorResource.class.getName());
+    private final static Logger LOGGER = Logger.getLogger(VendedorResource.class.getName());
 
     @GET
     public VendedorDTO getVendedor() throws BusinessLogicException {
