@@ -32,6 +32,10 @@ public class VendedorResource {
     public VendedorDTO createVendedor(VendedorDTO vendedor) throws BusinessLogicException {
         return new VendedorDTO();
     }
+    @PUT
+    public VendedorDTO updateVendedor (VendedorDTO vendedor) throws BusinessLogicException {
+        return new VendedorDTO();
+    }
      /**
      * Borra el administrador con el id asociado recibido en la URL.
      *

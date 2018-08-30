@@ -33,6 +33,11 @@ public class AdministradorResource {
     public AdministradorDTO createAdministrador(AdministradorDTO administrador) throws BusinessLogicException {
         return new AdministradorDTO();
     }
+    @PUT
+    public AdministradorDTO updateAdministrador(AdministradorDTO administrador) throws BusinessLogicException {
+        return new AdministradorDTO();
+    }
+
      /**
      * Borra el administrador con el id asociado recibido en la URL.
      *

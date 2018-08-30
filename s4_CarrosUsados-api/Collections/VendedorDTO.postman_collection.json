@@ -1,0 +1,171 @@
+{
+	"info": {
+		"_postman_id": "00b907d2-894a-45cc-aefc-4101865678b8",
+		"name": "VendedorDTO",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET Vendedor",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1a2a2ce0-dc5d-4c56-bd8b-b4835148b973",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Ok\",function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"DTO correcto\",function(){",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/s4_CarrosUsados-api/api/vendedores",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"s4_CarrosUsados-api",
+						"api",
+						"vendedores"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Vendedor",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6cc33d37-8cbc-48e6-bbc4-7f28faf4ba04",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Ok\",function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"DTO correcto\",function(){",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/s4_CarrosUsados-api/api/vendedores",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"s4_CarrosUsados-api",
+						"api",
+						"vendedores"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE Vendedor",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "fc626064-b736-4a90-a013-0cc08ac850bb",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"DTO correcto\",function(){",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/s4_CarrosUsados-api/api/vendedores/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"s4_CarrosUsados-api",
+						"api",
+						"vendedores",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT Vendedor",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "44fa116b-de5b-4540-9318-db2706118a3f",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Ok\",function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"DTO correcto\",function(){",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/s4_CarrosUsados-api/api/vendedor",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"s4_CarrosUsados-api",
+						"api",
+						"vendedor"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

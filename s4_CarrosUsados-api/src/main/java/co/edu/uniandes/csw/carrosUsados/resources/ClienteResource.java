@@ -7,7 +7,7 @@ package co.edu.uniandes.csw.carrosUsados.resources;
 
 /**
  *
- * @author estudiante
+ * @author js.bravo
  */
 import java.util.logging.Logger;
 
@@ -41,7 +41,11 @@ public class ClienteResource {
      */
     @DELETE
     @Path("{clientesId: \\d+}")
-    public void deleteAdministrador(@PathParam("clientesId") Long clientesId)
+    public void deleteCliente (@PathParam("clientesId") Long clientesId)
     {
+    }
+    @PUT
+    public ClienteDTO updateCliente(ClienteDTO vendedor) throws BusinessLogicException {
+        return new ClienteDTO();
     }
 }
