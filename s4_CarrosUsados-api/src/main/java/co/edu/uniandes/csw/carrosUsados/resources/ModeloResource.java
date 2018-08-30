@@ -27,7 +27,13 @@ public class ModeloResource {
     private final static Logger LOGGER = Logger.getLogger(ModeloResource.class.getName());
     
     @GET
+     @Path("{editorialsId: \\d+}")
     public ModeloDTO getModelo () throws BusinessLogicException {
+        return new ModeloDTO();
+    }
+    
+    @GET
+    public ModeloDTO getAllModelo() throws BusinessLogicException {
         return new ModeloDTO();
     }
     
@@ -36,6 +42,14 @@ public class ModeloResource {
         return new ModeloDTO();
     }
     
-    
+    @PUT
+    public ModeloDTO updateModelo() throws BusinessLogicException{
+        return new ModeloDTO();
+    }
+            
+    @DELETE
+    public void deleteModelo() throws BusinessLogicException{
+        
+    }
     
 }
