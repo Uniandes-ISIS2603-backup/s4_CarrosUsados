@@ -5,6 +5,8 @@
  */
 package co.edu.uniandes.csw.carrosUsados.dtos;
 
+import java.io.Serializable;
+
 /**
  *
  * @author js.bravo
@@ -12,7 +14,7 @@ package co.edu.uniandes.csw.carrosUsados.dtos;
 /**
      * Clase Data Transfer Object Vendedor que representa el vendedor de un automovil en el sistema.
      */
-public class VendedorDTO {
+public class VendedorDTO implements Serializable{
  /**
      * Cadena de caracteres que representa el id del usuario en el sistema.
      */
@@ -34,27 +36,27 @@ public class VendedorDTO {
     public VendedorDTO() {
     }
      /**
-     * Devuelve el ID del usuario.
+     * Devuelve el ID del vendedor.
      *
-     * @return  id del Usuario.
+     * @return  id del vendedor.
      */
     public Long getId() {
         return id;
     }
 
     /**
-     * Modifica el ID del usuario.
+     * Modifica el ID del vendedor.
      *
-     * @param id id del Usuario.
+     * @param id id del vendedor.
      */
     public void setId(Long id) {
         this.id = id;
     }
 
     /**
-     * Devuelve el nombre del Usuario.
+     * Devuelve el nombre del vendedor.
      *
-     * @return nombre del Usuario
+     * @return nombre del vendedor
      */
     public String getNombre() {
         return nombre;
