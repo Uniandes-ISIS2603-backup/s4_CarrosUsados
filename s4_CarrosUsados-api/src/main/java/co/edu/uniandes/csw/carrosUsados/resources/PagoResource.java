@@ -19,6 +19,8 @@ import java.util.List;
 import javax.enterprise.context.RequestScoped;
 import javax.ws.rs.Consumes;
 import java.util.logging.Logger;
+import javax.ws.rs.DELETE;
+import javax.ws.rs.PUT;
 /**
  *
  * @author estudiante
@@ -45,6 +47,20 @@ public class PagoResource {
     {
         return pago;
     }
+    @PUT
+    public PagoDTO putPago(PagoDTO pagoPut)throws BusinessLogicException
+    {
+        return pagoPut;
+    }
+    @DELETE
+    public void deletePago(PagoDTO paguoD)throws BusinessLogicException
+    {
+        
+    }
+    
+    
+    
+    
    
     
 }
