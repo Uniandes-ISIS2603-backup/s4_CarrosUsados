@@ -10,6 +10,7 @@ import co.edu.uniandes.csw.carrosUsados.entities.FacturaEntity;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
@@ -18,6 +19,7 @@ import javax.persistence.TypedQuery;
  *
  * @author estudiante
  */
+@Stateless
 public class FacturaPersistence {
     private static final Logger LOGGER = Logger.getLogger(FacturaPersistence.class.getName());
     
