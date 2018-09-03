@@ -182,7 +182,7 @@ public class AutomovilPersistenceTest {
 
         newEntity.setId(entity.getId());
 
-        automovilPersistence.update(newEntity);
+        entity = automovilPersistence.update(newEntity);
 
         AutomovilEntity resp = em.find(AutomovilEntity.class, entity.getId());
 

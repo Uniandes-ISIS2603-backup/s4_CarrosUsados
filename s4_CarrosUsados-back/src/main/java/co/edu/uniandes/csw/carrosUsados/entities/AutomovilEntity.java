@@ -29,7 +29,7 @@ public class AutomovilEntity extends BaseEntity implements Serializable {
     private String color;
     private String num_chasis;
     private String placa;
-    @Temporal(TemporalType.DATE)
+    @Temporal(TemporalType.TIMESTAMP)
     private Date fecha_agregacion; //Chequear el tipo de dato
     private String precio_original;
     
