@@ -37,5 +37,88 @@ public class AutomovilEntity extends BaseEntity implements Serializable {
     
     
     //Falta agregar PuntoVenta y Calificacion
+
+    @Override
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public int getModelo() {
+        return modelo;
+    }
+
+    public void setModelo(int modelo) {
+        this.modelo = modelo;
+    }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    public int getAnio() {
+        return anio;
+    }
+
+    public void setAnio(int anio) {
+        this.anio = anio;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public String getNum_chasis() {
+        return num_chasis;
+    }
+
+    public void setNum_chasis(String num_chasis) {
+        this.num_chasis = num_chasis;
+    }
+
+    public String getPlaca() {
+        return placa;
+    }
+
+    public void setPlaca(String placa) {
+        this.placa = placa;
+    }
+
+    public Date getFecha_agregacion() {
+        return fecha_agregacion;
+    }
+
+    public void setFecha_agregacion(Date fecha_agregacion) {
+        this.fecha_agregacion = fecha_agregacion;
+    }
+
+    public String getPrecio_original() {
+        return precio_original;
+    }
+
+    public void setPrecio_original(String precio_original) {
+        this.precio_original = precio_original;
+    }
+
+    public FichaTecnicaEntity getFicha_tecnica() {
+        return ficha_tecnica;
+    }
+
+    public void setFicha_tecnica(FichaTecnicaEntity ficha_tecnica) {
+        this.ficha_tecnica = ficha_tecnica;
+    }
+    
+    
     
 }
