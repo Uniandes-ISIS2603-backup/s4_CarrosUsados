@@ -6,15 +6,19 @@
 package co.edu.uniandes.csw.carrosUsados.entities;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+import uk.co.jemos.podam.common.PodamExclude;
 
 /**
  *
  * @author js.bravo
  */
 @Entity
-public class VendedorEntity extends BaseEntity implements Serializable  {
-     /**
+public class VendedorEntity extends BaseEntity implements Serializable {
+
+    /**
      * Nombre del vendedor.
      */
     private String nombre;
@@ -22,8 +26,12 @@ public class VendedorEntity extends BaseEntity implements Serializable  {
      * Apellido del vendedor.
      */
     private String apellido;
-    
-     /**
+
+    @PodamExclude
+    @OneToMany(mappedBy = "vendedor")
+    private List<AutomovilEntity> automoviles;
+
+    /**
      * Retorna el nombre del vendedor.
      *
      * @return nombre del vendedor.
@@ -58,4 +66,13 @@ public class VendedorEntity extends BaseEntity implements Serializable  {
     public void setApellido(String apellido) {
         this.apellido = apellido;
     }
+
+    public List<AutomovilEntity> getAutomoviles() {
+        return automoviles;
+    }
+
+    public void setAutomoviles(List<AutomovilEntity> automoviles) {
+        this.automoviles = automoviles;
+    }
+
 }

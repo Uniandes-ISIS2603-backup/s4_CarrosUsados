@@ -10,6 +10,7 @@ import java.util.Date;
 import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
@@ -22,7 +23,7 @@ import uk.co.jemos.podam.common.PodamExclude;
  */
 @Entity
 public class AutomovilEntity extends BaseEntity implements Serializable {
-    
+
     private int modelo;
     private String marca;
     private int anio;
@@ -32,23 +33,24 @@ public class AutomovilEntity extends BaseEntity implements Serializable {
     @Temporal(TemporalType.TIMESTAMP)
     private Date fecha_agregacion; //Chequear el tipo de dato
     private String precio_original;
-    
+
     //Relacion a FichaTecnicaDTO dado que esta tiene cardinalidad 
     @PodamExclude
     @OneToOne(mappedBy = "automovil")
     private FichaTecnicaEntity ficha_tecnica;
-    
-    
+
     //Falta agregar PuntoVenta y Calificacion
     @PodamExclude
     @OneToOne
     private PuntoVentaEntity punto_venta;
-    
+
     @PodamExclude
     @OneToMany(mappedBy = "automovil", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<CalificacionEntity> calificaciones;
 
-   
+    @PodamExclude
+    @ManyToOne
+    private VendedorEntity vendedor;
 
     public int getModelo() {
         return modelo;
@@ -129,7 +131,21 @@ public class AutomovilEntity extends BaseEntity implements Serializable {
     public void setCalificaciones(List<CalificacionEntity> calificaciones) {
         this.calificaciones = calificaciones;
     }
-    
-    
-    
+
+    public PuntoVentaEntity getPunto_venta() {
+        return punto_venta;
+    }
+
+    public void setPunto_venta(PuntoVentaEntity punto_venta) {
+        this.punto_venta = punto_venta;
+    }
+
+    public VendedorEntity getVendedor() {
+        return vendedor;
+    }
+
+    public void setVendedor(VendedorEntity vendedor) {
+        this.vendedor = vendedor;
+    }
+
 }
