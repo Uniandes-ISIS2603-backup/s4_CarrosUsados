@@ -147,8 +147,7 @@ public class CalificacionPersistenceTest {
     @Test
     public void getCalificacionTest() {
        CalificacionEntity entity = data.get(0);
-       PuntoVentaEntity puntoent= data.get(0).getPuntoVenta();
-       CalificacionEntity newEntity = calificacionPersistence.find(puntoent.getId(),entity.getId());
+       CalificacionEntity newEntity = calificacionPersistence.find(entity.getId());
        
        Assert.assertEquals(newEntity.getEstrellas(), entity.getEstrellas());
         Assert.assertEquals(newEntity.getComentario(), entity.getComentario());
@@ -175,7 +174,7 @@ public class CalificacionPersistenceTest {
 
         newEntity.setId(entity.getId());
 
-        calificacionPersistence.update(newEntity);
+        entity= calificacionPersistence.update(newEntity);
 
         CalificacionEntity resp = em.find(CalificacionEntity.class, entity.getId());
 

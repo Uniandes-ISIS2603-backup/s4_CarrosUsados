@@ -170,7 +170,7 @@ public class PuntoVentaPersistenceTest {
 
         newEntity.setId(entity.getId());
 
-        puntoPersistence.update(newEntity);
+       entity= puntoPersistence.update(newEntity);
 
         PuntoVentaEntity resp = em.find(PuntoVentaEntity.class, entity.getId());
 

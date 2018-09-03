@@ -58,21 +58,9 @@ public class CalificacionPersistence {
         return q.getResultList();
     }
     
-    public CalificacionEntity find(Long puntoId, Long calificacionId) {
-        LOGGER.log(Level.INFO, "Consultando el review con id = {0} del punto con id = " + puntoId, calificacionId);
-        TypedQuery<CalificacionEntity> q = em.createQuery("select p from Entity p where (p.punto.id = :puntoid) and (p.id = :calificacionId)", CalificacionEntity.class);
-        q.setParameter("puntoid", puntoId);
-        q.setParameter("reviewsId", calificacionId);
-        List<CalificacionEntity> results = q.getResultList();
-        CalificacionEntity review = null;
-        if (results == null) {
-            review = null;
-        } else if (results.isEmpty()) {
-            review = null;
-        } else if (results.size() >= 1) {
-            review = results.get(0);
-        }
-        LOGGER.log(Level.INFO, "Saliendo de consultar el comentario con id = {0} del punto con id =" + puntoId, calificacionId);
-        return review;
+    public CalificacionEntity find(Long calificacionId) {
+        LOGGER.log(Level.INFO, "Consultando la calificacion con id = {0}", calificacionId);
+        
+        return em.find(CalificacionEntity.class, calificacionId);
     }
 }
