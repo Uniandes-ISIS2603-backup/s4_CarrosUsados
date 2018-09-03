@@ -31,6 +31,10 @@ public class CalificacionEntity extends BaseEntity implements Serializable{
     @ManyToOne
     private PuntoVentaEntity puntoVenta;
     
+    @PodamExclude
+    @ManyToOne
+    private AutomovilEntity automovil;
+    
     public CalificacionEntity()
     {
         
@@ -79,4 +83,22 @@ public class CalificacionEntity extends BaseEntity implements Serializable{
     {
         this.publishDate=newDate;
     }
+
+    public int getNum_estrellas() {
+        return num_estrellas;
+    }
+
+    public void setNum_estrellas(int num_estrellas) {
+        this.num_estrellas = num_estrellas;
+    }
+
+    public AutomovilEntity getAutomovil() {
+        return automovil;
+    }
+
+    public void setAutomovil(AutomovilEntity automovil) {
+        this.automovil = automovil;
+    }
+    
+    
 }

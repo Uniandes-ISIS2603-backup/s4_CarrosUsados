@@ -23,7 +23,6 @@ import uk.co.jemos.podam.common.PodamExclude;
 @Entity
 public class AutomovilEntity extends BaseEntity implements Serializable {
     
-    private long id;
     private int modelo;
     private String marca;
     private int anio;
@@ -36,27 +35,20 @@ public class AutomovilEntity extends BaseEntity implements Serializable {
     
     //Relacion a FichaTecnicaDTO dado que esta tiene cardinalidad 
     @PodamExclude
-    @OneToOne(mappedBy = "automovil", orphanRemoval = true)
+    @OneToOne(mappedBy = "automovil")
     private FichaTecnicaEntity ficha_tecnica;
     
     
     //Falta agregar PuntoVenta y Calificacion
     @PodamExclude
-    @OneToOne(mappedBy = "automovil")
+    @OneToOne
     private PuntoVentaEntity punto_venta;
     
     @PodamExclude
     @OneToMany(mappedBy = "automovil", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<CalificacionEntity> calificaciones;
 
-    @Override
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
+   
 
     public int getModelo() {
         return modelo;
@@ -128,6 +120,14 @@ public class AutomovilEntity extends BaseEntity implements Serializable {
 
     public void setFicha_tecnica(FichaTecnicaEntity ficha_tecnica) {
         this.ficha_tecnica = ficha_tecnica;
+    }
+
+    public List<CalificacionEntity> getCalificaciones() {
+        return calificaciones;
+    }
+
+    public void setCalificaciones(List<CalificacionEntity> calificaciones) {
+        this.calificaciones = calificaciones;
     }
     
     

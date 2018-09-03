@@ -26,7 +26,7 @@ public class FichaTecnicaEntity extends BaseEntity implements Serializable {
     
     @PodamExclude
     @OneToOne
-    AutomovilEntity automovil;
+    private AutomovilEntity automovil;
 
     public String getVidrios() {
         return vidrios;
