@@ -14,11 +14,13 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.UserTransaction;
 import org.jboss.arquillian.container.test.api.Deployment;
+import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.shrinkwrap.api.ShrinkWrap;
 import org.jboss.shrinkwrap.api.spec.JavaArchive;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import uk.co.jemos.podam.api.PodamFactory;
 import uk.co.jemos.podam.api.PodamFactoryImpl;
 
@@ -26,6 +28,7 @@ import uk.co.jemos.podam.api.PodamFactoryImpl;
  *
  * @author js.bravo
  */
+@RunWith(Arquillian.class)
 public class AdministradorPersistenceTest {
 
     @Inject
@@ -108,12 +111,12 @@ public class AdministradorPersistenceTest {
         Assert.assertEquals(newEntity.getNombre(), entity.getNombre());
         Assert.assertEquals(newEntity.getApellido(), entity.getApellido());
         Assert.assertEquals(newEntity.getCargo(), entity.getCargo());
-        Assert.assertEquals(newEntity.getNombre_Usuario(), entity.getNombre_Usuario());
-        Assert.assertEquals(newEntity.getFecha_Inicio(), entity.getFecha_Inicio());
+        Assert.assertEquals(newEntity.getNombre_usuario(), entity.getNombre_usuario());
+        Assert.assertEquals(newEntity.getFecha_inicio(), entity.getFecha_inicio());
         Assert.assertEquals(newEntity.getContrasena(), entity.getContrasena());
         Assert.assertEquals(newEntity.getTelefono(), entity.getTelefono());
         Assert.assertEquals(newEntity.getCorreo(), entity.getCorreo());
-        Assert.assertEquals(newEntity.getFecha_Nacimiento(), entity.getFecha_Nacimiento());
+        Assert.assertEquals(newEntity.getFecha_nacimiento(), entity.getFecha_nacimiento());
     }
 
     /**
@@ -147,12 +150,12 @@ public class AdministradorPersistenceTest {
         Assert.assertEquals(newEntity.getNombre(), entity.getNombre());
         Assert.assertEquals(newEntity.getApellido(), entity.getApellido());
         Assert.assertEquals(newEntity.getCargo(), entity.getCargo());
-        Assert.assertEquals(newEntity.getNombre_Usuario(), entity.getNombre_Usuario());
-        Assert.assertEquals(newEntity.getFecha_Inicio(), entity.getFecha_Inicio());
+        Assert.assertEquals(newEntity.getNombre_usuario(), entity.getNombre_usuario());
+        Assert.assertEquals(newEntity.getFecha_inicio(), entity.getFecha_inicio());
         Assert.assertEquals(newEntity.getContrasena(), entity.getContrasena());
         Assert.assertEquals(newEntity.getTelefono(), entity.getTelefono());
         Assert.assertEquals(newEntity.getCorreo(), entity.getCorreo());
-        Assert.assertEquals(newEntity.getFecha_Nacimiento() , entity.getFecha_Nacimiento());
+        Assert.assertEquals(newEntity.getFecha_nacimiento() , entity.getFecha_nacimiento());
     }
 
     /**
@@ -184,11 +187,11 @@ public class AdministradorPersistenceTest {
   Assert.assertEquals(newEntity.getNombre(), updated.getNombre());
         Assert.assertEquals(newEntity.getApellido(), updated.getApellido());
         Assert.assertEquals(newEntity.getCargo(), updated.getCargo());
-        Assert.assertEquals(newEntity.getNombre_Usuario(), updated.getNombre_Usuario());
-        Assert.assertEquals(newEntity.getFecha_Inicio(), updated.getFecha_Inicio());
+        Assert.assertEquals(newEntity.getNombre_usuario(), updated.getNombre_usuario());
+        Assert.assertEquals(newEntity.getFecha_inicio(), updated.getFecha_inicio());
         Assert.assertEquals(newEntity.getContrasena(), updated.getContrasena());
         Assert.assertEquals(newEntity.getTelefono(), updated.getTelefono());
         Assert.assertEquals(newEntity.getCorreo(), updated.getCorreo());
-        Assert.assertEquals(newEntity.getFecha_Nacimiento() , updated.getFecha_Nacimiento());
+        Assert.assertEquals(newEntity.getFecha_nacimiento() , updated.getFecha_nacimiento());
     }
 }

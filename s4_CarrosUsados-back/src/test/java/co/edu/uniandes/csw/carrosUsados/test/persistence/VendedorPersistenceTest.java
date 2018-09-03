@@ -13,17 +13,20 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.UserTransaction;
 import org.jboss.arquillian.container.test.api.Deployment;
+import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.shrinkwrap.api.ShrinkWrap;
 import org.jboss.shrinkwrap.api.spec.JavaArchive;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import uk.co.jemos.podam.api.PodamFactory;
 import uk.co.jemos.podam.api.PodamFactoryImpl;
 /**
  *
  * @author js.bravo
  */
+@RunWith(Arquillian.class)
 public class VendedorPersistenceTest {
     @Inject
     private VendedorPersistence vendedorPersistence;
@@ -110,7 +113,7 @@ public class VendedorPersistenceTest {
      * Prueba para consultar la lista de Vendedores.
      */
     @Test
-    public void getAdministradoresTest() {
+    public void getVendedoresTest() {
         List<VendedorEntity> list = vendedorPersistence.findAll();
         Assert.assertEquals(data.size(), list.size());
         for (VendedorEntity ent : list) {
