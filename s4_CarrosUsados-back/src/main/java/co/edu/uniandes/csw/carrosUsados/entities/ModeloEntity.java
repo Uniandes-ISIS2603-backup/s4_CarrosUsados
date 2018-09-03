@@ -6,11 +6,13 @@
 package co.edu.uniandes.csw.carrosUsados.entities;
 
 import java.io.Serializable;
+import javax.persistence.Entity;
 
 /**
  *
  * @author estudiante
  */
+@Entity
 public class ModeloEntity extends BaseEntity implements Serializable{
     
     private int num_puertas;
