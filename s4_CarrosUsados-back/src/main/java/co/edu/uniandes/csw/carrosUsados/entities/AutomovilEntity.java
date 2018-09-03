@@ -7,10 +7,13 @@ package co.edu.uniandes.csw.carrosUsados.entities;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import uk.co.jemos.podam.common.PodamExclude;
 
 /**
@@ -27,7 +30,7 @@ public class AutomovilEntity extends BaseEntity implements Serializable {
     private String color;
     private String num_chasis;
     private String placa;
-    //Chequear si toca agregar lo de TemporalType
+    @Temporal(TemporalType.DATE)
     private Date fecha_agregacion; //Chequear el tipo de dato
     private String precio_original;
     
@@ -43,8 +46,8 @@ public class AutomovilEntity extends BaseEntity implements Serializable {
     private PuntoVentaEntity punto_venta;
     
     @PodamExclude
-    @OneToMany(mappedBy = "automovil")
-    private CalificacionEntity calificacion;
+    @OneToMany(mappedBy = "automovil", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<CalificacionEntity> calificaciones;
 
     @Override
     public Long getId() {
