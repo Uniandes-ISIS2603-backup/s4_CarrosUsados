@@ -113,7 +113,7 @@ public class AdministradorEntity extends BaseEntity implements Serializable {
      *
      * @return el nombre de usuario del administrador.
      */
-    public String getNombre_Usuario() {
+    public String getNombre_usuario() {
         return nombre_usuario;
     }
 
@@ -122,7 +122,7 @@ public class AdministradorEntity extends BaseEntity implements Serializable {
      *
      * @param nombre_usuario - el nombre de usuario del administrador.
      */
-    public void setNombre_Usuario(String nombre_usuario) {
+    public void setNombre_usuario(String nombre_usuario) {
         this.nombre_usuario = nombre_usuario;
     }
 
@@ -131,7 +131,7 @@ public class AdministradorEntity extends BaseEntity implements Serializable {
      *
      * @return la fecha de nacimiento del administrador.
      */
-    public String getFecha_Nacimiento() {
+    public String getFecha_nacimiento() {
         return fecha_nacimiento;
     }
 
@@ -140,7 +140,7 @@ public class AdministradorEntity extends BaseEntity implements Serializable {
      *
      * @param fecha_nacimiento - la fecha de nacimiento del administrador.
      */
-    public void setFecha_Nacimiento(String fecha_nacimiento) {
+    public void setFecha_nacimiento(String fecha_nacimiento) {
         this.fecha_nacimiento = fecha_nacimiento;
     }
 
@@ -167,7 +167,7 @@ public class AdministradorEntity extends BaseEntity implements Serializable {
      *
      * @return la fecha de inicio del cargo del administrador.
      */
-    public String getFecha_Inicio() {
+    public String getFecha_inicio() {
         return fecha_inicio;
     }
 

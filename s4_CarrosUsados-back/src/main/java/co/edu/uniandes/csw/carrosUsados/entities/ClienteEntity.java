@@ -6,11 +6,13 @@
 package co.edu.uniandes.csw.carrosUsados.entities;
 
 import java.io.Serializable;
+import javax.persistence.Entity;
 
 /**
  *
  * @author js.bravo
  */
+@Entity
 public class ClienteEntity extends BaseEntity implements Serializable{
 
     /**
