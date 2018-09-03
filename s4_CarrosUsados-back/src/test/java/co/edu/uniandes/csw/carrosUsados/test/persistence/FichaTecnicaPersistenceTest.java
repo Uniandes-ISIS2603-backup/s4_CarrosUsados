@@ -172,10 +172,10 @@ public class FichaTecnicaPersistenceTest {
 
         newEntity.setId(entity.getId());
 
-        fichaTecnicaPersistence.update(newEntity);
+        entity = fichaTecnicaPersistence.update(newEntity);
 
         FichaTecnicaEntity resp = em.find(FichaTecnicaEntity.class, entity.getId());
-Assert.assertEquals(newEntity.getNum_airbags(), entity.getNum_airbags());
+        Assert.assertEquals(newEntity.getNum_airbags(), entity.getNum_airbags());
         Assert.assertEquals(newEntity.getRines(), entity.getRines());
         Assert.assertEquals(newEntity.getVidrios(), entity.getVidrios());   
     }
