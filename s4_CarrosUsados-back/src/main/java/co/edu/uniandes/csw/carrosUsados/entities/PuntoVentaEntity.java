@@ -14,6 +14,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import uk.co.jemos.podam.common.PodamExclude;
 
 /**
@@ -29,8 +30,12 @@ public class PuntoVentaEntity extends BaseEntity implements Serializable{
     private String ubicacion;
     
     @PodamExclude
-    @OneToMany(mappedBy = "punto", cascade = CascadeType.PERSIST, orphanRemoval = true)
+    @OneToMany(mappedBy = "puntoVenta", cascade = CascadeType.PERSIST, orphanRemoval = true)
     private List<CalificacionEntity> comentarios = new ArrayList<CalificacionEntity>();
+    
+    @PodamExclude
+    @OneToOne(mappedBy = "punto_venta")
+    private AutomovilEntity automovil;
     
   public PuntoVentaEntity()
   {
@@ -76,5 +81,31 @@ public class PuntoVentaEntity extends BaseEntity implements Serializable{
   {
       this.ubicacion= nueva;
   }
+
+    public int getNumEmpleados() {
+        return numEmpleados;
+    }
+
+    public void setNumEmpleados(int numEmpleados) {
+        this.numEmpleados = numEmpleados;
+    }
+
+    public List<CalificacionEntity> getComentarios() {
+        return comentarios;
+    }
+
+    public void setComentarios(List<CalificacionEntity> comentarios) {
+        this.comentarios = comentarios;
+    }
+
+    public AutomovilEntity getAutomovil() {
+        return automovil;
+    }
+
+    public void setAutomovil(AutomovilEntity automovil) {
+        this.automovil = automovil;
+    }
     
+  
+  
 }
