@@ -24,7 +24,7 @@ public class AutomovilPersistence {
     
     private static final Logger LOGGER = Logger.getLogger(AutomovilPersistence.class.getName());
     
-    @PersistenceContext("CarTeamPU")
+    @PersistenceContext(unitName = "CarTeamPU")
     protected EntityManager em;
     
     /**

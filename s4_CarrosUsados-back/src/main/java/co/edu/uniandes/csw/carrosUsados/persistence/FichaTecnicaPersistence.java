@@ -24,7 +24,7 @@ public class FichaTecnicaPersistence {
     
     private static final Logger LOGGER = Logger.getLogger(FichaTecnicaPersistence.class.getName());
     
-    @PersistenceContext("CarTeamPU")
+    @PersistenceContext(unitName = "CarTeamPU")
     protected EntityManager em;
     
     /**
