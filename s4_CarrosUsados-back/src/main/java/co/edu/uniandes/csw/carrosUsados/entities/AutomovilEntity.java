@@ -9,6 +9,7 @@ import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import uk.co.jemos.podam.common.PodamExclude;
 
@@ -37,6 +38,13 @@ public class AutomovilEntity extends BaseEntity implements Serializable {
     
     
     //Falta agregar PuntoVenta y Calificacion
+    @PodamExclude
+    @OneToOne(mappedBy = "automovil")
+    private PuntoVentaEntity punto_venta;
+    
+    @PodamExclude
+    @OneToMany(mappedBy = "automovil")
+    private CalificacionEntity calificacion;
 
     @Override
     public Long getId() {
