@@ -24,7 +24,7 @@ public class CalificacionEntity extends BaseEntity implements Serializable{
     private int num_estrellas;
     private String comentario;
     
-    @Temporal(TemporalType.DATE)
+    @Temporal(TemporalType.TIMESTAMP)
     private Date publishDate;
     
     @PodamExclude
