@@ -88,4 +88,31 @@ public class FormaDePagoPersistence {
         em.remove(entity);
         LOGGER.log(Level.INFO, "Saliendo de borrar la forma de pago con id = {0}", formaDePagoId);
     }
+    
+    /**
+     * Busca si hay alguna forma de pago con el tipo que se envía de argumento
+     *
+     * @param tipo: tipo de la forma de pago que se está buscando
+     * @return null si no existe ninguna forma de pago con la tipo del argumento. Si
+     * existe alguno devuelve el primero.
+     */
+    public FormaDePagoEntity findByTipo(String tipo) {
+        LOGGER.log(Level.INFO, "Consultando formas de pago por tipo ", tipo);
+        // Se crea un query para buscar forma de pagoes con la tipo que recibe el método como argumento. ":tipo" es un placeholder que debe ser remplazado
+        TypedQuery query = em.createQuery("Select e From FormaDePagoEntity e where e.tipo = :tipo", FormaDePagoEntity.class);
+        // Se remplaza el placeholder ":tipo" con el valor del argumento 
+        query = query.setParameter("tipo", tipo);
+        // Se invoca el query se obtiene la lista resultado
+        List<FormaDePagoEntity> sameTipo = query.getResultList();
+        FormaDePagoEntity result;
+        if (sameTipo == null) {
+            result = null;
+        } else if (sameTipo.isEmpty()) {
+            result = null;
+        } else {
+            result = sameTipo.get(0);
+        }
+        LOGGER.log(Level.INFO, "Saliendo de consultar formas de pago por tipo ", tipo);
+        return result;
+    }
 }

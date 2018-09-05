@@ -6,6 +6,7 @@
 package co.edu.uniandes.csw.carrosUsados.entities;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
@@ -15,10 +16,8 @@ import uk.co.jemos.podam.common.PodamExclude;
  *
  * @author estudiante
  */
+@Entity
 public class ArticuloEntity extends BaseEntity implements Serializable {
-    
-    // La id del articulo
-    private long id;
     
     // La ubicacion del articulo
     private String ubicacion;
@@ -31,30 +30,22 @@ public class ArticuloEntity extends BaseEntity implements Serializable {
     
     // Si el articulo esta disponible para comprar
     private boolean disponibilidad;
-    
+    /*
     // Relacion con el pago hecho
     @PodamExclude
-    @OneToOne(mappedBy = "articulo", orphanRemoval = true)
+    @OneToOne
     private PagoEntity pago;
-    
+    */
     // Relacion con el automovil que vende el articulo
     @PodamExclude
-    @OneToOne(mappedBy = "articulo")
+    @OneToOne
     private AutomovilEntity automovil;
     
     // Relacion con los clientes que desean comprar el articulo
     @PodamExclude
-    @ManyToMany(mappedBy = "automovil")
-    private ClienteEntity cliente;
+    @ManyToMany
+    private List<ClienteEntity> clientes;
 
-    @Override
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
 
     public String getUbicacion() {
         return ubicacion;
@@ -87,7 +78,7 @@ public class ArticuloEntity extends BaseEntity implements Serializable {
     public void setDisponibilidad(boolean disponibilidad) {
         this.disponibilidad = disponibilidad;
     }
-
+/*
     public PagoEntity getPago() {
         return pago;
     }
@@ -95,7 +86,7 @@ public class ArticuloEntity extends BaseEntity implements Serializable {
     public void setPago(PagoEntity pago) {
         this.pago = pago;
     }
-
+*/
     public AutomovilEntity getAutomovil() {
         return automovil;
     }
@@ -104,12 +95,12 @@ public class ArticuloEntity extends BaseEntity implements Serializable {
         this.automovil = automovil;
     }
 
-    public ClienteEntity getCliente() {
-        return cliente;
+    public List<ClienteEntity> getClientes() {
+        return clientes;
     }
 
-    public void setCliente(ClienteEntity cliente) {
-        this.cliente = cliente;
+    public void setClientes(List<ClienteEntity> cliente) {
+        this.clientes = cliente;
     }
     
     

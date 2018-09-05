@@ -47,6 +47,10 @@ public class AutomovilEntity extends BaseEntity implements Serializable {
     @PodamExclude
     @OneToMany(mappedBy = "automovil", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<CalificacionEntity> calificaciones;
+    
+    @PodamExclude
+    @OneToOne(mappedBy = "automovil")
+    private CalificacionEntity articulo;
 
     @PodamExclude
     @ManyToOne

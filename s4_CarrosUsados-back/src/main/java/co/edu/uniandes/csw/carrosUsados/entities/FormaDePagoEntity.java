@@ -6,17 +6,16 @@
 package co.edu.uniandes.csw.carrosUsados.entities;
 
 import java.io.Serializable;
-import javax.persistence.OneToOne;
+import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import uk.co.jemos.podam.common.PodamExclude;
 
 /**
  *
  * @author estudiante
  */
+@Entity
 public class FormaDePagoEntity extends BaseEntity implements Serializable {
-    
-    // La id de la forma de pago
-    private long id;
     
     // El nombre de la forma de pago
     private String nombre;
@@ -26,17 +25,8 @@ public class FormaDePagoEntity extends BaseEntity implements Serializable {
     
     // La relacion con el cliente al cual pertenece la forma de pago
     @PodamExclude
-    @OneToOne(mappedBy = "formaDePago")
-    private ClienteEntity cliente;
-
-    @Override
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }   
+    @ManyToOne
+    private ClienteEntity cliente;   
 
     public String getNombre() {
         return nombre;
