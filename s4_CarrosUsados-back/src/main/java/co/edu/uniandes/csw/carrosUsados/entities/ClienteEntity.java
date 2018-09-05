@@ -6,7 +6,11 @@
 package co.edu.uniandes.csw.carrosUsados.entities;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
+import uk.co.jemos.podam.common.PodamExclude;
 
 /**
  *
@@ -47,6 +51,14 @@ public class ClienteEntity extends BaseEntity implements Serializable{
      * Contraseña asociada al login del cliente.
      */
     private String contrasena;
+    
+    @PodamExclude
+    @OneToMany(mappedBy = "cliente")
+    private List<FormaDePagoEntity> formasDePago;
+    
+    @PodamExclude
+    @ManyToMany(mappedBy = "clientes")
+    private List<ArticuloEntity> articulos;
 
     /**
      * Retorna el nombre del cliente.
