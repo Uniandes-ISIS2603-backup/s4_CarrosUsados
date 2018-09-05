@@ -21,10 +21,17 @@ public class PagoEntity extends BaseEntity implements Serializable{
     private String codigo_tarjeta;
     private String fecha_tarjeta;
     private boolean comprobante_pago;
+
     
     @PodamExclude
     @OneToOne(mappedBy = "pago")
     private FacturaEntity factura;
+  
+  /*
+    @PodamExclude
+    @OneToOne
+    private PagoEntity articulo;
+    */
 
     public FacturaEntity getFactura() {
         return factura;
@@ -33,6 +40,7 @@ public class PagoEntity extends BaseEntity implements Serializable{
     public void setFactura(FacturaEntity factura) {
         this.factura = factura;
     }
+
     public String getIdPago()
     {
         return idPago;
@@ -73,6 +81,14 @@ public class PagoEntity extends BaseEntity implements Serializable{
     {
         comprobante_pago=comprobante;
     }
-    
+/*
+    public PagoEntity getArticulo() {
+        return articulo;
+    }
+
+    public void setArticulo(PagoEntity articulo) {
+        this.articulo = articulo;
+    }
+    */
     
 }
