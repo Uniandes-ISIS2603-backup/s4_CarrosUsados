@@ -7,6 +7,8 @@ package co.edu.uniandes.csw.carrosUsados.entities;
 
 import java.io.Serializable;
 import javax.persistence.Entity;
+import javax.persistence.OneToOne;
+import uk.co.jemos.podam.common.PodamExclude;
 
 /**
  *
@@ -20,7 +22,17 @@ public class PagoEntity extends BaseEntity implements Serializable{
     private String fecha_tarjeta;
     private boolean comprobante_pago;
     
-    
+    @PodamExclude
+    @OneToOne(mappedBy = "pago")
+    private FacturaEntity factura;
+
+    public FacturaEntity getFactura() {
+        return factura;
+    }
+
+    public void setFactura(FacturaEntity factura) {
+        this.factura = factura;
+    }
     public String getIdPago()
     {
         return idPago;
