@@ -24,8 +24,20 @@ public class PagoEntity extends BaseEntity implements Serializable{
 
     
     @PodamExclude
-    @OneToOne(mappedBy = "pago")
+    @OneToOne
     private FacturaEntity factura;
+    
+    @PodamExclude
+    @OneToOne
+    private ArticuloEntity articulo;
+
+    public ArticuloEntity getArticulo() {
+        return articulo;
+    }
+
+    public void setArticulo(ArticuloEntity articulo) {
+        this.articulo = articulo;
+    }
   
   /*
     @PodamExclude

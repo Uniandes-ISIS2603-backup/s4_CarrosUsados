@@ -30,12 +30,20 @@ public class ArticuloEntity extends BaseEntity implements Serializable {
     
     // Si el articulo esta disponible para comprar
     private boolean disponibilidad;
-    /*
+    
     // Relacion con el pago hecho
     @PodamExclude
-    @OneToOne
+    @OneToOne(mappedBy = "articulo")
     private PagoEntity pago;
-    */
+
+    public PagoEntity getPago() {
+        return pago;
+    }
+
+    public void setPago(PagoEntity pago) {
+        this.pago = pago;
+    }
+    
     // Relacion con el automovil que vende el articulo
     @PodamExclude
     @OneToOne(mappedBy = "articulo")
