@@ -28,8 +28,8 @@ public class ModeloEntity extends BaseEntity implements Serializable{
     @ManyToOne
     private MarcaEntity marca;
     
-    /*@PodamExclude
-    @OneToMany (mappedBy = "modelo", cascade = CascadeType.ALL, orphanRemoval = true)*/
+    @PodamExclude
+    @OneToMany (mappedBy = "modeloAsociado", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<AutomovilEntity> automoviles;
 
     public int getNum_puertas() {

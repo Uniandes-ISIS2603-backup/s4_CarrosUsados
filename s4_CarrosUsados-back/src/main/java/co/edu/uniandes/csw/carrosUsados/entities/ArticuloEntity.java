@@ -38,7 +38,7 @@ public class ArticuloEntity extends BaseEntity implements Serializable {
     */
     // Relacion con el automovil que vende el articulo
     @PodamExclude
-    @OneToOne
+    @OneToOne(mappedBy = "articulo")
     private AutomovilEntity automovil;
     
     // Relacion con los clientes que desean comprar el articulo
