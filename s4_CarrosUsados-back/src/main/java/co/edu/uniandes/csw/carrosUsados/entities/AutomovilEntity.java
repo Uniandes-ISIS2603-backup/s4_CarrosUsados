@@ -49,12 +49,16 @@ public class AutomovilEntity extends BaseEntity implements Serializable {
     private List<CalificacionEntity> calificaciones;
     
     @PodamExclude
-    @OneToOne(mappedBy = "automovil")
-    private CalificacionEntity articulo;
+    @OneToOne
+    private ArticuloEntity articulo;
 
     @PodamExclude
     @ManyToOne
     private VendedorEntity vendedor;
+    
+    @PodamExclude
+    @ManyToOne
+    private ModeloEntity modeloAsociado;
 
     public int getModelo() {
         return modelo;

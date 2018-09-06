@@ -10,5 +10,5 @@ package co.edu.uniandes.csw.carrosUsados.ejb;
  * @author estudiante
  */
 public class FacturaLogic {
-    
+
 }

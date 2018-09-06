@@ -10,5 +10,5 @@ package co.edu.uniandes.csw.carrosUsados.ejb;
  * @author na.morenoe
  */
 public class ModeloLogic {
-    
+
 }
