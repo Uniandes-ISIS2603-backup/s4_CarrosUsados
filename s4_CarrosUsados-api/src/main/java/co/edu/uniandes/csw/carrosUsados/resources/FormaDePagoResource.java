@@ -26,11 +26,11 @@ import javax.ws.rs.*;
 public class FormaDePagoResource {
 
     private final static Logger LOGGER = Logger.getLogger(FormaDePagoResource.class.getName());
-
+/*
     @GET
     public FormaDePagoDTO getFormaDePago() throws BusinessLogicException {
         return new FormaDePagoDTO();
-    }
+    }*/
     
     @GET     
     public List<FormaDePagoDetailDTO> getCalificaciones()

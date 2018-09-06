@@ -33,9 +33,10 @@ public class CalificacionResource {
      private static final Logger LOGGER=Logger.getLogger(CalificacionResource.class.getName());
     
     @GET
-    public CalificacionDTO getCalificacion(CalificacionDTO calificacion)
+    @Path("{calificacionId: \\d+}")
+    public CalificacionDTO getCalificacion(@PathParam("calificacionId")long calificacionId)
     {
-        return calificacion;
+        return new CalificacionDTO();
         
     }
     
@@ -43,14 +44,14 @@ public class CalificacionResource {
     @POST
     public CalificacionDTO createCalificacion(CalificacionDTO califica)
     {
-        return califica;
+        return new CalificacionDTO();
     }
     
     @PUT
     @Path("{calificacionId: \\d+}")
     public CalificacionDTO updateCalificacion(@PathParam("calificacionId") Long calificacionId, CalificacionDTO calificacion)
     {
-        return calificacion;
+        return new CalificacionDTO();
         
     }
     
