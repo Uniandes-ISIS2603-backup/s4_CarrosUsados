@@ -7,6 +7,11 @@ package co.edu.uniandes.csw.carrosUsados.entities;
 
 import java.io.Serializable;
 import javax.persistence.Entity;
+import uk.co.jemos.podam.common.PodamExclude;
+import java.util.List;
+import javax.persistence.CascadeType;
+import javax.persistence.OneToMany;
+
 
 /**
  *
@@ -18,6 +23,11 @@ public class MarcaEntity extends BaseEntity implements Serializable {
     private String nombre;
     private String pais;
     private String descripcion;
+    
+    @PodamExclude
+    @OneToMany(mappedBy = "marca", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<ModeloEntity> modelos;
+      
 
     public String getNombre() {
         return nombre;
@@ -43,6 +53,12 @@ public class MarcaEntity extends BaseEntity implements Serializable {
         this.descripcion = descripcion;
     }
     
+    public List<ModeloEntity> getModelos(){
+        return modelos;
+    }
     
+    public void setModelos(List<ModeloEntity> modelos){
+        this.modelos = modelos;
+    }
     
 }
