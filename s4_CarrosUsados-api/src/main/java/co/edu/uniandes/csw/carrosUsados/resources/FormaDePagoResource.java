@@ -26,14 +26,15 @@ import javax.ws.rs.*;
 public class FormaDePagoResource {
 
     private final static Logger LOGGER = Logger.getLogger(FormaDePagoResource.class.getName());
-/*
+
     @GET
-    public FormaDePagoDTO getFormaDePago() throws BusinessLogicException {
+    @Path("{formasDePagoId: \\d+}")
+    public FormaDePagoDTO getFormaDePago(@PathParam("formasDePagoId") Long formasDePagoId) throws BusinessLogicException {
         return new FormaDePagoDTO();
-    }*/
+    }
     
     @GET     
-    public List<FormaDePagoDetailDTO> getCalificaciones()
+    public List<FormaDePagoDetailDTO> getFormasDePago()
     {
         return new ArrayList<FormaDePagoDetailDTO>();        
     }
