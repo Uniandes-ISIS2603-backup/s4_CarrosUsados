@@ -26,11 +26,12 @@ import javax.ws.rs.*;
 public class ArticuloResource {
 
     private final static Logger LOGGER = Logger.getLogger(ArticuloResource.class.getName());
-    /*
+    
     @GET
-    public ArticuloDTO getArticulo() throws BusinessLogicException {
+    @Path("{articulosId: \\d+}")
+    public ArticuloDTO getArticulo(@PathParam("articulosId") Long articulosId) throws BusinessLogicException {
         return new ArticuloDTO();
-    }*/
+    }
     
     @GET     
     public List<ArticuloDetailDTO> getArticulos()
