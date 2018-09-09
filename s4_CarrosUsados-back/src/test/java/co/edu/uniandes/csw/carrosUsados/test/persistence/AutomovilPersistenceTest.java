@@ -114,13 +114,13 @@ public class AutomovilPersistenceTest {
 
         Assert.assertEquals(newEntity.getAnio(), entity.getAnio());
         Assert.assertEquals(newEntity.getColor(), entity.getColor());
-        Assert.assertEquals(newEntity.getFecha_agregacion(), entity.getFecha_agregacion());
+        Assert.assertEquals(newEntity.getFechaAgregacion(), entity.getFechaAgregacion());
         Assert.assertEquals(newEntity.getId(), entity.getId());
         Assert.assertEquals(newEntity.getMarca(),newEntity.getMarca());
         Assert.assertEquals(newEntity.getModelo(), entity.getModelo());
-        Assert.assertEquals(newEntity.getNum_chasis(), entity.getNum_chasis());
+        Assert.assertEquals(newEntity.getNumChasis(), entity.getNumChasis());
         Assert.assertEquals(newEntity.getPlaca(), entity.getPlaca());
-        Assert.assertEquals(newEntity.getPrecio_original(), entity.getPrecio_original());
+        Assert.assertEquals(newEntity.getPrecioOriginal(), entity.getPrecioOriginal());
     }
 
     /**
@@ -151,13 +151,13 @@ public class AutomovilPersistenceTest {
         Assert.assertNotNull(newEntity);
         Assert.assertEquals(newEntity.getAnio(), entity.getAnio());
         Assert.assertEquals(newEntity.getColor(), entity.getColor());
-        Assert.assertEquals(newEntity.getFecha_agregacion(), entity.getFecha_agregacion());
+        Assert.assertEquals(newEntity.getFechaAgregacion(), entity.getFechaAgregacion());
         Assert.assertEquals(newEntity.getId(), entity.getId());
         Assert.assertEquals(newEntity.getMarca(),newEntity.getMarca());
         Assert.assertEquals(newEntity.getModelo(), entity.getModelo());
-        Assert.assertEquals(newEntity.getNum_chasis(), entity.getNum_chasis());
+        Assert.assertEquals(newEntity.getNumChasis(), entity.getNumChasis());
         Assert.assertEquals(newEntity.getPlaca(), entity.getPlaca());
-        Assert.assertEquals(newEntity.getPrecio_original(), entity.getPrecio_original());
+        Assert.assertEquals(newEntity.getPrecioOriginal(), entity.getPrecioOriginal());
     }
 
     /**
@@ -188,13 +188,13 @@ public class AutomovilPersistenceTest {
 
         Assert.assertEquals(newEntity.getAnio(), entity.getAnio());
         Assert.assertEquals(newEntity.getColor(), entity.getColor());
-        Assert.assertEquals(newEntity.getFecha_agregacion(), entity.getFecha_agregacion());
+        Assert.assertEquals(newEntity.getFechaAgregacion(), entity.getFechaAgregacion());
         Assert.assertEquals(newEntity.getId(), entity.getId());
         Assert.assertEquals(newEntity.getMarca(),newEntity.getMarca());
         Assert.assertEquals(newEntity.getModelo(), entity.getModelo());
-        Assert.assertEquals(newEntity.getNum_chasis(), entity.getNum_chasis());
+        Assert.assertEquals(newEntity.getNumChasis(), entity.getNumChasis());
         Assert.assertEquals(newEntity.getPlaca(), entity.getPlaca());
-        Assert.assertEquals(newEntity.getPrecio_original(), entity.getPrecio_original());
+        Assert.assertEquals(newEntity.getPrecioOriginal(), entity.getPrecioOriginal());
     }
 
     /**

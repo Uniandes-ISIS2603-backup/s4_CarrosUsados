@@ -114,7 +114,7 @@ public class FichaTecnicaPersistenceTest {
         FichaTecnicaEntity entity = em.find(FichaTecnicaEntity.class, result.getId());
 
         Assert.assertEquals(newEntity.getId(), entity.getId());
-        Assert.assertEquals(newEntity.getNum_airbags(), entity.getNum_airbags());
+        Assert.assertEquals(newEntity.getNumAirbags(), entity.getNumAirbags());
         Assert.assertEquals(newEntity.getRines(), entity.getRines());
         Assert.assertEquals(newEntity.getVidrios(), entity.getVidrios());
     }
@@ -145,7 +145,7 @@ public class FichaTecnicaPersistenceTest {
         FichaTecnicaEntity entity = data.get(0);
         FichaTecnicaEntity newEntity = fichaTecnicaPersistence.find(entity.getId());
         Assert.assertNotNull(newEntity);Assert.assertEquals(newEntity.getId(), entity.getId());
-        Assert.assertEquals(newEntity.getNum_airbags(), entity.getNum_airbags());
+        Assert.assertEquals(newEntity.getNumAirbags(), entity.getNumAirbags());
         Assert.assertEquals(newEntity.getRines(), entity.getRines());
         Assert.assertEquals(newEntity.getVidrios(), entity.getVidrios());
     }
@@ -175,7 +175,7 @@ public class FichaTecnicaPersistenceTest {
         entity = fichaTecnicaPersistence.update(newEntity);
 
         FichaTecnicaEntity resp = em.find(FichaTecnicaEntity.class, entity.getId());
-        Assert.assertEquals(newEntity.getNum_airbags(), entity.getNum_airbags());
+        Assert.assertEquals(newEntity.getNumAirbags(), entity.getNumAirbags());
         Assert.assertEquals(newEntity.getRines(), entity.getRines());
         Assert.assertEquals(newEntity.getVidrios(), entity.getVidrios());   
     }

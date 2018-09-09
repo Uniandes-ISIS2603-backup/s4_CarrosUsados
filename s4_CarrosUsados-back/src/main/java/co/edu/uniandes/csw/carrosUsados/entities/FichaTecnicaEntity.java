@@ -18,68 +18,111 @@ import uk.co.jemos.podam.common.PodamExclude;
 public class FichaTecnicaEntity extends BaseEntity implements Serializable {
     
     private String vidrios;
-    private boolean camara_reversa;
+    private boolean camaraReversa;
     private boolean sensores;
     private String rines;
-    private boolean aire_acondicionado;
-    private int num_airbags;
+    private boolean aireAcondicionado;
+    private int numAirbags;
     
     @PodamExclude
     @OneToOne
     private AutomovilEntity automovil;
-
+    
+    /**
+     * Retorna los vidrios de la ficha tecnica.
+     * @return los vidrios
+     */
     public String getVidrios() {
         return vidrios;
     }
-
+    /**
+     * Actualiza los vidrios de la ficha tecnica.
+     * @param vidrios 
+     */
     public void setVidrios(String vidrios) {
         this.vidrios = vidrios;
     }
-
-    public boolean isCamara_reversa() {
-        return camara_reversa;
+    /**
+     * Retorna la camara de reversa de la ficha tecnica
+     * @return la camara de reversa
+     */
+    public boolean isCamaraReversa() {
+        return camaraReversa;
     }
-
-    public void setCamara_reversa(boolean camara_reversa) {
-        this.camara_reversa = camara_reversa;
+    /**
+     * Actualiza la camara de reversa de la ficha tecnica
+     * @param camaraReversa 
+     */
+    public void setCamaraReversa(boolean camaraReversa) {
+        this.camaraReversa = camaraReversa;
     }
-
+    /**
+     * Retorna los sensores de la ficha tecnica
+     * @return los sensores
+     */
     public boolean isSensores() {
         return sensores;
     }
-
+    /**
+     * Actualiza los sensores de una ficha tecnica.
+     * @param sensores 
+     */
     public void setSensores(boolean sensores) {
         this.sensores = sensores;
     }
-
+    /**
+     * Retorna los rines de la ficha tecnica
+     * @return los rines
+     */
     public String getRines() {
         return rines;
     }
-
+    /**
+     * Actualiza los rines de la ficha tecnica.
+     * @param rines 
+     */
     public void setRines(String rines) {
         this.rines = rines;
     }
-
-    public boolean isAire_acondicionado() {
-        return aire_acondicionado;
+    /**
+     * Retorna el aire acondicionado de la ficha tecnica.
+     * @return el aire acondicionado
+     */
+    public boolean isAireAcondicionado() {
+        return aireAcondicionado;
     }
-
-    public void setAire_acondicionado(boolean aire_acondicionado) {
-        this.aire_acondicionado = aire_acondicionado;
+    /**
+     * Actualiza el aire acondicioando de la ficha tecnica
+     * @param aireAcondicionado 
+     */
+    public void setAireAcondicionado(boolean aireAcondicionado) {
+        this.aireAcondicionado = aireAcondicionado;
     }
-
-    public int getNum_airbags() {
-        return num_airbags;
+    /**
+     * Retorna le numero de airbags de la ficha tecnica
+     * @return el numero de airbags
+     */
+    public int getNumAirbags() {
+        return numAirbags;
     }
-
-    public void setNum_airbags(int num_airbags) {
-        this.num_airbags = num_airbags;
+    /**
+     * Actualiza el numero de airbags de la ficha tecnica.
+     * @param numAirbags 
+     */
+    public void setNumAirbags(int numAirbags) {
+        this.numAirbags = numAirbags;
     }
-
+    /**
+     * Retorna el automovil asociado a la ficha tecnica.
+     * @return el automovil
+     */
     public AutomovilEntity getAutomovil() {
         return automovil;
     }
-
+    /**
+     * Actualiza el automovil asociado a al ficha tecnica.
+     * @param automovil 
+     */
     public void setAutomovil(AutomovilEntity automovil) {
         this.automovil = automovil;
     }
