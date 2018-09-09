@@ -23,7 +23,7 @@ import uk.co.jemos.podam.common.PodamExclude;
  */
 @Entity
 public class AutomovilEntity extends BaseEntity implements Serializable {
-    
+
     /**
      * modelo del automovil.
     */
@@ -49,22 +49,22 @@ public class AutomovilEntity extends BaseEntity implements Serializable {
      */
     private String placa;
     /**
-     * Fecha de agregación al sistema del automovil. 
+     * Fecha de agregación al sistema del automovil.
      */
     @Temporal(TemporalType.TIMESTAMP)
     private Date fechaAgregacion; //Chequear el tipo de dato
-    
+
     /**
      * Precio al que fue se le compro el automovil usado a un cliente.
      */
     private String precioOriginal;
 
-    //Relacion a FichaTecnicaDTO dado que esta tiene cardinalidad 
+    //Relacion a FichaTecnicaDTO dado que esta tiene cardinalidad
     /**
      * Se mapea relacion con una Ficha Tenica. Un automovil tiene una única ficha tecnica.
      */
     @PodamExclude
-    @OneToOne(mappedBy = "automovil")
+    @OneToOne(mappedBy = "automovil", cascade = CascadeType.ALL)
     private FichaTecnicaEntity fichaTecnica;
 
     //Falta agregar PuntoVenta y Calificacion
@@ -74,28 +74,28 @@ public class AutomovilEntity extends BaseEntity implements Serializable {
     @PodamExclude
     @OneToOne
     private PuntoVentaEntity puntoVenta;
-    
+
     /**
      * Mapea relacion con un objeto Calificacion. Un automovil puede tener muchas calificaciones.
      */
     @PodamExclude
     @OneToMany(mappedBy = "automovil", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<CalificacionEntity> calificaciones;
-    
+
     /**
      * Mapea relacion con ub objeto Articulo. Un automovil aparece en exactamente un articulo
      */
     @PodamExclude
     @OneToOne
     private ArticuloEntity articulo;
-    
+
     /**
      * Mapea relacion con un objeto Vendedor. Un vendedor puede tenermuchos automoviles, y un automovil tiene unicamente un vendedor.
      */
     @PodamExclude
     @ManyToOne
     private VendedorEntity vendedor;
-    
+
     /**
      * Mapea relacion con un objeto Modelo. Un automovil tiene un unico Modelo, pero un Modelo puede tener muchos automoviles.
      */
@@ -110,15 +110,15 @@ public class AutomovilEntity extends BaseEntity implements Serializable {
     public int getModelo() {
         return modelo;
     }
-    
+
     /**
      * Actualiza el modelo del automovil.
-     * @param modelo 
+     * @param modelo
      */
     public void setModelo(int modelo) {
         this.modelo = modelo;
     }
-    
+
     /**
      * Retorna la marca del automovil.
      * @return la marca
@@ -126,10 +126,10 @@ public class AutomovilEntity extends BaseEntity implements Serializable {
     public String getMarca() {
         return marca;
     }
-    
+
     /**
      * Actualiza la marca del automovil
-     * @param marca 
+     * @param marca
      */
     public void setMarca(String marca) {
         this.marca = marca;
@@ -141,10 +141,10 @@ public class AutomovilEntity extends BaseEntity implements Serializable {
     public int getAnio() {
         return anio;
     }
-    
+
     /**
      * Actualiza el anio del automovil.
-     * @param anio 
+     * @param anio
      */
     public void setAnio(int anio) {
         this.anio = anio;
@@ -158,7 +158,7 @@ public class AutomovilEntity extends BaseEntity implements Serializable {
     }
     /**
      * Actualzia el color del automovil.
-     * @param color 
+     * @param color
      */
     public void setColor(String color) {
         this.color = color;
@@ -172,21 +172,21 @@ public class AutomovilEntity extends BaseEntity implements Serializable {
     }
     /**
      * Actualiza el numero de chasis del automovil.
-     * @param numchasis 
+     * @param numchasis
      */
     public void setNumChasis(String numchasis) {
         this.numChasis = numchasis;
     }
     /**
      * Retorna la placa del automovil.
-     * @return 
+     * @return
      */
     public String getPlaca() {
         return placa;
     }
     /**
      * Actualiza la placa del automovil.
-     * @param placa 
+     * @param placa
      */
     public void setPlaca(String placa) {
         this.placa = placa;
@@ -200,7 +200,7 @@ public class AutomovilEntity extends BaseEntity implements Serializable {
     }
     /**
      * Actualiza la fecha de agregacion del automovil.
-     * @param fechaAgregacion 
+     * @param fechaAgregacion
      */
     public void setFechaAgregacion(Date fechaAgregacion) {
         this.fechaAgregacion = fechaAgregacion;
@@ -214,7 +214,7 @@ public class AutomovilEntity extends BaseEntity implements Serializable {
     }
     /**
      * Actualiza el precio original del automovil
-     * @param precioOriginal 
+     * @param precioOriginal
      */
     public void setPrecioOriginal(String precioOriginal) {
         this.precioOriginal = precioOriginal;
@@ -228,7 +228,7 @@ public class AutomovilEntity extends BaseEntity implements Serializable {
     }
     /**
      * Actualiza la fecha tecnica del automovil
-     * @param fichaTecnica 
+     * @param fichaTecnica
      */
     public void setFichaTecnica(FichaTecnicaEntity fichaTecnica) {
         this.fichaTecnica = fichaTecnica;
@@ -242,7 +242,7 @@ public class AutomovilEntity extends BaseEntity implements Serializable {
     }
     /**
      * Actualiza la coleccion de calificaciones del automovil.
-     * @param calificaciones 
+     * @param calificaciones
      */
     public void setCalificaciones(List<CalificacionEntity> calificaciones) {
         this.calificaciones = calificaciones;
@@ -256,7 +256,7 @@ public class AutomovilEntity extends BaseEntity implements Serializable {
     }
     /**
      * Actualiza el punto de venta asociado al automovil
-     * @param puntoVenta 
+     * @param puntoVenta
      */
     public void setPuntoVenta(PuntoVentaEntity puntoVenta) {
         this.puntoVenta = puntoVenta;
@@ -270,10 +270,18 @@ public class AutomovilEntity extends BaseEntity implements Serializable {
     }
     /**
      * Actualiza el vendedor asociado al automovil
-     * @param vendedor 
+     * @param vendedor
      */
     public void setVendedor(VendedorEntity vendedor) {
         this.vendedor = vendedor;
     }
 
+    public ModeloEntity getModeloAsociado() {
+        return modeloAsociado;
+    }
+
+    public void setModeloAsociado(ModeloEntity modeloAsociado) {
+        this.modeloAsociado = modeloAsociado;
+    }
+    
 }

@@ -21,26 +21,26 @@ import javax.persistence.TypedQuery;
  */
 @Stateless
 public class AutomovilPersistence {
-    
+
     private static final Logger LOGGER = Logger.getLogger(AutomovilPersistence.class.getName());
-    
+
     @PersistenceContext(unitName = "CarTeamPU")
     protected EntityManager em;
-    
+
     /**
      * Método para persisitir la entidad en la base de datos.
      *
      * @param automovilEntity objeto libro que se creará en la base de datos
      * @return devuelve la entidad creada con un id dado por la base de datos.
      */
-    
+
     public AutomovilEntity create(AutomovilEntity automovilEntity){
         LOGGER.log(Level.INFO, "Creando un automovil nuevo");
         em.persist(automovilEntity);
         LOGGER.log(Level.INFO, "Automovil creado");
         return automovilEntity;
     }
-    
+
     /**
      * Devuelve todos los automoviles de la base de datos.
      *
@@ -48,13 +48,13 @@ public class AutomovilPersistence {
      * "select u from AutomovilEntity u" es como un "select * from AutomovilEntity;" -
      * "SELECT * FROM table_name" en SQL.
      */
-    
+
     public List<AutomovilEntity> findAll() {
         LOGGER.log(Level.INFO, "Consultando todos los automoviles");
         Query q = em.createQuery("select u from AutomovilEntity u");
         return q.getResultList();
     }
-    
+
     /**
      * Busca si hay algun automovil con el id que se envía de argumento
      *
@@ -63,9 +63,9 @@ public class AutomovilPersistence {
      */
     public AutomovilEntity find(Long booksId) {
         LOGGER.log(Level.INFO, "Consultando el automovil con id={0}", booksId);
-        return em.find(AutomovilEntity.class, booksId);       
+        return em.find(AutomovilEntity.class, booksId);
     }
-    
+
     /**
      * Actualiza un automovil.
      *
@@ -77,7 +77,7 @@ public class AutomovilPersistence {
         LOGGER.log(Level.INFO, "Actualizando el automovil con id={0}", automovilEntity.getId());
         return em.merge(automovilEntity);
     }
-    
+
     /**
      *
      * Borra un automovil de la base de datos recibiendo como argumento el id del
@@ -90,7 +90,7 @@ public class AutomovilPersistence {
         AutomovilEntity automovilEntity = em.find(AutomovilEntity.class, automovilId);
         em.remove(automovilEntity);
     }
-    
+
     /**
      * Busca si hay algun automovil con la placa que se envía de argumento
      *
@@ -102,7 +102,7 @@ public class AutomovilPersistence {
         LOGGER.log(Level.INFO, "Consultando automoviles por placa ", placa);
         // Se crea un query para buscar automoviles con la placa que recibe el método como argumento. ":placa" es un placeholder que debe ser remplazado
         TypedQuery query = em.createQuery("Select e From AutomovilEntity e where e.placa = :placa", AutomovilEntity.class);
-        // Se remplaza el placeholder ":placa" con el valor del argumento 
+        // Se remplaza el placeholder ":placa" con el valor del argumento
         query = query.setParameter("placa", placa);
         // Se invoca el query se obtiene la lista resultado
         List<AutomovilEntity> samePlaca = query.getResultList();
@@ -115,6 +115,32 @@ public class AutomovilPersistence {
             result = samePlaca.get(0);
         }
         LOGGER.log(Level.INFO, "Saliendo de consultar automoviles por placa ", placa);
+        return result;
+    }
+    /**
+     * Busca si hay algun automovil con el mismo numero de chasis que se envía de argumento
+     *
+     * @param numChasis: numero de chasis del automovil que se está buscando
+     * @return null si no existe ningun automovil con el numero de chasis del argumento. Si
+     * existe alguno devuelve el primero.
+     */
+    public AutomovilEntity findByNumChasis(String numChasis) {
+        LOGGER.log(Level.INFO, "Consultando automoviles por numero de chasis ", numChasis);
+        // Se crea un query para buscar automoviles con el numero de chasis que recibe el método como argumento. ":numChasis" es un placeholder que debe ser remplazado
+        TypedQuery query = em.createQuery("Select e From AutomovilEntity e where e.numChasis = :numChasis", AutomovilEntity.class);
+        // Se remplaza el placeholder ":numChasis" con el valor del argumento
+        query = query.setParameter("numChasis", numChasis);
+        // Se invoca el query se obtiene la lista resultado
+        List<AutomovilEntity> sameNumChasis = query.getResultList();
+        AutomovilEntity result;
+        if (sameNumChasis == null) {
+            result = null;
+        } else if (sameNumChasis.isEmpty()) {
+            result = null;
+        } else {
+            result = sameNumChasis.get(0);
+        }
+        LOGGER.log(Level.INFO, "Saliendo de consultar automoviles por numero de chasis ", numChasis);
         return result;
     }
 }
