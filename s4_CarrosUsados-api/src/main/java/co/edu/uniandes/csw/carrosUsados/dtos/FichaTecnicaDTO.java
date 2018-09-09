@@ -14,11 +14,11 @@ import java.io.Serializable;
 public class FichaTecnicaDTO implements Serializable {
     
     private String vidrios;
-    private boolean camara_reversa;
+    private boolean camaraReversa;
     private boolean sensores;
     private String rines;
-    private boolean aire_acondicionado;
-    private int num_airbags;
+    private boolean aireAcondicionado;
+    private int numAirbags;
     
     public FichaTecnicaDTO(){
         

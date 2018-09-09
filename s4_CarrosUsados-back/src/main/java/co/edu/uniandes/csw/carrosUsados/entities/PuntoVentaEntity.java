@@ -34,7 +34,7 @@ public class PuntoVentaEntity extends BaseEntity implements Serializable{
     private List<CalificacionEntity> comentarios = new ArrayList<CalificacionEntity>();
     
     @PodamExclude
-    @OneToOne(mappedBy = "punto_venta")
+    @OneToOne(mappedBy = "puntoVenta")
     private AutomovilEntity automovil;
     
   public PuntoVentaEntity()

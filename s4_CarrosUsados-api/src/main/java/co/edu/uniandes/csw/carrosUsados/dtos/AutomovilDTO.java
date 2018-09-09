@@ -20,10 +20,10 @@ public class AutomovilDTO implements Serializable{
     private String marca;
     private int anio;
     private String color;
-    private String num_chasis;
+    private String numChasis;
     private String placa;
     private Date fecha_agregacion; //Chequear el tipo de dato
-    private String precio_original;
+    private String precioOriginal;
     
     //Relacion a FichaTecnicaDTO dado que esta tiene cardinalidad 1
     private FichaTecnicaDTO ficha_tecnica;
