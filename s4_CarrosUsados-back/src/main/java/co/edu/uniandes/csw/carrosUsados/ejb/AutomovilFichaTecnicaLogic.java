@@ -56,13 +56,14 @@ public class AutomovilFichaTecnicaLogic {
      * @param idAutomovil El automovil al cual se le desea borrar la ficha tecnica
      */
     public void removeFichaTecnica(Long idAutomovil) {
-        LOGGER.log(Level.INFO, "Inicia proceso de borrar la FichaTecnica del libro con id = {0}", idAutomovil);
+        LOGGER.log(Level.INFO, "Inicia proceso de borrar la FichaTecnica del automovil con id = {0}", idAutomovil);
         AutomovilEntity automovilEntity = automovilPersistence.find(idAutomovil);
         FichaTecnicaEntity fichaTecnicaEntity = fichaTecnicaPersistence.find(automovilEntity.getFichaTecnica().getId());
+        fichaTecnicaPersistence.delete(fichaTecnicaEntity.getId());
         automovilEntity.setFichaTecnica(null);
         //Ahora persisto los cambios en la base de datos:
         automovilPersistence.update(automovilEntity);
-        fichaTecnicaPersistence.delete(fichaTecnicaEntity.getId());
+        
         LOGGER.log(Level.INFO, "Termina proceso de borrar la ficha tecnica del automovil con id = {0}", automovilEntity.getId());
     }
     

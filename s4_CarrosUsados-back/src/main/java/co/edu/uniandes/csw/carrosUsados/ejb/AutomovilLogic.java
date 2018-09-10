@@ -41,7 +41,9 @@ import javax.inject.Inject;
       public AutomovilEntity createAutomovil(AutomovilEntity automovilEntity) throws BusinessLogicException{
           LOGGER.log(Level.INFO, "Inicio proceso de creacion de un automovil");
           //Se chequea que el modelo, el cual contiene los automoviles, no sea nulo y que ya exista en la base de datos
-          if((automovilEntity.getModeloAsociado() == null) || (modeloPersistence.find(automovilEntity.getModeloAsociado().getId()) == null)){
+          
+          
+          if((automovilEntity.getModeloAsociado() == null) || (modeloPersistence.find(automovilEntity.getModeloAsociado().getId()) == null )){
               throw new BusinessLogicException("El modelo es invalido");
           }
           if(!validatePlaca(automovilEntity.getPlaca())){

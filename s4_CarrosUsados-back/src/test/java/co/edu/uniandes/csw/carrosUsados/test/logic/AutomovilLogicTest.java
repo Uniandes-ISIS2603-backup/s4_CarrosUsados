@@ -8,6 +8,7 @@ package co.edu.uniandes.csw.carrosUsados.test.logic;
 import co.edu.uniandes.csw.carrosUsados.ejb.AutomovilLogic;
 import co.edu.uniandes.csw.carrosUsados.entities.AutomovilEntity;
 import co.edu.uniandes.csw.carrosUsados.entities.FichaTecnicaEntity;
+import co.edu.uniandes.csw.carrosUsados.entities.ModeloEntity;
 import co.edu.uniandes.csw.carrosUsados.exceptions.BusinessLogicException;
 import co.edu.uniandes.csw.carrosUsados.persistence.AutomovilPersistence;
 import java.util.ArrayList;
@@ -47,7 +48,8 @@ public class AutomovilLogicTest {
    
     
    private List<AutomovilEntity> data = new ArrayList<AutomovilEntity>();
-
+   
+   private List<ModeloEntity> modeloData = new ArrayList<ModeloEntity>();
    /**
      * @return Devuelve el jar que Arquillian va a desplegar en Payara embebido.
      * El jar contiene las clases, el descriptor de la base de datos y el
@@ -89,6 +91,7 @@ public class AutomovilLogicTest {
     private void clearData() {
         em.createQuery("delete from AutomovilEntity").executeUpdate();
         em.createQuery("delete from FichaTecnicaEntity").executeUpdate();
+        em.createQuery("delete from ModeloEntity").executeUpdate();
     }
     
     /**
@@ -99,11 +102,12 @@ public class AutomovilLogicTest {
         for (int i = 0; i < 3; i++) {
             AutomovilEntity entity = factory.manufacturePojo(AutomovilEntity.class);
             em.persist(entity);
-            //Esto lo añadi yo
-            FichaTecnicaEntity fichaTecnicaEntity = factory.manufacturePojo(FichaTecnicaEntity.class);
-            entity.setFichaTecnica(fichaTecnicaEntity);
-            fichaTecnicaEntity.setAutomovil(entity);
             data.add(entity);
+        }
+        for (int i = 0; i < 3; i++) {
+            ModeloEntity modeloEntity = factory.manufacturePojo(ModeloEntity.class);
+            em.persist(modeloEntity);
+            modeloData.add(modeloEntity);
         }
     }
     
@@ -113,7 +117,10 @@ public class AutomovilLogicTest {
      */
     @Test
     public void createAutomovilTest() throws BusinessLogicException {
+        
         AutomovilEntity newEntity = factory.manufacturePojo(AutomovilEntity.class);
+        newEntity.setModeloAsociado(modeloData.get(0));
+            
         AutomovilEntity result = automovilLogic.createAutomovil(newEntity);
         Assert.assertNotNull(result);
         AutomovilEntity entity = em.find(AutomovilEntity.class, result.getId());

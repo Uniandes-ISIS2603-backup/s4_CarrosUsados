@@ -33,20 +33,20 @@ public class AdministradorResource {
     public AdministradorDTO createAdministrador(AdministradorDTO administrador) throws BusinessLogicException {
         return new AdministradorDTO();
     }
+
     @PUT
     public AdministradorDTO updateAdministrador(AdministradorDTO administrador) throws BusinessLogicException {
         return new AdministradorDTO();
     }
 
-     /**
+    /**
      * Borra el administrador con el id asociado recibido en la URL.
      *
-     * @param administradoresId Identificador del administrador que se desea borrar.
-     * Este debe ser una cadena de dígitos.
+     * @param administradoresId Identificador del administrador que se desea
+     * borrar. Este debe ser una cadena de dígitos.
      */
     @DELETE
     @Path("{administradoresId: \\d+}")
-    public void deleteAdministrador(@PathParam("administradoresId") Long administradoresId)
-    {
+    public void deleteAdministrador(@PathParam("administradoresId") Long administradoresId) {
     }
 }

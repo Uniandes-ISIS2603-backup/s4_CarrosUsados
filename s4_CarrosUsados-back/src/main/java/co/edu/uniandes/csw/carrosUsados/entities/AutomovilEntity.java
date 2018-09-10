@@ -102,7 +102,12 @@ public class AutomovilEntity extends BaseEntity implements Serializable {
     @PodamExclude
     @ManyToOne
     private ModeloEntity modeloAsociado;
-
+    
+    
+    public AutomovilEntity(){
+        
+    }
+    
     /**
      * Retorna el modelo del automovil.
      * @return el modelo

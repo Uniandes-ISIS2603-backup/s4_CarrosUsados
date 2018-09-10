@@ -5,6 +5,7 @@
  */
 package co.edu.uniandes.csw.carrosUsados.dtos;
 
+import co.edu.uniandes.csw.carrosUsados.entities.AutomovilEntity;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -12,25 +13,73 @@ import java.util.Date;
  *
  * @author estudiante
  */
+public class AutomovilDTO implements Serializable {
 
-public class AutomovilDTO implements Serializable{
-    
-    private long id;
+    private Long id;
     private int modelo;
     private String marca;
     private int anio;
     private String color;
     private String numChasis;
     private String placa;
-    private Date fecha_agregacion; //Chequear el tipo de dato
+    private Date fechaAgregacion; //Chequear el tipo de dato
     private String precioOriginal;
-    
+
     //Relacion a FichaTecnicaDTO dado que esta tiene cardinalidad 1
-    private FichaTecnicaDTO ficha_tecnica;
-    
-    public AutomovilDTO(){
-        
+    private FichaTecnicaDTO fichaTecnica;
+
+    //Relacion a PuntoVentaDTO dado que esta tiene cardinalidad 1
+    private PuntoVentaDTO puntoVenta;
+
+    public AutomovilDTO() {
+
     }
-    
-    
+
+    public AutomovilDTO(AutomovilEntity automovilEntity) {
+        this.id = automovilEntity.getId();
+        this.modelo = automovilEntity.getModelo();
+        this.marca = automovilEntity.getMarca();
+        this.anio = automovilEntity.getAnio();
+        this.color = automovilEntity.getColor();
+        this.numChasis = automovilEntity.getNumChasis();
+        this.placa = automovilEntity.getPlaca();
+        this.fechaAgregacion = automovilEntity.getFechaAgregacion();
+        this.precioOriginal = automovilEntity.getPrecioOriginal();
+
+        if (automovilEntity.getFichaTecnica() != null) {
+            this.fichaTecnica = new FichaTecnicaDTO(automovilEntity.getFichaTecnica());
+        }
+        if (automovilEntity.getPuntoVenta() != null) {
+            this.puntoVenta = new PuntoVentaDTO(automovilEntity.getPuntoVenta());
+        }
+    }
+
+    public AutomovilEntity toEntity() {
+        AutomovilEntity entity = new AutomovilEntity();
+
+        entity.setId(this.id);
+        entity.setModelo(this.modelo);
+        entity.setMarca(this.marca);
+        entity.setAnio(this.anio);
+        entity.setColor(this.color);
+        entity.setNumChasis(this.numChasis);
+        entity.setPlaca(this.placa);
+        entity.setFechaAgregacion(this.fechaAgregacion);
+        entity.setPrecioOriginal(this.precioOriginal);
+
+        if (this.fichaTecnica != null) {
+            entity.setFichaTecnica(this.fichaTecnica.toEntity());
+        }
+
+        return entity;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
 }

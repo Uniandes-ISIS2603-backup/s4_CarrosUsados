@@ -27,34 +27,33 @@ import javax.ws.rs.Produces;
 @Consumes("application/json")
 @RequestScoped
 public class MarcaResource {
-    
+
     private final static Logger LOGGER = Logger.getLogger(MarcaResource.class.getName());
-    
+
     @GET
     @Path("{editorialsId: \\d+}")
-    public MarcaDTO getMarca () throws BusinessLogicException {
+    public MarcaDTO getMarca() throws BusinessLogicException {
         return new MarcaDTO();
     }
-    
+
     @GET
     public MarcaDTO getAllMarca() throws BusinessLogicException {
         return new MarcaDTO();
     }
-    
+
     @POST
     public MarcaDTO createMarca(MarcaDTO modelo) throws BusinessLogicException {
         return new MarcaDTO();
     }
-    
+
     @PUT
-    public MarcaDTO updateMarca() throws BusinessLogicException{
+    public MarcaDTO updateMarca() throws BusinessLogicException {
         return new MarcaDTO();
     }
-            
+
     @DELETE
-    public void deleteMarca() throws BusinessLogicException{
-        
+    public void deleteMarca() throws BusinessLogicException {
+
     }
-            
-    
+
 }

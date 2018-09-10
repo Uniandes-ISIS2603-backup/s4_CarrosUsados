@@ -12,6 +12,7 @@ import java.util.logging.Logger;
 import co.edu.uniandes.csw.carrosUsados.dtos.ModeloDTO;
 import javax.enterprise.context.RequestScoped;
 import javax.ws.rs.*;
+
 /**
  *
  * @author na.morenoe
@@ -22,34 +23,33 @@ import javax.ws.rs.*;
 @Consumes("application/json")
 @RequestScoped
 public class ModeloResource {
-    
 
     private final static Logger LOGGER = Logger.getLogger(ModeloResource.class.getName());
-    
+
     @GET
-     @Path("{editorialsId: \\d+}")
-    public ModeloDTO getModelo () throws BusinessLogicException {
+    @Path("{editorialsId: \\d+}")
+    public ModeloDTO getModelo() throws BusinessLogicException {
         return new ModeloDTO();
     }
-    
+
     @GET
     public ModeloDTO getAllModelo() throws BusinessLogicException {
         return new ModeloDTO();
     }
-    
+
     @POST
     public ModeloDTO createModelo(ModeloDTO modelo) throws BusinessLogicException {
         return new ModeloDTO();
     }
-    
+
     @PUT
-    public ModeloDTO updateModelo() throws BusinessLogicException{
+    public ModeloDTO updateModelo() throws BusinessLogicException {
         return new ModeloDTO();
     }
-            
+
     @DELETE
-    public void deleteModelo() throws BusinessLogicException{
-        
+    public void deleteModelo() throws BusinessLogicException {
+
     }
-    
+
 }

@@ -61,9 +61,9 @@ public class AutomovilPersistence {
      * @param automovilId: id correspondiente al libro buscado.
      * @return un automovil.
      */
-    public AutomovilEntity find(Long booksId) {
-        LOGGER.log(Level.INFO, "Consultando el automovil con id={0}", booksId);
-        return em.find(AutomovilEntity.class, booksId);
+    public AutomovilEntity find(Long automovilId) {
+        LOGGER.log(Level.INFO, "Consultando el automovil con id={0}", automovilId);
+        return em.find(AutomovilEntity.class, automovilId);
     }
 
     /**

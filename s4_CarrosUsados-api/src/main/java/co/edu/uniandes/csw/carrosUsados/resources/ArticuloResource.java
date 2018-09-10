@@ -26,21 +26,20 @@ import javax.ws.rs.*;
 public class ArticuloResource {
 
     private final static Logger LOGGER = Logger.getLogger(ArticuloResource.class.getName());
-    
+
     @GET
     @Path("{articulosId: \\d+}")
     public ArticuloDTO getArticulo(@PathParam("articulosId") Long articulosId) throws BusinessLogicException {
         return new ArticuloDTO();
     }
-    
-    @GET     
-    public List<ArticuloDetailDTO> getArticulos()
-    {
-        return new ArrayList<ArticuloDetailDTO>();        
+
+    @GET
+    public List<ArticuloDetailDTO> getArticulos() {
+        return new ArrayList<ArticuloDetailDTO>();
     }
-    
+
     @PUT
-    public ArticuloDTO updateArticulo() throws BusinessLogicException{
+    public ArticuloDTO updateArticulo() throws BusinessLogicException {
         return new ArticuloDTO();
     }
 
@@ -48,15 +47,15 @@ public class ArticuloResource {
     public ArticuloDTO createArticulo(ArticuloDTO articulo) throws BusinessLogicException {
         return new ArticuloDTO();
     }
-      /**
+
+    /**
      * Borra un articulo con el id asociado recibido en la URL.
      *
-     * @param articulosId Identificador del cliente que se desea borrar.
-     * Este debe ser una cadena de dígitos.
+     * @param articulosId Identificador del cliente que se desea borrar. Este
+     * debe ser una cadena de dígitos.
      */
     @DELETE
     @Path("{articulosId: \\d+}")
-    public void deleteArticulo(@PathParam("articulosId") Long articulosId)
-    {
+    public void deleteArticulo(@PathParam("articulosId") Long articulosId) {
     }
 }
