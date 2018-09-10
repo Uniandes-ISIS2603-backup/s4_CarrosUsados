@@ -26,13 +26,6 @@
             <artifactId>s4_carTeam-back</artifactId>
             <version>1.0</version>
         </dependency>
-        <dependency>
-            <groupId>co.edu.uniandes.csw</groupId>
-            <artifactId>postman-simple</artifactId>
-            <version>1.0</version>
-            <scope>test</scope>
-            <type>jar</type>
-        </dependency>
     </dependencies>
     
 </project>
