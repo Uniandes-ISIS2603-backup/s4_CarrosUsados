@@ -10,9 +10,8 @@ package co.edu.uniandes.csw.carrosUsados.dtos;
  * @author estudiante
  */
 public class PuntoVentaDetailDTO extends PuntoVentaDTO {
-    
-    public PuntoVentaDetailDTO()
-    {
+
+    public PuntoVentaDetailDTO() {
         super();
     }
 }

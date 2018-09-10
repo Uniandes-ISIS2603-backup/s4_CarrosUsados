@@ -12,15 +12,10 @@ import javax.ws.rs.Path;
  *
  * @author estudiante
  */
+public class PagoDTO implements Serializable {
 
+    public PagoDTO() {
 
-public class PagoDTO implements Serializable{
-   
-    
-    public PagoDTO()
-   {
-       
-   }
-                     
-           
+    }
+
 }

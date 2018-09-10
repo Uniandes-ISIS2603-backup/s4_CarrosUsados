@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package co.edu.uniandes.csw.carrosUsados.resources;
+
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -21,6 +22,7 @@ import javax.ws.rs.Consumes;
 import java.util.logging.Logger;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.PUT;
+
 /**
  *
  * @author estudiante
@@ -30,37 +32,32 @@ import javax.ws.rs.PUT;
 @Consumes("application/json")
 @RequestScoped
 public class PagoResource {
+
     private final static Logger LOGGER = Logger.getLogger(PagoResource.class.getName());
-    public PagoResource()
-    {
-        
+
+    public PagoResource() {
+
     }
+
     @GET
-    public List<PagoDTO> getPagos()  throws BusinessLogicException
-    {
-        
-       return new ArrayList<>();
+    public List<PagoDTO> getPagos() throws BusinessLogicException {
+
+        return new ArrayList<>();
     }
-   
+
     @POST
-    public PagoDTO createPago(PagoDTO pago) throws BusinessLogicException
-    {
+    public PagoDTO createPago(PagoDTO pago) throws BusinessLogicException {
         return pago;
     }
+
     @PUT
-    public PagoDTO putPago(PagoDTO pagoPut)throws BusinessLogicException
-    {
+    public PagoDTO putPago(PagoDTO pagoPut) throws BusinessLogicException {
         return pagoPut;
     }
+
     @DELETE
-    public void deletePago(PagoDTO paguoD)throws BusinessLogicException
-    {
-        
+    public void deletePago(PagoDTO paguoD) throws BusinessLogicException {
+
     }
-    
-    
-    
-    
-   
-    
+
 }

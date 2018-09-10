@@ -9,9 +9,10 @@ package co.edu.uniandes.csw.carrosUsados.dtos;
  *
  * @author js.bravo
  */
-    /**
-     * Clase Data Transfer Object Usuario que contiene atributos que utilizan tanto ClienteDTO como AdministradorDTO.
-     */
+/**
+ * Clase Data Transfer Object Usuario que contiene atributos que utilizan tanto
+ * ClienteDTO como AdministradorDTO.
+ */
 public class UsuarioDTO {
 
     /**
@@ -23,7 +24,8 @@ public class UsuarioDTO {
      */
     private String nombre;
     /**
-     * Cadena de caracteres que representa el apellido del usuario en el sistema.
+     * Cadena de caracteres que representa el apellido del usuario en el
+     * sistema.
      */
     private String apellido;
     /**
@@ -31,7 +33,8 @@ public class UsuarioDTO {
      */
     private String correo;
     /**
-     * Cadena de caracteres que representa la contraseña del usuario en el sistema.
+     * Cadena de caracteres que representa la contraseña del usuario en el
+     * sistema.
      */
     private String contrasena;
     /**
@@ -39,18 +42,20 @@ public class UsuarioDTO {
      */
     private String nombre_usuario;
     /**
-     * Cadena de caracteres que representa la fecha de nacimiento del usuario en el sistema.
+     * Cadena de caracteres que representa la fecha de nacimiento del usuario en
+     * el sistema.
      */
     private String fecha_nacimiento;
-     /**
-     * Cadena de caracteres que representa el telefono de contacto del usuario en el sistema.
+    /**
+     * Cadena de caracteres que representa el telefono de contacto del usuario
+     * en el sistema.
      */
     private String telefono;
-    
+
     /**
      * Devuelve el ID del usuario.
      *
-     * @return  id del Usuario.
+     * @return id del Usuario.
      */
     public Long getId() {
         return id;
@@ -82,7 +87,7 @@ public class UsuarioDTO {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    
+
     /**
      * Devuelve el apellido del Usuario.
      *
@@ -100,7 +105,7 @@ public class UsuarioDTO {
     public void setApellido(String apellido) {
         this.apellido = apellido;
     }
-    
+
     /**
      * Devuelve el nombre del Usuario.
      *
@@ -113,11 +118,12 @@ public class UsuarioDTO {
     /**
      * Modifica el correo del usuario.
      *
-     * @param correo  correo del usuario.
+     * @param correo correo del usuario.
      */
     public void setCorreo(String correo) {
         this.correo = correo;
     }
+
     /**
      * Devuelve la contrasena del Usuario.
      *
@@ -135,7 +141,8 @@ public class UsuarioDTO {
     public void setContrasena(String contrasena) {
         this.contrasena = contrasena;
     }
-     /**
+
+    /**
      * Devuelve el login del usuario.
      *
      * @return login del usuario
@@ -143,6 +150,7 @@ public class UsuarioDTO {
     public String getNombre_Usuario() {
         return nombre_usuario;
     }
+
     /**
      * Modifica el login del usuario..
      *
@@ -151,7 +159,8 @@ public class UsuarioDTO {
     public void setNombre_Usuario(String nombre_usuario) {
         this.nombre_usuario = nombre_usuario;
     }
-     /**
+
+    /**
      * Devuelve la fecha de nacimiento del usuario.
      *
      * @return fecha de nacimiento del usuario
@@ -163,12 +172,13 @@ public class UsuarioDTO {
     /**
      * Modifica la fecha de nacimiento del usuario..
      *
-     * @param fecha_nacimiento  fecha de nacimiento del usuario.
+     * @param fecha_nacimiento fecha de nacimiento del usuario.
      */
     public void setFecha_Nacimiento(String fecha_nacimiento) {
         this.fecha_nacimiento = fecha_nacimiento;
     }
-       /**
+
+    /**
      * Devuelve el telefono del Usuario.
      *
      * @return telefono del usuario

@@ -21,6 +21,7 @@ import javax.ws.rs.*;
 @RequestScoped
 
 public class VendedorResource {
+
     private final static Logger LOGGER = Logger.getLogger(VendedorResource.class.getName());
 
     @GET
@@ -32,11 +33,13 @@ public class VendedorResource {
     public VendedorDTO createVendedor(VendedorDTO vendedor) throws BusinessLogicException {
         return new VendedorDTO();
     }
+
     @PUT
-    public VendedorDTO updateVendedor (VendedorDTO vendedor) throws BusinessLogicException {
+    public VendedorDTO updateVendedor(VendedorDTO vendedor) throws BusinessLogicException {
         return new VendedorDTO();
     }
-     /**
+
+    /**
      * Borra el administrador con el id asociado recibido en la URL.
      *
      * @param vendedoresId Identificador del administrador que se desea borrar.
@@ -44,8 +47,7 @@ public class VendedorResource {
      */
     @DELETE
     @Path("{vendedoresId: \\d+}")
-    public void deleteVendedor(@PathParam("vendedoresId") Long vendedoresId)
-    {
+    public void deleteVendedor(@PathParam("vendedoresId") Long vendedoresId) {
     }
-    
+
 }

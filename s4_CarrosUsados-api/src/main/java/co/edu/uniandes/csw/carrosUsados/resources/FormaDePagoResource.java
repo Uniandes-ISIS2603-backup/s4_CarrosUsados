@@ -32,15 +32,14 @@ public class FormaDePagoResource {
     public FormaDePagoDTO getFormaDePago(@PathParam("formasDePagoId") Long formasDePagoId) throws BusinessLogicException {
         return new FormaDePagoDTO();
     }
-    
-    @GET     
-    public List<FormaDePagoDetailDTO> getFormasDePago()
-    {
-        return new ArrayList<FormaDePagoDetailDTO>();        
+
+    @GET
+    public List<FormaDePagoDetailDTO> getFormasDePago() {
+        return new ArrayList<FormaDePagoDetailDTO>();
     }
-    
+
     @PUT
-    public FormaDePagoDTO updateFormaDePago() throws BusinessLogicException{
+    public FormaDePagoDTO updateFormaDePago() throws BusinessLogicException {
         return new FormaDePagoDTO();
     }
 
@@ -48,15 +47,15 @@ public class FormaDePagoResource {
     public FormaDePagoDTO createFormaDePago(FormaDePagoDTO formaDePago) throws BusinessLogicException {
         return new FormaDePagoDTO();
     }
-      /**
+
+    /**
      * Borra la forma de pago con el id asociado recibido en la URL.
      *
-     * @param formasDePagoId Identificador del cliente que se desea borrar.
-     * Este debe ser una cadena de dígitos.
+     * @param formasDePagoId Identificador del cliente que se desea borrar. Este
+     * debe ser una cadena de dígitos.
      */
     @DELETE
     @Path("{formasDePagoId: \\d+}")
-    public void deleteFormaDePago(@PathParam("formasDePagoId") Long formasDePagoId)
-    {
+    public void deleteFormaDePago(@PathParam("formasDePagoId") Long formasDePagoId) {
     }
 }

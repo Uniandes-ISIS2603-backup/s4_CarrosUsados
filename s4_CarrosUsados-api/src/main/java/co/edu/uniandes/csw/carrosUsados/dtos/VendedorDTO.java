@@ -12,10 +12,12 @@ import java.io.Serializable;
  * @author js.bravo
  */
 /**
-     * Clase Data Transfer Object Vendedor que representa el vendedor de un automovil en el sistema.
-     */
-public class VendedorDTO implements Serializable{
- /**
+ * Clase Data Transfer Object Vendedor que representa el vendedor de un
+ * automovil en el sistema.
+ */
+public class VendedorDTO implements Serializable {
+
+    /**
      * Cadena de caracteres que representa el id del usuario en el sistema.
      */
     private Long id;
@@ -24,21 +26,24 @@ public class VendedorDTO implements Serializable{
      */
     private String nombre;
     /**
-     * Cadena de caracteres que representa el apellido del usuario en el sistema.
+     * Cadena de caracteres que representa el apellido del usuario en el
+     * sistema.
      */
     private String apellido;
+
     /**
      * Cadena de caracteres que representa el correo del usuario en el sistema.
-     */    
+     */
     /**
      * Constructor por defecto
      */
     public VendedorDTO() {
     }
-     /**
+
+    /**
      * Devuelve el ID del vendedor.
      *
-     * @return  id del vendedor.
+     * @return id del vendedor.
      */
     public Long getId() {
         return id;
@@ -70,7 +75,7 @@ public class VendedorDTO implements Serializable{
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    
+
     /**
      * Devuelve el apellido del vendedor.
      *
@@ -88,6 +93,5 @@ public class VendedorDTO implements Serializable{
     public void setApellido(String apellido) {
         this.apellido = apellido;
     }
-    
-    
+
 }

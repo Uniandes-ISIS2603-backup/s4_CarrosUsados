@@ -10,6 +10,7 @@ package co.edu.uniandes.csw.carrosUsados.dtos;
  * @author estudiante
  */
 public class ModeloDTO {
- public ModeloDTO(){}    
-}
 
+    public ModeloDTO() {
+    }
+}

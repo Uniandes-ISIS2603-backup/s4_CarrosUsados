@@ -20,31 +20,29 @@ import javax.ws.rs.PUT;
  * @author estudiante
  */
 public class FacturaResource {
-   
-    public FacturaResource()
-    {
-        
+
+    public FacturaResource() {
+
     }
+
     @GET
-    public List<PagoDTO> getFacturas()  throws BusinessLogicException
-    {
-        
-       return new ArrayList<>();
+    public List<PagoDTO> getFacturas() throws BusinessLogicException {
+
+        return new ArrayList<>();
     }
-   
+
     @POST
-    public FacturaDTO createFactura(FacturaDTO fact) throws BusinessLogicException
-    {
+    public FacturaDTO createFactura(FacturaDTO fact) throws BusinessLogicException {
         return fact;
-    } 
+    }
+
     @PUT
-    public FacturaDTO putFactura(FacturaDTO facturaPut)throws BusinessLogicException
-    {
+    public FacturaDTO putFactura(FacturaDTO facturaPut) throws BusinessLogicException {
         return facturaPut;
     }
+
     @DELETE
-    public void deleteFactura(FacturaDTO facturaD)throws BusinessLogicException
-    {
-        
+    public void deleteFactura(FacturaDTO facturaD) throws BusinessLogicException {
+
     }
 }

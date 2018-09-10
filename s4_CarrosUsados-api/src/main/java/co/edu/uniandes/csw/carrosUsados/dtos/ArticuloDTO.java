@@ -10,7 +10,7 @@ package co.edu.uniandes.csw.carrosUsados.dtos;
  * @author estudiante
  */
 public class ArticuloDTO {
-    
+
     private long id;
     private String ubicacion;
     private String precio;
@@ -24,9 +24,9 @@ public class ArticuloDTO {
         this.descripcion = descripcion;
         this.disponibilidad = disponibilidad;
     }
-    
-    public ArticuloDTO(){
-        
+
+    public ArticuloDTO() {
+
     }
 
     public long getId() {
@@ -68,6 +68,5 @@ public class ArticuloDTO {
     public void setDisponibilidad(String disponibilidad) {
         this.disponibilidad = disponibilidad;
     }
-    
-    
+
 }

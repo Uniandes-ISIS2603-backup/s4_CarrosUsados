@@ -23,49 +23,37 @@ import javax.ws.rs.Produces;
  *
  * @author estudiante
  */
-
 @Path("calificaciones")
 @Produces("application/json")
 @Consumes("application/json")
 @RequestScoped
 public class CalificacionResource {
-    
-     private static final Logger LOGGER=Logger.getLogger(CalificacionResource.class.getName());
-    
+
+    private static final Logger LOGGER = Logger.getLogger(CalificacionResource.class.getName());
+
     @GET
     @Path("{calificacionId: \\d+}")
-    public CalificacionDTO getCalificacion(@PathParam("calificacionId")long calificacionId)
-    {
+    public CalificacionDTO getCalificacion(@PathParam("calificacionId") long calificacionId) {
         return new CalificacionDTO();
-        
+
     }
-    
-    
+
     @POST
-    public CalificacionDTO createCalificacion(CalificacionDTO califica)
-    {
+    public CalificacionDTO createCalificacion(CalificacionDTO califica) {
         return new CalificacionDTO();
     }
-    
+
     @PUT
     @Path("{calificacionId: \\d+}")
-    public CalificacionDTO updateCalificacion(@PathParam("calificacionId") Long calificacionId, CalificacionDTO calificacion)
-    {
+    public CalificacionDTO updateCalificacion(@PathParam("calificacionId") Long calificacionId, CalificacionDTO calificacion) {
         return new CalificacionDTO();
-        
+
     }
-    
-     @DELETE
+
+    @DELETE
     @Path("{calificacionId: \\d+}")
-    public void deleteCalificacion(@PathParam("calificacionId") Long calificacionId)
-    {
-    
+    public void deleteCalificacion(@PathParam("calificacionId") Long calificacionId) {
+
     }
-        
-    
-    
-    
-    
-    
-    
+
 }

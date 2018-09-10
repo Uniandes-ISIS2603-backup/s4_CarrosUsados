@@ -10,16 +10,16 @@ package co.edu.uniandes.csw.carrosUsados.dtos;
  * @author estudiante
  */
 public class FormaDePagoDTO {
-    
+
     private long id;
     private String nombre;
     private String tipo;
-    
-    public FormaDePagoDTO(){
-    
+
+    public FormaDePagoDTO() {
+
     }
-    
-    public FormaDePagoDTO(String nombreP, String tipoP){
+
+    public FormaDePagoDTO(String nombreP, String tipoP) {
         this.nombre = nombreP;
         this.tipo = tipoP;
     }
@@ -31,20 +31,20 @@ public class FormaDePagoDTO {
     public void setId(long id) {
         this.id = id;
     }
-    
-    public String getNombre(){
+
+    public String getNombre() {
         return nombre;
     }
-    
-    public String getTipo(){
+
+    public String getTipo() {
         return tipo;
     }
-    
-    public void setNombre(String nombreP){
+
+    public void setNombre(String nombreP) {
         this.nombre = nombreP;
     }
-    
-    public void setTipo(String tipoP){
+
+    public void setTipo(String tipoP) {
         this.tipo = tipoP;
     }
 }

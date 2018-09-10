@@ -17,7 +17,6 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 
-
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
@@ -29,51 +28,44 @@ import javax.ws.rs.core.MediaType;
  *
  * @author estudiante
  */
-
 @Path("puntos")
 @Produces("application/json")
 @Consumes("application/json")
 @RequestScoped
 public class PuntoVentaResource {
-    
-    private static final Logger LOGGER=Logger.getLogger(PuntoVentaResource.class.getName());
-    
-     @GET
-     
-    public List<PuntoVentaDetailDTO> getCalificaciones()
-    {
-        return new ArrayList<PuntoVentaDetailDTO>();
-        
-    }
-    
+
+    private static final Logger LOGGER = Logger.getLogger(PuntoVentaResource.class.getName());
+
     @GET
-     @Path("{puntoId: \\d+}")
-    public PuntoVentaDTO getPuntoVenta(@PathParam("puntoId") long id)
-    {
+
+    public List<PuntoVentaDetailDTO> getCalificaciones() {
+        return new ArrayList<PuntoVentaDetailDTO>();
+
+    }
+
+    @GET
+    @Path("{puntoId: \\d+}")
+    public PuntoVentaDTO getPuntoVenta(@PathParam("puntoId") long id) {
         return new PuntoVentaDTO();
-        
+
     }
-    
-    
+
     @POST
-    public PuntoVentaDTO createPuntoVenta(PuntoVentaDTO punto)
-    {
-         return new PuntoVentaDTO();
+    public PuntoVentaDTO createPuntoVenta(PuntoVentaDTO punto) {
+        return new PuntoVentaDTO();
     }
-    
+
     @PUT
     @Path("{puntoId: \\d+}")
-    public PuntoVentaDTO updatePunto(@PathParam("puntoId") Long puntoId, PuntoVentaDTO punto)
-    {
-       return new PuntoVentaDTO();
-        
+    public PuntoVentaDTO updatePunto(@PathParam("puntoId") Long puntoId, PuntoVentaDTO punto) {
+        return new PuntoVentaDTO();
+
     }
-    
-     @DELETE
+
+    @DELETE
     @Path("{puntoId: \\d+}")
-    public void deletePunto(@PathParam("puntoId") Long puntoId)
-    {
-        
+    public void deletePunto(@PathParam("puntoId") Long puntoId) {
+
     }
-    
+
 }

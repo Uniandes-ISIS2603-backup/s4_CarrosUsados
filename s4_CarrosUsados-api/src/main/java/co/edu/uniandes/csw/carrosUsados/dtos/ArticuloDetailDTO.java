@@ -10,20 +10,20 @@ package co.edu.uniandes.csw.carrosUsados.dtos;
  * @author estudiante
  */
 public class ArticuloDetailDTO extends ArticuloDTO {
-    
+
     private final AutomovilDTO automovil;
-    
+
     public ArticuloDetailDTO() {
         super();
         automovil = null;
     }
-    
-    public ArticuloDetailDTO( AutomovilDTO automovilP, long id, String ubicacion, String precio, String descripcion, String disponibilidad) {
+
+    public ArticuloDetailDTO(AutomovilDTO automovilP, long id, String ubicacion, String precio, String descripcion, String disponibilidad) {
         super(id, ubicacion, precio, descripcion, disponibilidad);
         automovil = automovilP;
     }
-    
-    public AutomovilDTO getAutomovil(){
+
+    public AutomovilDTO getAutomovil() {
         return automovil;
     }
 }

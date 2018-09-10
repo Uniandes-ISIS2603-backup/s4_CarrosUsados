@@ -33,17 +33,18 @@ public class ClienteResource {
     public ClienteDTO createCliente(ClienteDTO cliente) throws BusinessLogicException {
         return new ClienteDTO();
     }
-      /**
+
+    /**
      * Borra el cliente con el id asociado recibido en la URL.
      *
-     * @param clientesId Identificador del cliente que se desea borrar.
-     * Este debe ser una cadena de dígitos.
+     * @param clientesId Identificador del cliente que se desea borrar. Este
+     * debe ser una cadena de dígitos.
      */
     @DELETE
     @Path("{clientesId: \\d+}")
-    public void deleteCliente (@PathParam("clientesId") Long clientesId)
-    {
+    public void deleteCliente(@PathParam("clientesId") Long clientesId) {
     }
+
     @PUT
     public ClienteDTO updateCliente(ClienteDTO vendedor) throws BusinessLogicException {
         return new ClienteDTO();
