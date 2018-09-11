@@ -5,12 +5,18 @@
  */
 package co.edu.uniandes.csw.carrosUsados.resources;
 
+import co.edu.uniandes.csw.carrosUsados.dtos.AutomovilDetailDTO;
 import co.edu.uniandes.csw.carrosUsados.ejb.ModeloLogic;
+import co.edu.uniandes.csw.carrosUsados.entities.ModeloEntity;
 import co.edu.uniandes.csw.carrosUsados.exceptions.BusinessLogicException;
 import java.util.logging.Logger;
 
 import co.edu.uniandes.csw.carrosUsados.dtos.ModeloDTO;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Level;
 import javax.enterprise.context.RequestScoped;
+import javax.inject.Inject;
 import javax.ws.rs.*;
 
 /**
@@ -25,31 +31,122 @@ import javax.ws.rs.*;
 public class ModeloResource {
 
     private final static Logger LOGGER = Logger.getLogger(ModeloResource.class.getName());
-
+    
+    @Inject
+    ModeloLogic modeloLogic;
+    
+     /**
+     * Busca el modelo con el id asociado recibido en la URL y lo devuelve.
+     *
+     * @param modeloId Identificador del modelo que se esta buscando.
+     * Este debe ser una cadena de dígitos.
+     * @return JSON {@link ModeloDTO} - El modelo buscado
+     * @throws WebApplicationException {@link WebApplicationExceptionMapper} -
+     * Error de lógica que se genera cuando no se encuentra el modelo.
+     */
     @GET
-    @Path("{editorialsId: \\d+}")
-    public ModeloDTO getModelo() throws BusinessLogicException {
-        return new ModeloDTO();
+    @Path("{modeloId: \\d+}")
+    public ModeloDTO getModelo(@PathParam("modeloId") long modeloId) throws BusinessLogicException {
+        LOGGER.log(Level.INFO, "ModeloResource getModelo: input: {0}", modeloId);
+        ModeloEntity modeloEntity = modeloLogic.getModelo(modeloId);
+        if (modeloEntity == null) {
+            throw new WebApplicationException("El recurso /modelos/" + modeloId + " no existe.", 404);
+        }
+        ModeloDTO modeloDTO = new ModeloDTO(modeloEntity);
+        LOGGER.log(Level.INFO, "ModeloResource getBook: output: {0}", modeloDTO.toString());
+        return modeloDTO;
     }
 
+    /**
+     * Busca y devuelve todos los modelos que existen en la aplicacion.
+     *
+     * @return JSONArray {@link ModeloDetailDTO} - Los modelos
+     * encontrados en la aplicación. Si no hay ninguno retorna una lista vacía.
+     */
     @GET
-    public ModeloDTO getAllModelo() throws BusinessLogicException {
-        return new ModeloDTO();
+    public List<ModeloDTO> getAllModelo() throws BusinessLogicException {
+        LOGGER.info("ModeloResource getModelos: input: void");
+        List<ModeloDTO> listaDTOs = listEntity2DTO(modeloLogic.getModelos());
+        LOGGER.log(Level.INFO, "ModeloResource getModelos: output: {0}", listaDTOs.toString());
+        return listaDTOs;
     }
 
+     /**
+     * Crea un nuevo modelo con la informacion que se recibe en el cuerpo de
+     * la petición y se regresa un objeto identico con un id auto-generado por
+     * la base de datos.
+     *
+     * @param modelo {@link ModeloDTO} - El modelo que se desea
+     * guardar.
+     * @return JSON {@link ModeloDTO} - El modelo guardado con el atributo id
+     * autogenerado.
+     * @throws BusinessLogicException {@link BusinessLogicExceptionMapper} -
+     * Error de lógica que se genera cuando, la marca no existe, el numero de puertas esta dentro del rango (0,6) y los centrimetros cubicos sean > 100
+     * invalido.
+     */
     @POST
     public ModeloDTO createModelo(ModeloDTO modelo) throws BusinessLogicException {
-        return new ModeloDTO();
+        LOGGER.log(Level.INFO, "ModeloResource createModelo: input: {0}", modelo.toString());
+        ModeloDTO nuevoModeloDTO = new ModeloDTO(modeloLogic.createModelo(modelo.toEntity()));
+        LOGGER.log(Level.INFO, "ModeloResource createModelo: output: {0}", nuevoModeloDTO.toString());
+        return nuevoModeloDTO;
     }
 
+     /**
+     * Actualiza el modelo con el id recibido en la URL con la información
+     * que se recibe en el cuerpo de la petición.
+     *
+     * @param modeloId Identificador del modelo que se desea actualizar.
+     * Este debe ser una cadena de dígitos.
+     * @param modelo {@link ModeloDTO} El modelo que se desea guardar.
+     * @return JSON {@link ModeloDTO} - El modelo guardado.
+     * @throws WebApplicationException {@link WebApplicationExceptionMapper} -
+     * Error de lógica que se genera cuando no se encuentra el automovil a
+     * actualizar.
+     * @throws BusinessLogicException {@link BusinessLogicExceptionMapper} -
+     * Error de lógica que se genera cuando no se puede actualizar el modelo.
+     */
     @PUT
-    public ModeloDTO updateModelo() throws BusinessLogicException {
-        return new ModeloDTO();
+    @Path("{modeloId: \\d+}")
+    public ModeloDTO updateModelo(@PathParam("modeloId") Long modeloId, ModeloDTO modelo) throws BusinessLogicException {
+        LOGGER.log(Level.INFO, "ModeloResource updateModelo: input: id: {0} , modelo: {1}", new Object[]{modeloId, modelo.toString()});
+        modelo.setId(modeloId);
+        if (modeloLogic.getModelo(modeloId) == null) {
+            throw new WebApplicationException("El recurso /modelos/" + modeloId + " no existe.", 404);
+        }
+        ModeloDTO modeloDTO = new ModeloDTO(modeloLogic.updateModelo(modeloId, modelo.toEntity()));
+        LOGGER.log(Level.INFO, "ModeloResource updateModelo: output: {0}", modeloDTO.toString());
+        return modeloDTO;
     }
 
+     /**
+     * Borra el modelo con el id asociado recibido en la URL.
+     *
+     * @param modeloId Identificador del modelo que se desea borrar.
+     * Este debe ser una cadena de dígitos.
+     * @throws WebApplicationException {@link WebApplicationExceptionMapper} -
+     * Error de lógica que se genera cuando no se encuentra el modelo.
+     */
     @DELETE
-    public void deleteModelo() throws BusinessLogicException {
-
+    @Path("{modeloId: \\d+}")
+    public void deleteModelo(@PathParam("modeloId") Long modeloId) throws BusinessLogicException {
+        LOGGER.log(Level.INFO, "ModeloResource deleteModelo: input: {0}", modeloId);
+        ModeloEntity entity = modeloLogic.getModelo(modeloId);
+        if (entity == null) {
+            throw new WebApplicationException("El recurso /modelos/" + modeloId + " no existe.", 404);
+        }
+        //La siguiente linea puede causar un error:
+        //automovilFichaTecnicaLogic.removeFichaTecnica(automovilesId);
+        //automovilLogic.deleteAutomovil(automovilesId);
+        //LOGGER.info("AutomovilResource deleteAutomovil: output: void");
+    }
+    
+    private List<ModeloDTO> listEntity2DTO(List<ModeloEntity> modelos) {
+        List<ModeloDTO> list = new ArrayList<>();
+        for (ModeloEntity entity : modelos) {
+            list.add(new ModeloDTO(entity));
+        }
+        return list;
     }
 
 }

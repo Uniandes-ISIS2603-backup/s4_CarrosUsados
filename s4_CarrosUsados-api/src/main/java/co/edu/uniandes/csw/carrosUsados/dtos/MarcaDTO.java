@@ -5,6 +5,8 @@
  */
 package co.edu.uniandes.csw.carrosUsados.dtos;
 
+import co.edu.uniandes.csw.carrosUsados.entities.MarcaEntity;
+
 /**
  *
  * @author estudiante
@@ -12,5 +14,14 @@ package co.edu.uniandes.csw.carrosUsados.dtos;
 public class MarcaDTO {
 
     public MarcaDTO() {
+    }
+
+    MarcaDTO(MarcaEntity marca) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    public MarcaEntity toEntity(){
+        
+        return new MarcaEntity();
     }
 }
