@@ -12,12 +12,14 @@ import co.edu.uniandes.csw.carrosUsados.persistence.MarcaPersistence;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.ejb.Stateless;
 import javax.inject.Inject;
 
 /**
  *
  * @author na.morenoe
  */
+@Stateless
 public class ModeloLogic {
     
     private static final Logger LOGGER = Logger.getLogger(ModeloLogic.class.getName());

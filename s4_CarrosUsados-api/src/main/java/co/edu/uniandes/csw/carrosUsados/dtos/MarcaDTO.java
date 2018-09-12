@@ -13,15 +13,43 @@ import co.edu.uniandes.csw.carrosUsados.entities.MarcaEntity;
  */
 public class MarcaDTO {
 
-    public MarcaDTO() {
-    }
+    private Long id;
+    private String nombre;
+    private String pais;
+    private String descripcion;
+    
+    //Relación con MARCA
+    private MarcaDTO marca;
 
-    MarcaDTO(MarcaEntity marca) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public MarcaDTO() {
+        
     }
     
-    public MarcaEntity toEntity(){
+    public MarcaDTO(MarcaEntity marcaEntity){
         
-        return new MarcaEntity();
+        this.id = marcaEntity.getId();
+        this.nombre = marcaEntity.getNombre();
+        this.pais = marcaEntity.getPais();
+        this.descripcion = marcaEntity.getDescripcion();
+        
+    } 
+    
+    public MarcaEntity toEntity(){
+        MarcaEntity entity = new MarcaEntity();
+        
+        entity.setId(this.id);
+        entity.setNombre(this.nombre);
+        entity.setPais(this.pais);
+        entity.setDescripcion(this.descripcion);
+        
+        return entity;
+    }
+    
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 }
