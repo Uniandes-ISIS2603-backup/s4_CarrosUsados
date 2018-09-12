@@ -45,12 +45,7 @@ public class ModeloLogic {
           if((modeloEntity.getMarca() == null) || (marcaPersistence.find(modeloEntity.getMarca().getId()) == null )){
               throw new BusinessLogicException("El marca no existe");
           }
-         /* if(modeloEntity.getNum_puertas() < 1){
-            throw new BusinessLogicException("el numero de puertas es invalido");
-          }
-          if(modeloEntity.getCentrimetros_cubicos() < 100){
-            throw new BusinessLogicException("El numero de centrimetros cubicos es invalido");
-          }*/
+
           persistence.create(modeloEntity);
           LOGGER.log(Level.INFO, "Termina proceso de creación del modelo");
 
@@ -100,14 +95,9 @@ public class ModeloLogic {
         LOGGER.log(Level.INFO, "Inicia proceso de actualizar un modelo");
         
           if((modeloEntity.getMarca() == null) || (marcaPersistence.find(modeloEntity.getMarca().getId()) == null )){
-              throw new BusinessLogicException("El marca no existe");
+              throw new BusinessLogicException("La marca no existe");
           }
-          /*if(modeloEntity.getNum_puertas() < 1){
-            throw new BusinessLogicException("el numero de puertas es invalido");
-          }
-          if(modeloEntity.getCentrimetros_cubicos() < 100){
-            throw new BusinessLogicException("El numero de centrimetros cubicos es invalido");
-          }*/
+
         ModeloEntity newEntity = persistence.update(modeloEntity);
         LOGGER.log(Level.INFO, "Termina proceso de actualizacion de un modelo");
         return newEntity;

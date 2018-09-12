@@ -89,7 +89,7 @@ public class ModeloLogicTest {
      */
     private void clearData() {
         em.createQuery("delete from AutomovilEntity").executeUpdate();
-        em.createQuery("delete from MarcaEntity").executeUpdate();
+        //em.createQuery("delete from MarcaEntity").executeUpdate();
         em.createQuery("delete from ModeloEntity").executeUpdate();
     }
     
@@ -171,6 +171,8 @@ public class ModeloLogicTest {
 
         pojoEntity.setId(entity.getId());
 
+        MarcaEntity marcaEntity = marcaData.get(0);
+        pojoEntity.setMarca(marcaEntity);
         modeloLogic.updateModelo(pojoEntity.getId(), pojoEntity);
 
         ModeloEntity resp = em.find(ModeloEntity.class, entity.getId());

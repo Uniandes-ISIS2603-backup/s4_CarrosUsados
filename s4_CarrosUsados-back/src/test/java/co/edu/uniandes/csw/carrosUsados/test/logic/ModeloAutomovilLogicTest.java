@@ -92,8 +92,8 @@ public class ModeloAutomovilLogicTest {
      * Limpia las tablas que están implicadas en la prueba.
      */
     private void clearData() {
-        em.createQuery("delete from ModeloEntity").executeUpdate();
-        em.createQuery("delete from MarcaEntity").executeUpdate();
+        //em.createQuery("delete from ModeloEntity").executeUpdate();
+        //em.createQuery("delete from MarcaEntity").executeUpdate();
         em.createQuery("delete from AutomovilEntity").executeUpdate();
     }
 
@@ -102,12 +102,12 @@ public class ModeloAutomovilLogicTest {
      * pruebas.
      */
     private void insertData() {
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 4; i++) {
             AutomovilEntity autos = factory.manufacturePojo(AutomovilEntity.class);
             em.persist(autos);
             automovilesData.add(autos);
         }
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 4; i++) {
             ModeloEntity entity = factory.manufacturePojo(ModeloEntity.class);
             em.persist(entity);
             data.add(entity);
