@@ -3,13 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package co.edu.uniandes.csw.carrosUsados.test.persistence;
+package co.edu.uniandes.csw.carrosUsados.test.logic;
 
 import co.edu.uniandes.csw.carrosUsados.entities.ClienteEntity;
+import co.edu.uniandes.csw.carrosUsados.ejb.ClienteLogic;
+import co.edu.uniandes.csw.carrosUsados.exceptions.BusinessLogicException;
 import co.edu.uniandes.csw.carrosUsados.persistence.ClientePersistence;
 import java.util.ArrayList;
 import java.util.List;
 import javax.inject.Inject;
+
+import java.util.Date;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.UserTransaction;
@@ -29,10 +35,11 @@ import uk.co.jemos.podam.api.PodamFactoryImpl;
  * @author js.bravo
  */
 @RunWith(Arquillian.class)
-public class ClientePersistenceTest {
+public class ClienteLogicTest {
 
+    private PodamFactory factory = new PodamFactoryImpl();
     @Inject
-    private ClientePersistence clientePersistence;
+    private ClienteLogic clienteLogic;
 
     @PersistenceContext
     private EntityManager em;
@@ -46,6 +53,7 @@ public class ClientePersistenceTest {
     public static JavaArchive createDeployment() {
         return ShrinkWrap.create(JavaArchive.class)
                 .addPackage(ClienteEntity.class.getPackage())
+                .addPackage(ClienteLogic.class.getPackage())
                 .addPackage(ClientePersistence.class.getPackage())
                 .addAsManifestResource("META-INF/persistence.xml", "persistence.xml")
                 .addAsManifestResource("META-INF/beans.xml", "beans.xml");
@@ -99,13 +107,22 @@ public class ClientePersistenceTest {
      * Prueba para crear un Cliente en la DB.
      */
     @Test
-    public void createClienteTest() {
+    public void createClienteTest() throws BusinessLogicException  {
         PodamFactory factory = new PodamFactoryImpl();
         ClienteEntity newEntity = factory.manufacturePojo(ClienteEntity.class);
-        ClienteEntity result = clientePersistence.create(newEntity);
+        
 
-        Assert.assertNotNull(result);
-
+        
+        newEntity.setNombreUsuario("jsbravo");
+        newEntity.setNombre("Sebastian");
+        newEntity.setApellido("Castelo");
+        newEntity.setCorreo("jsbravoc@hotmail.co");
+        newEntity.setTelefono("3000000000");
+        newEntity.setContrasena("ConTra$ENAMuYFu3Rte$");
+        Date mayor = new GregorianCalendar(1999, Calendar.JANUARY, 1).getTime();
+    newEntity.setFechaNacimiento(mayor);
+    ClienteEntity result = clienteLogic.createCliente(newEntity);
+    Assert.assertNotNull(result);
         ClienteEntity entity = em.find(ClienteEntity.class, result.getId());
 
         Assert.assertEquals(newEntity.getNombre(), entity.getNombre());
@@ -123,7 +140,7 @@ public class ClientePersistenceTest {
      */
     @Test
     public void getClientesTest() {
-        List<ClienteEntity> list = clientePersistence.findAll();
+        List<ClienteEntity> list = clienteLogic.getClientes();
         Assert.assertEquals(data.size(), list.size());
         for (ClienteEntity ent : list) {
             boolean found = false;
@@ -140,9 +157,9 @@ public class ClientePersistenceTest {
      * Prueba para consultar un Cliente.
      */
     @Test
-    public void getClienteTest() {
+    public void getClienteTest() throws BusinessLogicException  {
         ClienteEntity entity = data.get(0);
-        ClienteEntity newEntity = clientePersistence.find(entity.getId());
+        ClienteEntity newEntity = clienteLogic.getCliente(entity.getId());
         Assert.assertNotNull(newEntity);
 
         Assert.assertEquals(newEntity.getNombre(), entity.getNombre());
@@ -160,25 +177,34 @@ public class ClientePersistenceTest {
      * Prueba para eliminar un Cliente.
      */
     @Test
-    public void deleteClienteTest() {
+    public void deleteClienteTest() throws BusinessLogicException{
         ClienteEntity entity = data.get(0);
-        clientePersistence.delete(entity.getId());
+        clienteLogic.deleteCliente(entity.getId());
         ClienteEntity deleted = em.find(ClienteEntity.class, entity.getId());
         Assert.assertNull(deleted);
     }
 
     /**
-     * Prueba para actualizar un Cliente.
+     * Prueba para actualizar un Cliente con datos correctos.
      */
-    @Test
-    public void updateClienteTest() {
+    
+    public void updateClienteTest() throws BusinessLogicException {
         ClienteEntity entity = data.get(0);
         PodamFactory factory = new PodamFactoryImpl();
         ClienteEntity newEntity = factory.manufacturePojo(ClienteEntity.class);
 
         newEntity.setId(entity.getId());
+        newEntity.setNombreUsuario("jsbravo");
+        newEntity.setNombre("Sebastian");
+        newEntity.setApellido("Castelo");
+        newEntity.setCorreo("jsbravoc@hotmail.co");
+        newEntity.setTelefono("3000000000");
+        newEntity.setContrasena("ConTra$ENAMuYFu3Rte$");
+        Date mayor = new GregorianCalendar(1999, Calendar.JANUARY, 1).getTime();
+      newEntity.setFechaNacimiento(mayor);
 
-        clientePersistence.update(newEntity);
+
+        clienteLogic.updateCliente(newEntity.getId(),newEntity);
 
         ClienteEntity updated = em.find(ClienteEntity.class, entity.getId());
 
@@ -191,5 +217,72 @@ public class ClientePersistenceTest {
         Assert.assertEquals(newEntity.getTelefono(), updated.getTelefono());
         Assert.assertEquals(newEntity.getCorreo(), updated.getCorreo());
         Assert.assertEquals(newEntity.getFechaNacimiento(), updated.getFechaNacimiento());
+    }
+    /**
+     * Prueba para actualizar un Cliente con datos erroneos.
+     */
+    @Test(expected = BusinessLogicException.class)
+    public void updateClienteTestErroneo() throws BusinessLogicException {
+        ClienteEntity entity = data.get(0);
+        PodamFactory factory = new PodamFactoryImpl();
+        ClienteEntity newEntity = factory.manufacturePojo(ClienteEntity.class);
+
+        newEntity.setId(entity.getId());
+newEntity.setNombre(null);
+        clienteLogic.updateCliente(newEntity.getId(),newEntity);
+
+        ClienteEntity updated = em.find(ClienteEntity.class, entity.getId());
+
+        Assert.assertEquals(newEntity.getNombre(), updated.getNombre());
+        Assert.assertEquals(newEntity.getApellido(), updated.getApellido());
+
+        Assert.assertEquals(newEntity.getNombreUsuario(), updated.getNombreUsuario());
+        Assert.assertEquals(newEntity.getDireccion(), updated.getDireccion());
+        Assert.assertEquals(newEntity.getContrasena(), updated.getContrasena());
+        Assert.assertEquals(newEntity.getTelefono(), updated.getTelefono());
+        Assert.assertEquals(newEntity.getCorreo(), updated.getCorreo());
+        Assert.assertEquals(newEntity.getFechaNacimiento(), updated.getFechaNacimiento());
+    }
+    /**
+     * Prueba para actualizar un Cliente con datos incorrectos.
+     */
+    @Test(expected = BusinessLogicException.class)
+    public void updateClienteTestCorreoInvalido() throws BusinessLogicException {
+        ClienteEntity entity = data.get(0);
+        PodamFactory factory = new PodamFactoryImpl();
+        ClienteEntity newEntity = factory.manufacturePojo(ClienteEntity.class);
+
+        newEntity.setId(entity.getId());
+ newEntity.setCorreo("correo");
+        clienteLogic.updateCliente(newEntity.getId(), newEntity);
+
+    }
+    /**
+     * Prueba para actualizar un cliente con datos incorrectos.
+     */
+    @Test(expected = BusinessLogicException.class)
+    public void createClienteTestTelefonoInvalido() throws BusinessLogicException {
+        ClienteEntity entity = data.get(0);
+        PodamFactory factory = new PodamFactoryImpl();
+        ClienteEntity newEntity = factory.manufacturePojo(ClienteEntity.class);
+
+        newEntity.setId(entity.getId());
+ newEntity.setTelefono("2");
+        clienteLogic.updateCliente(newEntity.getId(), newEntity);
+
+    }
+    /**
+     * Prueba para actualizar un cliente con datos incorrectos.
+     */
+    @Test(expected = BusinessLogicException.class)
+    public void updateClienteTestContrasenaInvalida() throws BusinessLogicException {
+        ClienteEntity entity = data.get(0);
+        PodamFactory factory = new PodamFactoryImpl();
+        ClienteEntity newEntity = factory.manufacturePojo(ClienteEntity.class);
+
+        newEntity.setId(entity.getId());
+ newEntity.setContrasena("12345678Aa");
+        clienteLogic.updateCliente(newEntity.getId(), newEntity);
+
     }
 }
