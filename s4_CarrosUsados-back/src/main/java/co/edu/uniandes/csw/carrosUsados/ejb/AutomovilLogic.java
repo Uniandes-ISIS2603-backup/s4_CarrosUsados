@@ -12,6 +12,8 @@ import co.edu.uniandes.csw.carrosUsados.persistence.ModeloPersistence;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 
@@ -135,19 +137,38 @@ import javax.inject.Inject;
         LOGGER.log(Level.INFO, "Termina proceso de borrar el automovil con id = {0}", automovilId);
     }
 
-
+    /**
+     * Metodo que chequea la validez de una placa.
+     * @param placa La placa a validar
+     * @return verdadero si es valida, falso de lo contrario
+     */
       public boolean validatePlaca(String placa){
         if(placa == null || placa.isEmpty()){
           return false;
+        }else{
+            Matcher m = Pattern.compile("[A-Z][A-Z][A-Z]\\d\\d\\d").matcher(placa); //Chequea que la placa sea valida
+            if(m.matches()){
+                return true;
+            }else{
+                return false;
+            }
+
         }
-        return true;
       }
 
       public boolean validateNumChasis(String numChasis){
         if(numChasis == null || numChasis.isEmpty()){
           return false;
-        }
-        return true;
+        }else{
+            Pattern pattern = Pattern.compile("[A-Z|\\d][A-Z|\\d][A-Z|\\d][A-Z|\\d][A-Z|\\d][A-Z|\\d][A-Z|\\d][A-Z|\\d][A-Z|\\d][A-Z|\\d][A-Z|\\d]\\d\\d\\d\\d\\d\\d");
+            //numChasis = "AAAAAAAAAAA111111";
+            Matcher matcher = pattern.matcher(numChasis);
+            if(matcher.matches()){
+                return true;
+            }else{
+                return false;
+            }
+        } 
       }
 
 }

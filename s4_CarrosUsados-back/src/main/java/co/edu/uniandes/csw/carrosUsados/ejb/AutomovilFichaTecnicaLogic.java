@@ -30,6 +30,7 @@ public class AutomovilFichaTecnicaLogic {
     @Inject
     FichaTecnicaPersistence fichaTecnicaPersistence;
     
+    
     /**
      * Reemplazar la ficha tecnica de un automovil.
      *
