@@ -3,9 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package co.edu.uniandes.csw.carrosUsados.test.persistence;
+package co.edu.uniandes.csw.carrosUsados.test.logic;
 
+import co.edu.uniandes.csw.carrosUsados.ejb.FormaDePagoLogic;
 import co.edu.uniandes.csw.carrosUsados.entities.FormaDePagoEntity;
+import co.edu.uniandes.csw.carrosUsados.entities.ClienteEntity;
+import co.edu.uniandes.csw.carrosUsados.exceptions.BusinessLogicException;
 import co.edu.uniandes.csw.carrosUsados.persistence.FormaDePagoPersistence;
 import java.util.ArrayList;
 import java.util.List;
@@ -26,23 +29,27 @@ import uk.co.jemos.podam.api.PodamFactoryImpl;
 
 /**
  *
- * @author estudiante
+ * @author juanestebanmendez
  */
 @RunWith(Arquillian.class)
-public class FormaDePagoPersistenceTest {
+public class FormaDePagoLogicTest {
     
-    @Inject
-    private FormaDePagoPersistence formaDePagoPersistence;
+   private PodamFactory factory = new PodamFactoryImpl();
 
-    @PersistenceContext
-    private EntityManager em;
+   @Inject
+   FormaDePagoLogic formaDePagoLogic;
+    
+   @PersistenceContext
+   private EntityManager em;
 
-    @Inject
-    UserTransaction utx;
-
-    private List<FormaDePagoEntity> data = new ArrayList<FormaDePagoEntity>();
-
-    /**
+   @Inject
+   private UserTransaction utx;
+   
+    
+   private List<FormaDePagoEntity> data = new ArrayList<FormaDePagoEntity>();
+   
+   private List<ClienteEntity> clienteData = new ArrayList<ClienteEntity>();
+   /**
      * @return Devuelve el jar que Arquillian va a desplegar en Payara embebido.
      * El jar contiene las clases, el descriptor de la base de datos y el
      * archivo beans.xml para resolver la inyección de dependencias.
@@ -51,11 +58,12 @@ public class FormaDePagoPersistenceTest {
     public static JavaArchive createDeployment() {
         return ShrinkWrap.create(JavaArchive.class)
                 .addPackage(FormaDePagoEntity.class.getPackage())
+                .addPackage(FormaDePagoLogic.class.getPackage())
                 .addPackage(FormaDePagoPersistence.class.getPackage())
                 .addAsManifestResource("META-INF/persistence.xml", "persistence.xml")
                 .addAsManifestResource("META-INF/beans.xml", "beans.xml");
     }
-
+    
     /**
      * Configuración inicial de la prueba.
      */
@@ -63,7 +71,6 @@ public class FormaDePagoPersistenceTest {
     public void configTest() {
         try {
             utx.begin();
-            em.joinTransaction();
             clearData();
             insertData();
             utx.commit();
@@ -76,125 +83,117 @@ public class FormaDePagoPersistenceTest {
             }
         }
     }
-
+    
     /**
      * Limpia las tablas que están implicadas en la prueba.
      */
     private void clearData() {
         em.createQuery("delete from FormaDePagoEntity").executeUpdate();
+        em.createQuery("delete from ClienteEntity").executeUpdate();
     }
-
+    
     /**
      * Inserta los datos iniciales para el correcto funcionamiento de las
      * pruebas.
      */
     private void insertData() {
-        PodamFactory factory = new PodamFactoryImpl();
         for (int i = 0; i < 3; i++) {
             FormaDePagoEntity entity = factory.manufacturePojo(FormaDePagoEntity.class);
-
             em.persist(entity);
             data.add(entity);
         }
+        for (int i = 0; i < 3; i++) {
+            ClienteEntity clienteEntity = factory.manufacturePojo(ClienteEntity.class);
+            em.persist(clienteEntity);
+            clienteData.add(clienteEntity);
+        }
     }
-
+    
+    
     /**
      * Prueba para crear un FormaDePago.
      */
     @Test
-    public void createFormaDePagoTest() {
-        PodamFactory factory = new PodamFactoryImpl();
+    public void createFormaDePagoTest() throws BusinessLogicException {
+        
         FormaDePagoEntity newEntity = factory.manufacturePojo(FormaDePagoEntity.class);
-        FormaDePagoEntity result = formaDePagoPersistence.create(newEntity);
-
+        newEntity.setCliente(clienteData.get(0));
+            
+        FormaDePagoEntity result = formaDePagoLogic.createFormaDePago(newEntity);
         Assert.assertNotNull(result);
-
         FormaDePagoEntity entity = em.find(FormaDePagoEntity.class, result.getId());
-
+        Assert.assertEquals(newEntity.getId(), entity.getId());
         Assert.assertEquals(newEntity.getNombre(), entity.getNombre());
         Assert.assertEquals(newEntity.getTipo(), entity.getTipo());
-        Assert.assertEquals(newEntity.getCliente(), entity.getCliente());
-        Assert.assertEquals(newEntity.getId(), entity.getId());
+        Assert.assertEquals(newEntity.getCliente(), newEntity.getCliente());
     }
-
+    
     /**
-     * Prueba para consultar la lista de FormaDePagoes.
+     * Prueba para consultar la lista de FormaDePagoes
      */
     @Test
-    public void getFormaDePagoesTest() {
-        List<FormaDePagoEntity> list = formaDePagoPersistence.findAll();
+    public void getFormaDePagoesTest() throws BusinessLogicException {
+        List<FormaDePagoEntity> list = formaDePagoLogic.getFormaDePagoes();
         Assert.assertEquals(data.size(), list.size());
-        for (FormaDePagoEntity ent : list) {
+        for (FormaDePagoEntity entity : list) {
             boolean found = false;
-            for (FormaDePagoEntity entity : data) {
-                if (ent.getId().equals(entity.getId())) {
+            for (FormaDePagoEntity storedEntity : data) {
+                if (entity.getId().equals(storedEntity.getId())) {
                     found = true;
                 }
             }
             Assert.assertTrue(found);
         }
     }
-
+    
     /**
      * Prueba para consultar un FormaDePago.
      */
     @Test
-    public void getFormaDePagoTest() {
+    public void getFormaDePagoTest() throws BusinessLogicException {
         FormaDePagoEntity entity = data.get(0);
-        FormaDePagoEntity newEntity = formaDePagoPersistence.find(entity.getId());
-        Assert.assertNotNull(newEntity);
-        Assert.assertEquals(newEntity.getNombre(), entity.getNombre());
-        Assert.assertEquals(newEntity.getTipo(), entity.getTipo());
-        Assert.assertEquals(newEntity.getCliente(), entity.getCliente());
-        Assert.assertEquals(newEntity.getId(), entity.getId());
+        FormaDePagoEntity resultEntity = formaDePagoLogic.getFormaDePago(entity.getId());
+        Assert.assertNotNull(resultEntity);
+        Assert.assertEquals(resultEntity.getId(), entity.getId());
+        Assert.assertEquals(resultEntity.getNombre(), entity.getNombre());
+        Assert.assertEquals(resultEntity.getTipo(), entity.getTipo());
+        Assert.assertEquals(resultEntity.getCliente(), entity.getCliente());
     }
-
-    /**
-     * Prueba para eliminar un FormaDePago.
-     */
-    @Test
-    public void deleteFormaDePagoTest() {
-        FormaDePagoEntity entity = data.get(0);
-        formaDePagoPersistence.delete(entity.getId());
-        FormaDePagoEntity deleted = em.find(FormaDePagoEntity.class, entity.getId());
-        Assert.assertNull(deleted);
-    }
-
+    
     /**
      * Prueba para actualizar un FormaDePago.
      */
     @Test
-    public void updateFormaDePagoTest() {
+    public void updateFormaDePagoTest() throws BusinessLogicException {
         FormaDePagoEntity entity = data.get(0);
-        PodamFactory factory = new PodamFactoryImpl();
-        FormaDePagoEntity newEntity = factory.manufacturePojo(FormaDePagoEntity.class);
+        FormaDePagoEntity pojoEntity = factory.manufacturePojo(FormaDePagoEntity.class);
 
-        newEntity.setId(entity.getId());
+        pojoEntity.setId(entity.getId());
+        pojoEntity.setCliente(entity.getCliente());
 
-        entity = formaDePagoPersistence.update(newEntity);
+        formaDePagoLogic.updateFormaDePago(pojoEntity.getId(), pojoEntity);
+        
 
         FormaDePagoEntity resp = em.find(FormaDePagoEntity.class, entity.getId());
 
-        Assert.assertEquals(newEntity.getNombre(), entity.getNombre());
-        Assert.assertEquals(newEntity.getTipo(), entity.getTipo());
-        Assert.assertEquals(newEntity.getCliente(), entity.getCliente());
-        Assert.assertEquals(newEntity.getId(), entity.getId());
+        Assert.assertEquals(pojoEntity.getId(), resp.getId());
+        Assert.assertEquals(pojoEntity.getNombre(), resp.getNombre());
+        Assert.assertEquals(pojoEntity.getTipo(), resp.getTipo());
+        Assert.assertEquals(pojoEntity.getCliente(), resp.getCliente()); 
     }
-
+    
     /**
-     * Prueba para consultasr un FormaDePago por nombre.
+     * Prueba para eliminar un FormaDePago
+     *
+     * @throws co.edu.uniandes.csw.bookstore.exceptions.BusinessLogicException
      */
     @Test
-    public void findFormaDePagoByISBNTest() {
+    public void deleteFormaDePagoTest() throws BusinessLogicException {
         FormaDePagoEntity entity = data.get(0);
-        FormaDePagoEntity newEntity = formaDePagoPersistence.findByNombre(entity.getNombre());
-        Assert.assertNotNull(newEntity);
-        Assert.assertEquals(entity.getNombre(), newEntity.getNombre());
-
-        newEntity = formaDePagoPersistence.findByNombre(null);
-        Assert.assertNull(newEntity);
-        
-        newEntity = formaDePagoPersistence.findByNombre("");
-        Assert.assertNull(newEntity);
+        formaDePagoLogic.deleteFormaDePago(entity.getId());
+        FormaDePagoEntity deleted = em.find(FormaDePagoEntity.class, entity.getId());
+        Assert.assertNull(deleted);
     }
+    
+    
 }
