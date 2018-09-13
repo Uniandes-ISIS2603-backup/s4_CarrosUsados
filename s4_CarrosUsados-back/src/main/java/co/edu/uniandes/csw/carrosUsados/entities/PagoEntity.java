@@ -6,8 +6,11 @@
 package co.edu.uniandes.csw.carrosUsados.entities;
 
 import java.io.Serializable;
+import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import uk.co.jemos.podam.common.PodamExclude;
 
 /**
@@ -18,8 +21,11 @@ import uk.co.jemos.podam.common.PodamExclude;
 public class PagoEntity extends BaseEntity implements Serializable{
     private String idPago;
     private String num_tarjeta;
-    private String codigo_tarjeta;
-    private String fecha_tarjeta;
+    private String codigoTarjeta;
+    
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date fechaTarjeta;
+    
     private boolean comprobante_pago;
 
     
@@ -71,19 +77,19 @@ public class PagoEntity extends BaseEntity implements Serializable{
     }
     public String getCodigoTargeta()
     {
-        return codigo_tarjeta;
+        return codigoTarjeta;
     }
     public void setCodigoTargeta(String pCodigo)
     {
-        codigo_tarjeta=pCodigo;
+        codigoTarjeta=pCodigo;
     }
-    public String getFechaTarjeta()
+    public Date getFechaTarjeta()
     {
-        return fecha_tarjeta;
+        return fechaTarjeta;
     }
-    public void setFechaTarjeta(String pFecha)
+    public void setFechaTarjeta(Date pFecha)
     {
-        fecha_tarjeta= pFecha;
+        fechaTarjeta= pFecha;
     }
     public boolean getComprobanteDePago()
     {
