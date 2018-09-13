@@ -20,6 +20,7 @@ import javax.persistence.TypedQuery;
  */
 @Stateless
 public class ClientePersistence {
+
     private static final Logger LOGGER = Logger.getLogger(ClientePersistence.class.getName());
 
     @PersistenceContext(unitName = "CarTeamPU")
@@ -28,8 +29,7 @@ public class ClientePersistence {
     /**
      * Método para persisitir la entidad en la base de datos.
      *
-     * @param clienteEntity objeto cliente que se creará en la base
-     * de datos
+     * @param clienteEntity objeto cliente que se creará en la base de datos
      * @return devuelve la entidad creada con un id dado por la base de datos.
      */
     public ClienteEntity create(ClienteEntity clienteEntity) {
@@ -42,8 +42,7 @@ public class ClientePersistence {
     /**
      * Consulta todos los clientes de la base de datos.
      *
-     * @return Liat con todas las entidades de clientes de la base de
-     * datos.
+     * @return Liat con todas las entidades de clientes de la base de datos.
      */
     public List<ClienteEntity> findAll() {
         LOGGER.log(Level.INFO, "Consultando todos los clientes");
@@ -55,8 +54,8 @@ public class ClientePersistence {
      * Busca el cliente con el id enviado por argumento.
      *
      * @param clienteId: Id del cliente a buscar.
-     * @return null si no existe ningún cliente con ese id. Si existe
-     * retorna la entidad.
+     * @return null si no existe ningún cliente con ese id. Si existe retorna la
+     * entidad.
      */
     public ClienteEntity find(Long clienteId) {
         LOGGER.log(Level.INFO, "Consultando cliente con id={0}", clienteId);
@@ -66,8 +65,7 @@ public class ClientePersistence {
     /**
      * Actualiza el cliente cuya entidad es recibida por parámetro.
      *
-     * @param clienteEntity: La entidad del cliente que se desea
-     * actualizar.
+     * @param clienteEntity: La entidad del cliente que se desea actualizar.
      * @return la entidad del cliente actualizada.
      */
     public ClienteEntity update(ClienteEntity clienteEntity) {
