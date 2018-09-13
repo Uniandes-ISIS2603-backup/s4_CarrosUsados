@@ -82,21 +82,8 @@ public class PuntoVentaEntity extends BaseEntity implements Serializable{
       this.ubicacion= nueva;
   }
 
-    public int getNumEmpleados() {
-        return numEmpleados;
-    }
 
-    public void setNumEmpleados(int numEmpleados) {
-        this.numEmpleados = numEmpleados;
-    }
-
-    public List<CalificacionEntity> getComentarios() {
-        return comentarios;
-    }
-
-    public void setComentarios(List<CalificacionEntity> comentarios) {
-        this.comentarios = comentarios;
-    }
+   
 
     public AutomovilEntity getAutomovil() {
         return automovil;
