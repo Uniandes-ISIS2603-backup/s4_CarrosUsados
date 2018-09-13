@@ -23,7 +23,7 @@ public class PuntoVentaDTO implements Serializable {
     }
 
     public PuntoVentaDTO(PuntoVentaEntity puntoVenta) {
-        this.num_vendedores = puntoVenta.getNumEmpleados();
+        this.num_vendedores = puntoVenta.getEmpleados();
         this.ubicacion = puntoVenta.getUbicacion();
         this.ciudad = puntoVenta.getCiudad();
         this.id = puntoVenta.getId();
