@@ -6,6 +6,7 @@
 package co.edu.uniandes.csw.carrosUsados.persistence;
 
 import co.edu.uniandes.csw.carrosUsados.entities.FormaDePagoEntity;
+import co.edu.uniandes.csw.carrosUsados.entities.ClienteEntity;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -90,18 +91,18 @@ public class FormaDePagoPersistence {
     }
     
     /**
-     * Busca si hay alguna forma de pago con el tipo que se envía de argumento
+     * Busca si hay alguna forma de pago con el nombre que se envía de argumento
      *
-     * @param tipo: tipo de la forma de pago que se está buscando
-     * @return null si no existe ninguna forma de pago con la tipo del argumento. Si
+     * @param nombre: nombre de la forma de pago que se está buscando
+     * @return null si no existe ninguna forma de pago con el nombre del argumento. Si
      * existe alguno devuelve el primero.
      */
-    public FormaDePagoEntity findByTipo(String tipo) {
-        LOGGER.log(Level.INFO, "Consultando formas de pago por tipo ", tipo);
-        // Se crea un query para buscar forma de pagoes con la tipo que recibe el método como argumento. ":tipo" es un placeholder que debe ser remplazado
-        TypedQuery query = em.createQuery("Select e From FormaDePagoEntity e where e.tipo = :tipo", FormaDePagoEntity.class);
-        // Se remplaza el placeholder ":tipo" con el valor del argumento 
-        query = query.setParameter("tipo", tipo);
+    public FormaDePagoEntity findByNombre(String nombre) {
+        LOGGER.log(Level.INFO, "Consultando formas de pago por nombre ", nombre);
+        // Se crea un query para buscar forma de pagoes con la nombre que recibe el método como argumento. ":nombre" es un placeholder que debe ser remplazado
+        TypedQuery query = em.createQuery("Select e From FormaDePagoEntity e where e.nombre = :nombre ", FormaDePagoEntity.class);
+        // Se remplaza el placeholder ":nombre" con el valor del argumento 
+        query = query.setParameter("nombre", nombre);
         // Se invoca el query se obtiene la lista resultado
         List<FormaDePagoEntity> sameTipo = query.getResultList();
         FormaDePagoEntity result;
@@ -112,7 +113,7 @@ public class FormaDePagoPersistence {
         } else {
             result = sameTipo.get(0);
         }
-        LOGGER.log(Level.INFO, "Saliendo de consultar formas de pago por tipo ", tipo);
+        LOGGER.log(Level.INFO, "Saliendo de consultar formas de pago por nombre ", nombre);
         return result;
     }
 }
