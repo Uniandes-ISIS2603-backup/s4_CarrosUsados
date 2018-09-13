@@ -3,9 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package co.edu.uniandes.csw.carrosUsados.test.persistence;
+package co.edu.uniandes.csw.carrosUsados.test.logic;
 
 import co.edu.uniandes.csw.carrosUsados.entities.VendedorEntity;
+import co.edu.uniandes.csw.carrosUsados.ejb.VendedorLogic;
+import co.edu.uniandes.csw.carrosUsados.exceptions.*;
 import co.edu.uniandes.csw.carrosUsados.persistence.VendedorPersistence;
 import java.util.ArrayList;
 import java.util.List;
@@ -29,10 +31,12 @@ import uk.co.jemos.podam.api.PodamFactoryImpl;
  * @author js.bravo
  */
 @RunWith(Arquillian.class)
-public class VendedorPersistenceTest {
+public class VendedorLogicTest {
 
+   private PodamFactory factory = new PodamFactoryImpl();
+   
     @Inject
-    private VendedorPersistence vendedorPersistence;
+    private VendedorLogic vendedorLogic;
 
     @PersistenceContext
     private EntityManager em;
@@ -46,6 +50,7 @@ public class VendedorPersistenceTest {
     public static JavaArchive createDeployment() {
         return ShrinkWrap.create(JavaArchive.class)
                 .addPackage(VendedorEntity.class.getPackage())
+                .addPackage(VendedorLogic.class.getPackage())
                 .addPackage(VendedorPersistence.class.getPackage())
                 .addAsManifestResource("META-INF/persistence.xml", "persistence.xml")
                 .addAsManifestResource("META-INF/beans.xml", "beans.xml");
@@ -94,15 +99,33 @@ public class VendedorPersistenceTest {
             data.add(entity);
         }
     }
-
     /**
      * Prueba para crear un Vendedor en la DB.
      */
-    @Test
-    public void createVendedorTest() {
+    public void createVendedorTest() throws BusinessLogicException{
         PodamFactory factory = new PodamFactoryImpl();
         VendedorEntity newEntity = factory.manufacturePojo(VendedorEntity.class);
-        VendedorEntity result = vendedorPersistence.create(newEntity);
+        newEntity.setNombre("Thomas");
+        newEntity.setApellido("Müller");
+        VendedorEntity result = vendedorLogic.createVendedor(newEntity);
+    
+        Assert.assertNotNull(result);
+    
+        VendedorEntity entity = em.find(VendedorEntity.class, result.getId());
+    
+        Assert.assertEquals(newEntity.getNombre(), entity.getNombre());
+        Assert.assertEquals(newEntity.getApellido(), entity.getApellido());
+    }
+    /**
+     * Prueba para crear un Vendedor en la DB con datos incorrectos.
+     */
+    @Test(expected = BusinessLogicException.class)
+    public void createVendedorTestNombreInvalido() throws BusinessLogicException{
+        PodamFactory factory = new PodamFactoryImpl();
+        VendedorEntity newEntity = factory.manufacturePojo(VendedorEntity.class);
+        newEntity.setNombre("6ix9ine");
+        newEntity.setApellido("2Pac");
+        VendedorEntity result = vendedorLogic.createVendedor(newEntity);
 
         Assert.assertNotNull(result);
 
@@ -117,7 +140,7 @@ public class VendedorPersistenceTest {
      */
     @Test
     public void getVendedoresTest() {
-        List<VendedorEntity> list = vendedorPersistence.findAll();
+        List<VendedorEntity> list = vendedorLogic.getVendedores();
         Assert.assertEquals(data.size(), list.size());
         for (VendedorEntity ent : list) {
             boolean found = false;
@@ -134,9 +157,9 @@ public class VendedorPersistenceTest {
      * Prueba para consultar un Vendedor.
      */
     @Test
-    public void getVendedorTest() {
+    public void getVendedorTest() throws BusinessLogicException{
         VendedorEntity entity = data.get(0);
-        VendedorEntity newEntity = vendedorPersistence.find(entity.getId());
+        VendedorEntity newEntity = vendedorLogic.getVendedor(entity.getId());
         Assert.assertNotNull(newEntity);
 
         Assert.assertEquals(newEntity.getNombre(), entity.getNombre());
@@ -148,9 +171,9 @@ public class VendedorPersistenceTest {
      * Prueba para eliminar un Vendedor.
      */
     @Test
-    public void deleteVendedorTest() {
+    public void deleteVendedorTest() throws BusinessLogicException{
         VendedorEntity entity = data.get(0);
-        vendedorPersistence.delete(entity.getId());
+        vendedorLogic.deleteVendedor(entity.getId());
         VendedorEntity deleted = em.find(VendedorEntity.class, entity.getId());
         Assert.assertNull(deleted);
     }
@@ -159,14 +182,15 @@ public class VendedorPersistenceTest {
      * Prueba para actualizar un Vendedor.
      */
     @Test
-    public void updateVendedorTest() {
+    public void updateVendedorTest() throws BusinessLogicException{
         VendedorEntity entity = data.get(0);
         PodamFactory factory = new PodamFactoryImpl();
         VendedorEntity newEntity = factory.manufacturePojo(VendedorEntity.class);
-
+        newEntity.setNombre("Juan");
+        newEntity.setApellido("Bravo");
         newEntity.setId(entity.getId());
 
-        vendedorPersistence.update(newEntity);
+        vendedorLogic.updateVendedor(entity.getId(),newEntity);
 
         VendedorEntity updated = em.find(VendedorEntity.class, entity.getId());
 

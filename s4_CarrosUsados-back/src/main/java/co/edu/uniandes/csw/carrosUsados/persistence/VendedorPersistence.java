@@ -19,7 +19,8 @@ import javax.persistence.TypedQuery;
  * @author js.bravo
  */
 @Stateless
-public class VendedorPersistence{
+public class VendedorPersistence {
+
     private static final Logger LOGGER = Logger.getLogger(VendedorPersistence.class.getName());
 
     @PersistenceContext(unitName = "CarTeamPU")
@@ -28,8 +29,7 @@ public class VendedorPersistence{
     /**
      * Método para persisitir la entidad en la base de datos.
      *
-     * @param vendedorEntity objeto vendedor que se creará en la base
-     * de datos
+     * @param vendedorEntity objeto vendedor que se creará en la base de datos
      * @return devuelve la entidad creada con un id dado por la base de datos.
      */
     public VendedorEntity create(VendedorEntity vendedorEntity) {
@@ -42,8 +42,7 @@ public class VendedorPersistence{
     /**
      * Consulta todos los vendedores de la base de datos.
      *
-     * @return Liat con todas las entidades de vendedores de la base de
-     * datos.
+     * @return Liat con todas las entidades de vendedores de la base de datos.
      */
     public List<VendedorEntity> findAll() {
         LOGGER.log(Level.INFO, "Consultando todos los vendedores");
@@ -55,8 +54,8 @@ public class VendedorPersistence{
      * Busca el vendedor con el id enviado por argumento.
      *
      * @param vendedorId: Id del vendedor a buscar.
-     * @return null si no existe ningún vendedor con ese id. Si existe
-     * retorna la entidad.
+     * @return null si no existe ningún vendedor con ese id. Si existe retorna
+     * la entidad.
      */
     public VendedorEntity find(Long vendedorId) {
         LOGGER.log(Level.INFO, "Consultando vendedor con id={0}", vendedorId);
@@ -66,8 +65,7 @@ public class VendedorPersistence{
     /**
      * Actualiza el vendedor cuya entidad es recibida por parámetro.
      *
-     * @param vendedorEntity: La entidad del vendedor que se desea
-     * actualizar.
+     * @param vendedorEntity: La entidad del vendedor que se desea actualizar.
      * @return la entidad del vendedor actualizada.
      */
     public VendedorEntity update(VendedorEntity vendedorEntity) {
@@ -87,5 +85,5 @@ public class VendedorPersistence{
         em.remove(entity);
         LOGGER.log(Level.INFO, "Saliendo de borrar el vendedor con id = {0}", vendedorId);
     }
-    
+
 }

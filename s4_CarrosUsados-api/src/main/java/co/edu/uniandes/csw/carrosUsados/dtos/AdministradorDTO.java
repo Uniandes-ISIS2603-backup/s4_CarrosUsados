@@ -22,7 +22,7 @@ public class AdministradorDTO extends UsuarioDTO implements Serializable {
      * Cadena de caracteres que representa la fecha de inicio del cargo del
      * Administrador.
      */
-    private String fecha_inicio;
+    private String fechaInicio;
     /**
      * Cadena de caracteres que representa el cargo que ejerce el Administrador.
      */
@@ -36,17 +36,17 @@ public class AdministradorDTO extends UsuarioDTO implements Serializable {
      *
      * @return fecha de inicio del administrador.
      */
-    public String getFecha_Inicio() {
-        return fecha_inicio;
+    public String getFechaInicio() {
+        return fechaInicio;
     }
 
     /**
      * Modifica la fecha de incio del cargo del administrador.
      *
-     * @param fecha_inicio fecha de inicio del cargo del administrador.
+     * @param fechaInicio fecha de inicio del cargo del administrador.
      */
-    public void setFecha_Inicio(String fecha_inicio) {
-        this.fecha_inicio = fecha_inicio;
+    public void setFechaInicio(String fechaInicio) {
+        this.fechaInicio = fechaInicio;
     }
 
     /**

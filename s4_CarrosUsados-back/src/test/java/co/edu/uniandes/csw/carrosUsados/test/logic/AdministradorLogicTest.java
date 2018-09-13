@@ -3,12 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package co.edu.uniandes.csw.carrosUsados.test.persistence;
+package co.edu.uniandes.csw.carrosUsados.test.logic;
 
 import co.edu.uniandes.csw.carrosUsados.entities.AdministradorEntity;
+import co.edu.uniandes.csw.carrosUsados.ejb.AdministradorLogic;
+import co.edu.uniandes.csw.carrosUsados.exceptions.BusinessLogicException;
 import co.edu.uniandes.csw.carrosUsados.persistence.AdministradorPersistence;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Date;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -29,10 +34,12 @@ import uk.co.jemos.podam.api.PodamFactoryImpl;
  * @author js.bravo
  */
 @RunWith(Arquillian.class)
-public class AdministradorPersistenceTest {
+public class AdministradorLogicTest {
 
+   private PodamFactory factory = new PodamFactoryImpl();
+   
     @Inject
-    private AdministradorPersistence administradorPersistence;
+    private AdministradorLogic administradorLogic;
 
     @PersistenceContext
     private EntityManager em;
@@ -46,6 +53,7 @@ public class AdministradorPersistenceTest {
     public static JavaArchive createDeployment() {
         return ShrinkWrap.create(JavaArchive.class)
                 .addPackage(AdministradorEntity.class.getPackage())
+                .addPackage(AdministradorLogic.class.getPackage())
                 .addPackage(AdministradorPersistence.class.getPackage())
                 .addAsManifestResource("META-INF/persistence.xml", "persistence.xml")
                 .addAsManifestResource("META-INF/beans.xml", "beans.xml");
@@ -99,10 +107,32 @@ public class AdministradorPersistenceTest {
      * Prueba para crear un Administrador en la DB.
      */
     @Test
-    public void createAdministradorTest() {
+    public void createAdministradorTest() throws BusinessLogicException {
         PodamFactory factory = new PodamFactoryImpl();
         AdministradorEntity newEntity = factory.manufacturePojo(AdministradorEntity.class);
-        AdministradorEntity result = administradorPersistence.create(newEntity);
+        /**
+        * Datos ejemplo que sí cumplen las reglas de negocio
+        * Nombres sin números
+        * correo(@)dominio.(*)
+        * telefono 3[9]
+        * contrasena fuerte (min una mayuscula, minuscula, simbolo, numero, 8 chars)
+        * Fecha nacimiento >= 18 años
+        * Cargo sin números
+        * Cargo empezado en el pasado (>=0 años de iniciado el cargo) 
+        */
+
+        newEntity.setNombreUsuario("js.bravo");
+        newEntity.setNombre("Juan");
+        newEntity.setApellido("Bravo");
+        newEntity.setCorreo("js.bravo@uniandes.edu.co");
+        newEntity.setTelefono("3000000000");
+        newEntity.setContrasena("ConTra$EN3Fu3Rte");
+        Date mayor = new GregorianCalendar(1999, Calendar.JANUARY, 1).getTime();
+  newEntity.setFechaNacimiento(mayor);
+    newEntity.setCargo("Desarrollador");
+      Date inicio = new GregorianCalendar(2018, Calendar.SEPTEMBER, 10).getTime();
+    newEntity.setFechaInicio(inicio);
+        AdministradorEntity result = administradorLogic.createAdministrador(newEntity);
 
         Assert.assertNotNull(result);
 
@@ -124,7 +154,7 @@ public class AdministradorPersistenceTest {
      */
     @Test
     public void getAdministradoresTest() {
-        List<AdministradorEntity> list = administradorPersistence.findAll();
+        List<AdministradorEntity> list = administradorLogic.getAdministradores();
         Assert.assertEquals(data.size(), list.size());
         for (AdministradorEntity ent : list) {
             boolean found = false;
@@ -141,9 +171,9 @@ public class AdministradorPersistenceTest {
      * Prueba para consultar un Administrador.
      */
     @Test
-    public void getAdministradorTest() {
+    public void getAdministradorTest() throws BusinessLogicException {
         AdministradorEntity entity = data.get(0);
-        AdministradorEntity newEntity = administradorPersistence.find(entity.getId());
+        AdministradorEntity newEntity = administradorLogic.getAdministrador(entity.getId());
         Assert.assertNotNull(newEntity);
 
         Assert.assertEquals(newEntity.getNombre(), entity.getNombre());
@@ -163,7 +193,7 @@ public class AdministradorPersistenceTest {
     @Test
     public void deleteAdministradorTest() {
         AdministradorEntity entity = data.get(0);
-        administradorPersistence.delete(entity.getId());
+        administradorLogic.deleteAdministrador(entity.getId());
         AdministradorEntity deleted = em.find(AdministradorEntity.class, entity.getId());
         Assert.assertNull(deleted);
     }
@@ -172,14 +202,33 @@ public class AdministradorPersistenceTest {
      * Prueba para actualizar un Administrador.
      */
     @Test
-    public void updateAdministradorTest() {
+    public void updateAdministradorTest() throws BusinessLogicException {
         AdministradorEntity entity = data.get(0);
         PodamFactory factory = new PodamFactoryImpl();
         AdministradorEntity newEntity = factory.manufacturePojo(AdministradorEntity.class);
-
-        newEntity.setId(entity.getId());
-
-        administradorPersistence.update(newEntity);
+newEntity.setId(entity.getId());
+/**
+* Datos ejemplo que sí cumplen las reglas de negocio
+* Nombres sin números
+* correo(@)dominio.(*)
+* telefono 3[9]
+* contrasena fuerte (min una mayuscula, minuscula, simbolo, numero, 8 chars)
+* Fecha nacimiento >= 18 años
+* Cargo sin números
+* Cargo empezado en el pasado (>=0 años de iniciado el cargo) 
+*/
+        newEntity.setNombreUsuario("js.bravo");
+        newEntity.setNombre("Juan");
+        newEntity.setApellido("Bravo");
+        newEntity.setCorreo("js.bravo@uniandes.edu.co");
+        newEntity.setTelefono("3000000000");
+        newEntity.setContrasena("ConTra$EN3Fu3Rte");
+        Date mayor = new GregorianCalendar(1999, Calendar.JANUARY, 1).getTime();
+  newEntity.setFechaNacimiento(mayor);
+    newEntity.setCargo("Desarrollador");
+      Date inicio = new GregorianCalendar(2018, Calendar.SEPTEMBER, 10).getTime();
+    newEntity.setFechaInicio(inicio);
+        administradorLogic.updateAdministrador(newEntity.getId(), newEntity);
 
         AdministradorEntity updated = em.find(AdministradorEntity.class, entity.getId());
 
@@ -193,4 +242,76 @@ public class AdministradorPersistenceTest {
         Assert.assertEquals(newEntity.getCorreo(), updated.getCorreo());
         Assert.assertEquals(newEntity.getFechaNacimiento(), updated.getFechaNacimiento());
     }
+
+     /**
+      * Prueba para actualizar un Administrador con datos incorrectos.
+      */
+     @Test(expected = BusinessLogicException.class)
+     public void updateAdministradorTestNombreInvalido() throws BusinessLogicException {
+         AdministradorEntity entity = data.get(0);
+         PodamFactory factory = new PodamFactoryImpl();
+         AdministradorEntity newEntity = factory.manufacturePojo(AdministradorEntity.class);
+ 
+         newEntity.setId(entity.getId());
+  newEntity.setNombre("");
+         administradorLogic.updateAdministrador(newEntity.getId(), newEntity);
+
+     }
+     /**
+      * Prueba para actualizar un Administrador con datos incorrectos.
+      */
+     @Test(expected = BusinessLogicException.class)
+     public void updateAdministradorTestCorreoInvalido() throws BusinessLogicException {
+         AdministradorEntity entity = data.get(0);
+         PodamFactory factory = new PodamFactoryImpl();
+         AdministradorEntity newEntity = factory.manufacturePojo(AdministradorEntity.class);
+ 
+         newEntity.setId(entity.getId());
+  newEntity.setCorreo("correo");
+         administradorLogic.updateAdministrador(newEntity.getId(), newEntity);
+
+     }
+     /**
+      * Prueba para actualizar un Administrador con datos incorrectos.
+      */
+     @Test(expected = BusinessLogicException.class)
+     public void createAdministradorTestTelefonoInvalido() throws BusinessLogicException {
+         AdministradorEntity entity = data.get(0);
+         PodamFactory factory = new PodamFactoryImpl();
+         AdministradorEntity newEntity = factory.manufacturePojo(AdministradorEntity.class);
+ 
+         newEntity.setId(entity.getId());
+  newEntity.setTelefono("2000000000");
+         administradorLogic.updateAdministrador(newEntity.getId(), newEntity);
+
+     }
+     /**
+      * Prueba para actualizar un Administrador con datos incorrectos.
+      */
+     @Test(expected = BusinessLogicException.class)
+     public void updateAdministradorTestContrasenaInvalida() throws BusinessLogicException {
+         AdministradorEntity entity = data.get(0);
+         PodamFactory factory = new PodamFactoryImpl();
+         AdministradorEntity newEntity = factory.manufacturePojo(AdministradorEntity.class);
+ 
+         newEntity.setId(entity.getId());
+  newEntity.setContrasena("contrasena");
+         administradorLogic.updateAdministrador(newEntity.getId(), newEntity);
+
+     }
+     /**
+      * Prueba para actualizar un Administrador con datos incorrectos.
+      */
+     @Test(expected = BusinessLogicException.class)
+     public void updateAdministradorTestFechaInicioInvalida() throws BusinessLogicException {
+         AdministradorEntity entity = data.get(0);
+         PodamFactory factory = new PodamFactoryImpl();
+         AdministradorEntity newEntity = factory.manufacturePojo(AdministradorEntity.class);
+ 
+         newEntity.setId(entity.getId());
+         Date inicio = new GregorianCalendar(Calendar.getInstance().get(Calendar.YEAR)+1, Calendar.getInstance().get(Calendar.MONTH)+1, Calendar.getInstance().get(Calendar.DATE)+1).getTime();
+       newEntity.setFechaInicio(inicio);
+         administradorLogic.updateAdministrador(newEntity.getId(), newEntity);
+
+     }
 }

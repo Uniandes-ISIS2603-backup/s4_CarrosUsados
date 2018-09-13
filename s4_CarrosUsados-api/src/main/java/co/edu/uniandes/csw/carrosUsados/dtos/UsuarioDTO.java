@@ -40,12 +40,12 @@ public class UsuarioDTO {
     /**
      * Cadena de caracteres que representa el login del usuario en el sistema.
      */
-    private String nombre_usuario;
+    private String nombreUsuario;
     /**
      * Cadena de caracteres que representa la fecha de nacimiento del usuario en
      * el sistema.
      */
-    private String fecha_nacimiento;
+    private String fechaNacimiento;
     /**
      * Cadena de caracteres que representa el telefono de contacto del usuario
      * en el sistema.
@@ -127,14 +127,14 @@ public class UsuarioDTO {
     /**
      * Devuelve la contrasena del Usuario.
      *
-     * @return contraasena del usuario
+     * @return contrasena del usuario.
      */
     public String getContrasena() {
         return contrasena;
     }
 
     /**
-     * Modifica la contrasena del usuario..
+     * Modifica la contrasena del usuario.
      *
      * @param contrasena contrasena del usuario.
      */
@@ -147,17 +147,17 @@ public class UsuarioDTO {
      *
      * @return login del usuario
      */
-    public String getNombre_Usuario() {
-        return nombre_usuario;
+    public String getNombreUsuario() {
+        return nombreUsuario;
     }
 
     /**
-     * Modifica el login del usuario..
+     * Modifica el login del usuario.
      *
-     * @param nombre_usuario El login del usuario.
+     * @param nombreUsuario El login del usuario.
      */
-    public void setNombre_Usuario(String nombre_usuario) {
-        this.nombre_usuario = nombre_usuario;
+    public void setNombreUsuario(String nombreUsuario) {
+        this.nombreUsuario = nombreUsuario;
     }
 
     /**
@@ -165,17 +165,17 @@ public class UsuarioDTO {
      *
      * @return fecha de nacimiento del usuario
      */
-    public String getFecha_Nacimiento() {
-        return fecha_nacimiento;
+    public String getFechaNacimiento() {
+        return fechaNacimiento;
     }
 
     /**
-     * Modifica la fecha de nacimiento del usuario..
+     * Modifica la fecha de nacimiento del usuario.
      *
-     * @param fecha_nacimiento fecha de nacimiento del usuario.
+     * @param fechaNacimiento fecha de nacimiento del usuario.
      */
-    public void setFecha_Nacimiento(String fecha_nacimiento) {
-        this.fecha_nacimiento = fecha_nacimiento;
+    public void setFechaNacimiento(String fechaNacimiento) {
+        this.fechaNacimiento = fechaNacimiento;
     }
 
     /**
@@ -184,11 +184,11 @@ public class UsuarioDTO {
      * @return telefono del usuario
      */
     public String getTelefono() {
-        return contrasena;
+        return telefono;
     }
 
     /**
-     * Modifica el telofono del usuario..
+     * Modifica el telefono del usuario.
      *
      * @param telefono telefono del usuario.
      */
