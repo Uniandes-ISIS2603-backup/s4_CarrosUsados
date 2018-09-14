@@ -5,7 +5,6 @@
  */
 package co.edu.uniandes.csw.carrosUsados.resources;
 
-import co.edu.uniandes.csw.carrosUsados.dtos.AutomovilDTO;
 import co.edu.uniandes.csw.carrosUsados.dtos.FichaTecnicaDTO;
 import co.edu.uniandes.csw.carrosUsados.ejb.FichaTecnicaLogic;
 import co.edu.uniandes.csw.carrosUsados.entities.FichaTecnicaEntity;

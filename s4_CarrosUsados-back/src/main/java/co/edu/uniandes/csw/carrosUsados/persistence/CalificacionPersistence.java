@@ -6,19 +6,18 @@
 package co.edu.uniandes.csw.carrosUsados.persistence;
 
 import co.edu.uniandes.csw.carrosUsados.entities.CalificacionEntity;
-import co.edu.uniandes.csw.carrosUsados.entities.PuntoVentaEntity;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
 import javax.persistence.TypedQuery;
+ 
 
 /**
  *
- * @author estudiante
+ * @author Daniella Arteaga
  */
 @Stateless
 public class CalificacionPersistence {
@@ -32,9 +31,9 @@ public class CalificacionPersistence {
       
       
        public CalificacionEntity create(CalificacionEntity reviewEntity) {
-        LOGGER.log(Level.INFO, "Creando un review nuevo");
+        LOGGER.log(Level.INFO, "Creando una calificación nueva");
         em.persist(reviewEntity);
-        LOGGER.log(Level.INFO, "Review creado");
+        LOGGER.log(Level.INFO, "Calificación creada");
         return reviewEntity;
     }
 
@@ -54,7 +53,7 @@ public class CalificacionPersistence {
 
      public List<CalificacionEntity> findAll() {
         LOGGER.log(Level.INFO, "Consultando todos las calificaciones");
-        Query q = em.createQuery("select u from CalificacionEntity u");
+        TypedQuery q = em.createQuery("select u from CalificacionEntity u", CalificacionEntity.class);
         return q.getResultList();
     }
     
