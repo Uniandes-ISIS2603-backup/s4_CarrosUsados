@@ -42,7 +42,7 @@ public class CalificacionLogic {
             throw new BusinessLogicException("Ya existe esta calificación.");
         }
         
-        if(entityNew.getComentario()==null || (entityNew.getComentario()==""))
+        if(entityNew.getComentario()==null)
         {
             throw new BusinessLogicException("Comentario inválido");
         }
@@ -53,13 +53,13 @@ public class CalificacionLogic {
         }
         
         CalificacionEntity entity= persistencia.create(entityNew);
-        LOGGER.log(Level.INFO, "Finaliza la creción de la calificación");
+        LOGGER.log(Level.INFO, "Finaliza la creación de la calificación");
         return entity;
     }
     
     public List<CalificacionEntity> getCalificaciones()
     {
-        LOGGER.log(Level.INFO, "Iniciaconsulta de calificaciones");
+        LOGGER.log(Level.INFO, "Inicia consulta de calificaciones");
         List<CalificacionEntity> lista= persistencia.findAll();
         LOGGER.log(Level.INFO, "Termina consulta");
         return lista;
@@ -91,9 +91,9 @@ public class CalificacionLogic {
     
      public CalificacionEntity updateCalificacion(Long calificacionId, CalificacionEntity calificacionEntity) {
         LOGGER.log(Level.INFO, "Inicia proceso de actualizar  la calificación con id = {0}", calificacionId);
-        CalificacionEntity newAuthorEntity = persistencia.update(calificacionEntity);
+        CalificacionEntity newCalificacionEntity = persistencia.update(calificacionEntity);
         LOGGER.log(Level.INFO, "Termina proceso de actualizar la calificación con id = {0}", calificacionId);
-        return newAuthorEntity;
+        return newCalificacionEntity;
     }
      
      

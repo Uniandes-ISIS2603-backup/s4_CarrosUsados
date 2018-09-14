@@ -5,8 +5,12 @@
  */
 package co.edu.uniandes.csw.carrosUsados.dtos;
 
+import co.edu.uniandes.csw.carrosUsados.entities.AutomovilEntity;
+import co.edu.uniandes.csw.carrosUsados.entities.CalificacionEntity;
 import co.edu.uniandes.csw.carrosUsados.entities.PuntoVentaEntity;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -18,6 +22,8 @@ public class PuntoVentaDTO implements Serializable {
     private String ubicacion;
     private String ciudad;
     private long id;
+    private AutomovilEntity automovil;
+    private List<CalificacionEntity> calificaciones =new ArrayList<CalificacionEntity>();
 
     public PuntoVentaDTO() {
     }
@@ -27,8 +33,22 @@ public class PuntoVentaDTO implements Serializable {
         this.ubicacion = puntoVenta.getUbicacion();
         this.ciudad = puntoVenta.getCiudad();
         this.id = puntoVenta.getId();
+        this.calificaciones= puntoVenta.getCalificaciones();
+        this.automovil= puntoVenta.getAutomovil();
     }
 
+    public PuntoVentaEntity toEntity()
+    {
+        PuntoVentaEntity entity= new PuntoVentaEntity();
+        entity.setAutomovil(this.automovil);
+        entity.setCalificaciones(calificaciones);
+        entity.setCiudad(this.ciudad);
+        entity.setEmpleados(num_vendedores);
+        entity.setUbicacion(this.ubicacion);
+        entity.setId(this.id);
+        
+        return entity;
+    }
     public void setNumVendedores(int num) {
         this.num_vendedores = num;
     }
