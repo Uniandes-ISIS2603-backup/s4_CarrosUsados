@@ -14,7 +14,11 @@ import java.util.List;
 
 /**
  *
- * @author estudiante
+ *  Objeto de transferencia de datos Puntos de venta. Los DTO
+ * contienen las representaciones de los JSON que se transfieren entre el
+ * cliente y el servidor.
+ *
+ * @author Daniella Arteaga
  */
 public class PuntoVentaDTO implements Serializable {
 
@@ -25,9 +29,19 @@ public class PuntoVentaDTO implements Serializable {
     private AutomovilEntity automovil;
     private List<CalificacionEntity> calificaciones =new ArrayList<CalificacionEntity>();
 
+    /**
+     *Constructor
+     */
     public PuntoVentaDTO() {
     }
-
+  
+    
+    /**
+     * Conviertir Entity a DTO (Crea un nuevo DTO con los valores que recibe en
+     * la entidad que viene de argumento.
+     *
+     * @param puntoVenta Entity: Es la entidad que se va a convertir a DTO
+     */
     public PuntoVentaDTO(PuntoVentaEntity puntoVenta) {
         this.num_vendedores = puntoVenta.getEmpleados();
         this.ubicacion = puntoVenta.getUbicacion();
@@ -37,6 +51,12 @@ public class PuntoVentaDTO implements Serializable {
         this.automovil= puntoVenta.getAutomovil();
     }
 
+  
+    /**
+     * Convertir DTO a Entity
+     *
+     * @return Un Entity con los valores del DTO
+     */
     public PuntoVentaEntity toEntity()
     {
         PuntoVentaEntity entity= new PuntoVentaEntity();
@@ -49,34 +69,76 @@ public class PuntoVentaDTO implements Serializable {
         
         return entity;
     }
+
+       /**
+     * Modifica el número de punto de venta
+     *
+     * @param num  número nuevo de vendedores
+     */
     public void setNumVendedores(int num) {
         this.num_vendedores = num;
     }
 
+   /**
+     * Devuelve numero de vendedores de punto
+     *
+     * @return num_vendedores numero de vendedores
+     * 
+     */
     public int getNumVendedores() {
         return num_vendedores;
     }
 
+      /**
+     * Modifica la ubicación de punto
+     *
+     * @param ubicar ubicacion nueva
+     */
     public void setUbicacion(String ubicar) {
         this.ubicacion = ubicar;
     }
 
+   /**
+     * Devuelve la ubicación de punto
+     *
+     * @return ubicacion ubicacion del punto
+     */
     public String getUbicacion() {
         return ubicacion;
     }
 
+       /**
+     * Modifica la ciudad de punto
+     *
+     * @param ciudad nueva ciudad
+     */
     public void setCiudad(String ciudadn) {
         this.ciudad = ciudadn;
     }
 
+    /**
+     * Devuelve la ciudad de punto
+     *
+     * @return ciudad la ciudad del punto de venta
+     */
     public String getCiudad() {
         return ciudad;
     }
 
+    /**
+     * Modifica el id de punto.
+     *
+     * @param idnueva nueva id 
+     */
     public void setId(long idnueva) {
         this.id = idnueva;
     }
 
+    /**
+     * Devuelve el ID de punto
+     *
+     * @return id id de punto
+     */
     public long getId() {
         return id;
     }

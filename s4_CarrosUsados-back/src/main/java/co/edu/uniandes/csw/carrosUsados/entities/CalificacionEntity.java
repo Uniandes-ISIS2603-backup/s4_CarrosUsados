@@ -14,8 +14,9 @@ import javax.persistence.TemporalType;
 import uk.co.jemos.podam.common.PodamExclude;
 
 /**
- *
- * @author estudiante
+ * Clase que representa una calificación en la persistencia y permite su
+ * serialización.
+ * @author Daniella Arteaga
  */
 @Entity
 public class CalificacionEntity extends BaseEntity implements Serializable{
@@ -35,67 +36,116 @@ public class CalificacionEntity extends BaseEntity implements Serializable{
     @ManyToOne
     private AutomovilEntity automovil;
     
+    /**
+     * Constructor de entidad.
+     */
     public CalificacionEntity()
     {
         
     }
     
+    /**
+     *  Obtiene punto de venta de la calificación
+     * @return puntoVenta de la calificación
+     */
     public PuntoVentaEntity getPuntoVenta()
     {
         return puntoVenta;
     }
     
+    /**
+     * Modifica el punto de venta de la calificación
+     * @param puntoEntity punto que se califica.
+     */
     public void setPuntoVenta(PuntoVentaEntity puntoEntity)
     {
         this.puntoVenta=puntoEntity;
     }
     
+    /**
+     *  Retorna número de estrellas asignado a la calificación.
+     * @return número de estrellas de calificación.
+     */
     public int getEstrellas()
     {
          return num_estrellas;   
     }
     
+    /**
+     * Modifica número de estrellas de la calificación.
+     * @param num número de estrellas a reasignar de la calificación.
+     */
     public void setEstrellas(int num)
             
     {
         this.num_estrellas=num;
     }
     
-    
-    
+    /**
+     * Devuelve comentario de la calificación. 
+     * @return comentario asignado a la calificación.
+     */
     public String getComentario()
     {
         return comentario;
     }
     
+    /**
+     * Modifica comentario de la calificación.
+     * @param com comentario que se va a asignar a la calificación.
+     */
     public void setComentario(String com)
     {  
         this.comentario=com;
                    
     }
     
+    /**
+     * Devuelve fecha de publicación de la calificación.
+     * @return publishDate fecha de la publicación.
+     */
     public Date getpublishedDate()
     {
         return publishDate;
     }
     
+    /**
+     * Modifica la fecha de publicación.
+     * @param newDate nueva fecha a asignar.
+     */
     public void setPublishDate(Date newDate)
     {
         this.publishDate=newDate;
     }
 
+    /**
+     * Devuelve número de estrellas que tiene calificación.
+     * @return num_estrellas número de estrellas que tiene calificación.
+     */
     public int getNum_estrellas() {
         return num_estrellas;
     }
 
+    /**
+     *  Modifica número de estrellas de la calificación.
+     * @param num_estrellas número de estrellas a asignar.
+     */
     public void setNum_estrellas(int num_estrellas) {
         this.num_estrellas = num_estrellas;
     }
 
+    /**
+     *  Devuelve auto de la calificación.
+     * @return automovil de la calificación a devolver.
+     */
     public AutomovilEntity getAutomovil() {
         return automovil;
     }
 
+    /**
+     *  Modifica el carro asignado a la calificación.
+     * @param automovil entidad del auto con el que se va a modificar.
+     */
     public void setAutomovil(AutomovilEntity automovil) {
         this.automovil = automovil;
     }
