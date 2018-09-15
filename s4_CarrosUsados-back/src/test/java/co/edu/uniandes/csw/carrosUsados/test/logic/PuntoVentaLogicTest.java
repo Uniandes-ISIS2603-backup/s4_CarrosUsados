@@ -5,14 +5,9 @@
  */
 package co.edu.uniandes.csw.carrosUsados.test.logic;
 
-import co.edu.uniandes.csw.carrosUsados.ejb.CalificacionLogic;
 import co.edu.uniandes.csw.carrosUsados.ejb.PuntoVentaLogic;
-import co.edu.uniandes.csw.carrosUsados.entities.AutomovilEntity;
-import co.edu.uniandes.csw.carrosUsados.entities.CalificacionEntity;
 import co.edu.uniandes.csw.carrosUsados.entities.PuntoVentaEntity;
 import co.edu.uniandes.csw.carrosUsados.exceptions.BusinessLogicException;
-import co.edu.uniandes.csw.carrosUsados.persistence.AutomovilPersistence;
-import co.edu.uniandes.csw.carrosUsados.persistence.CalificacionPersistence;
 import co.edu.uniandes.csw.carrosUsados.persistence.PuntoVentaPersistence;
 import java.util.ArrayList;
 import java.util.List;

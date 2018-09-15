@@ -6,6 +6,7 @@
 package co.edu.uniandes.csw.carrosUsados.resources;
 
 import co.edu.uniandes.csw.carrosUsados.dtos.CalificacionDTO;
+import co.edu.uniandes.csw.carrosUsados.dtos.CalificacionDetailDTO;
 import co.edu.uniandes.csw.carrosUsados.dtos.PuntoVentaDetailDTO;
 import co.edu.uniandes.csw.carrosUsados.ejb.CalificacionLogic;
 import co.edu.uniandes.csw.carrosUsados.ejb.PuntoVentaLogic;
@@ -31,8 +32,8 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.WebApplicationException;
 
 /**
- *
- * @author estudiante
+ * Clase que implementa el recurso "calificaciones".
+ * @author Daniella Arteaga
  */
 @Path("calificaciones")
 @Produces("application/json")
@@ -44,7 +45,17 @@ public class CalificacionResource {
     
     @Inject
     private CalificacionLogic calificacionLogic;
+    
 
+   /**
+     * Busca la calificación con el id asociado recibido en la URL y la devuelve.
+     *
+     * @param calificacionId Id Identificador de la calificación que se está buscando. Esta debe
+     * ser una cadena de dígitos.
+     * @return JSON {@link CalificacionDTO} - La calificación buscada
+     * @throws WebApplicationException {@link WebApplicationExceptionMapper} -
+     * Error de lógica que se genera cuando no se encuentra el autor.
+     */
     @GET
     @Path("{calificacionId: \\d+}")
     public CalificacionDTO getCalificacion(@PathParam("calificacionId") long calificacionId) throws BusinessLogicException {
@@ -62,15 +73,31 @@ public class CalificacionResource {
     }
 
     
+    
+     /**
+     * Busca y devuelve todas las calificaciones que existen en la aplicacion.
+     *
+     * @return JSONArray {@link CalificacionDTO} - Los libros encontrados en la
+     * aplicación. Si no hay ninguno retorna una lista vacía.
+     */
     @GET
-    public List<CalificacionDTO> getCalificaciones()
+    public List<CalificacionDetailDTO> getCalificaciones()
     {
        LOGGER.log(Level.INFO, "CalificacionResource getCalificaciones: input:void");
-       List<CalificacionDTO> calificaciones=listEntity2DTO(calificacionLogic.getCalificaciones());
+       List<CalificacionDetailDTO> calificaciones=listEntity2DTO(calificacionLogic.getCalificaciones());
        LOGGER.log(Level.INFO, "CalificacionResource getCalificaciones: output:",calificaciones.toString()); 
        return calificaciones;
     }
     
+    /**
+     * Crea una nueva calificación con la informacion que se recibe en el cuerpo de la
+     * petición y se regresa un objeto identico con un id auto-generado por la
+     * base de datos.
+     *
+     * @param califica  {@link CaliificacionDTO} - la calificación que se desea guardar.
+     * @return JSON {@link CalificacionDTO} - la calificación guardado con el atributo id
+     * autogenerado.
+     */
     @POST
     public CalificacionDTO createCalificacion(CalificacionDTO califica) throws BusinessLogicException {
        
@@ -80,6 +107,20 @@ public class CalificacionResource {
         return calificacion;
     }
 
+    /**
+     * Actualiza la calificación con el id recibido en la URL con la información que se
+     * recibe en el cuerpo de la petición.
+     *
+     * @param calificacionId Id Identificador  la calificación que se desea actualizar. Este debe
+     * ser una cadena de dígitos.
+     * @param calificacion  {@link CalificacionDTO} El libro que se desea guardar.
+     * @return JSON {@link CalificacionDTO} - la calificación guardada.
+     * @throws WebApplicationException {@link WebApplicationExceptionMapper} -
+     * Error de lógica que se genera cuando no se encuentra la calificación a
+     * actualizar.
+     * @throws BusinessLogicException {@link BusinessLogicExceptionMapper} -
+     * Error de lógica que se genera cuando no se puede actualizar la calificación.
+     */
     @PUT
     @Path("{calificacionId: \\d+}")
     public CalificacionDTO updateCalificacion(@PathParam("calificacionId") Long calificacionId, CalificacionDTO calificacion) throws BusinessLogicException {
@@ -96,6 +137,14 @@ public class CalificacionResource {
        return  calificacionDTO;
     }
 
+    /**
+     * Borra la calificación con el id asociado recibido en la URL.
+     *
+     * @param calificacionId Id Identificador de la calificación que se desea borrar. Este debe ser
+     * una cadena de dígitos.
+     * @throws WebApplicationException {@link WebApplicationExceptionMapper} -
+     * Error de lógica que se genera cuando no se encuentra la calificación.
+     */
     @DELETE
     @Path("{calificacionId: \\d+}")
     public void deleteCalificacion(@PathParam("calificacionId") Long calificacionId) throws BusinessLogicException {
@@ -123,10 +172,10 @@ public class CalificacionResource {
      * vamos a convertir a DTO.
      * @return la lista de libros en forma DTO (json)
      */
-    private List<CalificacionDTO> listEntity2DTO(List<CalificacionEntity> entityList) {
-        List<CalificacionDTO> list = new ArrayList<>();
+    private List<CalificacionDetailDTO> listEntity2DTO(List<CalificacionEntity> entityList) {
+        List<CalificacionDetailDTO> list = new ArrayList<>();
         for (CalificacionEntity entity : entityList) {
-            list.add(new CalificacionDTO(entity));
+            list.add(new CalificacionDetailDTO(entity));
         }
         return list;
     }
