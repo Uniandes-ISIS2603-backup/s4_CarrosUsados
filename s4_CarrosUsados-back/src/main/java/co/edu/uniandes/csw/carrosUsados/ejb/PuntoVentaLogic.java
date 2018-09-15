@@ -16,7 +16,8 @@ import javax.ejb.Stateless;
 import javax.inject.Inject;
 
 /**
- *
+ * Clase que implementa la conexion con la persistencia para la entidad de PuntoVenta.
+ * 
  * @author estudiante
  */
 @Stateless
@@ -27,6 +28,14 @@ public class PuntoVentaLogic {
     private static final Logger LOGGER = Logger.getLogger(PuntoVentaLogic.class.getName());
     
      
+    /**
+     * Crea un punto de venta en la persistencia.
+     *
+     * @param entityNew  La entidad que representa el punto de venta a
+     * persistir.
+     * @return La entiddad de punto de venta luego de persistirla.
+     * @throws BusinessLogicException Si puntos de venta a persistir ya existe.
+     */
     public PuntoVentaEntity createPuntoVenta(PuntoVentaEntity entityNew) throws BusinessLogicException
     {
         LOGGER.log(Level.INFO, "Inicia creación del punto de venta");
@@ -40,6 +49,14 @@ public class PuntoVentaLogic {
         return entity;
     }
     
+    
+    
+    /**
+     *
+     * Obtener todas los puntos de venta existentes en la base de datos.
+     *
+     * @return una lista de puntos de venta
+     */
     public List<PuntoVentaEntity> getPuntosDeVenta()
     {
         LOGGER.log(Level.INFO, "Inicia consulta de puntos de venta");
@@ -51,6 +68,14 @@ public class PuntoVentaLogic {
     
     
     
+     /**
+     *
+     * Obtener un punto por medio de su id.
+     *
+     * @param puntoVentaId Id: id de punto para ser buscado.
+     * @throws BusinessLogicException si el ID es inválido  o si este no existe.
+     * @return punto solicitado por medio de su id. 
+     */
     
     public PuntoVentaEntity getPuntoVenta(Long puntoVentaId) throws BusinessLogicException
     {
@@ -61,16 +86,26 @@ public class PuntoVentaLogic {
             throw new BusinessLogicException("ID inválido");
         }
          PuntoVentaEntity puntoVentaEntity = persistencia.find(puntoVentaId);
-        if (puntoVentaEntity == null) {
-            LOGGER.log(Level.SEVERE, "El punto de venta con el id = {0} no existe", puntoVentaId);
+        
+         if (puntoVentaEntity == null) {
+             
+             throw new BusinessLogicException("El punto de venta con el id = {0} no existe");  
         }
         LOGGER.log(Level.INFO, "Termina proceso de consultar el punto de venta con id = {0}", puntoVentaId);
         return puntoVentaEntity;
     }
     
     
-    
-    
+      /**
+     *
+     * Actualizar un punto.
+     *
+     * @param puntoVentaId Id: id de punto para buscarlo en la base de
+     * datos.
+     * @param puntoVentaEntity Entity:punto con los cambios para ser actualizado,
+     * por ejemplo el nombre.
+     * @return punto con los cambios actualizados en la base de datos.
+     */
      public PuntoVentaEntity updatePuntoVenta(Long puntoVentaId, PuntoVentaEntity puntoVentaEntity) {
         LOGGER.log(Level.INFO, "Inicia proceso de actualizar el punto de venta con id = {0}", puntoVentaId);
         PuntoVentaEntity newPuntoEntity = persistencia.update(puntoVentaEntity);
@@ -80,6 +115,12 @@ public class PuntoVentaLogic {
      
      
      
+     /**
+     * Borrar un punto
+     *
+     * @param puntoVentaId Id: id del punto a borrar
+     * @throws BusinessLogicException Si el punto de venta no existe.
+     */
         public void deletePuntoVenta(Long puntoVentaId) throws BusinessLogicException {
         LOGGER.log(Level.INFO, "Inicia proceso de borrar el punto de venta con id = {0}", puntoVentaId);
         

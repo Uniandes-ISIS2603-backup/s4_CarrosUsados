@@ -31,8 +31,8 @@ import javax.ws.rs.WebApplicationException;
 
 
 /**
- *
- * @author estudiante
+ * Clase que implementa el recurso "puntos".
+ * @author Daniella Arteaga
  */
 @Path("puntos")
 @Produces("application/json")
@@ -55,6 +55,19 @@ public class PuntoVentaResource {
         return lista;
     }
     
+    
+    
+        /**
+     * Busca y devuelve el punto con el ID recibido en la URL
+     * 
+     *
+     * @param id  El ID del punto del cual se busca
+     * @return {@link PuntoVentaDTO} - el punto buscado.
+     * @throws BusinessLogicException {@link BusinessLogicExceptionMapper} -
+     * Error de lógica que se genera cuando no se encuentra el punto.
+     * @throws WebApplicationException {@link WebApplicationExceptionMapper} -
+     * Error de lógica que se genera cuando no se encuentra el punto.
+     */
     @GET
     @Path("{puntoId: \\d+}")
     public PuntoVentaDTO getPuntoVenta(@PathParam("puntoId") long id) throws BusinessLogicException {
@@ -69,6 +82,19 @@ public class PuntoVentaResource {
 
     }
 
+    
+    /**
+     * Crea un nuevo punto con la informacion que se recibe en el cuerpo de la
+     * petición y se regresa un objeto identico con un id auto-generado por la
+     * base de datos.
+     *
+     * @param punto {@link PuntoVentaDTO} - EL punto que se desea guardar.
+     * @return JSON {@link PuntoVentaDTO} - El punto guardado con el atributo id
+     * autogenerado.
+     * @throws BusinessLogicException {@link BusinessLogicExceptionMapper} -
+     * Error de lógica que se genera cuando ya existe el punto o el id es
+     * inválido o si el punto ingresada es invalido.
+     */
     @POST
     public PuntoVentaDTO createPuntoVenta(PuntoVentaDTO punto)throws BusinessLogicException {
         LOGGER.log(Level.INFO, "PuntoVentaResource createPunto: input:", punto.toString());
@@ -77,6 +103,17 @@ public class PuntoVentaResource {
         return nuevo;
     }
 
+    
+        /**
+     * Actualiza un punto de venta con la informacion que se recibe en el cuerpo de la
+     * petición y se regresa el objeto actualizado.
+     *
+     * @param puntoId Id El ID del libro del cual se guarda la reseña
+     * @param punto {@link PuntoVentaDTO} - el punto de venta que se desea guardar.
+     * @return JSON {@link PuntoVentaDTO} - wl punto actualizada.
+     * @throws WebApplicationException {@link WebApplicationExceptionMapper} -
+     * Error de lógica que se genera cuando no se encuentra el punto a actualizar.
+     */
     @PUT
     @Path("{puntoId: \\d+}")
     public PuntoVentaDTO updatePunto(@PathParam("puntoId") Long puntoId, PuntoVentaDTO punto) throws BusinessLogicException {
@@ -97,6 +134,17 @@ public class PuntoVentaResource {
 
     }
 
+    
+       /**
+     * Borra el punto con el id asociado recibido en la URL.
+     *
+     * @param puntoId Identificador del punto que se desea borrar. Este debe ser
+     * una cadena de dígitos.
+     * @throws co.edu.uniandes.csw.carrosUsados.exceptions.BusinessLogicException
+     * cuando el punto de venta no existe.
+     * @throws WebApplicationException {@link WebApplicationExceptionMapper} -
+     * Error de lógica que se genera cuando no se encuentra el punto.
+     */
     @DELETE
     @Path("{puntoId: \\d+}")
     public void deletePunto(@PathParam("puntoId") Long puntoId) throws BusinessLogicException {
@@ -118,9 +166,9 @@ public class PuntoVentaResource {
      * Este método convierte una lista de objetos PuntoVetaEntity a una lista de
      * objetos PuntoVentaDetailDTO (json)
      *
-     * @param entityList corresponde a la lista de libros de tipo Entity que
+     * @param entityList corresponde a la lista de puntos de tipo Entity que
      * vamos a convertir a DTO.
-     * @return la lista de libros en forma DTO (json)
+     * @return la lista de puntos en forma DTO (json)
      */
     private List<PuntoVentaDetailDTO> listEntity2DetailDTO(List<PuntoVentaEntity> entityList) {
         List<PuntoVentaDetailDTO> list = new ArrayList<>();
@@ -135,11 +183,11 @@ public class PuntoVentaResource {
      *
      * Este método conecta la ruta de /puntos con las rutas de /calificaciones que
      * dependen del punto, es una redirección al servicio que maneja el segmento
-     * de la URL que se encarga de las reseñas.
+     * de la URL que se encarga de las calificaciones.
      *
      * @param puntoId El ID del punto de venta con respecto al cual se accede al
      * servicio.
-     * @return El servicio de Reseñas para ese libro en paricular.\
+     * @return El servicio de Calificaciones para ese punto de venta en paricular.\
      * @throws WebApplicationException {@link WebApplicationExceptionMapper} -
      * Error de lógica que se genera cuando no se encuentra el punto de venta.
      */
