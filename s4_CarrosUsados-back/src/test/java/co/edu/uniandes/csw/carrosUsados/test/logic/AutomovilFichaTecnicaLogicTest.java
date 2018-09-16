@@ -126,7 +126,7 @@ public class AutomovilFichaTecnicaLogicTest {
      */
     @Test
     public void replaceFichaTecnicaTest() throws BusinessLogicException {
-        AutomovilEntity entity = data.get(2);
+        AutomovilEntity entity = data.get(0);
         automovilFichaTecnicaLogic.replaceFichaTecnica(entity.getId(), fichaTecnicaData.get(1).getId());
         entity = automovilLogic.getAutomovil(entity.getId());
         Assert.assertEquals(entity.getFichaTecnica(), fichaTecnicaData.get(1));
