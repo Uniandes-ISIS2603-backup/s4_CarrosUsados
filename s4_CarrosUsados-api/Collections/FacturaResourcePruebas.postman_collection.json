@@ -1,0 +1,137 @@
+{
+	"info": {
+		"_postman_id": "1c26184a-3bdc-4b8e-919a-64f81d3c2158",
+		"name": "FacturaResourcePruebas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetFactura",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"id\":1,\"producto\":\"volkswagen\",\"total\" : 30000, \"subtotal\": 300, \"forma_de_pago\":\"tarjeta\"}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/s4_CarrosUsados-api/api/factura/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"s4_CarrosUsados-api",
+						"api",
+						"factura",
+						"1"
+					]
+				},
+				"description": "GetFactura"
+			},
+			"response": []
+		},
+		{
+			"name": "PostFactura",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"id\":2,\"producto\":\"volkswagen2\",\"total\" : 3000000, \"subtotal\": 300000, \"forma_de_pago\":\"tarjeta\"}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/s4_CarrosUsados-api/api/factura/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"s4_CarrosUsados-api",
+						"api",
+						"factura",
+						""
+					]
+				},
+				"description": "PostFactura"
+			},
+			"response": []
+		},
+		{
+			"name": "PutFactura",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"id\":2,\"producto\":\"volkswagen4\",\"total\" : 3000000, \"subtotal\": 300000, \"forma_de_pago\":\"tarjeta\"}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/s4_CarrosUsados-api/api/factura/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"s4_CarrosUsados-api",
+						"api",
+						"factura",
+						"3"
+					]
+				},
+				"description": "PutFactura"
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteFactura",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"id\":2,\"producto\":\"volkswagen4\",\"total\" : 3000000, \"subtotal\": 300000, \"forma_de_pago\":\"tarjeta\"}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/s4_CarrosUsados-api/api/factura/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"s4_CarrosUsados-api",
+						"api",
+						"factura",
+						"3"
+					]
+				},
+				"description": "DeleteFactura"
+			},
+			"response": []
+		}
+	]
+}
