@@ -169,6 +169,7 @@ public class FacturaPersistenceTest {
         FacturaEntity newEntity = factory.manufacturePojo(FacturaEntity.class);
 
         newEntity.setId(entity.getId());
+        newEntity.setTotal(123);
 
         facturaPersistence.update(newEntity);
 

@@ -35,7 +35,7 @@ private static final Logger LOGGER = Logger.getLogger(PagoLogic.class.getName())
      */
     public FacturaEntity createFactura(FacturaEntity facturaEntity) throws BusinessLogicException {
         LOGGER.log(Level.INFO, "Inicia proceso de creación de la factura");
-        if(facturaEntity.getIdFactura()== null ){
+        if(facturaEntity.getId()== null ){
           throw new BusinessLogicException("El pago debe tener una id");
         }
         
@@ -45,9 +45,9 @@ private static final Logger LOGGER = Logger.getLogger(PagoLogic.class.getName())
             throw new BusinessLogicException("El valor total debe ser positivo");
             
         }
-        if("".equals(facturaEntity.getProducto()) && facturaEntity.getProducto()==null)
+        if(facturaEntity.getProducto()==null || "".equals(facturaEntity.getProducto()) )
         {
-            throw new BusinessLogicException("NO hay forma de pago");
+            throw new BusinessLogicException("NO hay productos");
         }
         
         persistence.create(facturaEntity);
