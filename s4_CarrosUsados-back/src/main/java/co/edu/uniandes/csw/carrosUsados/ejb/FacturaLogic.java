@@ -6,12 +6,8 @@
 package co.edu.uniandes.csw.carrosUsados.ejb;
 
 import co.edu.uniandes.csw.carrosUsados.entities.FacturaEntity;
-import co.edu.uniandes.csw.carrosUsados.entities.PagoEntity;
 import co.edu.uniandes.csw.carrosUsados.exceptions.BusinessLogicException;
 import co.edu.uniandes.csw.carrosUsados.persistence.FacturaPersistence;
-import co.edu.uniandes.csw.carrosUsados.persistence.PagoPersistence;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.ejb.Stateless;
@@ -38,9 +34,7 @@ private static final Logger LOGGER = Logger.getLogger(PagoLogic.class.getName())
         LOGGER.log(Level.INFO, "Inicia proceso de creación de la factura");
         if(facturaEntity.getId()== null ){
           throw new BusinessLogicException("El pago debe tener una id");
-        }
-        
-        
+        }       
         if (facturaEntity.getTotal()<0)
         {
             throw new BusinessLogicException("El valor total debe ser positivo");
