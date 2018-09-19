@@ -99,6 +99,12 @@ public class ArticuloLogicTest {
     private void insertData() {
         for (int i = 0; i < 3; i++) {
             ArticuloEntity entity = factory.manufacturePojo(ArticuloEntity.class);
+            if(i == 0){
+                entity.setPrecio("1000");}
+            if(i == 1){
+                entity.setPrecio("1500");}
+            if(i == 2){
+                entity.setPrecio("2000");}
             em.persist(entity);
             data.add(entity);
         }
@@ -118,6 +124,7 @@ public class ArticuloLogicTest {
         
         ArticuloEntity newEntity = factory.manufacturePojo(ArticuloEntity.class);
         newEntity.setAutomovil(automovilData.get(0));
+        newEntity.setPrecio("50");
             
         ArticuloEntity result = articuloLogic.createArticulo(newEntity);
         Assert.assertNotNull(result);
@@ -128,14 +135,64 @@ public class ArticuloLogicTest {
         Assert.assertEquals(newEntity.getUbicacion(), entity.getUbicacion());
         Assert.assertEquals(newEntity.getPrecio(), entity.getPrecio());
         Assert.assertEquals(newEntity.getAutomovil(), newEntity.getAutomovil());
+        
+        ArticuloEntity dupEntity = newEntity;
+        
+        try{
+            newEntity.setAutomovil(null);            
+            result = articuloLogic.createArticulo(newEntity);
+            Assert.fail();
+        }
+        catch(BusinessLogicException e){
+            Assert.assertEquals(dupEntity.getId(),newEntity.getId());
+            newEntity = dupEntity;
+            Assert.assertEquals(dupEntity.getAutomovil(),newEntity.getAutomovil());
+        }
+        try{
+            newEntity.setDescripcion(null);            
+            result = articuloLogic.createArticulo(newEntity);
+            Assert.fail();
+        }
+        catch(BusinessLogicException e){
+            Assert.assertEquals(dupEntity.getId(),newEntity.getId());
+            newEntity = dupEntity;
+            Assert.assertEquals(dupEntity.getDescripcion(),newEntity.getDescripcion());
+        }try{
+            newEntity.setUbicacion(null);            
+            result = articuloLogic.createArticulo(newEntity);
+            Assert.fail();
+        }
+        catch(BusinessLogicException e){            
+            Assert.assertEquals(dupEntity.getId(),newEntity.getId());
+            newEntity = dupEntity;
+            Assert.assertEquals(dupEntity.getUbicacion(),newEntity.getUbicacion());
+        }try{
+            newEntity.setPrecio(null);            
+            result = articuloLogic.createArticulo(newEntity);
+            Assert.fail();
+        }
+        catch(BusinessLogicException e){
+            Assert.assertEquals(dupEntity.getId(),newEntity.getId());
+            newEntity = dupEntity;
+            Assert.assertEquals(dupEntity.getPrecio(),newEntity.getPrecio());
+        }try{
+            newEntity.setDisponibilidad(false);            
+            result = articuloLogic.createArticulo(newEntity);
+            Assert.fail();
+        }
+        catch(BusinessLogicException e){
+            Assert.assertEquals(dupEntity.getId(),newEntity.getId());
+            newEntity = dupEntity;
+            Assert.assertEquals(dupEntity.isDisponibilidad(),newEntity.isDisponibilidad());
+        }
     }
     
     /**
      * Prueba para consultar la lista de Articuloes
      */
     @Test
-    public void getArticuloesTest() throws BusinessLogicException {
-        List<ArticuloEntity> list = articuloLogic.getArticuloes();
+    public void getArticulosTest() throws BusinessLogicException {
+        List<ArticuloEntity> list = articuloLogic.getArticulos();
         Assert.assertEquals(data.size(), list.size());
         for (ArticuloEntity entity : list) {
             boolean found = false;
@@ -146,6 +203,7 @@ public class ArticuloLogicTest {
             }
             Assert.assertTrue(found);
         }
+        
     }
     
     /**
@@ -161,6 +219,16 @@ public class ArticuloLogicTest {
         Assert.assertEquals(resultEntity.getUbicacion(), entity.getUbicacion());
         Assert.assertEquals(resultEntity.getPrecio(), entity.getPrecio());
         Assert.assertEquals(resultEntity.getAutomovil(), resultEntity.getAutomovil());
+        
+        try{        
+            resultEntity = articuloLogic.getArticulo(null);
+            Assert.fail();
+        }
+        catch(BusinessLogicException e){}  
+        resultEntity = articuloLogic.getArticulo(-123L);
+        Assert.assertNull(resultEntity);
+              
+        
     }
     
     /**
@@ -173,6 +241,7 @@ public class ArticuloLogicTest {
 
         pojoEntity.setId(entity.getId());
         pojoEntity.setAutomovil(entity.getAutomovil());
+        pojoEntity.setPrecio(entity.getPrecio());
 
         articuloLogic.updateArticulo(pojoEntity.getId(), pojoEntity);
         
@@ -184,6 +253,46 @@ public class ArticuloLogicTest {
         Assert.assertEquals(pojoEntity.getUbicacion(), resp.getUbicacion());
         Assert.assertEquals(pojoEntity.getPrecio(), resp.getPrecio());
         Assert.assertEquals(pojoEntity.getAutomovil(), resp.getAutomovil()); 
+        
+        ArticuloEntity dupEntity = entity;
+        
+        try{
+            entity.setDescripcion("");            
+            articuloLogic.updateArticulo(entity.getId(),entity);
+            Assert.fail();
+        }
+        catch(BusinessLogicException e){
+            Assert.assertEquals(dupEntity.getId(),entity.getId());
+            entity = dupEntity;
+            Assert.assertEquals(dupEntity.getDescripcion(),entity.getDescripcion());
+        }try{
+            entity.setUbicacion("");            
+            articuloLogic.updateArticulo(entity.getId(),entity);
+            Assert.fail();
+        }
+        catch(BusinessLogicException e){            
+            Assert.assertEquals(dupEntity.getId(),entity.getId());
+            entity = dupEntity;
+            Assert.assertEquals(dupEntity.getUbicacion(),entity.getUbicacion());
+        }try{
+            entity.setPrecio("");            
+            articuloLogic.updateArticulo(entity.getId(),entity);
+            Assert.fail();
+        }
+        catch(BusinessLogicException e){
+            Assert.assertEquals(dupEntity.getId(),entity.getId());
+            entity = dupEntity;
+            Assert.assertEquals(dupEntity.getPrecio(),entity.getPrecio());
+        }try{
+            entity.setDisponibilidad(false);            
+            articuloLogic.updateArticulo(entity.getId(),entity);
+            Assert.fail();
+        }
+        catch(BusinessLogicException e){
+            Assert.assertEquals(dupEntity.getId(),entity.getId());
+            entity = dupEntity;
+            Assert.assertEquals(dupEntity.isDisponibilidad(),entity.isDisponibilidad());
+        }
     }
     
     /**

@@ -67,7 +67,7 @@ import javax.inject.Inject;
      *
      * @return Lista de entidades de tipo articulo.
      */
-    public List<ArticuloEntity> getArticuloes() throws BusinessLogicException {
+    public List<ArticuloEntity> getArticulos(){
         LOGGER.log(Level.INFO, "Inicia proceso de consultar todos los articuloes");
         List<ArticuloEntity> articuloes = persistence.findAll();
         LOGGER.log(Level.INFO, "Termina proceso de consultar todos los articuloes");
@@ -148,17 +148,19 @@ import javax.inject.Inject;
         return true;
       }
       
-      public boolean validatePrecio(String tipo){
-        if(tipo == null || tipo.isEmpty()){
+      public boolean validatePrecio(String precio){
+        if(precio == null || precio.isEmpty()){
           return false;
         }
         try{
-            Integer.getInteger(tipo);
+            int i = Integer.parseInt(precio);
+            if(i > 0)
+            return true;
         }
         catch(Exception e){
             return false;
-        }
-        return true;
+        }        
+        return false;
       }
 
 }

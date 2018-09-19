@@ -64,7 +64,7 @@ import javax.inject.Inject;
      *
      * @return Lista de entidades de tipo formaDePago.
      */
-    public List<FormaDePagoEntity> getFormaDePagoes() throws BusinessLogicException {
+    public List<FormaDePagoEntity> getFormasDePago() throws BusinessLogicException {
         LOGGER.log(Level.INFO, "Inicia proceso de consultar todos los formaDePagoes");
         List<FormaDePagoEntity> formaDePagoes = persistence.findAll();
         LOGGER.log(Level.INFO, "Termina proceso de consultar todos los formaDePagoes");
