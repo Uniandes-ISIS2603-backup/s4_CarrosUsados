@@ -126,14 +126,55 @@ public class FormaDePagoLogicTest {
         Assert.assertEquals(newEntity.getNombre(), entity.getNombre());
         Assert.assertEquals(newEntity.getTipo(), entity.getTipo());
         Assert.assertEquals(newEntity.getCliente(), newEntity.getCliente());
+                
+        FormaDePagoEntity dupEntity = newEntity;
+        
+        try{
+            newEntity.setCliente(null);            
+            result = formaDePagoLogic.createFormaDePago(newEntity);
+            Assert.fail();
+        }
+        catch(BusinessLogicException e){
+            Assert.assertEquals(dupEntity.getId(),newEntity.getId());
+            newEntity = dupEntity;
+            Assert.assertEquals(dupEntity.getCliente(),newEntity.getCliente());
+        }
+        try{
+            newEntity.setNombre(null);            
+            result = formaDePagoLogic.createFormaDePago(newEntity);
+            Assert.fail();
+        }
+        catch(BusinessLogicException e){
+            Assert.assertEquals(dupEntity.getId(),newEntity.getId());
+            newEntity = dupEntity;
+            Assert.assertEquals(dupEntity.getNombre(),newEntity.getNombre());
+        }try{
+            newEntity.setTipo(null);            
+            result = formaDePagoLogic.createFormaDePago(newEntity);
+            Assert.fail();
+        }
+        catch(BusinessLogicException e){            
+            Assert.assertEquals(dupEntity.getId(),newEntity.getId());
+            newEntity = dupEntity;
+            Assert.assertEquals(dupEntity.getTipo(),newEntity.getTipo());
+        }
+        try{           
+            result = formaDePagoLogic.createFormaDePago(newEntity);
+            Assert.fail();
+        }
+        catch(BusinessLogicException e){            
+            Assert.assertEquals(dupEntity.getId(),newEntity.getId());
+            newEntity = dupEntity;
+            Assert.assertEquals(dupEntity.getTipo(),newEntity.getTipo());
+        }
     }
     
     /**
      * Prueba para consultar la lista de FormaDePagoes
      */
     @Test
-    public void getFormaDePagoesTest() throws BusinessLogicException {
-        List<FormaDePagoEntity> list = formaDePagoLogic.getFormaDePagoes();
+    public void getFormasDePagoTest() throws BusinessLogicException {
+        List<FormaDePagoEntity> list = formaDePagoLogic.getFormasDePago();
         Assert.assertEquals(data.size(), list.size());
         for (FormaDePagoEntity entity : list) {
             boolean found = false;
@@ -158,6 +199,14 @@ public class FormaDePagoLogicTest {
         Assert.assertEquals(resultEntity.getNombre(), entity.getNombre());
         Assert.assertEquals(resultEntity.getTipo(), entity.getTipo());
         Assert.assertEquals(resultEntity.getCliente(), entity.getCliente());
+        
+        try{        
+            resultEntity = formaDePagoLogic.getFormaDePago(null);
+            Assert.fail();
+        }
+        catch(BusinessLogicException e){}  
+        resultEntity = formaDePagoLogic.getFormaDePago(-123L);
+        Assert.assertNull(resultEntity);
     }
     
     /**
@@ -180,6 +229,36 @@ public class FormaDePagoLogicTest {
         Assert.assertEquals(pojoEntity.getNombre(), resp.getNombre());
         Assert.assertEquals(pojoEntity.getTipo(), resp.getTipo());
         Assert.assertEquals(pojoEntity.getCliente(), resp.getCliente()); 
+        
+        FormaDePagoEntity dupEntity = entity;
+        
+        try{
+            entity.setNombre("");            
+            formaDePagoLogic.updateFormaDePago(entity.getId(),entity);
+            Assert.fail();
+        }
+        catch(BusinessLogicException e){
+            Assert.assertEquals(dupEntity.getId(),entity.getId());
+            entity = dupEntity;
+            Assert.assertEquals(dupEntity.getNombre(),entity.getNombre());
+        }try{
+            entity.setNombre("");            
+            formaDePagoLogic.updateFormaDePago(entity.getId(),entity);
+            Assert.fail();
+        }
+        catch(BusinessLogicException e){            
+            Assert.assertEquals(dupEntity.getId(),entity.getId());
+            entity = dupEntity;
+            Assert.assertEquals(dupEntity.getNombre(),entity.getNombre());
+        }try{           
+            formaDePagoLogic.updateFormaDePago(entity.getId(),entity);
+            Assert.fail();
+        }
+        catch(BusinessLogicException e){            
+            Assert.assertEquals(dupEntity.getId(),entity.getId());
+            entity = dupEntity;
+            Assert.assertEquals(dupEntity.getTipo(),entity.getTipo());
+        }
     }
     
     /**
