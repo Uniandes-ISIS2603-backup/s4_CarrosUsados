@@ -47,6 +47,10 @@ public class FormaDePagoEntity extends BaseEntity implements Serializable {
     public ClienteEntity getCliente() {
         return cliente;
     }
+
+    public void setCliente(ClienteEntity cliente) {
+        this.cliente = cliente;
+    }
     
     
 }

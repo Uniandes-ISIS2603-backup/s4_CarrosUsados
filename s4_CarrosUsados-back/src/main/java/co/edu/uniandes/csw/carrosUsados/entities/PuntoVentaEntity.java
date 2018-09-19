@@ -10,16 +10,14 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import uk.co.jemos.podam.common.PodamExclude;
 
 /**
- *
- * @author estudiante
+  * Clase que representa un punto de venta en la persistencia y permite su
+ * serialización.
+ * @author Daniella Arteaga
  */
 
 @Entity
@@ -37,71 +35,98 @@ public class PuntoVentaEntity extends BaseEntity implements Serializable{
     @OneToOne(mappedBy = "puntoVenta")
     private AutomovilEntity automovil;
     
-  public PuntoVentaEntity()
+    /**
+     *Constructor de entidad.
+     */
+    public PuntoVentaEntity()
   {
       
   }
   
-  public List<CalificacionEntity> getCalificaciones()
+    /**
+     *  Devuelve las lista de calificaciones del punto de venta.
+     * @return comentarios calificaciones del punto de venta.
+     */
+    public List<CalificacionEntity> getCalificaciones()
   {
       return comentarios;
   }
   
-  public void setCalificaciones(List<CalificacionEntity> cal)
+    /**
+     *  Modifica la lista de calificaciones del punto de venta.
+     * @param cal la lista de las calificaciones que se asinarán.
+     */
+    public void setCalificaciones(List<CalificacionEntity> cal)
   {
       this.comentarios=cal;
   }
   
-  public int getEmpleados()
+    /**
+     * Devuelve el número de empleados del punot.
+     * @return numEmpleados número de empleados del punto.
+     */
+    public int getEmpleados()
   {
       return numEmpleados;
   }
   
-  public void setEmpleados(int num)
+    /**
+     * Modifica el número de empleados del punto.
+     * @param num número de empleados del punto.
+     */
+    public void setEmpleados(int num)
   {
       this.numEmpleados= num;
   }
   
-  public String getCiudad()
+    /**
+     * Devuelve la ciudad del punto de venta.
+     * @return ciudad del punto de venta.
+     */
+    public String getCiudad()
   {
       return ciudad;
   }
   
-  public void setCiudad(String nueva)
+    /**
+     * Modifica la ciudad del punto de venta.
+     * @param nueva ciudad a asignar al punto de venta.
+     */
+    public void setCiudad(String nueva)
   {
       this.ciudad=nueva;
   }
     
-  public String getUbicacion()
+    /**
+     *  Devuelve ubicación del punto de venta.
+     * @return ubicacion del punto de venta
+     */
+    public String getUbicacion()
   {
       return ubicacion;
   }
   
-  public void setUbicacion(String nueva)
+    /**
+     * Modifica la ubicación del punto
+     * @param nueva ubicación del punto de venta.
+     */
+    public void setUbicacion(String nueva)
   {
       this.ubicacion= nueva;
   }
 
-    public int getNumEmpleados() {
-        return numEmpleados;
-    }
-
-    public void setNumEmpleados(int numEmpleados) {
-        this.numEmpleados = numEmpleados;
-    }
-
-    public List<CalificacionEntity> getComentarios() {
-        return comentarios;
-    }
-
-    public void setComentarios(List<CalificacionEntity> comentarios) {
-        this.comentarios = comentarios;
-    }
-
+    /**
+     *  Devuelve automovil del punto de venta.
+     * @return automovil del punto de venta.
+     */
     public AutomovilEntity getAutomovil() {
         return automovil;
     }
 
+    /**
+     *  Devuelve el carro que pertenece al punto
+     * @param automovil nuevo que se asignarà.
+     */
     public void setAutomovil(AutomovilEntity automovil) {
         this.automovil = automovil;
     }
