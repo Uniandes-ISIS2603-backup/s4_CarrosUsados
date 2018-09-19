@@ -1,0 +1,169 @@
+{
+	"info": {
+		"_postman_id": "b032bef1-ce66-4d37-bf2e-f268d352b4b5",
+		"name": "PRUEBAS_DTO",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "PUNTO_VENTA",
+			"item": [
+				{
+					"name": "getPuntoVenta",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/s4_CarrosUsados-api/api/puntos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"s4_CarrosUsados-api",
+								"api",
+								"puntos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createPunto",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/s4_CarrosUsados-api/api/puntos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"s4_CarrosUsados-api",
+								"api",
+								"puntos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updatePunto",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/s4_CarrosUsados-api/api/puntos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"s4_CarrosUsados-api",
+								"api",
+								"puntos"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CALIFICACION",
+			"item": [
+				{
+					"name": "getCalificacion",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/s4_CarrosUsados-api/api/calificaciones",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"s4_CarrosUsados-api",
+								"api",
+								"calificaciones"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createCalificacion",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/s4_CarrosUsados-api/api/calificaciones",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"s4_CarrosUsados-api",
+								"api",
+								"calificaciones"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateCalificacion",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/s4_CarrosUsados-api/api/calificaciones",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"s4_CarrosUsados-api",
+								"api",
+								"calificaciones"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
