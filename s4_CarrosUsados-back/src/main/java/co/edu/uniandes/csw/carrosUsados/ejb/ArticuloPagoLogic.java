@@ -66,6 +66,6 @@ public class ArticuloPagoLogic {
         pagoPersistence.update(pagoEntity);
         LOGGER.log(Level.INFO, "Termina proceso de actualizar articulo con id = {0}", articuloEntity.getId());
         return articuloEntity;
-    }
+    }   
     
 }

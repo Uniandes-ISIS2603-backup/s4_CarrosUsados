@@ -11,7 +11,6 @@ package co.edu.uniandes.csw.carrosUsados.ejb;
 import co.edu.uniandes.csw.carrosUsados.entities.PagoEntity;
 import co.edu.uniandes.csw.carrosUsados.exceptions.BusinessLogicException;
 import co.edu.uniandes.csw.carrosUsados.persistence.PagoPersistence;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -73,32 +72,7 @@ public class PagoLogic {
         LOGGER.log(Level.INFO, "Terminando de buscar el Pago");
         return pagoEntity;
     }
-    /**
-     * Actualizar el pago mediate la ID 
-     *
-     * @param idPago El ID del pago que se quiere actualizar
-     * @param pagoEntity La entity con las modificaciones que se haran
-     * @return La entidad del pago despues del update
-     * @throws BusinessLogicException Si el pago no tiene un ID o la tarjeta no es valida
-     */
-     public PagoEntity updatePago(Long idPago, PagoEntity pagoEntity) throws BusinessLogicException {
-        LOGGER.log(Level.INFO, "Inicia proceso de actualizar el Pago con id = {0}", idPago);
-       
-        
-        if (pagoEntity.getFechaTarjeta()!=null && pagoEntity.getFechaTarjeta().after(Calendar.getInstance().getTime()))
-        {
-            throw new BusinessLogicException("La fecha de la tarjeta de credito esta en el futuro");
-            
-        }
-        if(pagoEntity.getNum_targeta().length() <16 ||pagoEntity.getNum_targeta().length()>16)
-        {
-            throw new BusinessLogicException("El numero de la tarjeta no tiene 16 digitos");
-        }
-        
-        PagoEntity newEntity = persistence.update(pagoEntity);
-        LOGGER.log(Level.INFO, "Termina proceso de actualizar el pago con id = {0}", pagoEntity.getId());
-        return newEntity;
-    }
+   
         /**
      * Elimina un Pago con la ID dada
      *
