@@ -41,7 +41,7 @@ public class PuntoVentaCalificacionLogic {
      * la calificación.
      * @return El libro creado.
      */
-    public CalificacionEntity addCalificacion(Long calificacionId,Long puntoId) 
+    public CalificacionEntity addCalificacion(Long puntoId,Long calificacionId) 
     {
         LOGGER.log(Level.INFO, "Inicia proceso de agregarle una calificación al punto de venta con id{0}",puntoId);
         CalificacionEntity calificacionent= calificacionPersistence.find(calificacionId);
@@ -52,7 +52,29 @@ public class PuntoVentaCalificacionLogic {
         return calificacionent;
     }
     
-    
+        /**
+     * Remplaza las instancias de Book asociadas a una instancia de Author
+     *
+     * @param puntoId Id Identificador de la instancia de puntoVenta
+     * @param calificaciones  Colección de instancias de CalificacionEntity a asociar a instancia
+     * de punto
+     * @return Nueva colección de BookEntity asociada a la instancia de Author
+     */
+    public List<CalificacionEntity> replaceCalificaciones(Long puntoId, List<CalificacionEntity> calificaciones) {
+        LOGGER.log(Level.INFO, "Inicia proceso de reemplazar los calificaciones asocidas al punto con id = {0}", puntoId);
+        PuntoVentaEntity puntoEntity = puntoPersistence.find(puntoId);
+        List<CalificacionEntity> calList = calificacionPersistence.findAll();
+        for (CalificacionEntity calificacion : calList) {
+            if (calificaciones.contains(calificacion)) {
+                
+                   calificacion.setPuntoVenta(puntoEntity);
+ 
+            }
+        }
+        puntoEntity.setCalificaciones(calList);
+        LOGGER.log(Level.INFO, "Termina proceso de reemplazar las calificaciones asocidos al punto con id = {0}", puntoId);
+        return  puntoEntity.getCalificaciones();
+    }
     
     
     
@@ -99,34 +121,8 @@ public class PuntoVentaCalificacionLogic {
          return calreturn;
     }
       
-      
-      
-      
-       /**
-     * Remplazar las calificaciones de un punto de venta.
-     *
-     * @param puntoId id del punto que se quiere actualizar.
-     * @param calificaciones la lista de calificaciones con las que se quiere reemplazar las actuales.
-     * @return la nueva lista.
-     */
-        public List<CalificacionEntity> replaceCalificaciones(Long puntoId, List<CalificacionEntity> calificaciones) {
-        LOGGER.log(Level.INFO, "Inicia proceso de actualizar el punto con id = {0}",puntoId);
-        PuntoVentaEntity puntoEntity = puntoPersistence.find(puntoId);
-        List<CalificacionEntity> calificacionList = calificacionPersistence.findAll();
-        for (CalificacionEntity cal : calificacionList) {
-            if (calificaciones.contains(cal)) {
-                cal.setPuntoVenta(puntoEntity);
-                
-            } else if (cal.getPuntoVenta() != null && cal.getPuntoVenta().equals(puntoEntity)) {
-                cal.setPuntoVenta(null);
-            }
-        }
-        LOGGER.log(Level.INFO, "Termina proceso de actualizar el punto con id = {0}", puntoId);
-        return calificacionList;
-    }
-        
-        
-        
+ 
+       
          /**
      * Borrar una calificación de un punto de venta. Este metodo se utiliza para borrar la
      * relacion de una calificación.

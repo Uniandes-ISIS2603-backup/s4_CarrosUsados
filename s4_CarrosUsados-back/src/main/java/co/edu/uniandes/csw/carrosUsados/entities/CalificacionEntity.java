@@ -22,7 +22,7 @@ import uk.co.jemos.podam.common.PodamExclude;
 public class CalificacionEntity extends BaseEntity implements Serializable{
     
     
-    private int num_estrellas;
+    private int numEstrellas;
     private String comentario;
     
     @Temporal(TemporalType.TIMESTAMP)
@@ -68,7 +68,7 @@ public class CalificacionEntity extends BaseEntity implements Serializable{
      */
     public int getEstrellas()
     {
-         return num_estrellas;   
+         return numEstrellas;   
     }
     
     /**
@@ -78,7 +78,7 @@ public class CalificacionEntity extends BaseEntity implements Serializable{
     public void setEstrellas(int num)
             
     {
-        this.num_estrellas=num;
+        this.numEstrellas=num;
     }
     
     /**
@@ -118,21 +118,6 @@ public class CalificacionEntity extends BaseEntity implements Serializable{
         this.publishDate=newDate;
     }
 
-    /**
-     * Devuelve número de estrellas que tiene calificación.
-     * @return num_estrellas número de estrellas que tiene calificación.
-     */
-    public int getNum_estrellas() {
-        return num_estrellas;
-    }
-
-    /**
-     *  Modifica número de estrellas de la calificación.
-     * @param num_estrellas número de estrellas a asignar.
-     */
-    public void setNum_estrellas(int num_estrellas) {
-        this.num_estrellas = num_estrellas;
-    }
 
     /**
      *  Devuelve auto de la calificación.

@@ -39,7 +39,7 @@ public class CalificacionDTO implements Serializable {
      * @param entityCalificacion Entity: Es la entidad que se va a convertir a DTO
      */
     public CalificacionDTO(CalificacionEntity entityCalificacion) {
-        this.numEstrellas = entityCalificacion.getNum_estrellas();
+        this.numEstrellas = entityCalificacion.getEstrellas();
         this.comentario = entityCalificacion.getComentario();
         this.id= entityCalificacion.getId();
         this.publishedDate= entityCalificacion.getpublishedDate();
