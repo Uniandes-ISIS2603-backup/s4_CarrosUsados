@@ -60,26 +60,9 @@ public class ArticuloAutomovilLogic {
         AutomovilEntity automovilEntity = automovilPersistence.find(idAutomovil);
         articuloEntity.setAutomovil(automovilEntity);
         articuloPersistence.update(articuloEntity); //Chequear si esto es correcto
+        articuloEntity = articuloPersistence.find(idArticulo);
         LOGGER.log(Level.INFO, "Termina proceso de actualizar articulo con id = {0}", articuloEntity.getId());
         return articuloEntity;
-    }
-    
-    /**
-     * Borrar un automovil de un articulo. Este metodo se utiliza para borrar la
-     * relacion de una automovil.
-     *
-     * @param idArticulo El articulo al cual se le desea borrar la automovil
-     */
-    public void removeAutomovil(Long idArticulo) {
-        LOGGER.log(Level.INFO, "Inicia proceso de borrar la Automovil del articulo con id = {0}", idArticulo);
-        ArticuloEntity articuloEntity = articuloPersistence.find(idArticulo);
-        AutomovilEntity automovilEntity = automovilPersistence.find(articuloEntity.getAutomovil().getId());
-        automovilPersistence.delete(automovilEntity.getId());
-        articuloEntity.setAutomovil(null);
-        //Ahora persisto los cambios en la base de datos:
-        articuloPersistence.update(articuloEntity);
-        
-        LOGGER.log(Level.INFO, "Termina proceso de borrar la automovil del articulo con id = {0}", articuloEntity.getId());
     }
     
 }
