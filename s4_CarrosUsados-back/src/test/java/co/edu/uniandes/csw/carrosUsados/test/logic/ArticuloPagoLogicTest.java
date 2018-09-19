@@ -15,10 +15,10 @@ import org.jboss.arquillian.junit.Arquillian;
 import org.junit.runner.RunWith;
 import uk.co.jemos.podam.api.PodamFactory;
 import uk.co.jemos.podam.api.PodamFactoryImpl;
-import co.edu.uniandes.csw.carrosUsados.ejb.ArticuloAutomovilLogic;
+import co.edu.uniandes.csw.carrosUsados.ejb.ArticuloPagoLogic;
 import co.edu.uniandes.csw.carrosUsados.ejb.ArticuloLogic;
 import co.edu.uniandes.csw.carrosUsados.entities.ArticuloEntity;
-import co.edu.uniandes.csw.carrosUsados.entities.AutomovilEntity;
+import co.edu.uniandes.csw.carrosUsados.entities.PagoEntity;
 import co.edu.uniandes.csw.carrosUsados.exceptions.BusinessLogicException;
 import co.edu.uniandes.csw.carrosUsados.persistence.ArticuloPersistence;
 import org.jboss.arquillian.container.test.api.Deployment;
@@ -33,12 +33,12 @@ import org.junit.Test;
  * @author estudiante
  */
 @RunWith(Arquillian.class)
-public class ArticuloAutomovilLogicTest {
+public class ArticuloPagoLogicTest {
     
     private PodamFactory factory = new PodamFactoryImpl();
 
     @Inject
-    private ArticuloAutomovilLogic articuloAutomovilLogic;
+    private ArticuloPagoLogic articuloPagoLogic;
 
     @Inject
     private ArticuloLogic articuloLogic;
@@ -51,7 +51,7 @@ public class ArticuloAutomovilLogicTest {
 
     private List<ArticuloEntity> data = new ArrayList<ArticuloEntity>();
 
-    private List<AutomovilEntity> automovilData = new ArrayList();
+    private List<PagoEntity> pagoData = new ArrayList();
 
     /**
      * @return Devuelve el jar que Arquillian va a desplegar en Payara embebido.
@@ -92,7 +92,7 @@ public class ArticuloAutomovilLogicTest {
      * Limpia las tablas que están implicadas en la prueba.
      */
     private void clearData() {
-        em.createQuery("delete from AutomovilEntity").executeUpdate();
+        em.createQuery("delete from PagoEntity").executeUpdate();
         em.createQuery("delete from ArticuloEntity").executeUpdate();
     }
 
@@ -107,40 +107,40 @@ public class ArticuloAutomovilLogicTest {
             data.add(entity);
         }
         for (int i = 0; i < 3; i++) {
-            AutomovilEntity automovil = factory.manufacturePojo(AutomovilEntity.class);
-            em.persist(automovil);
-            automovilData.add(automovil);            
+            PagoEntity pago = factory.manufacturePojo(PagoEntity.class);
+            em.persist(pago);
+            pagoData.add(pago);            
             if (i == 0) {
-                data.get(i).setAutomovil(automovil);
+                data.get(i).setPago(pago);
             }
             if(i==1){
-                data.get(i).setAutomovil(automovil);
+                data.get(i).setPago(pago);
             }
         }
     }
 
     /**
-     * Prueba para asociar un Automovil existente a una Articulo.
+     * Prueba para asociar un Pago existente a una Articulo.
      */
     @Test
-    public void addAutomovilsTest() {
+    public void addPagosTest() {
         ArticuloEntity entity = data.get(2);
-        AutomovilEntity automovilEntity = automovilData.get(2);
-        AutomovilEntity response = articuloAutomovilLogic.addAutomovil(automovilEntity.getId(), entity.getId());
+        PagoEntity pagoEntity = pagoData.get(2);
+        PagoEntity response = articuloPagoLogic.addPago(pagoEntity.getId(), entity.getId());
 
         Assert.assertNotNull(response);
-        Assert.assertEquals(automovilEntity.getId(), response.getId());
+        Assert.assertEquals(pagoEntity.getId(), response.getId());
     }
 
     /**
-     * Prueba para remplazar la instancia de un Automovil asociada a un Articulo
+     * Prueba para remplazar la instancia de un Pago asociada a un Articulo
      */
     @Test
-    public void replaceAutomovilTest() throws BusinessLogicException {
+    public void replacePagoTest() throws BusinessLogicException {
         ArticuloEntity entity = data.get(2);
-        entity = articuloAutomovilLogic.replaceAutomovil(entity.getId(), automovilData.get(2).getId());
+        entity = articuloPagoLogic.replacePago(entity.getId(), pagoData.get(2).getId());
         
-        Assert.assertEquals(automovilData.get(2), entity.getAutomovil());
+        Assert.assertEquals(pagoData.get(2),entity.getPago());
     } 
     
 }
