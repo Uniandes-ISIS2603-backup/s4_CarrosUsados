@@ -7,7 +7,6 @@ package co.edu.uniandes.csw.carrosUsados.resources;
 
 import co.edu.uniandes.csw.carrosUsados.dtos.FacturaDTO;
 import co.edu.uniandes.csw.carrosUsados.dtos.FacturaDetailDTO;
-import co.edu.uniandes.csw.carrosUsados.dtos.FichaTecnicaDTO;
 import co.edu.uniandes.csw.carrosUsados.dtos.PagoDTO;
 import co.edu.uniandes.csw.carrosUsados.ejb.FacturaLogic;
 import co.edu.uniandes.csw.carrosUsados.entities.FacturaEntity;
