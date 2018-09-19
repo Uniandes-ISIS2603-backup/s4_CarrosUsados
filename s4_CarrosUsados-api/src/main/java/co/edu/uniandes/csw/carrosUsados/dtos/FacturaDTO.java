@@ -6,7 +6,7 @@
 package co.edu.uniandes.csw.carrosUsados.dtos;
 
 import co.edu.uniandes.csw.carrosUsados.entities.FacturaEntity;
-import co.edu.uniandes.csw.carrosUsados.entities.FichaTecnicaEntity;
+
 
 /**
  *

@@ -12,7 +12,6 @@ import co.edu.uniandes.csw.carrosUsados.entities.PagoEntity;
 import co.edu.uniandes.csw.carrosUsados.exceptions.BusinessLogicException;
 import co.edu.uniandes.csw.carrosUsados.persistence.FichaTecnicaPersistence;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
@@ -128,19 +127,49 @@ public class FacturaLogicTest {
     }
     
     /**
+     * Prueba para crear un factura con un total invalido
+     *
+     * @throws co.edu.uniandes.csw.carrosUsados.exceptions.BusinessLogicException
+     */
+    @Test(expected = BusinessLogicException.class)
+    public void createFacturaConValorTotalInvalido() throws BusinessLogicException {
+        FacturaEntity newEntity = factory.manufacturePojo(FacturaEntity.class);
+        newEntity.setTotal(-2);
+        facturaLogic.createFactura(newEntity);
+    }
+    /**
+     * Prueba para crear una factura con un subtotal invalido 
+     *
+     * @throws co.edu.uniandes.csw.carrosUsados.exceptions.BusinessLogicException
+     */
+    @Test(expected = BusinessLogicException.class)
+    public void createFacturaConValorSubTotalInvalido() throws BusinessLogicException {
+        FacturaEntity newEntity = factory.manufacturePojo(FacturaEntity.class);
+        newEntity.setSubtotal(-3);
+        facturaLogic.createFactura(newEntity);
+    }
+    /**
      * Prueba para crear un pago con una fecha invalida y un numero de tarjeta invalido
      *
      * @throws co.edu.uniandes.csw.carrosUsados.exceptions.BusinessLogicException
      */
     @Test(expected = BusinessLogicException.class)
-    public void createPagoConValoresInvalidos() throws BusinessLogicException {
+    public void createFacturasSinProducto() throws BusinessLogicException {
         FacturaEntity newEntity = factory.manufacturePojo(FacturaEntity.class);
-        newEntity.setTotal(-2);
-        
-        
+        newEntity.setProducto(null);
         facturaLogic.createFactura(newEntity);
     }
-    
+    /**
+     * Prueba para crear un pago con una fecha invalida y un numero de tarjeta invalido
+     *
+     * @throws co.edu.uniandes.csw.carrosUsados.exceptions.BusinessLogicException
+     */
+    @Test(expected = BusinessLogicException.class)
+    public void createFacturaSinFormaDePago() throws BusinessLogicException {
+        FacturaEntity newEntity = factory.manufacturePojo(FacturaEntity.class);
+        newEntity.setFormaDePago(null);
+        facturaLogic.createFactura(newEntity);
+    }
     /**
      * Prueba para consultar un Pago
      * @throws co.edu.uniandes.csw.carrosUsados.exceptions.BusinessLogicException

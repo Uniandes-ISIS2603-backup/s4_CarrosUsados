@@ -7,13 +7,10 @@ package co.edu.uniandes.csw.carrosUsados.test.logic;
 
 import co.edu.uniandes.csw.carrosUsados.ejb.PagoLogic;
 import co.edu.uniandes.csw.carrosUsados.entities.PagoEntity;
-
 import co.edu.uniandes.csw.carrosUsados.exceptions.BusinessLogicException;
 import co.edu.uniandes.csw.carrosUsados.persistence.FichaTecnicaPersistence;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
-import java.util.GregorianCalendar;
 import java.util.List;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
@@ -157,11 +154,8 @@ public class PagoLogicTest {
         Assert.assertEquals(entity.getComprobanteDePago(), resultEntity.getComprobanteDePago());
         Assert.assertEquals(entity.getFechaTarjeta(), resultEntity.getFechaTarjeta());
     }
-    
-    
-    
-    
-    
+  
+   
     /**
      * Prueba para eliminar un Pago.
      *

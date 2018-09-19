@@ -14,7 +14,15 @@ import java.util.List;
  * @author estudiante
  */
 public class FacturaDetailDTO extends FacturaDTO implements Serializable{
-     // relación  cero o muchos reviews 
+
+    public List<FacturaDTO> getReviews() {
+        return reviews;
+    }
+
+    // relación  cero o muchos reviews
+    public void setReviews(List<FacturaDTO> reviews) {
+        this.reviews = reviews;
+    }
     private List<FacturaDTO> reviews;
     
     public FacturaDetailDTO(FacturaEntity facturaEntity) {
