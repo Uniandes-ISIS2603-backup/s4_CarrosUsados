@@ -107,20 +107,22 @@ public class FacturaLogicTest {
     }
     
      /**
-     * Prueba para crear un Pago
+     * Prueba para crear una factura
      *
      * @throws co.edu.uniandes.csw.carrosUsados.exceptions.BusinessLogicException
      */
     @Test
-    public void createPagoTest() throws BusinessLogicException {
+    public void createFacturaTest() throws BusinessLogicException {
         FacturaEntity newEntity = factory.manufacturePojo(FacturaEntity.class);
         newEntity.setTotal(123);
+        newEntity.setSubtotal(123);
         FacturaEntity result = facturaLogic.createFactura(newEntity);
         Assert.assertNotNull(result);
         FacturaEntity entity = em.find(FacturaEntity.class, result.getId());
         Assert.assertEquals(newEntity.getId(), entity.getId());
         Assert.assertEquals(newEntity.getTotal(), entity.getTotal());
         Assert.assertEquals(newEntity.getSubtotal(), entity.getSubtotal());
+        Assert.assertEquals(newEntity.getFormaDePago(), entity.getFormaDePago());
         
         
     }
@@ -151,6 +153,7 @@ public class FacturaLogicTest {
         Assert.assertEquals(entity.getId(), resultEntity.getId());
         Assert.assertEquals(entity.getTotal(), resultEntity.getTotal());
         Assert.assertEquals(entity.getSubtotal(), resultEntity.getSubtotal());
+        Assert.assertEquals(entity.getFormaDePago(), resultEntity.getFormaDePago());
     }
     
     /**
@@ -159,15 +162,18 @@ public class FacturaLogicTest {
      * @throws co.edu.uniandes.csw.carrosUsados.exceptions.BusinessLogicException
      */
     @Test
-    public void updateFactiraTest() throws BusinessLogicException {
+    public void updateFacturaTest() throws BusinessLogicException {
         FacturaEntity entity = data.get(0);
         FacturaEntity pojoEntity = factory.manufacturePojo(FacturaEntity.class);
         pojoEntity.setId(entity.getId());
+        pojoEntity.setTotal(123);
+        pojoEntity.setSubtotal(123);
         facturaLogic.updateFactura(pojoEntity.getId(), pojoEntity);
         FacturaEntity resp = em.find(FacturaEntity.class, entity.getId());
         Assert.assertEquals(pojoEntity.getId(), resp.getId());
-       Assert.assertEquals(pojoEntity.getTotal(), resp.getTotal());
+        Assert.assertEquals(pojoEntity.getTotal(), resp.getTotal());
         Assert.assertEquals(pojoEntity.getSubtotal(), resp.getSubtotal());
+        Assert.assertEquals(pojoEntity.getFormaDePago(), resp.getFormaDePago());
         
         
     }

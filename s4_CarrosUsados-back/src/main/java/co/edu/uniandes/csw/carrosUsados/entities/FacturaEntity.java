@@ -20,7 +20,15 @@ public class FacturaEntity extends BaseEntity implements Serializable{
     private String producto;
     private Integer subtotal;
     private Integer total;
-    private String forma_de_pago;
+    private String formaDePago;
+
+    public String getFormaDePago() {
+        return formaDePago;
+    }
+
+    public void setFormaDePago(String formaDePago) {
+        this.formaDePago = formaDePago;
+    }
 
     @PodamExclude
     @OneToOne
@@ -65,13 +73,7 @@ public class FacturaEntity extends BaseEntity implements Serializable{
         this.total = total;
     }
 
-    public String getForma_de_pago() {
-        return forma_de_pago;
-    }
-
-    public void setForma_de_pago(String forma_de_pago) {
-        this.forma_de_pago = forma_de_pago;
-    }
+    
     
     
     

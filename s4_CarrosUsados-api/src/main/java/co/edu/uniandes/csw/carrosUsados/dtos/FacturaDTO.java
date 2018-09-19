@@ -63,14 +63,24 @@ public class FacturaDTO {
     public FacturaDTO() {
 
     }
+     /**
+     * Constructor a partir de la entidad
+     *
+     * @param facturaEntity
+     */
     public FacturaDTO(FacturaEntity facturaEntity) {
         this.id = facturaEntity.getId();
         this.producto = facturaEntity.getProducto();
         this.total = facturaEntity.getTotal();
         this.subtotal = facturaEntity.getSubtotal();
-        this.formaDepago = facturaEntity.getForma_de_pago();
+        this.formaDepago = facturaEntity.getFormaDePago();
         
     }
+     /**
+     * Método para transformar el DTO a una entidad.
+     *
+     * @return La entidad de la facrura asociado.
+     */
      public FacturaEntity toEntity() {
         FacturaEntity entity = new FacturaEntity();
         
@@ -78,7 +88,7 @@ public class FacturaDTO {
         entity.setProducto(producto);
         entity.setTotal(total);
         entity.setSubtotal(subtotal);
-        entity.setForma_de_pago(formaDepago);
+        entity.setFormaDePago(formaDepago);
         return entity;
     }
 }
