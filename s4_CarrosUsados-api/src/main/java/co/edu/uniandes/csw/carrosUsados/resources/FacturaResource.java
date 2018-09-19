@@ -7,13 +7,10 @@ package co.edu.uniandes.csw.carrosUsados.resources;
 
 import co.edu.uniandes.csw.carrosUsados.dtos.FacturaDTO;
 import co.edu.uniandes.csw.carrosUsados.dtos.FacturaDetailDTO;
-import co.edu.uniandes.csw.carrosUsados.dtos.PagoDTO;
 import co.edu.uniandes.csw.carrosUsados.ejb.FacturaLogic;
 import co.edu.uniandes.csw.carrosUsados.entities.FacturaEntity;
 import co.edu.uniandes.csw.carrosUsados.exceptions.BusinessLogicException;
 import java.util.ArrayList;
-import java.util.List;
-import java.util.logging.Level;
 import javax.inject.Inject;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
