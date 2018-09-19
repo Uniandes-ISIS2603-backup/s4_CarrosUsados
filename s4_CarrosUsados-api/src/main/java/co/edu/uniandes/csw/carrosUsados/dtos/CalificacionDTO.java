@@ -19,7 +19,7 @@ import java.util.Date;
  */
 public class CalificacionDTO implements Serializable {
 
-    private int num_estrellas;
+    private int numEstrellas;
     private String comentario;
     private PuntoVentaEntity puntoVenta;
     private Date publishedDate;
@@ -29,6 +29,7 @@ public class CalificacionDTO implements Serializable {
      * Constructor
      */
     public CalificacionDTO() {
+        //este constructor es dejado vacìo intencionalmente
     }
 
      /**
@@ -38,7 +39,7 @@ public class CalificacionDTO implements Serializable {
      * @param entityCalificacion Entity: Es la entidad que se va a convertir a DTO
      */
     public CalificacionDTO(CalificacionEntity entityCalificacion) {
-        this.num_estrellas = entityCalificacion.getNum_estrellas();
+        this.numEstrellas = entityCalificacion.getNum_estrellas();
         this.comentario = entityCalificacion.getComentario();
         this.id= entityCalificacion.getId();
         this.publishedDate= entityCalificacion.getpublishedDate();
@@ -55,7 +56,7 @@ public class CalificacionDTO implements Serializable {
     {
         CalificacionEntity calEntity= new CalificacionEntity();
         calEntity.setComentario(this.comentario);
-        calEntity.setEstrellas(this.num_estrellas);
+        calEntity.setEstrellas(this.numEstrellas);
         calEntity.setId(this.id);
         calEntity.setPuntoVenta(this.puntoVenta);
         calEntity.setPublishDate(this.publishedDate);
@@ -65,19 +66,19 @@ public class CalificacionDTO implements Serializable {
 
     /**
      * Devuelve número de estrellas de la calificación.
-     * @return num_estrellas número de estrellas de calificación.
+     * @return numEstrellas número de estrellas de calificación.
      */
     public int getNum_estrellas() {
-        return num_estrellas;
+        return numEstrellas;
     }
 
  /**
      * Modifica el número de estrellas de la calificación.
      *
-     * @param num_estrellas nuevo número de estrellas de la calificación.
+     * @param num nuevo número de estrellas de la calificación.
      */
-    public void setNum_estrellas(int num_estrellas) {
-        this.num_estrellas = num_estrellas;
+    public void setNum_estrellas(int num) {
+        this.numEstrellas = num;
     }
 
   /**

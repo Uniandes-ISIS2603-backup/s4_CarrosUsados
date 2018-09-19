@@ -24,7 +24,7 @@ public class PuntoVentaDetailDTO extends PuntoVentaDTO {
         super();
     }
     
-    
+  
     public PuntoVentaDetailDTO(PuntoVentaEntity entity)
     {
         super(entity);
@@ -39,7 +39,7 @@ public class PuntoVentaDetailDTO extends PuntoVentaDTO {
         }
     }
     
-    
+    @Override
     public PuntoVentaEntity toEntity()
     {
        PuntoVentaEntity entity= super.toEntity();

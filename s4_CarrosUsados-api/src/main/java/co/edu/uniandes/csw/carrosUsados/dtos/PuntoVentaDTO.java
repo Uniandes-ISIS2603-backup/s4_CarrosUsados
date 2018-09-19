@@ -22,7 +22,7 @@ import java.util.List;
  */
 public class PuntoVentaDTO implements Serializable {
 
-    private int num_vendedores;
+    private int numVendedores;
     private String ubicacion;
     private String ciudad;
     private long id;
@@ -33,6 +33,7 @@ public class PuntoVentaDTO implements Serializable {
      *Constructor
      */
     public PuntoVentaDTO() {
+          //este constructor es dejado vacìo intencionalmente
     }
   
     
@@ -43,7 +44,7 @@ public class PuntoVentaDTO implements Serializable {
      * @param puntoVenta Entity: Es la entidad que se va a convertir a DTO
      */
     public PuntoVentaDTO(PuntoVentaEntity puntoVenta) {
-        this.num_vendedores = puntoVenta.getEmpleados();
+        this.numVendedores = puntoVenta.getEmpleados();
         this.ubicacion = puntoVenta.getUbicacion();
         this.ciudad = puntoVenta.getCiudad();
         this.id = puntoVenta.getId();
@@ -63,7 +64,7 @@ public class PuntoVentaDTO implements Serializable {
         entity.setAutomovil(this.automovil);
         entity.setCalificaciones(calificaciones);
         entity.setCiudad(this.ciudad);
-        entity.setEmpleados(num_vendedores);
+        entity.setEmpleados(numVendedores);
         entity.setUbicacion(this.ubicacion);
         entity.setId(this.id);
         
@@ -76,7 +77,7 @@ public class PuntoVentaDTO implements Serializable {
      * @param num  número nuevo de vendedores
      */
     public void setNumVendedores(int num) {
-        this.num_vendedores = num;
+        this.numVendedores = num;
     }
 
    /**
@@ -86,7 +87,7 @@ public class PuntoVentaDTO implements Serializable {
      * 
      */
     public int getNumVendedores() {
-        return num_vendedores;
+        return numVendedores;
     }
 
       /**
@@ -110,7 +111,7 @@ public class PuntoVentaDTO implements Serializable {
        /**
      * Modifica la ciudad de punto
      *
-     * @param ciudad nueva ciudad
+     * @param ciudadn nueva ciudad
      */
     public void setCiudad(String ciudadn) {
         this.ciudad = ciudadn;
