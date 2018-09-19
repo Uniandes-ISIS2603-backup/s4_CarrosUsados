@@ -1,0 +1,138 @@
+{
+	"info": {
+		"_postman_id": "4c377cd0-2715-4244-ad1e-e4019708e482",
+		"name": "PRUEBAS_PUNTOVENTA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "PostPuntoVenta",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"numVendedores\":4,\n\t\"ubicacion\":\"sds\",\n\t\"ciudad\":\"Barranquilla\",\n\t\"automovil\": [],\n\t\"calificaciones\":[]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/s4_CarrosUsados-api/api/puntos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"s4_CarrosUsados-api",
+						"api",
+						"puntos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPuntos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/s4_CarrosUsados-api/api/puntos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"s4_CarrosUsados-api",
+						"api",
+						"puntos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPunto",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/s4_CarrosUsados-api/api/puntos/11",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"s4_CarrosUsados-api",
+						"api",
+						"puntos",
+						"11"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeletePunto",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/s4_CarrosUsados-api/api/puntos/10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"s4_CarrosUsados-api",
+						"api",
+						"puntos",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PutPuntoVenta",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"numVendedores\":2,\n\t\"ubicacion\":\"sds\",\n\t\"ciudad\":\"Barranquilla\",\n\t\"automovil\": [],\n\t\"calificaciones\":[]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/s4_CarrosUsados-api/api/puntos/11",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"s4_CarrosUsados-api",
+						"api",
+						"puntos",
+						"11"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

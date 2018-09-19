@@ -172,7 +172,7 @@ public class PuntoVentaLogicTest {
   
     @Test
     public void deletePuntoVentaTest() throws BusinessLogicException {
-        PuntoVentaEntity entity = data.get(0);
+       PuntoVentaEntity entity = data.get(0);
        puntoLogic.deletePuntoVenta(entity.getId());
        PuntoVentaEntity deleted = em.find(PuntoVentaEntity.class, entity.getId());
         Assert.assertNull(deleted);
