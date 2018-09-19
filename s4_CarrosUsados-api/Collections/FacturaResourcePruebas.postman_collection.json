@@ -132,6 +132,38 @@
 				"description": "DeleteFactura"
 			},
 			"response": []
+		},
+		{
+			"name": "GetTodasLasFacturas",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"id\":1,\"producto\":\"volkswagen\",\"total\" : 30000, \"subtotal\": 300, \"forma_de_pago\":\"tarjeta\"}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/s4_CarrosUsados-api/api/factura/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"s4_CarrosUsados-api",
+						"api",
+						"factura",
+						""
+					]
+				},
+				"description": "Todas"
+			},
+			"response": []
 		}
 	]
 }
