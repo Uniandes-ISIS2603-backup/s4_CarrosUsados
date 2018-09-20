@@ -24,10 +24,6 @@ public class FichaTecnicaEntity extends BaseEntity implements Serializable {
     private boolean aireAcondicionado;
     private int numAirbags;
     
-    @PodamExclude
-    @OneToOne
-    private AutomovilEntity automovil;
-    
     /**
      * Retorna los vidrios de la ficha tecnica.
      * @return los vidrios
@@ -112,23 +108,4 @@ public class FichaTecnicaEntity extends BaseEntity implements Serializable {
     public void setNumAirbags(int numAirbags) {
         this.numAirbags = numAirbags;
     }
-    /**
-     * Retorna el automovil asociado a la ficha tecnica.
-     * @return el automovil
-     */
-    public AutomovilEntity getAutomovil() {
-        return automovil;
-    }
-    /**
-     * Actualiza el automovil asociado a al ficha tecnica.
-     * @param automovil 
-     */
-    public void setAutomovil(AutomovilEntity automovil) {
-        this.automovil = automovil;
-    }
-    
-    
-    
-    
-    
 }

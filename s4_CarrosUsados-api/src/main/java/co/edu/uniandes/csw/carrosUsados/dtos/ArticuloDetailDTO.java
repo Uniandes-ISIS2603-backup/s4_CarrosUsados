@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package co.edu.uniandes.csw.carrosUsados.dtos;
+import co.edu.uniandes.csw.carrosUsados.entities.ArticuloEntity;
 
 /**
  *
@@ -13,16 +14,26 @@ public class ArticuloDetailDTO extends ArticuloDTO {
 
     private final AutomovilDTO automovil;
 
+    /**
+     * Crea un articulo vacio
+     */
     public ArticuloDetailDTO() {
         super();
         automovil = null;
     }
 
-    public ArticuloDetailDTO(AutomovilDTO automovilP, long id, String ubicacion, String precio, String descripcion, String disponibilidad) {
-        super(id, ubicacion, precio, descripcion, disponibilidad);
-        automovil = automovilP;
+    /**
+     * Crea un articuloDetailDTO
+     * @param articulo entity con la cual se va a generar el DTO
+     */
+    public ArticuloDetailDTO(ArticuloEntity articulo) {
+        super( articulo );
+        automovil = new AutomovilDTO(articulo.getAutomovil());
     }
 
+    /**
+     * @return retorna el automovil asociado al articulo 
+     */
     public AutomovilDTO getAutomovil() {
         return automovil;
     }

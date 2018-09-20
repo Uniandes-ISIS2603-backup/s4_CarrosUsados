@@ -39,7 +39,7 @@ public class CalificacionDetailDTO extends CalificacionDTO implements Serializab
      */
     public CalificacionDetailDTO(CalificacionEntity calEntity) {
         
-            calEntity=super.toEntity();
+            super(calEntity);
         if (calEntity.getPuntoVenta() != null) {
             this.punto = new PuntoVentaDTO(calEntity.getPuntoVenta());
         }
@@ -52,13 +52,13 @@ public class CalificacionDetailDTO extends CalificacionDTO implements Serializab
      * @return calEntity objeto CalificacionEntity.
      *
      */
-    @Override
+    
     public CalificacionEntity toEntity() {
-       CalificacionEntity calEntity = super.toEntity();
+       CalificacionEntity calificaEntity = super.toEntity();
         if (punto != null) {
-            calEntity.setPuntoVenta(calEntity.getPuntoVenta());
+            calificaEntity.setPuntoVenta(calificaEntity.getPuntoVenta());
         }
-        return calEntity;
+        return calificaEntity;
     }
 
     

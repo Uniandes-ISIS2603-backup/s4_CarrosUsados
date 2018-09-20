@@ -17,7 +17,7 @@ import java.util.List;
 public class PuntoVentaDetailDTO extends PuntoVentaDTO {
  
     //lista de calificaciones del punto de venta. relación de cero a muchas calificaciones.
-    private List<CalificacionDTO> calificaciones;
+    private List<CalificacionDetailDTO> calificaciones;
     
     
     public PuntoVentaDetailDTO() {
@@ -34,7 +34,7 @@ public class PuntoVentaDetailDTO extends PuntoVentaDTO {
             
             for(CalificacionEntity calificacionEntity: entity.getCalificaciones())
             {
-                calificaciones.add(new CalificacionDTO(calificacionEntity));
+                calificaciones.add(new CalificacionDetailDTO(calificacionEntity));
             }
         }
     }
@@ -46,7 +46,7 @@ public class PuntoVentaDetailDTO extends PuntoVentaDTO {
        if(calificaciones!=null)
        {
            List<CalificacionEntity> calificacionesEntity=     new ArrayList<>();
-           for(CalificacionDTO calificacionDTO:getCalificaciones())
+           for(CalificacionDetailDTO calificacionDTO:getCalificaciones())
            {
                calificacionesEntity.add(calificacionDTO.toEntity());
            }
@@ -57,11 +57,11 @@ public class PuntoVentaDetailDTO extends PuntoVentaDTO {
         return entity;
     }
 
-    public List<CalificacionDTO> getCalificaciones() {
+    public List<CalificacionDetailDTO> getCalificaciones() {
         return calificaciones;
     }
 
-    public void setCalificaciones(List<CalificacionDTO> calificaciones) {
+    public void setCalificaciones(List<CalificacionDetailDTO> calificaciones) {
         this.calificaciones = calificaciones;
     }
     

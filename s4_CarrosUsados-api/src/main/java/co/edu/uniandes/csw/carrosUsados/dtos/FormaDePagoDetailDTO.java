@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package co.edu.uniandes.csw.carrosUsados.dtos;
+import co.edu.uniandes.csw.carrosUsados.entities.FormaDePagoEntity;
 
 /**
  *
@@ -11,19 +12,29 @@ package co.edu.uniandes.csw.carrosUsados.dtos;
  */
 public class FormaDePagoDetailDTO extends FormaDePagoDTO {
 
-    //Relacion de carnidalidad 1 con cliente
     private final ClienteDTO cliente;
 
-    public FormaDePagoDetailDTO(String nombreP, String tipoP, ClienteDTO clienteP) {
-        super(nombreP, tipoP);
-        this.cliente = clienteP;
-    }
-
+    /**
+     * Crea un formaDePago vacio
+     */
     public FormaDePagoDetailDTO() {
         super();
         cliente = null;
     }
 
+    /**
+     * Crea un formaDePagoDetailDTO
+     * @param formaDePago entity con la cual se va a generar el DTO
+     */
+    public FormaDePagoDetailDTO(FormaDePagoEntity formaDePago) {
+        super( formaDePago );
+        //cliente = new ClienteDTO(formaDePago.getCliente());
+        cliente = null;
+    }
+
+    /**
+     * @return retorna el cliente asociado al formaDePago 
+     */
     public ClienteDTO getCliente() {
         return cliente;
     }
