@@ -127,7 +127,7 @@ public class CalificacionDTO implements Serializable {
     }
 
      /**
-     * Modifica el nombre de la calificación
+     * Modifica fecha de la calificación
      *
      * @param publishedDate nuevo fecha de publicación.
      */

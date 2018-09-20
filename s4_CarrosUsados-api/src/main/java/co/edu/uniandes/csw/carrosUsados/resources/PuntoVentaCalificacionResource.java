@@ -5,15 +5,18 @@
  */
 package co.edu.uniandes.csw.carrosUsados.resources;
 
+import co.edu.uniandes.csw.carrosUsados.dtos.CalificacionDTO;
 import co.edu.uniandes.csw.carrosUsados.dtos.CalificacionDetailDTO;
 import co.edu.uniandes.csw.carrosUsados.ejb.CalificacionLogic;
 import co.edu.uniandes.csw.carrosUsados.ejb.PuntoVentaCalificacionLogic;
+import co.edu.uniandes.csw.carrosUsados.ejb.PuntoVentaLogic;
 import co.edu.uniandes.csw.carrosUsados.entities.CalificacionEntity;
 import co.edu.uniandes.csw.carrosUsados.exceptions.BusinessLogicException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.faces.bean.RequestScoped;
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
@@ -26,10 +29,12 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.MediaType;
 
+
 /**
  * Clase que implementa el recurso "puntos/id/calificaciones"
  * @author Daniella Arteaga
  */
+
 
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
@@ -43,7 +48,8 @@ class PuntoVentaCalificacionResource {
     @Inject
     private CalificacionLogic calificacionlogic; //variable de logica de calificación
     
-    
+    @Inject
+    private PuntoVentaLogic puntologic;
     
     
      /**
@@ -57,14 +63,19 @@ class PuntoVentaCalificacionResource {
      */
     @POST
     @Path("{calificacionId: \\d+}")
-    public CalificacionDetailDTO addCalificacion(@PathParam("puntoId") Long puntoId, @PathParam("calificacionId") Long calificacionId) throws BusinessLogicException {
+    public CalificacionDTO addCalificacion(@PathParam("puntoId") Long puntoId, @PathParam("calificacionId") Long calificacionId) throws BusinessLogicException {
         LOGGER.log(Level.INFO, "PuntoVentaCalificacionResource addCalificacion: input: puntoId {0} , calificacionId {1}", new Object[]{puntoId, calificacionId});
+        
+        if(puntologic.getPuntoVenta(puntoId)==null)
+        {
+            throw new WebApplicationException("El recurso puntos/"+ puntoId+ " no existe.", 404);
+        }
         if (calificacionlogic.getCalificacion(calificacionId) == null) {
             throw new WebApplicationException("El recurso /calificaciones/" + calificacionId + " no existe.", 404);
         }
-        CalificacionDetailDTO detailDTO = new CalificacionDetailDTO(puntocallogic.addCalificacion(calificacionId, puntoId));
-        LOGGER.log(Level.INFO, "PuntoVentaCalificacionResource addCalificacion: output: {0}", detailDTO);
-        return detailDTO;
+        CalificacionDTO calificacionDTO = new CalificacionDTO(puntocallogic.addCalificacion(calificacionId, puntoId));
+        LOGGER.log(Level.INFO, "PuntoVentaCalificacionResource addCalificacion: output: {0}", calificacionDTO);
+        return calificacionDTO;
     }
 
     /**
@@ -95,9 +106,11 @@ class PuntoVentaCalificacionResource {
      * Error de lógica que se genera cuando no se encuentra la calificacion.
      */
     @GET
-    @Path("{booksId: \\d+}")
+    @Path("{puntoId: \\d+}")
     public CalificacionDetailDTO getCalificacion(@PathParam("puntoId") Long puntoId, @PathParam("calificacionId") Long calificacionId) throws BusinessLogicException {
         LOGGER.log(Level.INFO, "PuntoVentaCalificacionResource getCalificacion: input: puntoId {0} , calificacionId {1}", new Object[]{puntoId, calificacionId});
+        
+        
         if (calificacionlogic.getCalificacion(calificacionId) == null) {
             throw new WebApplicationException("El recurso /calificaciones/" + calificacionId + " no existe.", 404);
         }

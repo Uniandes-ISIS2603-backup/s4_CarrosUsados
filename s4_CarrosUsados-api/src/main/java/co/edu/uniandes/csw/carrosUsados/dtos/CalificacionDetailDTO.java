@@ -54,11 +54,11 @@ public class CalificacionDetailDTO extends CalificacionDTO implements Serializab
      */
     @Override
     public CalificacionEntity toEntity() {
-       CalificacionEntity calEntity = super.toEntity();
+       CalificacionEntity calificaEntity = super.toEntity();
         if (punto != null) {
-            calEntity.setPuntoVenta(calEntity.getPuntoVenta());
+            calificaEntity.setPuntoVenta(calificaEntity.getPuntoVenta());
         }
-        return calEntity;
+        return calificaEntity;
     }
 
     

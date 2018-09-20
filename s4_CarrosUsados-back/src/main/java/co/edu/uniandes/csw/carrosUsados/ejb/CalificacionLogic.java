@@ -22,7 +22,7 @@ import javax.inject.Inject;
  */
 
 @Stateless
-public class CalificacionLogic {
+public class CalificacionLogic  {
     
     @Inject private CalificacionPersistence persistencia;
     
@@ -48,14 +48,15 @@ public class CalificacionLogic {
     {
         LOGGER.log(Level.INFO, "Inicia creación de calificación");
 
-        if(entityNew.getId()==null)
-        {
-            throw new BusinessLogicException("Id inválido");
-        }
         
         if(persistencia.find(entityNew.getId())!=null)
         {
             throw new BusinessLogicException("Ya existe esta calificación.");
+        }
+        
+        if(entityNew.getPuntoVenta()==null)
+        {
+            throw new BusinessLogicException("No existe el punto de venta de esta calificación.");
         }
         
         if(entityNew.getComentario()==null)
