@@ -7,8 +7,11 @@ package co.edu.uniandes.csw.carrosUsados.ejb;
 
 import javax.ejb.Stateless;
 import co.edu.uniandes.csw.carrosUsados.entities.AdministradorEntity;
+import co.edu.uniandes.csw.carrosUsados.entities.PuntoVentaEntity;
 import co.edu.uniandes.csw.carrosUsados.exceptions.BusinessLogicException;
 import co.edu.uniandes.csw.carrosUsados.persistence.AdministradorPersistence;
+import co.edu.uniandes.csw.carrosUsados.persistence.PuntoVentaPersistence;
+
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -27,7 +30,8 @@ public class AdministradorLogic extends UsuarioLogic {
 
     @Inject
     private AdministradorPersistence persistence;
-
+    @Inject
+    private PuntoVentaPersistence persistencePuntoVenta;
     /**
      * Persiste un administrador en el sistema.
      *
@@ -120,5 +124,16 @@ public class AdministradorLogic extends UsuarioLogic {
         persistence.delete(administradorId);
         LOGGER.log(Level.INFO, "Termina proceso de borrar el administrador con id = {0}", administradorId);
     }
+
+    /**
+     * Obtener los puntos de venta de un administrador
+     *
+     * @param administradorId - El id del administrador cuyos puntos de venta se quieren buscar.
+     */
+    public List<PuntoVentaEntity> getPuntosDeVenta(Long administradorId) {
+        LOGGER.log(Level.INFO, "Inicia proceso de consultar los puntos de venta asociados al administrador con id = {0}", administradorId);
+        return persistence.find(administradorId).getPuntosDeVenta();
+    }
+
 
 }

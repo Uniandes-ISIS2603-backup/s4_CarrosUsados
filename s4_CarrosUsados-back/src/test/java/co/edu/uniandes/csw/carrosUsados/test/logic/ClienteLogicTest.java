@@ -110,9 +110,6 @@ public class ClienteLogicTest {
     public void createClienteTest() throws BusinessLogicException  {
         PodamFactory factory = new PodamFactoryImpl();
         ClienteEntity newEntity = factory.manufacturePojo(ClienteEntity.class);
-        
-
-        
         newEntity.setNombreUsuario("jsbravo");
         newEntity.setNombre("Sebastian");
         newEntity.setApellido("Castelo");

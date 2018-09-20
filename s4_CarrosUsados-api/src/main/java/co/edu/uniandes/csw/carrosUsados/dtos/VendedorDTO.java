@@ -5,7 +5,12 @@
  */
 package co.edu.uniandes.csw.carrosUsados.dtos;
 
+import co.edu.uniandes.csw.carrosUsados.entities.AutomovilEntity;
+import co.edu.uniandes.csw.carrosUsados.entities.VendedorEntity;
+
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -15,83 +20,52 @@ import java.io.Serializable;
  * Clase Data Transfer Object Vendedor que representa el vendedor de un
  * automovil en el sistema.
  */
-public class VendedorDTO implements Serializable {
+public class VendedorDTO extends PersonaDTO implements Serializable {
+
 
     /**
-     * Cadena de caracteres que representa el id del usuario en el sistema.
+     * Lista que representa la relación OneToMany entre Vendedor y Automovil.
      */
-    private Long id;
+    private List<AutomovilDTO> automoviles;
     /**
-     * Cadena de caracteres que representa el nombre del usuario en el sistema.
-     */
-    private String nombre;
-    /**
-     * Cadena de caracteres que representa el apellido del usuario en el
-     * sistema.
-     */
-    private String apellido;
-
-    /**
-     * Cadena de caracteres que representa el correo del usuario en el sistema.
-     */
-    /**
-     * Constructor por defecto
+     * Constructor vacío generado por defecto.
      */
     public VendedorDTO() {
+        //Constructor por defecto
+    }
+    /** Transforma un Data Transfer Object a una Entidad de tipo Vendedor.
+     *
+     * @return entidad de Vendedor.
+     */
+    public VendedorEntity toEntity()
+    {
+        VendedorEntity entity = new VendedorEntity();
+        entity.setId(this.id);
+        entity.setNombre(this.nombre);
+        entity.setApellido(this.apellido);
+        if (automoviles!= null)
+        {
+            List<AutomovilEntity> automovilesEntity = new ArrayList<>();
+            for (AutomovilDTO automovil : automoviles)
+            {
+                automovilesEntity.add(automovil.toEntity());
+            }
+        }
+        return entity;
+    }
+    /**
+     * Constructor que genera un Data Transfer Object Vendedor a partir de un VendedorEntity.
+     * @param vendedorEntity Entidad que representa al vendedor.
+     */
+    public VendedorDTO(VendedorEntity vendedorEntity) {
+        super(vendedorEntity);
+        if (vendedorEntity.getAutomoviles() != null) {
+            for(AutomovilEntity automovil : vendedorEntity.getAutomoviles())
+            {
+                automoviles.add(new AutomovilDTO(automovil));
+            }
+        }
     }
 
-    /**
-     * Devuelve el ID del vendedor.
-     *
-     * @return id del vendedor.
-     */
-    public Long getId() {
-        return id;
-    }
-
-    /**
-     * Modifica el ID del vendedor.
-     *
-     * @param id id del vendedor.
-     */
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    /**
-     * Devuelve el nombre del vendedor.
-     *
-     * @return nombre del vendedor
-     */
-    public String getNombre() {
-        return nombre;
-    }
-
-    /**
-     * Modifica el nombre del vendedor.
-     *
-     * @param nombre nuevo nombre del vendedor.
-     */
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    /**
-     * Devuelve el apellido del vendedor.
-     *
-     * @return nombre del vendedor.
-     */
-    public String getApellido() {
-        return apellido;
-    }
-
-    /**
-     * Modifica el apellido del vendedor.
-     *
-     * @param apellido apellido del vendedor.
-     */
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
-    }
 
 }

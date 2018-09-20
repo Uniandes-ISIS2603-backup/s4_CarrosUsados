@@ -9,102 +9,59 @@ package co.edu.uniandes.csw.carrosUsados.dtos;
  *
  * @author js.bravo
  */
+
+import co.edu.uniandes.csw.carrosUsados.entities.UsuarioEntity;
+
+import java.util.Date;
+
 /**
  * Clase Data Transfer Object Usuario que contiene atributos que utilizan tanto
  * ClienteDTO como AdministradorDTO.
  */
-public class UsuarioDTO {
+public class UsuarioDTO extends PersonaDTO {
 
-    /**
-     * Cadena de caracteres que representa el id del usuario en el sistema.
-     */
-    private Long id;
-    /**
-     * Cadena de caracteres que representa el nombre del usuario en el sistema.
-     */
-    private String nombre;
-    /**
-     * Cadena de caracteres que representa el apellido del usuario en el
-     * sistema.
-     */
-    private String apellido;
-    /**
-     * Cadena de caracteres que representa el correo del usuario en el sistema.
-     */
-    private String correo;
+    protected String correo;
     /**
      * Cadena de caracteres que representa la contraseña del usuario en el
      * sistema.
      */
-    private String contrasena;
+    protected String contrasena;
     /**
      * Cadena de caracteres que representa el login del usuario en el sistema.
      */
-    private String nombreUsuario;
+    protected String nombreUsuario;
     /**
      * Cadena de caracteres que representa la fecha de nacimiento del usuario en
      * el sistema.
      */
-    private String fechaNacimiento;
+    protected Date fechaNacimiento;
     /**
      * Cadena de caracteres que representa el telefono de contacto del usuario
      * en el sistema.
      */
-    private String telefono;
+    protected String telefono;
 
     /**
-     * Devuelve el ID del usuario.
-     *
-     * @return id del Usuario.
+     * Constructor vacío generado por defecto.
      */
-    public Long getId() {
-        return id;
+    public UsuarioDTO(){
+        // Constructor por defecto
     }
 
     /**
-     * Modifica el ID del usuario.
-     *
-     * @param id id del Usuario.
+     * Constructor que genera un Data Transfer Object UsuarioDTO a partir de un usuarioEntity.
+     * @param usuarioEntity Entidad que representa al usuario.
      */
-    public void setId(Long id) {
-        this.id = id;
+    public UsuarioDTO(UsuarioEntity usuarioEntity)
+    {
+        super(usuarioEntity);
+        this.correo = usuarioEntity.getCorreo();
+        this.contrasena = usuarioEntity.getContrasena();
+        this.nombreUsuario = usuarioEntity.getNombreUsuario();
+        this.fechaNacimiento = usuarioEntity.getFechaNacimiento();
+        this.telefono = usuarioEntity.getTelefono();
     }
 
-    /**
-     * Devuelve el nombre del Usuario.
-     *
-     * @return nombre del Usuario
-     */
-    public String getNombre() {
-        return nombre;
-    }
-
-    /**
-     * Modifica el nombre del usuario.
-     *
-     * @param nombre nuevo nombre del usuario..
-     */
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    /**
-     * Devuelve el apellido del Usuario.
-     *
-     * @return nombre del usuario.
-     */
-    public String getApellido() {
-        return apellido;
-    }
-
-    /**
-     * Modifica el apellido del usuario..
-     *
-     * @param apellido apellido del Usuario.
-     */
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
-    }
 
     /**
      * Devuelve el nombre del Usuario.
@@ -165,7 +122,7 @@ public class UsuarioDTO {
      *
      * @return fecha de nacimiento del usuario
      */
-    public String getFechaNacimiento() {
+    public Date getFechaNacimiento() {
         return fechaNacimiento;
     }
 
@@ -174,7 +131,7 @@ public class UsuarioDTO {
      *
      * @param fechaNacimiento fecha de nacimiento del usuario.
      */
-    public void setFechaNacimiento(String fechaNacimiento) {
+    public void setFechaNacimiento(Date fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
     }
 

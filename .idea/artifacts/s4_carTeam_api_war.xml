@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="s4_carTeam-api:war">
+    <output-path>$PROJECT_DIR$/s4_CarrosUsados-api/target</output-path>
+    <root id="archive" name="s4_carTeam-api-1.0.war">
+      <element id="artifact" artifact-name="s4_carTeam-api:war exploded" />
+    </root>
+  </artifact>
+</component>

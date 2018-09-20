@@ -5,10 +5,12 @@
  */
 package co.edu.uniandes.csw.carrosUsados.entities;
 
+import uk.co.jemos.podam.common.PodamExclude;
+
 import java.io.Serializable;
 import java.util.Date;
-import javax.persistence.Entity;
-import javax.persistence.Temporal;
+import java.util.List;
+import javax.persistence.*;
 
 /**
  *
@@ -21,13 +23,17 @@ public class AdministradorEntity extends UsuarioEntity implements Serializable {
      * Cadena de caracteres que representa la fecha de inicio del cargo del
      * administrador.
      */
-   
     private Date fechaInicio;
     /**
      * Cargo del administrador.
      */
     private String cargo;
-
+    /**
+     * Mapea la relación con un objeto PuntoDeVenta. Muchos Administradores pueden tener muchos Puntos de Venta
+     */
+    @PodamExclude
+    @OneToMany(mappedBy = "administrador")
+    private List<PuntoVentaEntity> puntosDeVenta;
   
     /**
      * Retorna la fecha de inicio del cargo del administrador.
@@ -65,6 +71,20 @@ public class AdministradorEntity extends UsuarioEntity implements Serializable {
         this.cargo = cargo;
     }
 
-
-
+    /**
+     * Retorna los puntos de venta del administrador.
+     *
+     * @return los puntos de venta del administrador.
+     */
+    public List<PuntoVentaEntity> getPuntosDeVenta() {
+        return puntosDeVenta;
+    }
+    /**
+     * Asigna los puntos de venta del administrador.
+     *
+     * @param puntosDeVenta - los puntos de venta del administrador.
+     */
+    public void setPuntosDeVenta(List<PuntoVentaEntity> puntosDeVenta) {
+        this.puntosDeVenta = puntosDeVenta;
+    }
 }

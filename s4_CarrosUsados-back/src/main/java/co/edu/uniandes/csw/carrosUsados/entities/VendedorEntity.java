@@ -16,61 +16,21 @@ import uk.co.jemos.podam.common.PodamExclude;
  * @author js.bravo
  */
 @Entity
-public class VendedorEntity extends BaseEntity implements Serializable {
+public class VendedorEntity extends PersonaEntity implements Serializable {
 
-    /**
-     * Nombre del vendedor.
-     */
-    private String nombre;
-    /**
-     * Apellido del vendedor.
-     */
-    private String apellido;
 
     @PodamExclude
     @OneToMany(mappedBy = "vendedor")
     private List<AutomovilEntity> automoviles;
 
-    /**
-     * Retorna el nombre del vendedor.
-     *
-     * @return nombre del vendedor.
-     */
-    public String getNombre() {
-        return nombre;
-    }
-
-    /**
-     * Retorna el nombre del vendedor.
-     *
-     * @param nombre - nombre del vendedor.
-     */
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    /**
-     * Retorna el apellido del vendedor.
-     *
-     * @return apellido del vendedor.
-     */
-    public String getApellido() {
-        return apellido;
-    }
-
-    /**
-     * Asigna el apellido del vendedor.
-     *
-     * @param apellido - apellido del vendedor.
-     */
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
-    }
-
     public List<AutomovilEntity> getAutomoviles() {
         return automoviles;
     }
-
+    /**
+     * Asigna los automoviles del vendedor.
+     *
+     * @param automoviles automoviles del vendedor.
+     */
     public void setAutomoviles(List<AutomovilEntity> automoviles) {
         this.automoviles = automoviles;
     }

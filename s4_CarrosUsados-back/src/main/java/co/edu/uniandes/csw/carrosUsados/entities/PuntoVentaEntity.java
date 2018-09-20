@@ -12,6 +12,7 @@ import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
 import uk.co.jemos.podam.common.PodamExclude;
 
 /**
@@ -30,7 +31,11 @@ public class PuntoVentaEntity extends BaseEntity implements Serializable{
     @PodamExclude
     @OneToMany(mappedBy = "puntoVenta", cascade = CascadeType.PERSIST, orphanRemoval = true)
     private List<CalificacionEntity> comentarios = new ArrayList<CalificacionEntity>();
-    
+
+    @PodamExclude
+    @ManyToOne
+    private AdministradorEntity administrador;
+
     @PodamExclude
     @OneToOne(mappedBy = "puntoVenta")
     private AutomovilEntity automovil;

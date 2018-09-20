@@ -9,80 +9,36 @@ import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  *
  * @author js.bravo
  */
 @Entity
-public class UsuarioEntity extends BaseEntity implements Serializable {
+public class UsuarioEntity extends PersonaEntity implements Serializable {
 
-    /**
-     * Nombre del usuario.
-     */
-    private String nombre;
-    /**
-     * Apellido del usuario.
-     */
-    private String apellido;
     /**
      * Correo electrónico del usuario.
      */
-    private String correo;
+    protected String correo;
     /**
      * Nombre de usuario (login) del usuario.
      */
-    private String nombreUsuario;
+    protected String nombreUsuario;
     /**
      * Cadena de caracteres que representa la fecha de nacimiento del
      * usuario.
      */
-    
-    private Date fechaNacimiento;
+    protected Date fechaNacimiento;
     /**
      * Cadena de caracteres que representa el telefono del usuario.
      */
-    private String telefono;
+    protected String telefono;
     /**
      * Contraseña asociada al login del usuario.
      */
-    private String contrasena;
-
-    /**
-     * Retorna el nombre del usuario.
-     *
-     * @return nombre del usuario.
-     */
-    public String getNombre() {
-        return nombre;
-    }
-
-    /**
-     * Retorna el nombre del usuario.
-     *
-     * @param nombre - nombre del usuario.
-     */
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    /**
-     * Retorna el apellido del usuario.
-     *
-     * @return apellido del usuario.
-     */
-    public String getApellido() {
-        return apellido;
-    }
-
-    /**
-     * Asigna el apellido del usuario.
-     *
-     * @param apellido - apellido del usuario.
-     */
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
-    }
+    protected String contrasena;
 
     /**
      * Retorna el correo electrónico del usuario.
