@@ -26,7 +26,6 @@ public class PuntoVentaDTO implements Serializable {
     private String ubicacion;
     private String ciudad;
     private long id;
-    private AutomovilEntity automovil;
     private List<CalificacionEntity> calificaciones =new ArrayList<CalificacionEntity>();
 
     /**
