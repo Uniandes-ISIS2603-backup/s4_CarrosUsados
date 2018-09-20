@@ -21,7 +21,7 @@ public class CalificacionDTO implements Serializable {
 
     private int numEstrellas;
     private String comentario;
-    private PuntoVentaEntity puntoVenta;
+    private PuntoVentaDTO puntoVenta;
     private Date publishedDate;
     private Long id;
 
@@ -39,11 +39,17 @@ public class CalificacionDTO implements Serializable {
      * @param entityCalificacion Entity: Es la entidad que se va a convertir a DTO
      */
     public CalificacionDTO(CalificacionEntity entityCalificacion) {
+       if(entityCalificacion!=null)
+       {
         this.numEstrellas = entityCalificacion.getEstrellas();
         this.comentario = entityCalificacion.getComentario();
         this.id= entityCalificacion.getId();
         this.publishedDate= entityCalificacion.getpublishedDate();
-        this.puntoVenta= entityCalificacion.getPuntoVenta();
+        
+        if(entityCalificacion.getPuntoVenta()!=null)
+        {
+        this.puntoVenta=  new PuntoVentaDTO(entityCalificacion.getPuntoVenta());
+    }}
     }
 
 
@@ -58,8 +64,13 @@ public class CalificacionDTO implements Serializable {
         calEntity.setComentario(this.comentario);
         calEntity.setEstrellas(this.numEstrellas);
         calEntity.setId(this.id);
-        calEntity.setPuntoVenta(this.puntoVenta);
+        
         calEntity.setPublishDate(this.publishedDate);
+        
+        if(this.puntoVenta!=null)
+        {
+            calEntity.setPuntoVenta(this.puntoVenta.toEntity());
+        }
         
         return calEntity;
     }
@@ -104,7 +115,7 @@ public class CalificacionDTO implements Serializable {
      *
      * @return puntoVenta el punto de venta de la calificación.
      */
-    public PuntoVentaEntity getPuntoVenta() {
+    public PuntoVentaDTO getPuntoVenta() {
         return puntoVenta;
     }
 
@@ -114,7 +125,7 @@ public class CalificacionDTO implements Serializable {
      * @param puntoVenta punto nuevo a asignar
      */
  
-    public void setPuntoVenta(PuntoVentaEntity puntoVenta) {
+    public void setPuntoVenta(PuntoVentaDTO puntoVenta) {
         this.puntoVenta = puntoVenta;
     }
     /**
