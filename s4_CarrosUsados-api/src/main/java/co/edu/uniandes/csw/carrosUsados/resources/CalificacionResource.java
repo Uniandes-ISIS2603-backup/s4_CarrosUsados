@@ -35,7 +35,7 @@ import javax.ws.rs.WebApplicationException;
  * Clase que implementa el recurso "calificaciones".
  * @author Daniella Arteaga
  */
-@Path("calificaciones")
+@Path("calificacion")
 @Produces("application/json")
 @Consumes("application/json")
 @RequestScoped
