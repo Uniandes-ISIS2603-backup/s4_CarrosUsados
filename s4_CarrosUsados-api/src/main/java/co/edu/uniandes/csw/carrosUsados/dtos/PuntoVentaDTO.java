@@ -26,7 +26,6 @@ public class PuntoVentaDTO implements Serializable {
     private String ubicacion;
     private String ciudad;
     private long id;
-    private AutomovilEntity automovil;
     private List<CalificacionEntity> calificaciones =new ArrayList<CalificacionEntity>();
 
     /**
@@ -49,7 +48,6 @@ public class PuntoVentaDTO implements Serializable {
         this.ciudad = puntoVenta.getCiudad();
         this.id = puntoVenta.getId();
         this.calificaciones= puntoVenta.getCalificaciones();
-        this.automovil= puntoVenta.getAutomovil();
     }
 
   
@@ -61,7 +59,6 @@ public class PuntoVentaDTO implements Serializable {
     public PuntoVentaEntity toEntity()
     {
         PuntoVentaEntity entity= new PuntoVentaEntity();
-        entity.setAutomovil(this.automovil);
         entity.setCalificaciones(calificaciones);
         entity.setCiudad(this.ciudad);
         entity.setEmpleados(numVendedores);

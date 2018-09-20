@@ -7,6 +7,7 @@ package co.edu.uniandes.csw.carrosUsados.ejb;
 
 import co.edu.uniandes.csw.carrosUsados.entities.AutomovilEntity;
 import co.edu.uniandes.csw.carrosUsados.entities.FichaTecnicaEntity;
+import co.edu.uniandes.csw.carrosUsados.exceptions.BusinessLogicException;
 import co.edu.uniandes.csw.carrosUsados.persistence.AutomovilPersistence;
 import co.edu.uniandes.csw.carrosUsados.persistence.FichaTecnicaPersistence;
 import java.util.logging.Level;
@@ -38,34 +39,19 @@ public class AutomovilFichaTecnicaLogic {
      * @param idFichaTecnica El id de la ficha tecnica que será del automovil
      * @return el nuevo automovil.
      */
-    public AutomovilEntity replaceFichaTecnica(Long idAutomovil, Long idFichaTecnica) {
+    public AutomovilEntity replaceFichaTecnica(Long idAutomovil, Long idFichaTecnica) throws BusinessLogicException {
         LOGGER.log(Level.INFO, "Inicia proceso de actualizar automovil con id = {0}", idAutomovil);
+        if(automovilPersistence.find(idAutomovil) == null){
+            throw new BusinessLogicException("El automovil no existe");
+        }
+        if(fichaTecnicaPersistence.find(idFichaTecnica) == null){
+            throw new BusinessLogicException("El ficha tecnica no existe");
+        } 
         AutomovilEntity automovilEntity = automovilPersistence.find(idAutomovil);
         FichaTecnicaEntity fichaTecnicaEntity = fichaTecnicaPersistence.find(idFichaTecnica);
         automovilEntity.setFichaTecnica(fichaTecnicaEntity);
-        fichaTecnicaEntity.setAutomovil(automovilEntity);
-        automovilPersistence.update(automovilEntity); //Chequear si esto es correcto
-        fichaTecnicaPersistence.update(fichaTecnicaEntity);
+        automovilPersistence.update(automovilEntity); //Chequear si esto es correcto (Sobra ya que las em actualzia automaticamente entidades)
         LOGGER.log(Level.INFO, "Termina proceso de actualizar automovil con id = {0}", automovilEntity.getId());
         return automovilEntity;
     }
-    
-    /**
-     * Borrar una ficha tecnica de un automovil. Este metodo se utiliza para borrar la
-     * relacion de una ficha tecnica.
-     *
-     * @param idAutomovil El automovil al cual se le desea borrar la ficha tecnica
-     */
-    public void removeFichaTecnica(Long idAutomovil) {
-        LOGGER.log(Level.INFO, "Inicia proceso de borrar la FichaTecnica del automovil con id = {0}", idAutomovil);
-        AutomovilEntity automovilEntity = automovilPersistence.find(idAutomovil);
-        FichaTecnicaEntity fichaTecnicaEntity = fichaTecnicaPersistence.find(automovilEntity.getFichaTecnica().getId());
-        fichaTecnicaPersistence.delete(fichaTecnicaEntity.getId());
-        automovilEntity.setFichaTecnica(null);
-        //Ahora persisto los cambios en la base de datos:
-        automovilPersistence.update(automovilEntity);
-        
-        LOGGER.log(Level.INFO, "Termina proceso de borrar la ficha tecnica del automovil con id = {0}", automovilEntity.getId());
-    }
-    
 }

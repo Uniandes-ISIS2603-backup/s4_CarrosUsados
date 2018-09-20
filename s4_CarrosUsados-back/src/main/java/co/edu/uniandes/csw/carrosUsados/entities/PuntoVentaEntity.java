@@ -31,9 +31,7 @@ public class PuntoVentaEntity extends BaseEntity implements Serializable{
     @OneToMany(mappedBy = "puntoVenta", cascade = CascadeType.PERSIST, orphanRemoval = true)
     private List<CalificacionEntity> comentarios = new ArrayList<CalificacionEntity>();
     
-    @PodamExclude
-    @OneToOne(mappedBy = "puntoVenta")
-    private AutomovilEntity automovil;
+    
     
     /**
      *Constructor de entidad.
@@ -114,23 +112,5 @@ public class PuntoVentaEntity extends BaseEntity implements Serializable{
   {
       this.ubicacion= nueva;
   }
-
-    /**
-     *  Devuelve automovil del punto de venta.
-     * @return automovil del punto de venta.
-     */
-    public AutomovilEntity getAutomovil() {
-        return automovil;
-    }
-
-    /**
-     *  Devuelve el carro que pertenece al punto
-     * @param automovil nuevo que se asignarà.
-     */
-    public void setAutomovil(AutomovilEntity automovil) {
-        this.automovil = automovil;
-    }
-    
-  
   
 }

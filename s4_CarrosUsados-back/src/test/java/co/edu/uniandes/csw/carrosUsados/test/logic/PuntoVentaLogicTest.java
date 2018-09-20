@@ -113,7 +113,6 @@ public class PuntoVentaLogicTest {
         Assert.assertEquals(newEntity.getUbicacion(), entity.getUbicacion());
         Assert.assertEquals(newEntity.getEmpleados(), entity.getEmpleados());
            Assert.assertEquals(newEntity.getCalificaciones(), entity.getCalificaciones());
-              Assert.assertEquals(newEntity.getAutomovil(), entity.getAutomovil());
            
     }
     
@@ -144,7 +143,6 @@ public class PuntoVentaLogicTest {
         Assert.assertEquals(newEntity.getCiudad(), entity.getCiudad());
         Assert.assertEquals(newEntity.getUbicacion(), entity.getUbicacion());
         Assert.assertEquals(newEntity.getCalificaciones(), entity.getCalificaciones());
-        Assert.assertEquals(newEntity.getAutomovil(), entity.getAutomovil());
         Assert.assertEquals(newEntity.getEmpleados(), entity.getEmpleados());
     }
     
@@ -164,7 +162,6 @@ public class PuntoVentaLogicTest {
         Assert.assertEquals(pojoEntity.getEmpleados(), resp.getEmpleados());
         Assert.assertEquals(pojoEntity.getCiudad(), resp.getCiudad());
         Assert.assertEquals(pojoEntity.getUbicacion(), resp.getUbicacion());
-        Assert.assertEquals(pojoEntity.getAutomovil(), resp.getAutomovil());
         Assert.assertEquals(pojoEntity.getCalificaciones(), resp.getCalificaciones());
         
     }
