@@ -150,7 +150,6 @@ public class AutomovilResource {
             throw new WebApplicationException("El recurso /automoviles/" + automovilesId + " no existe.", 404);
         }
         //La siguiente linea puede causar un error:
-        automovilFichaTecnicaLogic.removeFichaTecnica(automovilesId);
         automovilLogic.deleteAutomovil(automovilesId);
         LOGGER.info("AutomovilResource deleteAutomovil: output: void");
 

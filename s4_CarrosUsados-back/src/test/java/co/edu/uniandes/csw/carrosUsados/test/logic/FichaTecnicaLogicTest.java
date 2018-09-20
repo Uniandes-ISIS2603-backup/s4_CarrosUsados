@@ -117,29 +117,16 @@ public class FichaTecnicaLogicTest {
     @Test
     public void createFichaTecnicaTest() throws BusinessLogicException {
         FichaTecnicaEntity newEntity = factory.manufacturePojo(FichaTecnicaEntity.class);
-        newEntity.setAutomovil(automovilData.get(0));
         FichaTecnicaEntity result = fichaTecnicaLogic.createFichaTecnica(newEntity);
         Assert.assertNotNull(result);
         FichaTecnicaEntity entity = em.find(FichaTecnicaEntity.class, result.getId());
         Assert.assertEquals(newEntity.getId(), entity.getId());
-        Assert.assertEquals(newEntity.getAutomovil(), entity.getAutomovil());
         Assert.assertEquals(newEntity.getNumAirbags(), entity.getNumAirbags());
         Assert.assertEquals(newEntity.getRines(), entity.getRines());
         Assert.assertEquals(newEntity.getVidrios(), entity.getVidrios());
-    }
-    
-    /**
-     * Prueba para crear una Ficha Tecnica con un automovil que no existe.
-     *
-     * @throws co.edu.uniandes.csw.bookstore.exceptions.BusinessLogicException
-     */
-    @Test(expected = BusinessLogicException.class)
-    public void createFichaTecnicaTestConAutomovilInexistente() throws BusinessLogicException {
-        FichaTecnicaEntity newEntity = factory.manufacturePojo(FichaTecnicaEntity.class);
-        AutomovilEntity automovilEntity = new AutomovilEntity();
-        automovilEntity.setId(Long.MIN_VALUE);
-        newEntity.setAutomovil(automovilEntity);
-        fichaTecnicaLogic.createFichaTecnica(newEntity);
+        /*
+        Falta probar booleanos
+        */
     }
     
     /**
@@ -151,7 +138,6 @@ public class FichaTecnicaLogicTest {
         FichaTecnicaEntity resultEntity = fichaTecnicaLogic.getFichaTecnica(entity.getId());
         Assert.assertNotNull(resultEntity);
         Assert.assertEquals(entity.getId(), resultEntity.getId());
-        Assert.assertEquals(entity.getAutomovil(), resultEntity.getAutomovil());
         Assert.assertEquals(entity.getNumAirbags(), resultEntity.getNumAirbags());
         Assert.assertEquals(entity.getRines(), resultEntity.getRines());
         Assert.assertEquals(entity.getVidrios(), resultEntity.getVidrios());
@@ -166,29 +152,12 @@ public class FichaTecnicaLogicTest {
     public void updateFichaTecnicaTest() throws BusinessLogicException {
         FichaTecnicaEntity entity = data.get(0);
         FichaTecnicaEntity pojoEntity = factory.manufacturePojo(FichaTecnicaEntity.class);
-        pojoEntity.setAutomovil(automovilData.get(1));
         pojoEntity.setId(entity.getId());
         fichaTecnicaLogic.updateFichaTecnica(pojoEntity.getId(), pojoEntity);
         FichaTecnicaEntity resp = em.find(FichaTecnicaEntity.class, entity.getId());
         Assert.assertEquals(pojoEntity.getId(), resp.getId());
-        Assert.assertEquals(pojoEntity.getAutomovil(), resp.getAutomovil());
         Assert.assertEquals(pojoEntity.getNumAirbags(), resp.getNumAirbags());
         Assert.assertEquals(pojoEntity.getRines(), resp.getRines());
         Assert.assertEquals(pojoEntity.getVidrios(), resp.getVidrios());
-    }
-    
-    
-    
-    /**
-     * Prueba para eliminar una ficha tecnica.
-     *
-     * @throws co.edu.uniandes.csw.bookstore.exceptions.BusinessLogicException
-     */
-    @Test
-    public void deleteFichaTecnicaTest() throws BusinessLogicException {
-        FichaTecnicaEntity entity = data.get(0);
-        fichaTecnicaLogic.deleteFichaTecnica(entity.getId());
-        FichaTecnicaEntity deleted = em.find(FichaTecnicaEntity.class, entity.getId());
-        Assert.assertNull(deleted);
     }
 }

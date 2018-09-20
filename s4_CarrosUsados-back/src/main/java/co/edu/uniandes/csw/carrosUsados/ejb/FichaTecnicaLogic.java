@@ -32,8 +32,8 @@ public class FichaTecnicaLogic{
      */
     public FichaTecnicaEntity createFichaTecnica(FichaTecnicaEntity fichaTecnicaEntity) throws BusinessLogicException {
         LOGGER.log(Level.INFO, "Inicia proceso de creación de la ficha tecnica");
-        if(fichaTecnicaEntity.getAutomovil() == null || automovilPersistence.find(fichaTecnicaEntity.getAutomovil().getId()) == null){
-          throw new BusinessLogicException("El automovil es invalido");
+        if(persistence.find(fichaTecnicaEntity.getId()) != null){
+            throw new BusinessLogicException("Ya existe una ficha tecnica con ese ID");
         }
         persistence.create(fichaTecnicaEntity);
         LOGGER.log(Level.INFO, "Termina proceso de creación de la ficha tecnica");
@@ -70,24 +70,14 @@ public class FichaTecnicaLogic{
      */
     public FichaTecnicaEntity updateFichaTecnica(Long idFichaTecnica, FichaTecnicaEntity fichaTecnicaEntity) throws BusinessLogicException {
         LOGGER.log(Level.INFO, "Inicia proceso de actualizar la ficha tecnica con id = {0}", idFichaTecnica);
-        if (fichaTecnicaEntity.getAutomovil() == null || automovilPersistence.find(fichaTecnicaEntity.getAutomovil().getId()) == null) {
-            throw new BusinessLogicException("Automovil invalido");
+        if(persistence.find(idFichaTecnica) == null){
+            throw new BusinessLogicException("La ficha tecnica no existe");
         }
         FichaTecnicaEntity newEntity = persistence.update(fichaTecnicaEntity);
         LOGGER.log(Level.INFO, "Termina proceso de actualizar la ficha tecnica con id = {0}", fichaTecnicaEntity.getId());
         return newEntity;
     }
 
-    /**
-     * Eliminar una ficha tecnica por ID
-     *
-     * @param idFichaTecnica El ID de la ficha tecnica a eliminar
-     */
-    public void deleteFichaTecnica(Long idFichaTecnica) {
-        LOGGER.log(Level.INFO, "Inicia proceso de borrar la ficha tecnica con id = {0}", idFichaTecnica);
-        persistence.delete(idFichaTecnica);
-        LOGGER.log(Level.INFO, "Termina proceso de borrar la ficha tecnica con id = {0}", idFichaTecnica);
-    }
 
 
 }

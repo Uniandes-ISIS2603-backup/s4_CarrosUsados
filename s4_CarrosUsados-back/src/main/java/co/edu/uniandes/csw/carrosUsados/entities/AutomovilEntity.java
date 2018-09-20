@@ -64,7 +64,7 @@ public class AutomovilEntity extends BaseEntity implements Serializable {
      * Se mapea relacion con una Ficha Tenica. Un automovil tiene una única ficha tecnica.
      */
     @PodamExclude
-    @OneToOne(mappedBy = "automovil", cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL)
     private FichaTecnicaEntity fichaTecnica;
 
     //Falta agregar PuntoVenta y Calificacion

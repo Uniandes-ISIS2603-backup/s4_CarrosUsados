@@ -100,9 +100,11 @@ public class FichaTecnicaResource {
         LOGGER.log(Level.INFO, "FichaTecnicaResource updateFichaTecnica: input: id: {0} , fichaTecnica: {1}", new Object[]{fichastecnicasId, fichaTecnica.toString()});
         fichaTecnica.setId(fichastecnicasId);
         FichaTecnicaEntity entityFichaTecnica = fichaTecnicaLogic.getFichaTecnica(fichastecnicasId);
+        
         if (entityFichaTecnica == null) {
             throw new WebApplicationException("El recurso /fichastecnicas/" + fichastecnicasId + " no existe.", 404);
         }
+        entityFichaTecnica = fichaTecnicaLogic.updateFichaTecnica(fichastecnicasId, entityFichaTecnica);
         FichaTecnicaDTO fichaTecnicaDTO = new FichaTecnicaDTO(entityFichaTecnica);
         LOGGER.log(Level.INFO, "FichaTecnicaResource updateFichaTecnica: output: {0}", fichaTecnicaDTO.toString());
         return fichaTecnicaDTO;
@@ -117,6 +119,8 @@ public class FichaTecnicaResource {
      * Error de lógica que se genera cuando no se puede eliminar la
      * ficha tecnica.
      */
+    
+    /*
     @DELETE
     @Path("{fichastecnicasId: \\d+}")
     public void deleteFichaTecnica(@PathParam("fichastecnicasId") long fichastecnicasId) throws BusinessLogicException {
@@ -126,5 +130,5 @@ public class FichaTecnicaResource {
         }
         fichaTecnicaLogic.deleteFichaTecnica(fichastecnicasId);
         LOGGER.info("FichaTecnicaResource deleteFichaTecnica: output: void");
-    }
+    }*/
 }
