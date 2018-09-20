@@ -53,12 +53,7 @@ public class CalificacionLogic  {
         {
             throw new BusinessLogicException("Ya existe esta calificación.");
         }
-        
-        if(entityNew.getPuntoVenta()==null)
-        {
-            throw new BusinessLogicException("No existe el punto de venta de esta calificación.");
-        }
-        
+
         if(entityNew.getComentario()==null)
         {
             throw new BusinessLogicException("Comentario inválido");
