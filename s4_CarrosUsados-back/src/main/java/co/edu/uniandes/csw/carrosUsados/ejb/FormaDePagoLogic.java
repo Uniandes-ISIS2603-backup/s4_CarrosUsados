@@ -64,7 +64,7 @@ import javax.inject.Inject;
      *
      * @return Lista de entidades de tipo formaDePago.
      */
-    public List<FormaDePagoEntity> getFormaDePagoes() throws BusinessLogicException {
+    public List<FormaDePagoEntity> getFormasDePago() throws BusinessLogicException {
         LOGGER.log(Level.INFO, "Inicia proceso de consultar todos los formaDePagoes");
         List<FormaDePagoEntity> formaDePagoes = persistence.findAll();
         LOGGER.log(Level.INFO, "Termina proceso de consultar todos los formaDePagoes");
@@ -127,7 +127,11 @@ import javax.inject.Inject;
         LOGGER.log(Level.INFO, "Termina proceso de borrar el formaDePago con id = {0}", formaDePagoId);
     }
 
-
+    /**
+     * Valida el nombre de una forma de pago
+     * @param nombre nombre a validar.
+     * @return retorna true si es valido, false si no es valido
+     */
       public boolean validateNombre(String nombre){
         if(nombre == null || nombre.isEmpty()){
           return false;
@@ -135,6 +139,11 @@ import javax.inject.Inject;
         return true;
       }
 
+      /**
+       * Valida el tipo de una forma de pago
+       * @param tipo tipo a ser validado
+       * @return retorna true si es valido, false si no es valido
+       */
       public boolean validateTipo(String tipo){
         if(tipo == null || tipo.isEmpty()){
           return false;

@@ -6,7 +6,6 @@
 package co.edu.uniandes.csw.carrosUsados.persistence;
 
 import co.edu.uniandes.csw.carrosUsados.entities.FormaDePagoEntity;
-import co.edu.uniandes.csw.carrosUsados.entities.ClienteEntity;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -106,9 +105,7 @@ public class FormaDePagoPersistence {
         // Se invoca el query se obtiene la lista resultado
         List<FormaDePagoEntity> sameTipo = query.getResultList();
         FormaDePagoEntity result;
-        if (sameTipo == null) {
-            result = null;
-        } else if (sameTipo.isEmpty()) {
+        if (sameTipo.isEmpty()) {
             result = null;
         } else {
             result = sameTipo.get(0);

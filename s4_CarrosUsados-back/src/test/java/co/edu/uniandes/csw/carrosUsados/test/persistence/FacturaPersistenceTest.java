@@ -111,7 +111,7 @@ public class FacturaPersistenceTest {
         Assert.assertEquals(newEntity.getProducto(), entity.getProducto());
         Assert.assertEquals(newEntity.getSubtotal(), entity.getSubtotal());
         Assert.assertEquals(newEntity.getTotal(), entity.getTotal());
-        Assert.assertEquals(newEntity.getForma_de_pago(), entity.getForma_de_pago());
+        Assert.assertEquals(newEntity.getFormaDePago(), entity.getFormaDePago());
         
     }
 
@@ -145,7 +145,7 @@ public class FacturaPersistenceTest {
         Assert.assertEquals(newEntity.getProducto(), entity.getProducto());
         Assert.assertEquals(newEntity.getSubtotal(), entity.getSubtotal());
         Assert.assertEquals(newEntity.getTotal(), entity.getTotal());
-        Assert.assertEquals(newEntity.getForma_de_pago(), entity.getForma_de_pago());
+        Assert.assertEquals(newEntity.getFormaDePago(), entity.getFormaDePago());
     }
 
     /**
@@ -169,6 +169,7 @@ public class FacturaPersistenceTest {
         FacturaEntity newEntity = factory.manufacturePojo(FacturaEntity.class);
 
         newEntity.setId(entity.getId());
+        newEntity.setTotal(123);
 
         facturaPersistence.update(newEntity);
 
@@ -178,6 +179,6 @@ public class FacturaPersistenceTest {
         Assert.assertEquals(newEntity.getProducto(), resp.getProducto());
         Assert.assertEquals(newEntity.getSubtotal(), resp.getSubtotal());
         Assert.assertEquals(newEntity.getTotal(), resp.getTotal());
-        Assert.assertEquals(newEntity.getForma_de_pago(), resp.getForma_de_pago());
+        Assert.assertEquals(newEntity.getFormaDePago(), resp.getFormaDePago());
     }
 }

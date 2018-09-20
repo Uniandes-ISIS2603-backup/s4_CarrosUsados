@@ -28,26 +28,44 @@ public class FormaDePagoEntity extends BaseEntity implements Serializable {
     @ManyToOne
     private ClienteEntity cliente;   
 
+    /**     
+     * @return retorna el nombre de la forma de pago
+     */
     public String getNombre() {
         return nombre;
     }
 
+    /**
+     * @param nombre Cambie el nombre de la forma de pago
+     */
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
+    /**
+     * @return retorna el tipo de forma de pago
+     */
     public String getTipo() {
         return tipo;
     }
 
+    /**
+     * @param tipo cambia el tipo de forma de pago 
+     */
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
 
+    /**
+     * @return el cliente que tiene la forma de pago 
+     */
     public ClienteEntity getCliente() {
         return cliente;
     }
 
+    /**
+     * @param cliente cambia el cliente de la forma de pago. Nunca debe ser usada. 
+     */
     public void setCliente(ClienteEntity cliente) {
         this.cliente = cliente;
     }

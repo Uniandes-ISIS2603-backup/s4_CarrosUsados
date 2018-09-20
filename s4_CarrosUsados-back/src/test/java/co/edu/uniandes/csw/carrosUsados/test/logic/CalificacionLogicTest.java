@@ -7,10 +7,8 @@ package co.edu.uniandes.csw.carrosUsados.test.logic;
 
 
 import co.edu.uniandes.csw.carrosUsados.ejb.CalificacionLogic;
-import co.edu.uniandes.csw.carrosUsados.entities.AutomovilEntity;
 import co.edu.uniandes.csw.carrosUsados.entities.CalificacionEntity;
 import co.edu.uniandes.csw.carrosUsados.exceptions.BusinessLogicException;
-import co.edu.uniandes.csw.carrosUsados.persistence.AutomovilPersistence;
 import co.edu.uniandes.csw.carrosUsados.persistence.CalificacionPersistence;
 import java.util.ArrayList;
 import java.util.List;
@@ -91,7 +89,7 @@ public class CalificacionLogicTest {
      * pruebas.
      */
     private void insertData() {
-        PodamFactory factory = new PodamFactoryImpl();
+      
         for (int i = 0; i < 3; i++) {
             CalificacionEntity entity = factory.manufacturePojo(CalificacionEntity.class);
 

@@ -95,31 +95,5 @@ public class PuntoVentaPersistence {
         em.remove(puntoEntity);
     }
 
-    /**
-     * Busca si hay algun punto con el nombre que se envía de argumento
-     *
-     * @param name: Nombre de punto que se está buscando
-     * @return null si no existe ninguno con el nombre del argumento.
-     * Si existe alguna devuelve la primera.
-     */
-    public PuntoVentaEntity findName(String name) {
-        LOGGER.log(Level.INFO, "Consultando puntos de venta por nombre ", name);
-        // Se crea un query para buscar 
-        TypedQuery query = em.createQuery("Select e From PuntoVentaEntity e where e.nombre = :nombre", PuntoVentaEntity.class);
-        // Se remplaza el placeholder ":isbn" con el valor del argumento 
-        query = query.setParameter("nombre", name);
-        // Se invoca el query se obtiene la lista resultado
-        List<PuntoVentaEntity> sameName = query.getResultList();
-        PuntoVentaEntity result;
-        if (sameName == null) {
-            result = null;
-        } else if (sameName.isEmpty()) {
-            result = null;
-        } else {
-            result = sameName.get(0);
-        }
-        LOGGER.log(Level.INFO, "Saliendo de consultarpuntos de venta por nombre ", name);
-        return result;
-    }
 
 }

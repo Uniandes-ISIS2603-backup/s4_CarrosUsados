@@ -63,11 +63,11 @@ import javax.inject.Inject;
       }
 
     /**
-     * Devuelve todas las formas de pago que hay en la base de datos.
+     * Devuelve todos los articulos que hay en la base de datos.
      *
      * @return Lista de entidades de tipo articulo.
      */
-    public List<ArticuloEntity> getArticuloes() throws BusinessLogicException {
+    public List<ArticuloEntity> getArticulos(){
         LOGGER.log(Level.INFO, "Inicia proceso de consultar todos los articuloes");
         List<ArticuloEntity> articuloes = persistence.findAll();
         LOGGER.log(Level.INFO, "Termina proceso de consultar todos los articuloes");
@@ -133,32 +133,47 @@ import javax.inject.Inject;
         LOGGER.log(Level.INFO, "Termina proceso de borrar el articulo con id = {0}", articuloId);
     }
 
-
+    /**
+     * Valida el nombre de un articulo
+     * @param nombre el nombre a validar.
+     * @return retorna true si es valido, false si no es valido.
+     */
       public boolean validateDescripcion(String nombre){
         if(nombre == null || nombre.isEmpty()){
           return false;
         }
         return true;
       }
-
-      public boolean validateUbicacion(String tipo){
-        if(tipo == null || tipo.isEmpty()){
+      /**
+       * Valida la ubicacion de un articulo
+       * @param ubi ubicacion a validar.
+       * @return retorna true si es valido, false si no es valido.
+       */
+      public boolean validateUbicacion(String ubi){
+        if(ubi == null || ubi.isEmpty()){
           return false;
         }
         return true;
       }
       
-      public boolean validatePrecio(String tipo){
-        if(tipo == null || tipo.isEmpty()){
+      /**
+       * Valida el precio de un articulo
+       * @param precio precio a validad.
+       * @return retorna true si es valido, false si no es valido.
+       */
+      public boolean validatePrecio(String precio){
+        if(precio == null || precio.isEmpty()){
           return false;
         }
         try{
-            Integer.getInteger(tipo);
+            int i = Integer.parseInt(precio);
+            if(i > 0)
+            return true;
         }
         catch(Exception e){
             return false;
-        }
-        return true;
+        }        
+        return false;
       }
 
 }

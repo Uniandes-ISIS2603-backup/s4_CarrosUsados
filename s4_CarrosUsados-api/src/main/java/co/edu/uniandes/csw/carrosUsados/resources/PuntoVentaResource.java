@@ -130,7 +130,7 @@ public class PuntoVentaResource {
       
        LOGGER.log(Level.INFO, "PuntoVentaResource updatePunto: output:", puntoDTO.toString());
         
-       return new PuntoVentaDTO();
+       return puntoDTO;
 
     }
 
