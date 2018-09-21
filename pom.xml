@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     
     <groupId>co.edu.uniandes.csw</groupId>
-    <artifactId>s4_carTeam</artifactId>
+    <artifactId>s4_carTeam</artifactId> 
     <version>1.0</version>
     <packaging>pom</packaging>
     <name>s4_carTeam</name>
