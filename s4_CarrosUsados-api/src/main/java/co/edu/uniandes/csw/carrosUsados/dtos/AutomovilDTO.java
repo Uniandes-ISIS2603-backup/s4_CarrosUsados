@@ -70,7 +70,9 @@ public class AutomovilDTO implements Serializable {
         if (this.fichaTecnica != null) {
             entity.setFichaTecnica(this.fichaTecnica.toEntity());
         }
-
+        if(this.puntoVenta != null){
+            entity.setPuntoVenta(this.puntoVenta.toEntity());
+        }
         return entity;
     }
 
