@@ -16,7 +16,7 @@ import java.util.Date;
 public class AutomovilDTO implements Serializable {
 
     private Long id;
-    private int modelo;
+    private String modelo;
     private String marca;
     private int anio;
     private String color;
