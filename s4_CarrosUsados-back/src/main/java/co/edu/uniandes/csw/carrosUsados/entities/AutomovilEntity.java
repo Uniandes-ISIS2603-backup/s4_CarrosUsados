@@ -27,7 +27,7 @@ public class AutomovilEntity extends BaseEntity implements Serializable {
     /**
      * modelo del automovil.
     */
-    private int modelo;
+    private String modelo;
     /**
      * marca del automovil.
      */
@@ -112,7 +112,7 @@ public class AutomovilEntity extends BaseEntity implements Serializable {
      * Retorna el modelo del automovil.
      * @return el modelo
      */
-    public int getModelo() {
+    public String getModelo() {
         return modelo;
     }
 
@@ -120,7 +120,7 @@ public class AutomovilEntity extends BaseEntity implements Serializable {
      * Actualiza el modelo del automovil.
      * @param modelo
      */
-    public void setModelo(int modelo) {
+    public void setModelo(String modelo) {
         this.modelo = modelo;
     }
 
