@@ -6,6 +6,8 @@
 package co.edu.uniandes.csw.carrosUsados.dtos;
 
 import co.edu.uniandes.csw.carrosUsados.entities.MarcaEntity;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
 
 /**
  *
@@ -18,8 +20,6 @@ public class MarcaDTO {
     private String pais;
     private String descripcion;
     
-    //Relación con MARCA
-    private MarcaDTO marca;
 
     public MarcaDTO() {
         
@@ -27,10 +27,12 @@ public class MarcaDTO {
     
     public MarcaDTO(MarcaEntity marcaEntity){
         
+        if (marcaEntity != null) {
         this.id = marcaEntity.getId();
         this.nombre = marcaEntity.getNombre();
         this.pais = marcaEntity.getPais();
         this.descripcion = marcaEntity.getDescripcion();
+        }
         
     } 
     
@@ -51,5 +53,34 @@ public class MarcaDTO {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getPais() {
+        return pais;
+    }
+
+    public void setPais(String pais) {
+        this.pais = pais;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+    
+        @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
     }
 }
