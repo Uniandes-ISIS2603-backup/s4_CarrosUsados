@@ -201,7 +201,7 @@ public class AutomovilPersistenceTest {
      * Prueba para consultasr un Automovil por placa.
      */
     @Test
-    public void findAutomovilByISBNTest() {
+    public void findAutomovilByPlacaTest() {
         AutomovilEntity entity = data.get(0);
         AutomovilEntity newEntity = automovilPersistence.findByPlaca(entity.getPlaca());
         Assert.assertNotNull(newEntity);
