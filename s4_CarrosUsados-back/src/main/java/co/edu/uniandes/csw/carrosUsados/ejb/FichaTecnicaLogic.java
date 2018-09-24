@@ -32,9 +32,7 @@ public class FichaTecnicaLogic{
      */
     public FichaTecnicaEntity createFichaTecnica(FichaTecnicaEntity fichaTecnicaEntity) throws BusinessLogicException {
         LOGGER.log(Level.INFO, "Inicia proceso de creación de la ficha tecnica");
-        if(persistence.find(fichaTecnicaEntity.getId()) != null){
-            throw new BusinessLogicException("Ya existe una ficha tecnica con ese ID");
-        }
+        
         persistence.create(fichaTecnicaEntity);
         LOGGER.log(Level.INFO, "Termina proceso de creación de la ficha tecnica");
         return fichaTecnicaEntity;
