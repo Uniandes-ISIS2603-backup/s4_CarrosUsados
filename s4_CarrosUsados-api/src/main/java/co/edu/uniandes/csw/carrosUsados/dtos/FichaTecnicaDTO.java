@@ -7,6 +7,8 @@ package co.edu.uniandes.csw.carrosUsados.dtos;
 
 import co.edu.uniandes.csw.carrosUsados.entities.FichaTecnicaEntity;
 import java.io.Serializable;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
 
 /**
  *
@@ -57,6 +59,60 @@ public class FichaTecnicaDTO implements Serializable {
     public void setId(Long id) {
         this.id = id;
     }
+
+    public String getVidrios() {
+        return vidrios;
+    }
+
+    public void setVidrios(String vidrios) {
+        this.vidrios = vidrios;
+    }
+
+    public boolean isCamaraReversa() {
+        return camaraReversa;
+    }
+
+    public void setCamaraReversa(boolean camaraReversa) {
+        this.camaraReversa = camaraReversa;
+    }
+
+    public boolean isSensores() {
+        return sensores;
+    }
+
+    public void setSensores(boolean sensores) {
+        this.sensores = sensores;
+    }
+
+    public String getRines() {
+        return rines;
+    }
+
+    public void setRines(String rines) {
+        this.rines = rines;
+    }
+
+    public boolean isAireAcondicionado() {
+        return aireAcondicionado;
+    }
+
+    public void setAireAcondicionado(boolean aireAcondicionado) {
+        this.aireAcondicionado = aireAcondicionado;
+    }
+
+    public int getNumAirbags() {
+        return numAirbags;
+    }
+
+    public void setNumAirbags(int numAirbags) {
+        this.numAirbags = numAirbags;
+    }
     
+    
+    
+     @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
+    }
     
 }
