@@ -17,8 +17,7 @@
 							"pm.test(\"Prueba administrador inexistente correcta\",function () {",
 							"    pm.response.to.have.status(404);",
 							"pm.expect(pm.response.text()).to.include(\"El recurso /administradores/99999 no existe.\");",
-							"});",
-							""
+							"});"
 						]
 					}
 				}
@@ -31,7 +30,7 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://localhost:8080/s4_CarrosUsados-api/api/vendedores/99999",
+					"raw": "http://localhost:8080/s4_CarrosUsados-api/api/administradores/99999",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -291,8 +290,7 @@
 							"pm.test(\"Prueba precondición fallida correcta\",function () {",
 							"    pm.response.to.have.status(412);",
 							"    pm.expect(pm.response.text()).to.include(\"El correo es inválido\");",
-							"});",
-							""
+							"});"
 						]
 					}
 				}
