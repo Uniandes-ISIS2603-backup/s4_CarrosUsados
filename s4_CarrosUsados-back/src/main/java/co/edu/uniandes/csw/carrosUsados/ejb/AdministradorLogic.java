@@ -50,6 +50,10 @@ public class AdministradorLogic extends UsuarioLogic {
         if (!(validateNombre(administradorEntity.getCargo()))) {
             throw new BusinessLogicException("El cargo es inválido.");
         }
+        if(!(validateNuevoUsuarioAdministrador(administradorEntity.getNombreUsuario())))
+        {
+            throw new BusinessLogicException("Ya existe un administrador con ese nombre de usuario.");
+        }
         persistence.create(administradorEntity);
         LOGGER.log(Level.INFO, "Termina proceso de creación del administrador");
 
@@ -133,6 +137,15 @@ public class AdministradorLogic extends UsuarioLogic {
     public List<PuntoVentaEntity> getPuntosDeVenta(Long administradorId) {
         LOGGER.log(Level.INFO, "Inicia proceso de consultar los puntos de venta asociados al administrador con id = {0}", administradorId);
         return persistence.find(administradorId).getPuntosDeVenta();
+    }
+
+    /**
+     * Verifica si  el nombre de usuario del administrador  existe.
+     * @param nombreUsuario - nombre del usuario
+     * @return true no existe el usuario, false de lo contrario
+     */
+    public boolean validateNuevoUsuarioAdministrador(String nombreUsuario) {
+        return persistence.findByNombreUsuario(nombreUsuario) == null;
     }
 
 

@@ -68,6 +68,23 @@ public class AdministradorPersistence {
     }
 
     /**
+     * Busca el administrador con el nombre de usuario enviado por argumento.
+     *
+     * @param administradorNombreUsuario: Nombre del administrador a buscar.
+     * @return null si no existe ningún administrador con ese nombre de usuario. Si existe
+     * retorna la entidad.
+     */
+    public AdministradorEntity findByNombreUsuario(String administradorNombreUsuario) {
+        LOGGER.log(Level.INFO, "Consultando administrador con nombreUsuario={0} ", administradorNombreUsuario);
+        TypedQuery query = em.createQuery("Select e From AdministradorEntity e where e.nombreUsuario = :nombreUsuario", AdministradorEntity.class);
+        query = query.setParameter("nombreUsuario", administradorNombreUsuario);
+        List<AdministradorEntity> list = query.getResultList();
+       return list!=null && !list.isEmpty() ? list.get(0) : null;
+
+    }
+
+
+    /**
      * Actualiza el administrador cuya entidad es recibida por parámetro.
      *
      * @param administradorEntity: La entidad del administrador que se desea
