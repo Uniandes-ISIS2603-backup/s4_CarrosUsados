@@ -30,7 +30,10 @@ public class AutomovilDTO implements Serializable {
 
     //Relacion a PuntoVentaDTO dado que esta tiene cardinalidad 1
     private PuntoVentaDTO puntoVenta;
-
+    
+    //Relacion a ModeloDTO que tiene cardinalidad 1
+    private ModeloDTO modeloAsociado;
+    
     public AutomovilDTO() {
 
     }
@@ -84,4 +87,94 @@ public class AutomovilDTO implements Serializable {
         this.id = id;
     }
 
+    public String getModelo() {
+        return modelo;
+    }
+
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
+    }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    public int getAnio() {
+        return anio;
+    }
+
+    public void setAnio(int anio) {
+        this.anio = anio;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public String getNumChasis() {
+        return numChasis;
+    }
+
+    public void setNumChasis(String numChasis) {
+        this.numChasis = numChasis;
+    }
+
+    public String getPlaca() {
+        return placa;
+    }
+
+    public void setPlaca(String placa) {
+        this.placa = placa;
+    }
+
+    public Date getFechaAgregacion() {
+        return fechaAgregacion;
+    }
+
+    public void setFechaAgregacion(Date fechaAgregacion) {
+        this.fechaAgregacion = fechaAgregacion;
+    }
+
+    public String getPrecioOriginal() {
+        return precioOriginal;
+    }
+
+    public void setPrecioOriginal(String precioOriginal) {
+        this.precioOriginal = precioOriginal;
+    }
+
+    public FichaTecnicaDTO getFichaTecnica() {
+        return fichaTecnica;
+    }
+
+    public void setFichaTecnica(FichaTecnicaDTO fichaTecnica) {
+        this.fichaTecnica = fichaTecnica;
+    }
+
+    public PuntoVentaDTO getPuntoVenta() {
+        return puntoVenta;
+    }
+
+    public void setPuntoVenta(PuntoVentaDTO puntoVenta) {
+        this.puntoVenta = puntoVenta;
+    }
+
+    public ModeloDTO getModeloAsociado() {
+        return modeloAsociado;
+    }
+
+    public void setModeloAsociado(ModeloDTO modeloAsociado) {
+        this.modeloAsociado = modeloAsociado;
+    }
+    
+    
+    
 }
