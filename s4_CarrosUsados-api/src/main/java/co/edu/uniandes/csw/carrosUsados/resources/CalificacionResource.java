@@ -7,11 +7,11 @@ package co.edu.uniandes.csw.carrosUsados.resources;
 
 import co.edu.uniandes.csw.carrosUsados.dtos.CalificacionDTO;
 import co.edu.uniandes.csw.carrosUsados.dtos.CalificacionDetailDTO;
-import co.edu.uniandes.csw.carrosUsados.dtos.PuntoVentaDetailDTO;
+
 import co.edu.uniandes.csw.carrosUsados.ejb.CalificacionLogic;
-import co.edu.uniandes.csw.carrosUsados.ejb.PuntoVentaLogic;
+
 import co.edu.uniandes.csw.carrosUsados.entities.CalificacionEntity;
-import co.edu.uniandes.csw.carrosUsados.entities.PuntoVentaEntity;
+
 import co.edu.uniandes.csw.carrosUsados.exceptions.BusinessLogicException;
 import java.util.ArrayList;
 import java.util.List;
@@ -35,7 +35,7 @@ import javax.ws.rs.WebApplicationException;
  * Clase que implementa el recurso "calificaciones".
  * @author Daniella Arteaga
  */
-@Path("calificacion")
+@Path("calificaciones")
 @Produces("application/json")
 @Consumes("application/json")
 @RequestScoped
