@@ -55,7 +55,7 @@ public class UsuarioLogic extends BaseLogic {
      }
      if(!(validateTelefono(usuarioEntity.getTelefono())))
      {
-         throw new BusinessLogicException("El teléfono es inválido.");
+         throw new BusinessLogicException("El teléfono es inválido. (" + usuarioEntity.getTelefono() + ")");
      }
    }
 
@@ -68,7 +68,7 @@ public class UsuarioLogic extends BaseLogic {
      * contrario.
      */
     public static boolean validateCorreo(String correo) {
-        return correo == null ? false : CORREO_REGEX.matcher(correo).find();
+        return correo != null && CORREO_REGEX.matcher(correo).find();
     }
 
     /**
@@ -81,7 +81,7 @@ public class UsuarioLogic extends BaseLogic {
      * contrario.
      */
     public static boolean validateTelefono(String telefono) {
-        return telefono == null ? false : TELEFONO_REGEX.matcher(telefono).matches();
+        return telefono != null && TELEFONO_REGEX.matcher(telefono).matches();
     }
 
     /**
@@ -92,7 +92,7 @@ public class UsuarioLogic extends BaseLogic {
      * @return true si el login no tiene espacios, false de lo contrario.
      */
     public static boolean validateNombreUsuario(String usuario) {
-        return usuario == null ? false :!NOMBRE_USUARIO_REGEX.matcher(usuario).find();
+        return usuario != null && !NOMBRE_USUARIO_REGEX.matcher(usuario).find();
     }
 
     /**

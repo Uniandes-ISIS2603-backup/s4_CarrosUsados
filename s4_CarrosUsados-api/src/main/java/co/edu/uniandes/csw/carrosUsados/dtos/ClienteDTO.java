@@ -49,6 +49,7 @@ public class ClienteDTO extends UsuarioDTO implements Serializable {
         entity.setId(this.id);
         entity.setNombre(this.nombre);
         entity.setApellido(this.apellido);
+        entity.setTelefono(this.telefono);
         entity.setNombreUsuario(this.nombreUsuario);
         entity.setContrasena(this.contrasena);
         entity.setFechaNacimiento(this.fechaNacimiento);

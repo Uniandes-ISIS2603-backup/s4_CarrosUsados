@@ -158,6 +158,26 @@ public class AdministradorPersistenceTest {
     }
 
     /**
+     * Prueba para consultar un Administrador por nombre de Usuario
+     */
+    @Test
+    public void getAdministradorTestByNombreUsuario() {
+        AdministradorEntity entity = data.get(0);
+        AdministradorEntity newEntity = administradorPersistence.findByNombreUsuario(entity.getNombreUsuario());
+        Assert.assertNotNull(newEntity);
+
+        Assert.assertEquals(newEntity.getNombre(), entity.getNombre());
+        Assert.assertEquals(newEntity.getApellido(), entity.getApellido());
+        Assert.assertEquals(newEntity.getCargo(), entity.getCargo());
+        Assert.assertEquals(newEntity.getNombreUsuario(), entity.getNombreUsuario());
+        Assert.assertEquals(newEntity.getFechaInicio(), entity.getFechaInicio());
+        Assert.assertEquals(newEntity.getContrasena(), entity.getContrasena());
+        Assert.assertEquals(newEntity.getTelefono(), entity.getTelefono());
+        Assert.assertEquals(newEntity.getCorreo(), entity.getCorreo());
+        Assert.assertEquals(newEntity.getFechaNacimiento(), entity.getFechaNacimiento());
+    }
+
+    /**
      * Prueba para eliminar un Administrador.
      */
     @Test
