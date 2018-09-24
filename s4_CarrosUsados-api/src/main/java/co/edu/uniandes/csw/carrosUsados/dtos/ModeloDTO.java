@@ -61,4 +61,38 @@ public class ModeloDTO implements Serializable{
     public void setId(Long id) {
         this.id = id;
     }
+
+    public int getNum_puertas() {
+        return num_puertas;
+    }
+
+    public void setNum_puertas(int num_puertas) {
+        this.num_puertas = num_puertas;
+    }
+
+    public String getTransmision() {
+        return transmision;
+    }
+
+    public void setTransmision(String transmision) {
+        this.transmision = transmision;
+    }
+
+    public int getCentimetros_cubicos() {
+        return centimetros_cubicos;
+    }
+
+    public void setCentimetros_cubicos(int centimetros_cubicos) {
+        this.centimetros_cubicos = centimetros_cubicos;
+    }
+
+    public MarcaDTO getMarca() {
+        return marca;
+    }
+
+    public void setMarca(MarcaDTO marca) {
+        this.marca = marca;
+    }
+    
+    
 }

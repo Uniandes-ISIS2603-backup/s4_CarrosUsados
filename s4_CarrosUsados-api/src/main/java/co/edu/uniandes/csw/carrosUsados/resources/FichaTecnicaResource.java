@@ -99,16 +99,15 @@ public class FichaTecnicaResource {
     public FichaTecnicaDTO updateFichaTecnica(@PathParam("fichastecnicasId") Long fichastecnicasId, FichaTecnicaDTO fichaTecnica) throws BusinessLogicException {
         LOGGER.log(Level.INFO, "FichaTecnicaResource updateFichaTecnica: input: id: {0} , fichaTecnica: {1}", new Object[]{fichastecnicasId, fichaTecnica.toString()});
         fichaTecnica.setId(fichastecnicasId);
-        FichaTecnicaEntity entityFichaTecnica = fichaTecnicaLogic.getFichaTecnica(fichastecnicasId);
         
-        if (entityFichaTecnica == null) {
+        if (fichaTecnicaLogic.getFichaTecnica(fichastecnicasId) == null) {
             throw new WebApplicationException("El recurso /fichastecnicas/" + fichastecnicasId + " no existe.", 404);
         }
-        entityFichaTecnica = fichaTecnicaLogic.updateFichaTecnica(fichastecnicasId, entityFichaTecnica);
-        FichaTecnicaDTO fichaTecnicaDTO = new FichaTecnicaDTO(entityFichaTecnica);
+        FichaTecnicaDTO fichaTecnicaDTO = new FichaTecnicaDTO(fichaTecnicaLogic.updateFichaTecnica(fichastecnicasId, fichaTecnica.toEntity()));
         LOGGER.log(Level.INFO, "FichaTecnicaResource updateFichaTecnica: output: {0}", fichaTecnicaDTO.toString());
         return fichaTecnicaDTO;
     }
+    
     
     /**
      * Borra la ficha tecnica con el id asociado recibido en la URL.
@@ -119,16 +118,14 @@ public class FichaTecnicaResource {
      * Error de lógica que se genera cuando no se puede eliminar la
      * ficha tecnica.
      */
-    
-    /*
     @DELETE
     @Path("{fichastecnicasId: \\d+}")
-    public void deleteFichaTecnica(@PathParam("fichastecnicasId") long fichastecnicasId) throws BusinessLogicException {
+    public void deleteFichaTecnica(@PathParam("fichastecnicasId") Long fichastecnicasId) throws BusinessLogicException {
         LOGGER.log(Level.INFO, "FichaTecnicaResource deleteFichaTecnica: input: {0}", fichastecnicasId);
         if (fichaTecnicaLogic.getFichaTecnica(fichastecnicasId) == null) {
             throw new WebApplicationException("El recurso /fichastecnicas/" + fichastecnicasId + " no existe.", 404);
         }
         fichaTecnicaLogic.deleteFichaTecnica(fichastecnicasId);
         LOGGER.info("FichaTecnicaResource deleteFichaTecnica: output: void");
-    }*/
+    }
 }

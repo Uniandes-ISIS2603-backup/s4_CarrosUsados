@@ -68,14 +68,21 @@ public class FichaTecnicaLogic{
      */
     public FichaTecnicaEntity updateFichaTecnica(Long idFichaTecnica, FichaTecnicaEntity fichaTecnicaEntity) throws BusinessLogicException {
         LOGGER.log(Level.INFO, "Inicia proceso de actualizar la ficha tecnica con id = {0}", idFichaTecnica);
-        if(persistence.find(idFichaTecnica) == null){
-            throw new BusinessLogicException("La ficha tecnica no existe");
-        }
         FichaTecnicaEntity newEntity = persistence.update(fichaTecnicaEntity);
         LOGGER.log(Level.INFO, "Termina proceso de actualizar la ficha tecnica con id = {0}", fichaTecnicaEntity.getId());
         return newEntity;
     }
-
+    
+    /**
+     * Eliminar una ficha tecnica por ID
+     *
+     * @param fichatecnicaId El ID de la ficha tecnica a eliminar
+     */
+    public void deleteFichaTecnica(Long fichatecnicaId) {
+        LOGGER.log(Level.INFO, "Inicia proceso de borrar la ficha tecnica con id = {0}", fichatecnicaId);
+        persistence.delete(fichatecnicaId);
+        LOGGER.log(Level.INFO, "Termina proceso de borrar la ficha tecnica con id = {0}", fichatecnicaId);
+    }
 
 
 }
