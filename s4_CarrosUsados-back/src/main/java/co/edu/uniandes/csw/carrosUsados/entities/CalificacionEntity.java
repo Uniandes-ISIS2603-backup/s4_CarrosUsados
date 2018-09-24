@@ -36,6 +36,7 @@ public class CalificacionEntity extends BaseEntity implements Serializable{
     @ManyToOne
     private AutomovilEntity automovil;
     
+    
     /**
      * Constructor de entidad.
      */
@@ -134,6 +135,7 @@ public class CalificacionEntity extends BaseEntity implements Serializable{
     public void setAutomovil(AutomovilEntity automovil) {
         this.automovil = automovil;
     }
+
     
     
 }
