@@ -6,16 +6,11 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c7a0e589-e472-4569-b807-53a47d4e68e9" name="Default Changelist" comment="">
+    <list default="true" id="c7a0e589-e472-4569-b807-53a47d4e68e9" name="Default Changelist" comment="Corrección toEntity() de AdministradorDTO y ClienteDTO en setTelefono. Añadida prueba para verificar nombre de usuario">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/s4_CarrosUsados-api/s4_carTeam-api.iml" beforeDir="false" afterPath="$PROJECT_DIR$/s4_CarrosUsados-api/s4_carTeam-api.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/s4_CarrosUsados-api/src/main/java/co/edu/uniandes/csw/carrosUsados/dtos/AdministradorDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/s4_CarrosUsados-api/src/main/java/co/edu/uniandes/csw/carrosUsados/dtos/AdministradorDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/s4_CarrosUsados-api/src/main/java/co/edu/uniandes/csw/carrosUsados/dtos/ClienteDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/s4_CarrosUsados-api/src/main/java/co/edu/uniandes/csw/carrosUsados/dtos/ClienteDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/s4_CarrosUsados-back/s4_carTeam-back.iml" beforeDir="false" afterPath="$PROJECT_DIR$/s4_CarrosUsados-back/s4_carTeam-back.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/s4_CarrosUsados-back/src/main/java/co/edu/uniandes/csw/carrosUsados/ejb/AdministradorLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/s4_CarrosUsados-back/src/main/java/co/edu/uniandes/csw/carrosUsados/ejb/AdministradorLogic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/s4_CarrosUsados-back/src/main/java/co/edu/uniandes/csw/carrosUsados/ejb/UsuarioLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/s4_CarrosUsados-back/src/main/java/co/edu/uniandes/csw/carrosUsados/ejb/UsuarioLogic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/s4_CarrosUsados-back/src/main/java/co/edu/uniandes/csw/carrosUsados/persistence/AdministradorPersistence.java" beforeDir="false" afterPath="$PROJECT_DIR$/s4_CarrosUsados-back/src/main/java/co/edu/uniandes/csw/carrosUsados/persistence/AdministradorPersistence.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/s4_CarrosUsados-back/src/test/java/co/edu/uniandes/csw/carrosUsados/test/persistence/AdministradorPersistenceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/s4_CarrosUsados-back/src/test/java/co/edu/uniandes/csw/carrosUsados/test/persistence/AdministradorPersistenceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/s4_CarrosUsados-api/Collections/AdministradorDTO.postman_collection.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/s4_CarrosUsados-api/Collections/ClientesDTO.postman_collection.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/s4_CarrosUsados-api/Collections/VendedorDTO.postman_collection.json" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/s4_CarrosUsados-api/target/" />
     <ignored path="$PROJECT_DIR$/s4_CarrosUsados-back/target/" />
@@ -82,13 +77,13 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="java" value="5647" />
-          <entry key="txt" value="98" />
+          <entry key="txt" value="242" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JAVA" value="5647" />
-          <entry key="PLAIN_TEXT" value="98" />
+          <entry key="PLAIN_TEXT" value="242" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages">
@@ -255,41 +250,7 @@
               <item name="s4_carTeam" type="b2602c69:ProjectViewProjectNode" />
               <item name="Proyecto" type="462c0819:PsiDirectoryNode" />
               <item name="s4_CarrosUsados-api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="s4_carTeam" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Proyecto" type="462c0819:PsiDirectoryNode" />
-              <item name="s4_CarrosUsados-api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="s4_carTeam" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Proyecto" type="462c0819:PsiDirectoryNode" />
-              <item name="s4_CarrosUsados-api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="s4_carTeam" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Proyecto" type="462c0819:PsiDirectoryNode" />
-              <item name="s4_CarrosUsados-api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="carrosUsados" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="s4_carTeam" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Proyecto" type="462c0819:PsiDirectoryNode" />
-              <item name="s4_CarrosUsados-api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="carrosUsados" type="462c0819:PsiDirectoryNode" />
-              <item name="dtos" type="462c0819:PsiDirectoryNode" />
+              <item name="Collections" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="s4_carTeam" type="b2602c69:ProjectViewProjectNode" />
@@ -316,45 +277,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="s4_carTeam" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Proyecto" type="462c0819:PsiDirectoryNode" />
-              <item name="s4_CarrosUsados-back" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="carrosUsados" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="s4_carTeam" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Proyecto" type="462c0819:PsiDirectoryNode" />
-              <item name="s4_CarrosUsados-back" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="carrosUsados" type="462c0819:PsiDirectoryNode" />
-              <item name="ejb" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="s4_carTeam" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Proyecto" type="462c0819:PsiDirectoryNode" />
-              <item name="s4_CarrosUsados-back" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="carrosUsados" type="462c0819:PsiDirectoryNode" />
-              <item name="entities" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="s4_carTeam" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Proyecto" type="462c0819:PsiDirectoryNode" />
-              <item name="s4_CarrosUsados-back" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="carrosUsados" type="462c0819:PsiDirectoryNode" />
-              <item name="exceptions" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="s4_carTeam" type="b2602c69:ProjectViewProjectNode" />
@@ -419,7 +341,7 @@
     <property name="DatabaseDriversLRU" value="derby" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537762630854" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537763298971" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
@@ -437,7 +359,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="GlassFish Server.GlassFish 5.183">
+  <component name="RunManager" selected="JUnit.co.edu.uniandes.csw.carrosUsados.test in s4_carTeam-back">
     <configuration name="AdministradorLogicTest" type="ArquillianJUnit" factoryName="" temporary="true" nameIsGenerated="true">
       <module name="s4_carTeam-back" />
       <extension name="coverage">
@@ -628,10 +550,10 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.co.edu.uniandes.csw.carrosUsados.test in s4_carTeam-back" />
         <item itemvalue="Arquillian JUnit.AdministradorPersistenceTest.getAdministradorTestByNombreUsuario" />
         <item itemvalue="Arquillian JUnit.AdministradorPersistenceTest" />
         <item itemvalue="Arquillian JUnit.AdministradorLogicTest" />
-        <item itemvalue="JUnit.co.edu.uniandes.csw.carrosUsados.test in s4_carTeam-back" />
       </list>
     </recent_temporary>
   </component>
@@ -655,7 +577,7 @@
       <workItem from="1537422301156" duration="475000" />
       <workItem from="1537752498439" duration="6126000" />
       <workItem from="1537760149175" duration="443000" />
-      <workItem from="1537760620891" duration="1825000" />
+      <workItem from="1537760620891" duration="2601000" />
     </task>
     <task id="LOCAL-00001" summary="Corrección Administrador, Vendedor, Cliente">
       <created>1537419108227</created>
@@ -678,13 +600,17 @@
       <option name="project" value="LOCAL" />
       <updated>1537420697168</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Corrección toEntity() de AdministradorDTO y ClienteDTO en setTelefono. Añadida prueba para verificar nombre de usuario">
+      <created>1537762717156</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1537762717156</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="co_edu_uniandes_csw_carrosUsados_test_in_s4_carTeam-back - 2018.09.20 at 00h 51m 09s.xml">
-      <configuration name="co.edu.uniandes.csw.carrosUsados.test in s4_carTeam-back" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="co_edu_uniandes_csw_carrosUsados_test_persistence_in_s4_carTeam-back - 2018.09.23 at 22h 14m 40s.xml">
       <configuration name="co.edu.uniandes.csw.carrosUsados.test.persistence in s4_carTeam-back" configurationId="JUnit" />
     </history-entry>
@@ -712,15 +638,17 @@
     <history-entry file="co_edu_uniandes_csw_carrosUsados_test_persistence_in_s4_carTeam-back - 2018.09.23 at 22h 46m 03s.xml">
       <configuration name="co.edu.uniandes.csw.carrosUsados.test.persistence in s4_carTeam-back" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="co_edu_uniandes_csw_carrosUsados_test_in_s4_carTeam-back - 2018.09.23 at 23h 22m 35s.xml">
+      <configuration name="co.edu.uniandes.csw.carrosUsados.test in s4_carTeam-back" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32284000" />
+    <option name="totallyTimeSpent" value="33060000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.807611" visible="true" weight="0.26510066" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.807611" visible="true" weight="0.26510066" />
       <window_info id="Structure" order="1" sideWeight="0.19238901" side_tool="true" weight="0.23154363" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -730,7 +658,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.8865772" visible="true" weight="0.37588653" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.8865772" weight="0.37588653" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4986577" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -742,7 +670,7 @@
       <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.4986577" weight="0.29929078" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" />
       <window_info anchor="bottom" id="Database Changes" order="13" sideWeight="0.49932885" weight="0.32907802" />
-      <window_info anchor="bottom" id="Version Control" order="14" sideWeight="0.49395972" weight="0.42269504" />
+      <window_info anchor="bottom" id="Version Control" order="14" sideWeight="0.49395972" visible="true" weight="0.42269504" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24966443" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.24966443" />
@@ -829,7 +757,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Corrección Administrador, Vendedor, Cliente" />
     <MESSAGE value="Git add missing classes - IntelliJ" />
-    <option name="LAST_COMMIT_MESSAGE" value="Git add missing classes - IntelliJ" />
+    <MESSAGE value="Corrección toEntity() de AdministradorDTO y ClienteDTO en setTelefono. Añadida prueba para verificar nombre de usuario" />
+    <option name="LAST_COMMIT_MESSAGE" value="Corrección toEntity() de AdministradorDTO y ClienteDTO en setTelefono. Añadida prueba para verificar nombre de usuario" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

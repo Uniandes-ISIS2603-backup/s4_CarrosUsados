@@ -1,0 +1,330 @@
+{
+	"info": {
+		"_postman_id": "a7a9a881-18d4-45e8-a81f-b5ef505b3114",
+		"name": "Administrador Logic",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET Administrador inexistente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4855b1bc-b8a8-4a45-92de-edf3a08a969b",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Prueba administrador inexistente correcta\",function () {",
+							"    pm.response.to.have.status(404);",
+							"pm.expect(pm.response.text()).to.include(\"El recurso /administradores/99999 no existe.\");",
+							"});",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/s4_CarrosUsados-api/api/vendedores/99999",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"s4_CarrosUsados-api",
+						"api",
+						"vendedores",
+						"99999"
+					]
+				},
+				"description": "Prueba GET de un administrador que no existe en la base de datos. Se asume administrador con id 99999 inexistente en el sistema. "
+			},
+			"response": []
+		},
+		{
+			"name": "POST Administrador",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d007c8da-3bc0-47ea-9a8b-63e99e997e8a",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Ok\",function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"DTO correcto\",function(){",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"id\":1,\"nombre\":\"Juan Sebastián\",\"apellido\":\"Bravo Castelo\",\"correo\":\"js.bravo@uniandes.edu.co\",\"telefono\":\"3000000000\",\"fechaInicio\":\"2018-01-01T02:19:04.193Z\",\"fechaNacimiento\":\"1990-01-01T02:19:04.193Z\", \"cargo\":\"Desarrollador\",\"nombreUsuario\":\"js.bravo\",\"contrasena\":\"AbCdE$%1000\", \"puntosVenta\":[]}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/s4_CarrosUsados-api/api/administradores",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"s4_CarrosUsados-api",
+						"api",
+						"administradores"
+					]
+				},
+				"description": "POST Administrador para crear un administrador dentro de la base de datos. \nValores JSON quemados:\n*param* id: 1 //Innecesario: ID incremental en la db.\n*param* nombre:\"Juan Sebastián\" //Sin símbolos \n*param* apellido:\"Bravo Castelo\" //Sin símbolos\n*param* correo:\"js.bravo@uniandes.edu.co\" //Debe ser un correo válido\n*param* telefono:\"3000000000\" //Puede tener el id. del país, seguido del 3 seguido de 9 números\n*param* fechaInicio:\"2018-01-01T02:19:04.193Z\" //Debe tener mínimo 0 años (no puede iniciar en una fecha futura)\n*param* fechaNacimiento:\"1990-01-01T02:19:04.193Z\" //Debe ser mayor de 18 años\n*param* cargo:\"Desarrollador\" \n*param* nombreUsuario:\"js.bravo\" //No puede tener espacios\n*param* contrasena:\"AbCdE$%1000\" //Debe ser fuerte (min. 8 car, min. una minúscula, una mayúscula, un número, un símbolo)\n*param* puntosVenta:[]"
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE Administrador",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7d49d4d0-c531-4833-ab52-a70642bdb2df",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Borrado correcto\",function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Ok\",function(){",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/s4_CarrosUsados-api/api/administradores/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"s4_CarrosUsados-api",
+						"api",
+						"administradores",
+						"1"
+					]
+				},
+				"description": "DELETE Administrador con *param* _idAdministrador_. Se asume que el administrador con idAdministrador 1 ya existe."
+			},
+			"response": []
+		},
+		{
+			"name": "PUT Administrador",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "51fff52e-29a4-4125-919e-dfe36d8dca1f",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Ok\",function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Actualizado correcto\",function(){",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody;",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"id\":1,\"nombre\":\"Juan Sebastián\",\"apellido\":\"Bravo Castelo\",\"correo\":\"js.bravo@uniandes.edu.co\",\"telefono\":\"3000000001\",\"fechaInicio\":\"2018-01-01T02:19:04.193Z\",\"fechaNacimiento\":\"1990-01-01T02:19:04.193Z\", \"cargo\":\"Desarrollador\",\"nombreUsuario\":\"js.bravo\",\"contrasena\":\"AbCdE$%1001\", \"puntosVenta\":[]}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/s4_CarrosUsados-api/api/administradores/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"s4_CarrosUsados-api",
+						"api",
+						"administradores",
+						"1"
+					]
+				},
+				"description": "PUT Administrador para actualizar el administrador con *param* _idAdministrador_. Se asume que el administrador con id 1 ya existe en la base de datos."
+			},
+			"response": []
+		},
+		{
+			"name": "GET Administradores",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "08a83c17-5e8d-4f90-813a-4bfa914fda86",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Ok\",function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"DTO correcto\",function(){",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/s4_CarrosUsados-api/api/administradores",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"s4_CarrosUsados-api",
+						"api",
+						"administradores"
+					]
+				},
+				"description": "Prueba de postman para obtener una lista con todos los administradores de la base de datos."
+			},
+			"response": []
+		},
+		{
+			"name": "GET Administrador ",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bf2cf52f-cd96-4e8a-93d0-712e8de93427",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Ok\",function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"DTO correcto\",function(){",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/s4_CarrosUsados-api/api/administradores/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"s4_CarrosUsados-api",
+						"api",
+						"administradores",
+						"1"
+					]
+				},
+				"description": "GET Administrador con *param* _idAdministrador_. Se asume que el administrador con idAdministrador 1 ya existe."
+			},
+			"response": []
+		},
+		{
+			"name": "POST Administrador error precondición",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8e3a6f75-0bde-4af1-a659-a8c32075158a",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Prueba precondición fallida correcta\",function () {",
+							"    pm.response.to.have.status(412);",
+							"    pm.expect(pm.response.text()).to.include(\"El correo es inválido\");",
+							"});",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"id\":1,\"nombre\":\"Juan Sebastián\",\"apellido\":\"Bravo Castelo\",\"correo\":\"js.bravouniandes.edu.co\",\"telefono\":\"3000000000\",\"fechaInicio\":\"2018-01-01T02:19:04.193Z\",\"fechaNacimiento\":\"1990-01-01T02:19:04.193Z\", \"cargo\":\"Desarrollador\",\"nombreUsuario\":\"js.bravo\",\"contrasena\":\"AbCdE$%1000\", \"puntosVenta\":[]}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/s4_CarrosUsados-api/api/administradores",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"s4_CarrosUsados-api",
+						"api",
+						"administradores"
+					]
+				},
+				"description": "POST con error de lógica en el correo."
+			},
+			"response": []
+		}
+	]
+}

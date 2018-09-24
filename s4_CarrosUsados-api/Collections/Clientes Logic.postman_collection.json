@@ -1,0 +1,330 @@
+{
+	"info": {
+		"_postman_id": "2bfebf92-64a8-4b7b-9206-1079535429f1",
+		"name": "Clientes Logic",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET Cliente inexistente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1a7a5842-8b03-4ef8-9949-7791bce8f9ca",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Prueba administrador inexistente correcta\",function () {",
+							"    pm.response.to.have.status(404);",
+							"pm.expect(pm.response.text()).to.include(\"El recurso /clientes/99999 no existe.\");",
+							"});",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/s4_CarrosUsados-api/api/clientes/99999",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"s4_CarrosUsados-api",
+						"api",
+						"clientes",
+						"99999"
+					]
+				},
+				"description": "Prueba GET de un cliente que no existe en la base de datos. Se asume cliente con id 99999 inexistente en el sistema. "
+			},
+			"response": []
+		},
+		{
+			"name": "POST Cliente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d007c8da-3bc0-47ea-9a8b-63e99e997e8a",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Ok\",function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"DTO correcto\",function(){",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"id\":1,\"nombre\":\"Juan Sebastián\",\"apellido\":\"Bravo Castelo\",\"correo\":\"js.bravo@uniandes.edu.co\",\"telefono\":\"3000000000\",\"fechaNacimiento\":\"1990-01-01T02:19:04.193Z\", \"direccion\":\"Calle 1 # 2 - 3\",\"nombreUsuario\":\"js.bravo\",\"contrasena\":\"AbCdE$%1000\"}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/s4_CarrosUsados-api/api/clientes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"s4_CarrosUsados-api",
+						"api",
+						"clientes"
+					]
+				},
+				"description": "POST Cliente para crear un cliente dentro de la base de datos. \nValores JSON quemados:\n*param* id: 1 //Innecesario: ID incremental en la db.\n*param* nombre:\"Juan Sebastián\" //Sin símbolos \n*param* apellido:\"Bravo Castelo\" //Sin símbolos\n*param* correo:\"js.bravo@uniandes.edu.co\" //Debe ser un correo válido\n*param* telefono:\"3000000000\" //Puede tener el id. del país, seguido del 3 seguido de 9 números\n*param* fechaNacimiento:\"1990-01-01T02:19:04.193Z\" //Debe ser mayor de 18 años\n*param* dirección:\"Calle 1 # 2 - 3\" \n*param* nombreUsuario:\"js.bravo\" //No puede tener espacios\n*param* contrasena:\"AbCdE$%1000\" //Debe ser fuerte (min. 8 car, min. una minúscula, una mayúscula, un número, un símbolo)\n"
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE Cliente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7d49d4d0-c531-4833-ab52-a70642bdb2df",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Borrado correcto\",function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Ok\",function(){",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/s4_CarrosUsados-api/api/clientes/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"s4_CarrosUsados-api",
+						"api",
+						"clientes",
+						"1"
+					]
+				},
+				"description": "DELETE Cliente con *param* _idCliente_. Se asume que el cliente con idCliente 1 ya existe."
+			},
+			"response": []
+		},
+		{
+			"name": "PUT Cliente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "51fff52e-29a4-4125-919e-dfe36d8dca1f",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Ok\",function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Actualizado correcto\",function(){",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody;",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"id\":1,\"nombre\":\"Juan Sebastián\",\"apellido\":\"Bravo Castelo\",\"correo\":\"js.bravo@uniandes.edu.co\",\"telefono\":\"3000000001\",\"fechaNacimiento\":\"1990-01-01T02:19:04.193Z\", \"direccion\":\"Calle 1 # 2 - 4\",\"nombreUsuario\":\"js.bravo\",\"contrasena\":\"AbCdE$%1000\"}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/s4_CarrosUsados-api/api/clientes/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"s4_CarrosUsados-api",
+						"api",
+						"clientes",
+						"1"
+					]
+				},
+				"description": "PUT Cliente para actualizar el cliente con *param* _idCliente_. Se asume que el cliente con id 1 ya existe en la base de datos."
+			},
+			"response": []
+		},
+		{
+			"name": "GET Clientes",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "08a83c17-5e8d-4f90-813a-4bfa914fda86",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Ok\",function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"DTO correcto\",function(){",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/s4_CarrosUsados-api/api/clientes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"s4_CarrosUsados-api",
+						"api",
+						"clientes"
+					]
+				},
+				"description": "Prueba de postman para obtener una lista con todos los clientes de la base de datos."
+			},
+			"response": []
+		},
+		{
+			"name": "GET Cliente ",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bf2cf52f-cd96-4e8a-93d0-712e8de93427",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Ok\",function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"DTO correcto\",function(){",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/s4_CarrosUsados-api/api/clientes/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"s4_CarrosUsados-api",
+						"api",
+						"clientes",
+						"1"
+					]
+				},
+				"description": "GET Cliente con *param* _idCliente_. Se asume que el cliente con idCliente 1 ya existe."
+			},
+			"response": []
+		},
+		{
+			"name": "POST Cliente error precondición",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8e3a6f75-0bde-4af1-a659-a8c32075158a",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Prueba precondición fallida correcta\",function () {",
+							"    pm.response.to.have.status(412);",
+							"    pm.expect(pm.response.text()).to.include(\"El correo es inválido\");",
+							"});",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"id\":1,\"nombre\":\"Juan Sebastián\",\"apellido\":\"Bravo Castelo\",\"correo\":\"js.bravouniandes.edu.co\",\"telefono\":\"3000000000\",\"fechaNacimiento\":\"1990-01-01T02:19:04.193Z\", \"direccion\":\"Calle 1 # 2 - 3\",\"nombreUsuario\":\"js.bravo\",\"contrasena\":\"AbCdE$%1000\"}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/s4_CarrosUsados-api/api/clientes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"s4_CarrosUsados-api",
+						"api",
+						"clientes"
+					]
+				},
+				"description": "POST con error de lógica en el correo."
+			},
+			"response": []
+		}
+	]
+}
