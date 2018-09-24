@@ -73,7 +73,7 @@ class PuntoVentaCalificacionResource {
         if (calificacionlogic.getCalificacion(calificacionId) == null) {
             throw new WebApplicationException("El recurso /calificaciones/" + calificacionId + " no existe.", 404);
         }
-        CalificacionDTO calificacionDTO = new CalificacionDTO(puntocallogic.addCalificacion(calificacionId, puntoId));
+        CalificacionDTO calificacionDTO = new CalificacionDTO(puntocallogic.addCalificacion(puntoId, calificacionId));
         LOGGER.log(Level.INFO, "PuntoVentaCalificacionResource addCalificacion: output: {0}", calificacionDTO);
         return calificacionDTO;
     }

@@ -48,12 +48,6 @@ public class CalificacionLogic  {
     {
         LOGGER.log(Level.INFO, "Inicia creación de calificación");
 
-        
-        if(persistencia.find(entityNew.getId())!=null)
-        {
-            throw new BusinessLogicException("Ya existe esta calificación.");
-        }
-
         if(entityNew.getComentario()==null)
         {
             throw new BusinessLogicException("Comentario inválido");
@@ -140,11 +134,7 @@ public class CalificacionLogic  {
         {
             throw new BusinessLogicException("Id inválido");
         }
-//        PuntoVentaEntity punto_venta = getCalificacion(calificacionId).getPuntoVenta();
-//        if (punto_venta != null) {
-//            throw new BusinessLogicException("No se puede borrar la calificacion con id = " + calificacionId + " porque tiene un punto de venta asociado");
-//        }
-//       
+    
         persistencia.delete(calificacionId);
         LOGGER.log(Level.INFO, "Termina proceso de borrar la calificacion con id = {0}", calificacionId);
     }

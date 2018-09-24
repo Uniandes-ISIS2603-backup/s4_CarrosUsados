@@ -6,7 +6,7 @@
 package co.edu.uniandes.csw.carrosUsados.dtos;
 
 import co.edu.uniandes.csw.carrosUsados.entities.CalificacionEntity;
-import co.edu.uniandes.csw.carrosUsados.entities.PuntoVentaEntity;
+
 import java.io.Serializable;
 import java.util.Date;
 
