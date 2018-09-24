@@ -108,4 +108,6 @@ public class FichaTecnicaEntity extends BaseEntity implements Serializable {
     public void setNumAirbags(int numAirbags) {
         this.numAirbags = numAirbags;
     }
+    
+    
 }
