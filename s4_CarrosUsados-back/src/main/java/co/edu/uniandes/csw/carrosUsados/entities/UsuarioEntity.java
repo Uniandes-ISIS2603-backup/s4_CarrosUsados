@@ -130,4 +130,7 @@ public class UsuarioEntity extends PersonaEntity implements Serializable {
         this.contrasena = contrasena;
     }
 
+    public UsuarioEntity(){
+        //Constructor vacío por defecto
+    }
 }

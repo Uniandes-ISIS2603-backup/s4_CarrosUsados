@@ -110,7 +110,7 @@ public class VendedorResource {
      */
     @PUT
     @Path("{vendedoresId: \\d+}")
-    public VendedorDTO updateVendedor(@PathParam("vendedoresId") long vendedoresId, VendedorDTO vendedor) throws BusinessLogicException {
+    public VendedorDTO updateVendedor(@PathParam("vendedoresId") Long vendedoresId, VendedorDTO vendedor) throws BusinessLogicException {
         LOGGER.log(Level.INFO, "VendedorResource updateVendedor: input: id: {0} , vendedor: {1}", new Object[]{vendedoresId, vendedor.toString()});
         vendedor.setId(vendedoresId);
         if (vendedorLogic.getVendedor(vendedoresId) == null) {
@@ -130,7 +130,7 @@ public class VendedorResource {
      */
     @DELETE
     @Path("{vendedoresId: \\d+}")
-    public void deleteVendedor(@PathParam("vendedoresId") long vendedoresId) throws BusinessLogicException{
+    public void deleteVendedor(@PathParam("vendedoresId") Long vendedoresId) throws BusinessLogicException{
         LOGGER.log(Level.INFO, "VendedorResource deleteVendedor: input: {0}", vendedoresId);
         VendedorEntity entity = vendedorLogic.getVendedor(vendedoresId);
         if (entity == null) {

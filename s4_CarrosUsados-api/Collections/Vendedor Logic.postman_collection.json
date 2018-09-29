@@ -6,17 +6,18 @@
 	},
 	"item": [
 		{
-			"name": "GET Vendedores",
+			"name": "POST Vendedor",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
-						"id": "1a2a2ce0-dc5d-4c56-bd8b-b4835148b973",
+						"id": "5ece0e12-5927-45f0-8128-106dbbaf81b3",
 						"type": "text/javascript",
 						"exec": [
 							"pm.test(\"Ok\",function () {",
 							"    pm.response.to.have.status(200);",
 							"});",
+							"postman.setGlobalVariable(\"new_id_vendedor\",data.id);",
 							"pm.test(\"DTO correcto\",function(){",
 							"    pm.response.to.not.be.error; ",
 							"    pm.response.to.have.jsonBody(\"\"); ",
@@ -24,49 +25,15 @@
 							"});"
 						]
 					}
-				}
-			],
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
 				},
-				"url": {
-					"raw": "http://localhost:8080/s4_CarrosUsados-api/api/vendedores",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"s4_CarrosUsados-api",
-						"api",
-						"vendedores"
-					]
-				},
-				"description": "Prueba de postman para obtener una lista con todos los vendedores de la base de datos."
-			},
-			"response": []
-		},
-		{
-			"name": "POST Vendedor",
-			"event": [
 				{
-					"listen": "test",
+					"listen": "prerequest",
 					"script": {
-						"id": "6cc33d37-8cbc-48e6-bbc4-7f28faf4ba04",
+						"id": "39f2b5f4-253a-4cd2-814e-04eb60f5bc68",
 						"type": "text/javascript",
 						"exec": [
-							"pm.test(\"Ok\",function () {",
-							"    pm.response.to.have.status(200);",
-							"});",
-							"pm.test(\"DTO correcto\",function(){",
-							"    pm.response.to.not.be.error; ",
-							"    pm.response.to.have.jsonBody(\"\"); ",
-							"    pm.response.to.not.have.jsonBody(\"error\"); ",
-							"});"
+							"console.log(\"Iniciando POST Vendedor\");",
+							""
 						]
 					}
 				}
@@ -81,15 +48,15 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\"id\":1,\"nombre\":\"Juan Sebastián\",\"apellido\":\"Bravo Castelo\"}"
+					"raw": "{\"id\":1,\"nombre\":\"Juan\",\"apellido\":\"Bravo\"}"
 				},
 				"url": {
-					"raw": "http://localhost:8080/s4_CarrosUsados-api/api/vendedores",
+					"raw": "http://{{ip}}:{{puerto}}/s4_CarrosUsados-api/api/vendedores",
 					"protocol": "http",
 					"host": [
-						"localhost"
+						"{{ip}}"
 					],
-					"port": "8080",
+					"port": "{{puerto}}",
 					"path": [
 						"s4_CarrosUsados-api",
 						"api",
@@ -101,48 +68,44 @@
 			"response": []
 		},
 		{
-			"name": "DELETE Vendedor",
+			"name": "GET Vendedor",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
-						"id": "81b3dbc5-118b-4484-9a3a-ac14cb08f364",
+						"id": "20923dab-dec6-4597-8a50-e1b87c470799",
 						"type": "text/javascript",
 						"exec": [
-							"pm.test(\"Borrado correcto\",function () {",
+							"pm.test(\"Ok\",function () {",
 							"    pm.response.to.have.status(200);",
 							"});",
-							"pm.test(\"Ok\",function(){",
-							"    pm.response.to.not.be.error; ",
-							"    pm.response.to.have.jsonBody(\"\"); ",
-							"    pm.response.to.not.have.jsonBody(\"error\"); ",
-							"});"
+							""
 						]
 					}
 				}
 			],
 			"request": {
-				"method": "DELETE",
+				"method": "GET",
 				"header": [],
 				"body": {
 					"mode": "raw",
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://localhost:8080/s4_CarrosUsados-api/api/vendedores/1",
+					"raw": "http://{{ip}}:{{puerto}}/s4_CarrosUsados-api/api/vendedor/{{new_id_vendedor}}",
 					"protocol": "http",
 					"host": [
-						"localhost"
+						"{{ip}}"
 					],
-					"port": "8080",
+					"port": "{{puerto}}",
 					"path": [
 						"s4_CarrosUsados-api",
 						"api",
-						"vendedores",
-						"1"
+						"vendedor",
+						"{{new_id_vendedor}}"
 					]
 				},
-				"description": "DELETE Vendedor con *param* _idVendedor_. Se asume que el vendedor con idVendedor 1 ya existe."
+				"description": "Prueba de postman para obtener el vendedor con *param* _idVendedor_. Se asume que el vendedor con idVendedor 1 existe."
 			},
 			"response": []
 		},
@@ -177,22 +140,113 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\"id\":1,\"nombre\":\"Juan Sebastián\",\"apellido\":\"Bravo Castelo\"}"
+					"raw": "{\"id\":1,\"nombre\":\"Juan\",\"apellido\":\"Castelo\"}"
 				},
 				"url": {
-					"raw": "http://localhost:8080/s4_CarrosUsados-api/api/vendedores/1",
+					"raw": "http://{{ip}}:{{puerto}}/s4_CarrosUsados-api/api/vendedores/{{new_id_vendedor}}",
 					"protocol": "http",
 					"host": [
-						"localhost"
+						"{{ip}}"
 					],
-					"port": "8080",
+					"port": "{{puerto}}",
 					"path": [
 						"s4_CarrosUsados-api",
 						"api",
 						"vendedores",
-						"1"
+						"{{new_id_vendedor}}"
 					]
 				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE Vendedor",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e208f1d2-9718-4874-971b-55c5a71cf28a",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Borrado correcto\",function () {",
+							"    pm.response.to.have.status(204);",
+							"});",
+							"pm.test(\"Ok\",function(){",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/s4_CarrosUsados-api/api/vendedores/{{new_id_vendedor}}",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"s4_CarrosUsados-api",
+						"api",
+						"vendedores",
+						"{{new_id_vendedor}}"
+					]
+				},
+				"description": "DELETE Vendedor con *param* _idVendedor_. Se asume que el vendedor con idVendedor 1 ya existe."
+			},
+			"response": []
+		},
+		{
+			"name": "GET Vendedores",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1a2a2ce0-dc5d-4c56-bd8b-b4835148b973",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Ok\",function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"DTO correcto\",function(){",
+							"    pm.response.to.not.be.error; ",
+							"    pm.response.to.have.jsonBody(\"\"); ",
+							"    pm.response.to.not.have.jsonBody(\"error\"); ",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/s4_CarrosUsados-api/api/vendedores",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"s4_CarrosUsados-api",
+						"api",
+						"vendedores"
+					]
+				},
+				"description": "Prueba de postman para obtener una lista con todos los vendedores de la base de datos."
 			},
 			"response": []
 		},
@@ -212,6 +266,17 @@
 							""
 						]
 					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "2e8e05af-3112-4e0d-8302-99320e7217fa",
+						"type": "text/javascript",
+						"exec": [
+							"",
+							""
+						]
+					}
 				}
 			],
 			"request": {
@@ -227,12 +292,12 @@
 					"raw": "{\"id\":1,\"nombre\":\"Juan Sebastián\",\"apellido\":\"Bravo Castelo2&%\"}"
 				},
 				"url": {
-					"raw": "http://localhost:8080/s4_CarrosUsados-api/api/vendedores",
+					"raw": "http://{{ip}}:{{puerto}}/s4_CarrosUsados-api/api/vendedores",
 					"protocol": "http",
 					"host": [
-						"localhost"
+						"{{ip}}"
 					],
-					"port": "8080",
+					"port": "{{puerto}}",
 					"path": [
 						"s4_CarrosUsados-api",
 						"api",
@@ -240,48 +305,6 @@
 					]
 				},
 				"description": "POST con error de lógica en el nombre."
-			},
-			"response": []
-		},
-		{
-			"name": "GET Vendedor",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"id": "20923dab-dec6-4597-8a50-e1b87c470799",
-						"type": "text/javascript",
-						"exec": [
-							"pm.test(\"Ok\",function () {",
-							"    pm.response.to.have.status(200);",
-							"});",
-							""
-						]
-					}
-				}
-			],
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
-				"url": {
-					"raw": "http://localhost:8080/s4_CarrosUsados-api/api/vendedor/1",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"s4_CarrosUsados-api",
-						"api",
-						"vendedor",
-						"1"
-					]
-				},
-				"description": "Prueba de postman para obtener el vendedor con *param* _idVendedor_. Se asume que el vendedor con idVendedor 1 existe."
 			},
 			"response": []
 		},
@@ -311,12 +334,12 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://localhost:8080/s4_CarrosUsados-api/api/vendedores/99999",
+					"raw": "http://{{ip}}:{{puerto}}/s4_CarrosUsados-api/api/vendedores/99999",
 					"protocol": "http",
 					"host": [
-						"localhost"
+						"{{ip}}"
 					],
-					"port": "8080",
+					"port": "{{puerto}}",
 					"path": [
 						"s4_CarrosUsados-api",
 						"api",
