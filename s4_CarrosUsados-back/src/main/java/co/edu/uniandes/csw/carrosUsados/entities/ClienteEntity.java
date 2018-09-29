@@ -32,7 +32,9 @@ public class ClienteEntity extends UsuarioEntity implements Serializable {
     @ManyToMany(mappedBy = "clientes")
     private List<ArticuloEntity> articulos;
 
-    
+    public ClienteEntity(){
+        //Constructor vacío por defecto
+    }
  
     /**
      * Retorna la dirección de residencia/entrega del cliente.

@@ -9,6 +9,8 @@ import java.io.Serializable;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
+
+import co.edu.uniandes.csw.carrosUsados.ejb.VendedorLogic;
 import uk.co.jemos.podam.common.PodamExclude;
 
 /**
@@ -35,4 +37,7 @@ public class VendedorEntity extends PersonaEntity implements Serializable {
         this.automoviles = automoviles;
     }
 
+    public VendedorEntity(){
+        //Constructor vacío por defecto
+    }
 }

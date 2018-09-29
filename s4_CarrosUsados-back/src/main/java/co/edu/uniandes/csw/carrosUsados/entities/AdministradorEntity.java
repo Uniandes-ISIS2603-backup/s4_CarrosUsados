@@ -87,4 +87,8 @@ public class AdministradorEntity extends UsuarioEntity implements Serializable {
     public void setPuntosDeVenta(List<PuntoVentaEntity> puntosDeVenta) {
         this.puntosDeVenta = puntosDeVenta;
     }
+
+    public AdministradorEntity(){
+        //Constructor vacío por defecto
+    }
 }

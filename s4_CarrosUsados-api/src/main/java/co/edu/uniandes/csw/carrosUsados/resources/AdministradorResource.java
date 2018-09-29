@@ -109,7 +109,7 @@ public class AdministradorResource {
      */
     @PUT
     @Path("{administradoresId: \\d+}")
-    public AdministradorDTO updateAdministrador(@PathParam("administradoresId") long administradoresId, AdministradorDTO administrador) throws BusinessLogicException {
+    public AdministradorDTO updateAdministrador(@PathParam("administradoresId") Long administradoresId, AdministradorDTO administrador) throws BusinessLogicException {
         LOGGER.log(Level.INFO, "AdministradorResource updateAdministrador: input: id: {0} , administrador: {1}", new Object[]{administradoresId, administrador.toString()});
         administrador.setId(administradoresId);
         if (administradorLogic.getAdministrador(administradoresId) == null) {
@@ -129,7 +129,7 @@ public class AdministradorResource {
      */
     @DELETE
     @Path("{administradoresId: \\d+}")
-    public void deleteAdministrador(@PathParam("administradoresId") long administradoresId) throws BusinessLogicException{
+    public void deleteAdministrador(@PathParam("administradoresId") Long administradoresId) throws BusinessLogicException{
         LOGGER.log(Level.INFO, "AdministradorResource deleteAdministrador: input: {0}", administradoresId);
         AdministradorEntity entity = administradorLogic.getAdministrador(administradoresId);
         if (entity == null) {

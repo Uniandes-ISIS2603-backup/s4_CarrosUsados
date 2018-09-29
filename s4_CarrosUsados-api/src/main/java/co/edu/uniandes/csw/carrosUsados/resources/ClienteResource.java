@@ -104,7 +104,7 @@ public class ClienteResource {
      */
     @DELETE
     @Path("{clientesId: \\d+}")
-    public void deleteCliente(@PathParam("clientesId") long clientesId) throws BusinessLogicException{
+    public void deleteCliente(@PathParam("clientesId") Long clientesId) throws BusinessLogicException{
         LOGGER.log(Level.INFO, "ClienteResource deleteCliente: input: {0}", clientesId);
         ClienteEntity entity = clienteLogic.getCliente(clientesId);
         if (entity == null) {
@@ -129,7 +129,7 @@ public class ClienteResource {
      */
     @PUT
     @Path("{clientesId: \\d+}")
-    public ClienteDTO updateCliente(@PathParam("clientesId") long clientesId, ClienteDTO cliente) throws BusinessLogicException {
+    public ClienteDTO updateCliente(@PathParam("clientesId") Long clientesId, ClienteDTO cliente) throws BusinessLogicException {
         LOGGER.log(Level.INFO, "ClienteResource updatecliente: input: id: {0} , cliente: {1}", new Object[]{clientesId, cliente.toString()});
         cliente.setId(clientesId);
         if (clienteLogic.getCliente(clientesId) == null) {
