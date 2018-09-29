@@ -37,7 +37,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\"id\":1,\"nombre\":\"Juan Sebastián\",\"apellido\":\"Bravo Castelo\"}"
+					"raw": "{\"id\":1,\"nombre\":\"Juan\",\"apellido\":\"Bravo\"}"
 				},
 				"url": {
 					"raw": "http://{{ip}}:{{puerto}}/s4_CarrosUsados-api/api/vendedores",
@@ -129,7 +129,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\"id\":1,\"nombre\":\"Juan Sebastián\",\"apellido\":\"Bravo Castelo\"}"
+					"raw": "{\"id\":1,\"nombre\":\"Juan\",\"apellido\":\"Castelo\"}"
 				},
 				"url": {
 					"raw": "http://{{ip}}:{{puerto}}/s4_CarrosUsados-api/api/vendedores/{{new_id_vendedor}}",
@@ -154,11 +154,11 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "81b3dbc5-118b-4484-9a3a-ac14cb08f364",
+						"id": "e208f1d2-9718-4874-971b-55c5a71cf28a",
 						"type": "text/javascript",
 						"exec": [
 							"pm.test(\"Borrado correcto\",function () {",
-							"    pm.response.to.have.status(200);",
+							"    pm.response.to.have.status(204);",
 							"});",
 							"pm.test(\"Ok\",function(){",
 							"    pm.response.to.not.be.error; ",

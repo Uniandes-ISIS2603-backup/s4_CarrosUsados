@@ -37,7 +37,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\"id\":1,\"nombre\":\"Juan Sebastián\",\"apellido\":\"Bravo Castelo\",\"correo\":\"js.bravo@uniandes.edu.co\",\"telefono\":\"3000000000\",\"fechaNacimiento\":\"1990-01-01T02:19:04.193Z\", \"direccion\":\"Calle 1 # 2 - 3\",\"nombreUsuario\":\"js.bravo\",\"contrasena\":\"AbCdE$%1000\"}"
+					"raw": "{\"id\":1,\"nombre\":\"Juan\",\"apellido\":\"Bravo\",\"correo\":\"js.bravo@uniandes.edu.co\",\"telefono\":\"3000000000\",\"fechaNacimiento\":\"1990-01-01T02:19:04.193Z\", \"direccion\":\"Calle 1 # 2 - 3\",\"nombreUsuario\":\"js.bravo\",\"contrasena\":\"AbCdE$%1000\"}"
 				},
 				"url": {
 					"raw": "http://{{ip}}:{{puerto}}/s4_CarrosUsados-api/api/clientes",
@@ -129,7 +129,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\"id\":1,\"nombre\":\"Juan Sebastián\",\"apellido\":\"Bravo Castelo\",\"correo\":\"js.bravo@uniandes.edu.co\",\"telefono\":\"3000000001\",\"fechaNacimiento\":\"1990-01-01T02:19:04.193Z\", \"direccion\":\"Calle 1 # 2 - 4\",\"nombreUsuario\":\"js.bravo\",\"contrasena\":\"AbCdE$%1000\"}"
+					"raw": "{\"id\":1,\"nombre\":\"Juan\",\"apellido\":\"Castelo\",\"correo\":\"js.bravo@uniandes.edu.co\",\"telefono\":\"3000000001\",\"fechaNacimiento\":\"1990-01-01T02:19:04.193Z\", \"direccion\":\"Calle 1 # 2 - 4\",\"nombreUsuario\":\"js.bravo\",\"contrasena\":\"AbCdE$%1000\"}"
 				},
 				"url": {
 					"raw": "http://{{ip}}:{{puerto}}/s4_CarrosUsados-api/api/clientes/{{new_id_cliente}}",
@@ -155,11 +155,11 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "7d49d4d0-c531-4833-ab52-a70642bdb2df",
+						"id": "db8a79e9-4fde-4a51-b9b2-923b04431e27",
 						"type": "text/javascript",
 						"exec": [
 							"pm.test(\"Borrado correcto\",function () {",
-							"    pm.response.to.have.status(200);",
+							"    pm.response.to.have.status(204);",
 							"});",
 							"pm.test(\"Ok\",function(){",
 							"    pm.response.to.not.be.error; ",

@@ -38,7 +38,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\"id\":1,\"nombre\":\"Juan Sebastián\",\"apellido\":\"Bravo Castelo\",\"correo\":\"js.bravo@uniandes.edu.co\",\"telefono\":\"3000000000\",\"fechaInicio\":\"2018-01-01T02:19:04.193Z\",\"fechaNacimiento\":\"1990-01-01T02:19:04.193Z\", \"cargo\":\"Desarrollador\",\"nombreUsuario\":\"js.bravo\",\"contrasena\":\"AbCdE$%1000\", \"puntosVenta\":[]}"
+					"raw": "{\"id\":1,\"nombre\":\"Juan\",\"apellido\":\"Bravo\",\"correo\":\"js.bravo@uniandes.edu.co\",\"telefono\":\"3000000000\",\"fechaInicio\":\"2018-01-01T02:19:04.193Z\",\"fechaNacimiento\":\"1990-01-01T02:19:04.193Z\", \"cargo\":\"Desarrollador\",\"nombreUsuario\":\"js.bravo\",\"contrasena\":\"AbCdE$%1000\", \"puntosVenta\":[]}"
 				},
 				"url": {
 					"raw": "http://{{ip}}:{{puerto}}/s4_CarrosUsados-api/api/administradores",
@@ -133,7 +133,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\"id\":1,\"nombre\":\"Juan Sebastián\",\"apellido\":\"Bravo Castelo\",\"correo\":\"js.bravo@uniandes.edu.co\",\"telefono\":\"3000000001\",\"fechaInicio\":\"2018-01-01T02:19:04.193Z\",\"fechaNacimiento\":\"1990-01-01T02:19:04.193Z\", \"cargo\":\"Desarrollador\",\"nombreUsuario\":\"js.bravo\",\"contrasena\":\"AbCdE$%1001\", \"puntosVenta\":[]}"
+					"raw": "{\"id\":1,\"nombre\":\"Juan\",\"apellido\":\"Castelo\",\"correo\":\"js.bravo@uniandes.edu.co\",\"telefono\":\"3000000001\",\"fechaInicio\":\"2018-01-01T02:19:04.193Z\",\"fechaNacimiento\":\"1990-01-01T02:19:04.193Z\", \"cargo\":\"Desarrollador\",\"nombreUsuario\":\"js.bravo\",\"contrasena\":\"AbCdE$%1001\", \"puntosVenta\":[]}"
 				},
 				"url": {
 					"raw": "http://{{ip}}:{{puerto}}/s4_CarrosUsados-api/api/administradores/{{new_id_administrador}}",
@@ -159,11 +159,11 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "7d49d4d0-c531-4833-ab52-a70642bdb2df",
+						"id": "bc6ab106-d4de-4a84-ae66-232248ccc98f",
 						"type": "text/javascript",
 						"exec": [
 							"pm.test(\"Borrado correcto\",function () {",
-							"    pm.response.to.have.status(200);",
+							"    pm.response.to.have.status(204);",
 							"});",
 							"pm.test(\"Ok\",function(){",
 							"    pm.response.to.not.be.error; ",
