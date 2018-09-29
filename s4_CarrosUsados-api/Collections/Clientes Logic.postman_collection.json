@@ -221,12 +221,12 @@
 				"header": [],
 				"body": {},
 				"url": {
-					"raw": "http://{{ip}}:{{direccion}}/s4_CarrosUsados-api/api/clientes",
+					"raw": "http://{{ip}}:{{puerto}}/s4_CarrosUsados-api/api/clientes",
 					"protocol": "http",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{direccion}}",
+					"port": "{{puerto}}",
 					"path": [
 						"s4_CarrosUsados-api",
 						"api",
@@ -263,12 +263,12 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{direccion}}/s4_CarrosUsados-api/api/clientes/99999",
+					"raw": "http://{{ip}}:{{puerto}}/s4_CarrosUsados-api/api/clientes/99999",
 					"protocol": "http",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{direccion}}",
+					"port": "{{puerto}}",
 					"path": [
 						"s4_CarrosUsados-api",
 						"api",
@@ -311,12 +311,12 @@
 					"raw": "{\"id\":1,\"nombre\":\"Juan Sebastián\",\"apellido\":\"Bravo Castelo\",\"correo\":\"js.bravouniandes.edu.co\",\"telefono\":\"3000000000\",\"fechaNacimiento\":\"1990-01-01T02:19:04.193Z\", \"direccion\":\"Calle 1 # 2 - 3\",\"nombreUsuario\":\"js.bravo\",\"contrasena\":\"AbCdE$%1000\"}"
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{direccion}}/s4_CarrosUsados-api/api/clientes",
+					"raw": "http://{{ip}}:{{puerto}}/s4_CarrosUsados-api/api/clientes",
 					"protocol": "http",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{direccion}}",
+					"port": "{{puerto}}",
 					"path": [
 						"s4_CarrosUsados-api",
 						"api",

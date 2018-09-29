@@ -228,12 +228,12 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{direccion}}/s4_CarrosUsados-api/api/administradores",
+					"raw": "http://{{ip}}:{{puerto}}/s4_CarrosUsados-api/api/administradores",
 					"protocol": "http",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{direccion}}",
+					"port": "{{puerto}}",
 					"path": [
 						"s4_CarrosUsados-api",
 						"api",
@@ -274,12 +274,12 @@
 					"raw": "{\"id\":1,\"nombre\":\"Juan Sebastián\",\"apellido\":\"Bravo Castelo\",\"correo\":\"js.bravouniandes.edu.co\",\"telefono\":\"3000000000\",\"fechaInicio\":\"2018-01-01T02:19:04.193Z\",\"fechaNacimiento\":\"1990-01-01T02:19:04.193Z\", \"cargo\":\"Desarrollador\",\"nombreUsuario\":\"js.bravo\",\"contrasena\":\"AbCdE$%1000\", \"puntosVenta\":[]}"
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{direccion}}/s4_CarrosUsados-api/api/administradores",
+					"raw": "http://{{ip}}:{{puerto}}/s4_CarrosUsados-api/api/administradores",
 					"protocol": "http",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{direccion}}",
+					"port": "{{puerto}}",
 					"path": [
 						"s4_CarrosUsados-api",
 						"api",
@@ -315,12 +315,12 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{direccion}}/s4_CarrosUsados-api/api/administradores/99999",
+					"raw": "http://{{ip}}:{{puerto}}/s4_CarrosUsados-api/api/administradores/99999",
 					"protocol": "http",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{direccion}}",
+					"port": "{{puerto}}",
 					"path": [
 						"s4_CarrosUsados-api",
 						"api",

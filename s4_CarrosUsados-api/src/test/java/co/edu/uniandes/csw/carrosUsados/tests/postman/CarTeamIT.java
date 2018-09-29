@@ -78,7 +78,7 @@ public class CarTeamIT {
         for (File coleccion : colecciones) {
             if (!coleccion.getName().contains("postman_environment")) {
                 PostmanTestBuilder tp = new PostmanTestBuilder();
-                tp.setTestWithoutLogin(coleccion.getName().replaceFirst(".json", ""), "Entorno-IT.postman_environment");
+                tp.setTestWithoutLogin(coleccion.getName().replaceFirst(".json", ""), "CarTeam.postman_environment");
                 String desiredResult = "0";
                 String nombre = coleccion.getName().replaceFirst(".postman_environment.json", "");
 

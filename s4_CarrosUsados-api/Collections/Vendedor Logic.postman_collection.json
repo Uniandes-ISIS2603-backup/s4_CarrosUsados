@@ -223,12 +223,12 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{direccion}}/s4_CarrosUsados-api/api/vendedores",
+					"raw": "http://{{ip}}:{{puerto}}/s4_CarrosUsados-api/api/vendedores",
 					"protocol": "http",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{direccion}}",
+					"port": "{{puerto}}",
 					"path": [
 						"s4_CarrosUsados-api",
 						"api",
@@ -270,12 +270,12 @@
 					"raw": "{\"id\":1,\"nombre\":\"Juan Sebastián\",\"apellido\":\"Bravo Castelo2&%\"}"
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{direccion}}/s4_CarrosUsados-api/api/vendedores",
+					"raw": "http://{{ip}}:{{puerto}}/s4_CarrosUsados-api/api/vendedores",
 					"protocol": "http",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{direccion}}",
+					"port": "{{puerto}}",
 					"path": [
 						"s4_CarrosUsados-api",
 						"api",
@@ -312,12 +312,12 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://{{ip}}:{{direccion}}/s4_CarrosUsados-api/api/vendedores/99999",
+					"raw": "http://{{ip}}:{{puerto}}/s4_CarrosUsados-api/api/vendedores/99999",
 					"protocol": "http",
 					"host": [
 						"{{ip}}"
 					],
-					"port": "{{direccion}}",
+					"port": "{{puerto}}",
 					"path": [
 						"s4_CarrosUsados-api",
 						"api",

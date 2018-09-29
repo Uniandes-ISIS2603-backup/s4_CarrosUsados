@@ -6,7 +6,9 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c7a0e589-e472-4569-b807-53a47d4e68e9" name="Default Changelist" comment="" />
+    <list default="true" id="c7a0e589-e472-4569-b807-53a47d4e68e9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/s4_CarrosUsados-api/src/test/java/co/edu/uniandes/csw/carrosUsados/tests/postman/CarTeamIT.java" beforeDir="false" afterPath="$PROJECT_DIR$/s4_CarrosUsados-api/src/test/java/co/edu/uniandes/csw/carrosUsados/tests/postman/CarTeamIT.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/s4_CarrosUsados-api/target/" />
     <ignored path="$PROJECT_DIR$/s4_CarrosUsados-back/target/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -46,8 +48,8 @@
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.41" value="1" />
           <entry key="project.open.time.47" value="1" />
-          <entry key="project.open.time.9" value="4" />
-          <entry key="project.opened" value="13" />
+          <entry key="project.open.time.9" value="5" />
+          <entry key="project.opened" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -72,13 +74,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="5647" />
+          <entry key="java" value="5654" />
           <entry key="txt" value="316" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="5647" />
+          <entry key="JAVA" value="5654" />
           <entry key="PLAIN_TEXT" value="316" />
         </counts>
       </usages-collector>
@@ -106,7 +108,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/s4_CarrosUsados-api/src/main/java/co/edu/uniandes/csw/carrosUsados/dtos/ClienteDTO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="137">
+            <state relative-caret-position="714">
               <caret line="51" column="40" selection-start-line="51" selection-start-column="40" selection-end-line="51" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -118,8 +120,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/s4_CarrosUsados-api/src/test/java/co/edu/uniandes/csw/carrosUsados/tests/postman/CarTeamIT.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="218">
-              <caret line="84" selection-start-line="84" selection-end-line="84" />
+            <state relative-caret-position="164">
+              <caret line="80" column="94" selection-start-line="80" selection-start-column="94" selection-end-line="80" selection-end-column="94" />
             </state>
           </provider>
         </entry>
@@ -206,6 +208,7 @@
         <option value="$PROJECT_DIR$/s4_CarrosUsados-back/src/main/java/co/edu/uniandes/csw/carrosUsados/ejb/AdministradorLogic.java" />
         <option value="$PROJECT_DIR$/s4_CarrosUsados-back/src/test/java/co/edu/uniandes/csw/carrosUsados/test/logic/AdministradorLogicTest.java" />
         <option value="$PROJECT_DIR$/s4_CarrosUsados-api/src/main/java/co/edu/uniandes/csw/carrosUsados/dtos/ClienteDTO.java" />
+        <option value="$PROJECT_DIR$/s4_CarrosUsados-api/src/test/java/co/edu/uniandes/csw/carrosUsados/tests/postman/CarTeamIT.java" />
       </list>
     </option>
   </component>
@@ -224,7 +227,7 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="85" />
     <option name="y" value="25" />
     <option name="width" value="1750" />
@@ -239,6 +242,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -363,14 +367,13 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="derby" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538101304898" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538186490201" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
@@ -389,25 +392,6 @@
     </option>
   </component>
   <component name="RunManager" selected="JUnit.co.edu.uniandes.csw.carrosUsados.tests.postman in s4_carTeam-api">
-    <configuration name="AdministradorPersistenceTest" type="ArquillianJUnit" factoryName="" temporary="true" nameIsGenerated="true">
-      <module name="s4_carTeam-back" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="co.edu.uniandes.csw.carrosUsados.test.persistence.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="PACKAGE_NAME" value="co.edu.uniandes.csw.carrosUsados.test.persistence" />
-      <option name="MAIN_CLASS_NAME" value="co.edu.uniandes.csw.carrosUsados.test.persistence.AdministradorPersistenceTest" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="AdministradorPersistenceTest.getAdministradorTestByNombreUsuario" type="ArquillianJUnit" factoryName="" temporary="true" nameIsGenerated="true">
       <module name="s4_carTeam-back" />
       <extension name="coverage">
@@ -444,6 +428,27 @@
       </option>
       <option name="PACKAGE_NAME" value="co.edu.uniandes.csw.carrosUsados.tests.postman" />
       <option name="MAIN_CLASS_NAME" value="co.edu.uniandes.csw.carrosUsados.tests.postman.CarTeamIT" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CarTeamIT.postman" type="ArquillianJUnit" factoryName="" temporary="true" nameIsGenerated="true">
+      <module name="s4_carTeam-api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="co.edu.uniandes.csw.carrosUsados.tests.postman.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="PACKAGE_NAME" value="co.edu.uniandes.csw.carrosUsados.tests.postman" />
+      <option name="MAIN_CLASS_NAME" value="co.edu.uniandes.csw.carrosUsados.tests.postman.CarTeamIT" />
+      <option name="METHOD_NAME" value="postman" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -586,19 +591,19 @@
     <list>
       <item itemvalue="JUnit.co.edu.uniandes.csw.carrosUsados.test.persistence in s4_carTeam-back" />
       <item itemvalue="GlassFish Server.GlassFish 5.183" />
-      <item itemvalue="Arquillian JUnit.AdministradorPersistenceTest" />
       <item itemvalue="Arquillian JUnit.AdministradorPersistenceTest.getAdministradorTestByNombreUsuario" />
       <item itemvalue="JUnit.co.edu.uniandes.csw.carrosUsados.test in s4_carTeam-back" />
       <item itemvalue="Arquillian JUnit.CarTeamIT" />
       <item itemvalue="JUnit.co.edu.uniandes.csw.carrosUsados.tests.postman in s4_carTeam-api" />
+      <item itemvalue="Arquillian JUnit.CarTeamIT.postman" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.co.edu.uniandes.csw.carrosUsados.tests.postman in s4_carTeam-api" />
+        <item itemvalue="Arquillian JUnit.CarTeamIT.postman" />
         <item itemvalue="Arquillian JUnit.CarTeamIT" />
         <item itemvalue="JUnit.co.edu.uniandes.csw.carrosUsados.test in s4_carTeam-back" />
         <item itemvalue="Arquillian JUnit.AdministradorPersistenceTest.getAdministradorTestByNombreUsuario" />
-        <item itemvalue="Arquillian JUnit.AdministradorPersistenceTest" />
       </list>
     </recent_temporary>
   </component>
@@ -625,6 +630,7 @@
       <workItem from="1537760620891" duration="3249000" />
       <workItem from="1537764718526" duration="624000" />
       <workItem from="1538100614494" duration="826000" />
+      <workItem from="1538185509581" duration="854000" />
     </task>
     <task id="LOCAL-00001" summary="Corrección Administrador, Vendedor, Cliente">
       <created>1537419108227</created>
@@ -665,18 +671,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="co_edu_uniandes_csw_carrosUsados_test_persistence_in_s4_carTeam-back - 2018.09.23 at 22h 18m 45s.xml">
-      <configuration name="co.edu.uniandes.csw.carrosUsados.test.persistence in s4_carTeam-back" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="co_edu_uniandes_csw_carrosUsados_test_persistence_in_s4_carTeam-back - 2018.09.23 at 22h 20m 16s.xml">
-      <configuration name="co.edu.uniandes.csw.carrosUsados.test.persistence in s4_carTeam-back" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="co_edu_uniandes_csw_carrosUsados_test_persistence_in_s4_carTeam-back - 2018.09.23 at 22h 21m 28s.xml">
-      <configuration name="co.edu.uniandes.csw.carrosUsados.test.persistence in s4_carTeam-back" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="co_edu_uniandes_csw_carrosUsados_test_persistence_in_s4_carTeam-back - 2018.09.23 at 22h 25m 22s.xml">
-      <configuration name="co.edu.uniandes.csw.carrosUsados.test.persistence in s4_carTeam-back" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="co_edu_uniandes_csw_carrosUsados_test_persistence_in_s4_carTeam-back - 2018.09.23 at 22h 31m 22s.xml">
       <configuration name="co.edu.uniandes.csw.carrosUsados.test.persistence in s4_carTeam-back" configurationId="JUnit" />
     </history-entry>
@@ -695,14 +689,27 @@
     <history-entry file="co_edu_uniandes_csw_carrosUsados_tests_postman_in_s4_carTeam-api - 2018.09.27 at 21h 12m 08s.xml">
       <configuration name="co.edu.uniandes.csw.carrosUsados.tests.postman in s4_carTeam-api" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="co_edu_uniandes_csw_carrosUsados_tests_postman_in_s4_carTeam-api - 2018.09.28 at 20h 47m 24s.xml">
+      <configuration name="co.edu.uniandes.csw.carrosUsados.tests.postman in s4_carTeam-api" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="co_edu_uniandes_csw_carrosUsados_tests_postman_in_s4_carTeam-api - 2018.09.28 at 20h 49m 12s.xml">
+      <configuration name="co.edu.uniandes.csw.carrosUsados.tests.postman in s4_carTeam-api" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="co_edu_uniandes_csw_carrosUsados_tests_postman_in_s4_carTeam-api - 2018.09.28 at 20h 53m 22s.xml">
+      <configuration name="co.edu.uniandes.csw.carrosUsados.tests.postman in s4_carTeam-api" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="co_edu_uniandes_csw_carrosUsados_tests_postman_in_s4_carTeam-api - 2018.09.28 at 20h 54m 27s.xml">
+      <configuration name="co.edu.uniandes.csw.carrosUsados.tests.postman in s4_carTeam-api" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35158000" />
+    <option name="totallyTimeSpent" value="36012000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.807611" visible="true" weight="0.27315435" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.807611" visible="true" weight="0.2771812" />
       <window_info id="Structure" order="1" sideWeight="0.19238901" side_tool="true" weight="0.23154363" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -712,7 +719,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.8865772" weight="0.37588653" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.8865772" visible="true" weight="0.37588653" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4986577" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -852,6 +859,24 @@
           <line>51</line>
           <properties />
           <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/s4_CarrosUsados-api/src/test/java/co/edu/uniandes/csw/carrosUsados/tests/postman/CarTeamIT.java</url>
+          <line>79</line>
+          <properties />
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/s4_CarrosUsados-api/src/test/java/co/edu/uniandes/csw/carrosUsados/tests/postman/CarTeamIT.java</url>
+          <line>82</line>
+          <properties />
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/s4_CarrosUsados-api/src/test/java/co/edu/uniandes/csw/carrosUsados/tests/postman/CarTeamIT.java</url>
+          <line>84</line>
+          <properties />
+          <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/s4_CarrosUsados-api/src/main/java/co/edu/uniandes/csw/carrosUsados/resources/AdministradorResource.java</url>
@@ -1228,7 +1253,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/s4_CarrosUsados-api/src/main/java/co/edu/uniandes/csw/carrosUsados/dtos/ClienteDTO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
+        <state relative-caret-position="714">
           <caret line="51" column="40" selection-start-line="51" selection-start-column="40" selection-end-line="51" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1238,8 +1263,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/s4_CarrosUsados-api/src/test/java/co/edu/uniandes/csw/carrosUsados/tests/postman/CarTeamIT.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="84" selection-start-line="84" selection-end-line="84" />
+        <state relative-caret-position="164">
+          <caret line="80" column="94" selection-start-line="80" selection-start-column="94" selection-end-line="80" selection-end-column="94" />
         </state>
       </provider>
     </entry>
