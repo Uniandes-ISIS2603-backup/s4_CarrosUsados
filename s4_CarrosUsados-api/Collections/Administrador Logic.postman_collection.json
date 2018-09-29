@@ -26,6 +26,17 @@
 							"});"
 						]
 					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "2ebd388e-a18c-46ee-bfa3-3f0ea677e585",
+						"type": "text/javascript",
+						"exec": [
+							"console.log(\"Iniciando POST Administrador\");",
+							""
+						]
+					}
 				}
 			],
 			"request": {

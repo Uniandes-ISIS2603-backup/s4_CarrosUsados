@@ -25,6 +25,17 @@
 							"});"
 						]
 					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "39f2b5f4-253a-4cd2-814e-04eb60f5bc68",
+						"type": "text/javascript",
+						"exec": [
+							"console.log(\"Iniciando POST Vendedor\");",
+							""
+						]
+					}
 				}
 			],
 			"request": {
@@ -252,6 +263,17 @@
 							"    pm.response.to.have.status(412);",
 							"    pm.expect(pm.response.text()).to.include(\"La información del vendedor es inválida.\");",
 							"});",
+							""
+						]
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "2e8e05af-3112-4e0d-8302-99320e7217fa",
+						"type": "text/javascript",
+						"exec": [
+							"",
 							""
 						]
 					}

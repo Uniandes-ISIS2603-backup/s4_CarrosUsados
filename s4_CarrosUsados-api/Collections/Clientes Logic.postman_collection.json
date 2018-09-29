@@ -25,6 +25,18 @@
 							"});"
 						]
 					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "87e64183-dc1f-4ea7-a69c-2ac1fbe58291",
+						"type": "text/javascript",
+						"exec": [
+							"",
+							"console.log(\"Iniciando POST Cliente\");",
+							""
+						]
+					}
 				}
 			],
 			"request": {
