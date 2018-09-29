@@ -308,7 +308,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\"id\":1,\"nombre\":\"Juan Sebastián\",\"apellido\":\"Bravo Castelo\",\"correo\":\"js.bravouniandes.edu.co\",\"telefono\":\"3000000000\",\"fechaNacimiento\":\"1990-01-01T02:19:04.193Z\", \"direccion\":\"Calle 1 # 2 - 3\",\"nombreUsuario\":\"js.bravo\",\"contrasena\":\"AbCdE$%1000\"}"
+					"raw": "{\"id\":1,\"nombre\":\"Juan\",\"apellido\":\"Bravo\",\"correo\":\"js.bravouniandes.edu.co\",\"telefono\":\"3000000000\",\"fechaNacimiento\":\"1990-01-01T02:19:04.193Z\", \"direccion\":\"Calle 1 # 2 - 3\",\"nombreUsuario\":\"js.bravo\",\"contrasena\":\"AbCdE$%1000\"}"
 				},
 				"url": {
 					"raw": "http://{{ip}}:{{puerto}}/s4_CarrosUsados-api/api/clientes",

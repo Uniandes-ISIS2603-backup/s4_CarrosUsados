@@ -271,7 +271,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\"id\":1,\"nombre\":\"Juan Sebastián\",\"apellido\":\"Bravo Castelo\",\"correo\":\"js.bravouniandes.edu.co\",\"telefono\":\"3000000000\",\"fechaInicio\":\"2018-01-01T02:19:04.193Z\",\"fechaNacimiento\":\"1990-01-01T02:19:04.193Z\", \"cargo\":\"Desarrollador\",\"nombreUsuario\":\"js.bravo\",\"contrasena\":\"AbCdE$%1000\", \"puntosVenta\":[]}"
+					"raw": "{\"id\":1,\"nombre\":\"Juan\",\"apellido\":\"Bravo\",\"correo\":\"js.bravouniandes.edu.co\",\"telefono\":\"3000000000\",\"fechaInicio\":\"2018-01-01T02:19:04.193Z\",\"fechaNacimiento\":\"1990-01-01T02:19:04.193Z\", \"cargo\":\"Desarrollador\",\"nombreUsuario\":\"js.bravo\",\"contrasena\":\"AbCdE$%1000\", \"puntosVenta\":[]}"
 				},
 				"url": {
 					"raw": "http://{{ip}}:{{puerto}}/s4_CarrosUsados-api/api/administradores",
