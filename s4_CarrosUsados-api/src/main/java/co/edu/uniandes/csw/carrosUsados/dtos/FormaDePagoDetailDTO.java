@@ -28,8 +28,7 @@ public class FormaDePagoDetailDTO extends FormaDePagoDTO {
      */
     public FormaDePagoDetailDTO(FormaDePagoEntity formaDePago) {
         super( formaDePago );
-        //cliente = new ClienteDTO(formaDePago.getCliente());
-        cliente = null;
+        cliente = new ClienteDTO(formaDePago.getCliente());        
     }
 
     /**
