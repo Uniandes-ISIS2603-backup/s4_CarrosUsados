@@ -6,12 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c7a0e589-e472-4569-b807-53a47d4e68e9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/s4_CarrosUsados-api/Collections/Administrador Logic.postman_collection.json" beforeDir="false" afterPath="$PROJECT_DIR$/s4_CarrosUsados-api/Collections/Administrador Logic.postman_collection.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/s4_CarrosUsados-api/Collections/Clientes Logic.postman_collection.json" beforeDir="false" afterPath="$PROJECT_DIR$/s4_CarrosUsados-api/Collections/Clientes Logic.postman_collection.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/s4_CarrosUsados-api/Collections/Vendedor Logic.postman_collection.json" beforeDir="false" afterPath="$PROJECT_DIR$/s4_CarrosUsados-api/Collections/Vendedor Logic.postman_collection.json" afterDir="false" />
-    </list>
+    <list default="true" id="c7a0e589-e472-4569-b807-53a47d4e68e9" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/s4_CarrosUsados-api/target/" />
     <ignored path="$PROJECT_DIR$/s4_CarrosUsados-back/target/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -43,7 +38,7 @@
     <session id="2102926525">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="12" />
+          <entry key="project.closed" value="13" />
           <entry key="project.open.time.10" value="2" />
           <entry key="project.open.time.11" value="2" />
           <entry key="project.open.time.12" value="1" />
@@ -123,7 +118,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/s4_CarrosUsados-api/src/test/java/co/edu/uniandes/csw/carrosUsados/tests/postman/CarTeamIT.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
+            <state relative-caret-position="218">
               <caret line="84" selection-start-line="84" selection-end-line="84" />
             </state>
           </provider>
@@ -229,7 +224,7 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="85" />
     <option name="y" value="25" />
     <option name="width" value="1750" />
@@ -375,7 +370,7 @@
     <property name="DatabaseDriversLRU" value="derby" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538100863533" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538101304898" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
@@ -629,7 +624,7 @@
       <workItem from="1537760149175" duration="443000" />
       <workItem from="1537760620891" duration="3249000" />
       <workItem from="1537764718526" duration="624000" />
-      <workItem from="1538100614494" duration="240000" />
+      <workItem from="1538100614494" duration="826000" />
     </task>
     <task id="LOCAL-00001" summary="Corrección Administrador, Vendedor, Cliente">
       <created>1537419108227</created>
@@ -670,9 +665,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="co_edu_uniandes_csw_carrosUsados_test_persistence_in_s4_carTeam-back - 2018.09.23 at 22h 14m 40s.xml">
-      <configuration name="co.edu.uniandes.csw.carrosUsados.test.persistence in s4_carTeam-back" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="co_edu_uniandes_csw_carrosUsados_test_persistence_in_s4_carTeam-back - 2018.09.23 at 22h 18m 45s.xml">
       <configuration name="co.edu.uniandes.csw.carrosUsados.test.persistence in s4_carTeam-back" configurationId="JUnit" />
     </history-entry>
@@ -700,13 +692,15 @@
     <history-entry file="co_edu_uniandes_csw_carrosUsados_test_in_s4_carTeam-back - 2018.09.23 at 23h 22m 35s.xml">
       <configuration name="co.edu.uniandes.csw.carrosUsados.test in s4_carTeam-back" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="co_edu_uniandes_csw_carrosUsados_tests_postman_in_s4_carTeam-api - 2018.09.27 at 21h 12m 08s.xml">
+      <configuration name="co.edu.uniandes.csw.carrosUsados.tests.postman in s4_carTeam-api" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34572000" />
+    <option name="totallyTimeSpent" value="35158000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.807611" visible="true" weight="0.27315435" />
       <window_info id="Structure" order="1" sideWeight="0.19238901" side_tool="true" weight="0.23154363" />
@@ -718,7 +712,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.8865772" visible="true" weight="0.37588653" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.8865772" weight="0.37588653" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4986577" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1244,7 +1238,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/s4_CarrosUsados-api/src/test/java/co/edu/uniandes/csw/carrosUsados/tests/postman/CarTeamIT.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
+        <state relative-caret-position="218">
           <caret line="84" selection-start-line="84" selection-end-line="84" />
         </state>
       </provider>
