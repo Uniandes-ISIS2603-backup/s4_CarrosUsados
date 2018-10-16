@@ -27,8 +27,9 @@ private static final Logger LOGGER = Logger.getLogger(PagoLogic.class.getName())
     /**
      * Guardar un Pago nuevo
      *
-     * @param pagoEntity La entidad de tipo PagoEntity del pago que se percistira.
+     * @param facturaEntity La entidad de tipo PagoEntity del pago que se percistira.
      * @return La entidad luego de persistirla
+     * @throws co.edu.uniandes.csw.carrosUsados.exceptions.BusinessLogicException
      */
     public FacturaEntity createFactura(FacturaEntity facturaEntity) throws BusinessLogicException {
         LOGGER.log(Level.INFO, "Inicia proceso de creación de la factura");
@@ -60,7 +61,7 @@ private static final Logger LOGGER = Logger.getLogger(PagoLogic.class.getName())
     /**
      * Busca un Pago por la ID
      *
-     * @param idPago La id del pago que se quiere encontrar
+     * @param idFactura La id del pago que se quiere encontrar
      * @return El pago que se encontro, null si no la encuentra.
      */
     public FacturaEntity getFactura(Long idFactura) throws BusinessLogicException {
@@ -78,10 +79,10 @@ private static final Logger LOGGER = Logger.getLogger(PagoLogic.class.getName())
     /**
      * Actualizar el pago mediate la ID 
      *
-     * @param idPago El ID del pago que se quiere actualizar
-     * @param pagoEntity La entity con las modificaciones que se haran
-     * @return La entidad del pago despues del update
-     * @throws BusinessLogicException Si el pago no tiene un ID o la tarjeta no es valida
+     * @param idFactura El ID de la factura que se quiere actualizar
+     * @param facturaEntity La entity con las modificaciones que se haran
+     * @return La entidad de la factura despues del update
+     * @throws BusinessLogicException Si la factura no tiene un ID o la tarjeta no es valida
      */
      public FacturaEntity updateFactura(Long idFactura, FacturaEntity facturaEntity) throws BusinessLogicException {
         LOGGER.log(Level.INFO, "Inicia proceso de actualizar el Pago con id = {0}", idFactura);
@@ -117,7 +118,7 @@ private static final Logger LOGGER = Logger.getLogger(PagoLogic.class.getName())
         /**
      * Elimina un Pago con la ID dada
      *
-     * @param idPago La Id del pago que se quiere eliminar.
+     * @param idFactura La Id del pago que se quiere eliminar.
      */
      public void deleteFactura(Long idFactura) {
         LOGGER.log(Level.INFO, "Borrando el pago con id = {0}", idFactura);

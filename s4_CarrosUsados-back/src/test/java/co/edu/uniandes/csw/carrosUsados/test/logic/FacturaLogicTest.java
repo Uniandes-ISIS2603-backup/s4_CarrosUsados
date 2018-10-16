@@ -185,6 +185,16 @@ public class FacturaLogicTest {
         Assert.assertEquals(entity.getFormaDePago(), resultEntity.getFormaDePago());
     }
     
+     /**
+     * Prueba para consultar un Pago
+     * @throws co.edu.uniandes.csw.carrosUsados.exceptions.BusinessLogicException
+     */
+    @Test(expected = BusinessLogicException.class)
+    public void getFacturaSinIDTest() throws BusinessLogicException {
+        FacturaEntity entity = data.get(0);
+        FacturaEntity resultEntity = facturaLogic.getFactura(null);
+        
+    }
     /**
      * Prueba para actualizar un Pago.
      *

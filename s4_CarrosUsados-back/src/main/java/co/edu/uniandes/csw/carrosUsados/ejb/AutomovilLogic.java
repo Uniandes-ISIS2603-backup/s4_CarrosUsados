@@ -69,6 +69,7 @@ import javax.inject.Inject;
      * Devuelve todos los automoviles que hay en la base de datos.
      *
      * @return Lista de entidades de tipo automovil.
+     * @throws co.edu.uniandes.csw.carrosUsados.exceptions.BusinessLogicException
      */
     public List<AutomovilEntity> getAutomoviles() throws BusinessLogicException {
         LOGGER.log(Level.INFO, "Inicia proceso de consultar todos los automoviles");
@@ -82,6 +83,7 @@ import javax.inject.Inject;
      *
      * @param automovilId El id del automovil a buscar
      * @return El automovil encontrado, null si no lo encuentra.
+     * @throws co.edu.uniandes.csw.carrosUsados.exceptions.BusinessLogicException
      */
     public AutomovilEntity getAutomovil(Long automovilId) throws BusinessLogicException{
         LOGGER.log(Level.INFO, "Inicia proceso de consultar un automovil");

@@ -21,6 +21,21 @@ public class FacturaEntity extends BaseEntity implements Serializable{
     private Integer subtotal;
     private Integer total;
     private String formaDePago;
+    private String descripcion;
+
+    
+    
+    /**
+     * Retorna la descripción del producto
+     * @return String descirpcion
+     */
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
 
     public String getFormaDePago() {
         return formaDePago;
@@ -29,30 +44,15 @@ public class FacturaEntity extends BaseEntity implements Serializable{
     public void setFormaDePago(String formaDePago) {
         this.formaDePago = formaDePago;
     }
-
-    @PodamExclude
-    @OneToOne
-    private PagoEntity pago;
-
-    public PagoEntity getPago() {
-        return pago;
-    }
-
-    public void setPago(PagoEntity pago) {
-        this.pago = pago;
-    }
     public String getIdFactura() {
         return idFactura;
     }
-
     public void setIdFactura(String id) {
         this.idFactura = id;
     }
-
     public String getProducto() {
         return producto;
     }
-
     public void setProducto(String producto) {
         this.producto = producto;
     }
@@ -65,6 +65,10 @@ public class FacturaEntity extends BaseEntity implements Serializable{
         this.subtotal = subtotal;
     }
 
+    /**
+     * Retorna el precio total de los productos en facturados
+     * @return Precio total de los productos
+     */
     public Integer getTotal() {
         return total;
     }
