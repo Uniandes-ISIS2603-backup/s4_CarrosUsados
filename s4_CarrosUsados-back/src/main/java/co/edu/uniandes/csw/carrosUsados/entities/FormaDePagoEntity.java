@@ -22,11 +22,6 @@ public class FormaDePagoEntity extends BaseEntity implements Serializable {
     
     // El tipo de pago que se va a realizar
     private String tipo;
-    
-    // La relacion con el cliente al cual pertenece la forma de pago
-    @PodamExclude
-    @ManyToOne
-    private ClienteEntity cliente;   
 
     /**     
      * @return retorna el nombre de la forma de pago
@@ -54,20 +49,6 @@ public class FormaDePagoEntity extends BaseEntity implements Serializable {
      */
     public void setTipo(String tipo) {
         this.tipo = tipo;
-    }
-
-    /**
-     * @return el cliente que tiene la forma de pago 
-     */
-    public ClienteEntity getCliente() {
-        return cliente;
-    }
-
-    /**
-     * @param cliente cambia el cliente de la forma de pago. Nunca debe ser usada. 
-     */
-    public void setCliente(ClienteEntity cliente) {
-        this.cliente = cliente;
     }
     
     

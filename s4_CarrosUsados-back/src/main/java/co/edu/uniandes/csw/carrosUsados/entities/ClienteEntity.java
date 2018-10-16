@@ -9,7 +9,6 @@ import java.io.Serializable;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
 import uk.co.jemos.podam.common.PodamExclude;
 
 /**
@@ -23,10 +22,6 @@ public class ClienteEntity extends UsuarioEntity implements Serializable {
      * Dirección de entrega/residencia del cliente.
      */
     private String direccion;
-
-    @PodamExclude
-    @OneToMany(mappedBy = "cliente")
-    private List<FormaDePagoEntity> formasDePago;
 
     @PodamExclude
     @ManyToMany(mappedBy = "clientes")

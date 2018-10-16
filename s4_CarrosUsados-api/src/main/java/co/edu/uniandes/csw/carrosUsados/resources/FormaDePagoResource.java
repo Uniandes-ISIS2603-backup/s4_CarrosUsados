@@ -6,7 +6,6 @@
 package co.edu.uniandes.csw.carrosUsados.resources;
 
 import co.edu.uniandes.csw.carrosUsados.dtos.FormaDePagoDTO;
-import co.edu.uniandes.csw.carrosUsados.dtos.FormaDePagoDetailDTO;
 import co.edu.uniandes.csw.carrosUsados.ejb.FormaDePagoLogic;
 import co.edu.uniandes.csw.carrosUsados.entities.FormaDePagoEntity;
 import co.edu.uniandes.csw.carrosUsados.exceptions.BusinessLogicException;
@@ -71,8 +70,8 @@ public class FormaDePagoResource {
      * encontrados en la aplicación. Si no hay ninguno retorna una lista vacía.
      */
     @GET
-    public List<FormaDePagoDetailDTO> getFormaDePagoes() throws BusinessLogicException {
-        List<FormaDePagoDetailDTO> listaBooks = listEntity2DetailDTO(formaDePagoLogic.getFormasDePago());
+    public List<FormaDePagoDTO> getFormaDePagos() throws BusinessLogicException {
+        List<FormaDePagoDTO> listaBooks = listEntity2DetailDTO(formaDePagoLogic.getFormasDePago());
         return listaBooks;
     }
 
@@ -92,7 +91,7 @@ public class FormaDePagoResource {
         if (formaDePagoEntity == null) {
             throw new WebApplicationException("El recurso /formasDePago/" + formasDePagoId + " no existe.", 404);
         }
-        FormaDePagoDetailDTO formaDePagoDetailDTO = new FormaDePagoDetailDTO(formaDePagoEntity);
+        FormaDePagoDTO formaDePagoDetailDTO = new FormaDePagoDTO(formaDePagoEntity);
         return formaDePagoDetailDTO;
     }
 
@@ -112,13 +111,13 @@ public class FormaDePagoResource {
      */
     @PUT
     @Path("{formasDePagoId: \\d+}")
-    public FormaDePagoDetailDTO updateFormaDePago(@PathParam("formasDePagoId") Long formasDePagoId, FormaDePagoDTO formaDePago) throws BusinessLogicException {
+    public FormaDePagoDTO updateFormaDePago(@PathParam("formasDePagoId") Long formasDePagoId, FormaDePagoDTO formaDePago) throws BusinessLogicException {
         LOGGER.log(Level.INFO, "FormaDePagoResource updateFormaDePago: input: id: {0} , formaDePago: {1}", new Object[]{formasDePagoId, formaDePago.toString()});
         formaDePago.setId(formasDePagoId);
         if (formaDePagoLogic.getFormaDePago(formasDePagoId) == null) {
             throw new WebApplicationException("El recurso /formasDePago/" + formasDePagoId + " no existe.", 404);
         }
-        FormaDePagoDetailDTO detailDTO = new FormaDePagoDetailDTO(formaDePagoLogic.updateFormaDePago(formasDePagoId, formaDePago.toEntity()));
+        FormaDePagoDTO detailDTO = new FormaDePagoDTO(formaDePagoLogic.updateFormaDePago(formasDePagoId, formaDePago.toEntity()));
         LOGGER.log(Level.INFO, "FormaDePagoResource updateFormaDePago: output: {0}", detailDTO.toString());
         return detailDTO;
     }
@@ -156,10 +155,10 @@ public class FormaDePagoResource {
      * vamos a convertir a DTO.
      * @return la lista de libros en forma DTO (json)
      */
-    private List<FormaDePagoDetailDTO> listEntity2DetailDTO(List<FormaDePagoEntity> formasDePago) {
-        List<FormaDePagoDetailDTO> list = new ArrayList<>();
+    private List<FormaDePagoDTO> listEntity2DetailDTO(List<FormaDePagoEntity> formasDePago) {
+        List<FormaDePagoDTO> list = new ArrayList<>();
         for (FormaDePagoEntity entity : formasDePago) {
-            list.add(new FormaDePagoDetailDTO(entity));
+            list.add(new FormaDePagoDTO(entity));
         }
         return list;
     }

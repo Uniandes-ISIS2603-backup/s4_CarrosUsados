@@ -41,9 +41,6 @@ import javax.inject.Inject;
       public FormaDePagoEntity createFormaDePago(FormaDePagoEntity formaDePagoEntity) throws BusinessLogicException{
           LOGGER.log(Level.INFO, "Inicio proceso de creacion de una forma de pago");
                     
-          if((formaDePagoEntity.getCliente() == null) || (clientePersistence.find(formaDePagoEntity.getCliente().getId()) == null )){
-              throw new BusinessLogicException("El cliente es invalido o no fue asociado correctamente");
-          }
           if(!validateNombre(formaDePagoEntity.getNombre())){
             throw new BusinessLogicException("El nombre es invalido");
           }

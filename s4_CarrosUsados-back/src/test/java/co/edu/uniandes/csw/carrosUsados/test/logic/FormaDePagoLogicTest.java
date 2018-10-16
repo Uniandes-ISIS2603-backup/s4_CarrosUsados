@@ -117,7 +117,6 @@ public class FormaDePagoLogicTest {
     public void createFormaDePagoTest() throws BusinessLogicException {
         
         FormaDePagoEntity newEntity = factory.manufacturePojo(FormaDePagoEntity.class);
-        newEntity.setCliente(clienteData.get(0));
             
         FormaDePagoEntity result = formaDePagoLogic.createFormaDePago(newEntity);
         Assert.assertNotNull(result);
@@ -125,20 +124,9 @@ public class FormaDePagoLogicTest {
         Assert.assertEquals(newEntity.getId(), entity.getId());
         Assert.assertEquals(newEntity.getNombre(), entity.getNombre());
         Assert.assertEquals(newEntity.getTipo(), entity.getTipo());
-        Assert.assertEquals(newEntity.getCliente(), newEntity.getCliente());
                 
         FormaDePagoEntity dupEntity = newEntity;
         
-        try{
-            newEntity.setCliente(null);            
-            result = formaDePagoLogic.createFormaDePago(newEntity);
-            Assert.fail();
-        }
-        catch(BusinessLogicException e){
-            Assert.assertEquals(dupEntity.getId(),newEntity.getId());
-            newEntity = dupEntity;
-            Assert.assertEquals(dupEntity.getCliente(),newEntity.getCliente());
-        }
         try{
             newEntity.setNombre(null);            
             result = formaDePagoLogic.createFormaDePago(newEntity);
@@ -198,7 +186,6 @@ public class FormaDePagoLogicTest {
         Assert.assertEquals(resultEntity.getId(), entity.getId());
         Assert.assertEquals(resultEntity.getNombre(), entity.getNombre());
         Assert.assertEquals(resultEntity.getTipo(), entity.getTipo());
-        Assert.assertEquals(resultEntity.getCliente(), entity.getCliente());
         
         try{        
             resultEntity = formaDePagoLogic.getFormaDePago(null);
@@ -218,7 +205,6 @@ public class FormaDePagoLogicTest {
         FormaDePagoEntity pojoEntity = factory.manufacturePojo(FormaDePagoEntity.class);
 
         pojoEntity.setId(entity.getId());
-        pojoEntity.setCliente(entity.getCliente());
 
         formaDePagoLogic.updateFormaDePago(pojoEntity.getId(), pojoEntity);
         
@@ -228,7 +214,6 @@ public class FormaDePagoLogicTest {
         Assert.assertEquals(pojoEntity.getId(), resp.getId());
         Assert.assertEquals(pojoEntity.getNombre(), resp.getNombre());
         Assert.assertEquals(pojoEntity.getTipo(), resp.getTipo());
-        Assert.assertEquals(pojoEntity.getCliente(), resp.getCliente()); 
         
         FormaDePagoEntity dupEntity = entity;
         
