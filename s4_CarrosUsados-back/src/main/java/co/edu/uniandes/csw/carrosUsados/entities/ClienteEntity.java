@@ -45,6 +45,9 @@ public class ClienteEntity extends UsuarioEntity implements Serializable {
         return direccion;
     }
 
+    @PodamExclude
+    @OneToMany(mappedBy = "cliente")
+    private List<FacturaEntity> facturas;
     /**
      * Asigna la dirección de residencia/entrega del cliente.
      *
