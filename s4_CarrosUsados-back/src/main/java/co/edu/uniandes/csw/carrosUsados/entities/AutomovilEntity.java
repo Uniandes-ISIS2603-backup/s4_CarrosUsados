@@ -267,6 +267,20 @@ public class AutomovilEntity extends BaseEntity implements Serializable {
         this.puntoVenta = puntoVenta;
     }
     /**
+     * Retorna el articulo asociada al automovil
+     * @return el articulo
+     */
+    public ArticuloEntity getArticulo() {
+        return articulo;
+    }
+    /**
+     * Actualiza el articulo del automovil
+     * @param articulo
+     */
+    public void setArticulo(ArticuloEntity articulo) {
+        this.articulo = articulo;
+    }    
+    /**
      * Retorna el vendedor del automovil
      * @return el vendedor
      */

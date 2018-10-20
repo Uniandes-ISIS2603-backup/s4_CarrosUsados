@@ -20,27 +20,31 @@ public class FacturaEntity extends BaseEntity implements Serializable{
     private String producto;
     private Integer subtotal;
     private Integer total;
-    private String formaDePago;
+    
+    @PodamExclude
+    @OneToOne
+    private ArticuloEntity articulo;
+    
+    @PodamExclude
+    @OneToOne(mappedBy = "factura")
+    private FormaDePagoEntity formaDePago;
 
-    public String getFormaDePago() {
+    public FormaDePagoEntity getFormaDePago() {
         return formaDePago;
     }
 
-    public void setFormaDePago(String formaDePago) {
+    public void setFormaDePago(FormaDePagoEntity formaDePago) {
         this.formaDePago = formaDePago;
     }
-
-    @PodamExclude
-    @OneToOne
-    private PagoEntity pago;
-
-    public PagoEntity getPago() {
-        return pago;
+    
+    public ArticuloEntity getArticulo() {
+        return articulo;
     }
 
-    public void setPago(PagoEntity pago) {
-        this.pago = pago;
+    public void setArticulo(ArticuloEntity articulo) {
+        this.articulo = articulo;
     }
+    
     public String getIdFactura() {
         return idFactura;
     }

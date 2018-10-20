@@ -31,10 +31,10 @@ public class ArticuloEntity extends BaseEntity implements Serializable {
     // Si el articulo esta disponible para comprar
     private boolean disponibilidad;
     
-    // Relacion con el pago hecho
+    // Relacion con el factura hecho
     @PodamExclude
     @OneToOne(mappedBy = "articulo")
-    private PagoEntity pago;
+    private FacturaEntity factura;
     
     // Relacion con el automovil que vende el articulo
     @PodamExclude
@@ -89,7 +89,7 @@ public class ArticuloEntity extends BaseEntity implements Serializable {
     }
 
     /**
-    @Return retorna true si esta disponible, false si no lo esta y existe un pago
+    @Return retorna true si esta disponible, false si no lo esta y existe un factura
     */
     public boolean isDisponibilidad() {
         return disponibilidad;
@@ -103,17 +103,17 @@ public class ArticuloEntity extends BaseEntity implements Serializable {
     }
 
     /**
-    @Return retorna el pago un pago si disponibilidad es false, retorna null de lo contrario
+    @Return retorna el factura un factura si disponibilidad es false, retorna null de lo contrario
     */
-    public PagoEntity getPago() {
-        return pago;
+    public FacturaEntity getFactura() {
+        return factura;
     }
 
     /**
-    @param pago El nuevo pago que se realizo en el articulo
+    @param factura El nuevo factura que se realizo en el articulo
     */
-    public void setPago(PagoEntity pago) {
-        this.pago = pago;
+    public void setFactura(FacturaEntity factura) {
+        this.factura = factura;
     }
 
     /**

@@ -15,10 +15,10 @@ import org.jboss.arquillian.junit.Arquillian;
 import org.junit.runner.RunWith;
 import uk.co.jemos.podam.api.PodamFactory;
 import uk.co.jemos.podam.api.PodamFactoryImpl;
-import co.edu.uniandes.csw.carrosUsados.ejb.ArticuloPagoLogic;
+import co.edu.uniandes.csw.carrosUsados.ejb.ArticuloFacturaLogic;
 import co.edu.uniandes.csw.carrosUsados.ejb.ArticuloLogic;
 import co.edu.uniandes.csw.carrosUsados.entities.ArticuloEntity;
-import co.edu.uniandes.csw.carrosUsados.entities.PagoEntity;
+import co.edu.uniandes.csw.carrosUsados.entities.FacturaEntity;
 import co.edu.uniandes.csw.carrosUsados.exceptions.BusinessLogicException;
 import co.edu.uniandes.csw.carrosUsados.persistence.ArticuloPersistence;
 import org.jboss.arquillian.container.test.api.Deployment;
@@ -33,12 +33,12 @@ import org.junit.Test;
  * @author estudiante
  */
 @RunWith(Arquillian.class)
-public class ArticuloPagoLogicTest {
+public class ArticuloFacturaLogicTest {
     
     private PodamFactory factory = new PodamFactoryImpl();
 
     @Inject
-    private ArticuloPagoLogic articuloPagoLogic;
+    private ArticuloFacturaLogic articuloFacturaLogic;
 
     @Inject
     private ArticuloLogic articuloLogic;
@@ -51,7 +51,7 @@ public class ArticuloPagoLogicTest {
 
     private List<ArticuloEntity> data = new ArrayList<ArticuloEntity>();
 
-    private List<PagoEntity> pagoData = new ArrayList();
+    private List<FacturaEntity> facturaData = new ArrayList();
 
     /**
      * @return Devuelve el jar que Arquillian va a desplegar en Payara embebido.
@@ -92,7 +92,7 @@ public class ArticuloPagoLogicTest {
      * Limpia las tablas que están implicadas en la prueba.
      */
     private void clearData() {
-        em.createQuery("delete from PagoEntity").executeUpdate();
+        em.createQuery("delete from FacturaEntity").executeUpdate();
         em.createQuery("delete from ArticuloEntity").executeUpdate();
     }
 
@@ -107,40 +107,40 @@ public class ArticuloPagoLogicTest {
             data.add(entity);
         }
         for (int i = 0; i < 3; i++) {
-            PagoEntity pago = factory.manufacturePojo(PagoEntity.class);
-            em.persist(pago);
-            pagoData.add(pago);            
+            FacturaEntity factura = factory.manufacturePojo(FacturaEntity.class);
+            em.persist(factura);
+            facturaData.add(factura);            
             if (i == 0) {
-                data.get(i).setPago(pago);
+                data.get(i).setFactura(factura);
             }
             if(i==1){
-                data.get(i).setPago(pago);
+                data.get(i).setFactura(factura);
             }
         }
     }
 
     /**
-     * Prueba para asociar un Pago existente a una Articulo.
+     * Prueba para asociar un Factura existente a una Articulo.
      */
     @Test
-    public void addPagosTest() {
+    public void addFacturasTest() {
         ArticuloEntity entity = data.get(2);
-        PagoEntity pagoEntity = pagoData.get(2);
-        PagoEntity response = articuloPagoLogic.addPago(pagoEntity.getId(), entity.getId());
+        FacturaEntity facturaEntity = facturaData.get(2);
+        FacturaEntity response = articuloFacturaLogic.addFactura(facturaEntity.getId(), entity.getId());
 
         Assert.assertNotNull(response);
-        Assert.assertEquals(pagoEntity.getId(), response.getId());
+        Assert.assertEquals(facturaEntity.getId(), response.getId());
     }
 
     /**
-     * Prueba para remplazar la instancia de un Pago asociada a un Articulo
+     * Prueba para remplazar la instancia de un Factura asociada a un Articulo
      */
     @Test
-    public void replacePagoTest() throws BusinessLogicException {
+    public void replaceFacturaTest() throws BusinessLogicException {
         ArticuloEntity entity = data.get(2);
-        entity = articuloPagoLogic.replacePago(entity.getId(), pagoData.get(2).getId());
+        entity = articuloFacturaLogic.replaceFactura(entity.getId(), facturaData.get(2).getId());
         
-        Assert.assertEquals(pagoData.get(2),entity.getPago());
+        Assert.assertEquals(facturaData.get(2),entity.getFactura());
     } 
     
 }

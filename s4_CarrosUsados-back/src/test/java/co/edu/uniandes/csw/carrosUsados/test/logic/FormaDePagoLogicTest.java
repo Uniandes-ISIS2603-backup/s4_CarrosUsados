@@ -7,7 +7,6 @@ package co.edu.uniandes.csw.carrosUsados.test.logic;
 
 import co.edu.uniandes.csw.carrosUsados.ejb.FormaDePagoLogic;
 import co.edu.uniandes.csw.carrosUsados.entities.FormaDePagoEntity;
-import co.edu.uniandes.csw.carrosUsados.entities.ClienteEntity;
 import co.edu.uniandes.csw.carrosUsados.exceptions.BusinessLogicException;
 import co.edu.uniandes.csw.carrosUsados.persistence.FormaDePagoPersistence;
 import java.util.ArrayList;
@@ -47,8 +46,6 @@ public class FormaDePagoLogicTest {
    
     
    private List<FormaDePagoEntity> data = new ArrayList<FormaDePagoEntity>();
-   
-   private List<ClienteEntity> clienteData = new ArrayList<ClienteEntity>();
    /**
      * @return Devuelve el jar que Arquillian va a desplegar en Payara embebido.
      * El jar contiene las clases, el descriptor de la base de datos y el
@@ -97,16 +94,16 @@ public class FormaDePagoLogicTest {
      * pruebas.
      */
     private void insertData() {
-        for (int i = 0; i < 3; i++) {
-            FormaDePagoEntity entity = factory.manufacturePojo(FormaDePagoEntity.class);
-            em.persist(entity);
-            data.add(entity);
-        }
-        for (int i = 0; i < 3; i++) {
-            ClienteEntity clienteEntity = factory.manufacturePojo(ClienteEntity.class);
-            em.persist(clienteEntity);
-            clienteData.add(clienteEntity);
-        }
+        FormaDePagoEntity entity = factory.manufacturePojo(FormaDePagoEntity.class);
+        em.persist(entity);
+        data.add(entity);
+        entity = factory.manufacturePojo(FormaDePagoEntity.class);
+        em.persist(entity);
+        data.add(entity);
+        entity = factory.manufacturePojo(FormaDePagoEntity.class);
+        em.persist(entity);
+        data.add(entity);
+        
     }
     
     
@@ -124,6 +121,9 @@ public class FormaDePagoLogicTest {
         Assert.assertEquals(newEntity.getId(), entity.getId());
         Assert.assertEquals(newEntity.getNombre(), entity.getNombre());
         Assert.assertEquals(newEntity.getTipo(), entity.getTipo());
+        Assert.assertEquals(newEntity.getNumero(), entity.getNumero());
+        Assert.assertEquals(newEntity.getCodigo(), entity.getCodigo());
+        Assert.assertEquals(newEntity.getFecha(), entity.getFecha());
                 
         FormaDePagoEntity dupEntity = newEntity;
         
@@ -147,13 +147,33 @@ public class FormaDePagoLogicTest {
             Assert.assertEquals(dupEntity.getTipo(),newEntity.getTipo());
         }
         try{           
+            newEntity.setNumero(null);
             result = formaDePagoLogic.createFormaDePago(newEntity);
             Assert.fail();
         }
         catch(BusinessLogicException e){            
             Assert.assertEquals(dupEntity.getId(),newEntity.getId());
             newEntity = dupEntity;
-            Assert.assertEquals(dupEntity.getTipo(),newEntity.getTipo());
+            Assert.assertEquals(dupEntity.getNumero(),newEntity.getNumero());
+        }try{
+            newEntity.setCodigo(null);            
+            result = formaDePagoLogic.createFormaDePago(newEntity);
+            Assert.fail();
+        }
+        catch(BusinessLogicException e){            
+            Assert.assertEquals(dupEntity.getId(),newEntity.getId());
+            newEntity = dupEntity;
+            Assert.assertEquals(dupEntity.getCodigo(),newEntity.getCodigo());
+        }
+        try{        
+            newEntity.setFecha(null);
+            result = formaDePagoLogic.createFormaDePago(newEntity);
+            Assert.fail();
+        }
+        catch(BusinessLogicException e){            
+            Assert.assertEquals(dupEntity.getId(),newEntity.getId());
+            newEntity = dupEntity;
+            Assert.assertEquals(dupEntity.getFecha(),newEntity.getFecha());
         }
     }
     

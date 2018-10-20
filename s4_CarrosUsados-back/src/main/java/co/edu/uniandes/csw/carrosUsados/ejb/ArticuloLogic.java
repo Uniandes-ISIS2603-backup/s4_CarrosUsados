@@ -113,7 +113,7 @@ import javax.inject.Inject;
           if(!validatePrecio(articuloEntity.getPrecio())){
             throw new BusinessLogicException("El precio no es invalido");
           }
-          if(articuloEntity.isDisponibilidad() && articuloEntity.getPago() != null){
+          if(articuloEntity.isDisponibilidad() && articuloEntity.getFactura() != null){
               throw new BusinessLogicException("Si un pago es realizado disponibilidad deberia estar en falso");
           }
         ArticuloEntity newEntity = persistence.update(articuloEntity);

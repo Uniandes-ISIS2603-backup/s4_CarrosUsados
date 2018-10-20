@@ -46,11 +46,11 @@ public class FacturaDTO {
         this.total = total;
     }
 
-    public String getFormaDepago() {
+    public FormaDePagoDTO getFormaDepago() {
         return formaDepago;
     }
 
-    public void setFormaDepago(String formaDepago) {
+    public void setFormaDepago(FormaDePagoDTO formaDepago) {
         this.formaDepago = formaDepago;
     }
 
@@ -59,7 +59,7 @@ public class FacturaDTO {
     private String producto;
     private int subtotal;
     private int total;
-    private String formaDepago;
+    private FormaDePagoDTO formaDepago;
     public FacturaDTO() {
 
     }
@@ -73,7 +73,7 @@ public class FacturaDTO {
         this.producto = facturaEntity.getProducto();
         this.total = facturaEntity.getTotal();
         this.subtotal = facturaEntity.getSubtotal();
-        this.formaDepago = facturaEntity.getFormaDePago();
+        this.formaDepago = new FormaDePagoDTO(facturaEntity.getFormaDePago());
         
     }
      /**
@@ -88,7 +88,7 @@ public class FacturaDTO {
         entity.setProducto(producto);
         entity.setTotal(total);
         entity.setSubtotal(subtotal);
-        entity.setFormaDePago(formaDepago);
+        entity.setFormaDePago(formaDepago.toEntity());
         return entity;
     }
 }

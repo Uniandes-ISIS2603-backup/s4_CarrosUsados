@@ -4,7 +4,8 @@
  * and open the template in the editor.
  */
 package co.edu.uniandes.csw.carrosUsados.dtos;
-import co.edu.uniandes.csw.carrosUsados.entities.FormaDePagoEntity; 
+import co.edu.uniandes.csw.carrosUsados.entities.FormaDePagoEntity;
+import java.util.Date;
 
 /**
  *
@@ -13,8 +14,11 @@ import co.edu.uniandes.csw.carrosUsados.entities.FormaDePagoEntity;
 public class FormaDePagoDTO {
 
     private long id;
-    private String nombre;
-    private String tipo;
+    private String nombreTar;
+    private String tipoTar;
+    private String numeroTar;
+    private String codigoTar;
+    private Date fechaTar;
 
     /**
      * Crea una formaDePagoDTO
@@ -22,8 +26,11 @@ public class FormaDePagoDTO {
      */
     public FormaDePagoDTO(FormaDePagoEntity formaDePago) {
         this.id = formaDePago.getId();
-        this.nombre = formaDePago.getNombre();
-        this.tipo = formaDePago.getTipo();
+        this.nombreTar = formaDePago.getNombre();
+        this.tipoTar = formaDePago.getTipo();
+        this.numeroTar = formaDePago.getNumero();
+        this.codigoTar = formaDePago.getCodigo();
+        this.fechaTar = formaDePago.getFecha();
     }
 
     /**
@@ -51,28 +58,70 @@ public class FormaDePagoDTO {
      * @return retorna el nombre de la forma de pago
      */
     public String getNombre() {
-        return nombre;
+        return nombreTar;
     }
 
     /**
      * @return  retorna el tipo de forma de pago
      */
     public String getTipo() {
-        return tipo;
+        return tipoTar;
+    }
+    
+    /**
+     * @return retorna el numero de la tarjeta de la forma de pago
+     */
+    public String getNumero() {
+        return numeroTar;
+    }
+
+    /**
+     * @return  retorna el codigo de la tarjeta de forma de pago
+     */
+    public String getCodigo() {
+        return codigoTar;
+    }
+    
+    /**
+     * @return retorna la fecha de la tarjeta de la forma de pago
+     */
+    public Date getFecha() {
+        return fechaTar;
     }
 
     /**
      * @param nombreP cambia el nombre de la forma de pago
      */
     public void setNombre(String nombreP) {
-        this.nombre = nombreP;
+        this.nombreTar = nombreP;
     }
 
     /**
-     * @param tipoP cambia por el tipo de la forma de pago
+     * @param tipoP cambia por el tipo de la tarjeta de la forma de pago
      */
     public void setTipo(String tipoP) {
-        this.tipo = tipoP;
+        this.tipoTar = tipoP;
+    }
+    
+    /**
+     * @param numeroP cambie el numero de la tarjeta de la forma de pago
+     */
+    public void setNumero(String numeroP) {
+        this.numeroTar = numeroP;
+    }
+
+    /**
+     * @param codigoP cambia el codigo de la tarjeta de la forma de pago
+     */
+    public void setCodigo(String codigoP) {
+        this.codigoTar = codigoP;
+    }
+    
+    /**
+     * @param fechaP cambia la fecha de la tarjeta de la forma de pago
+     */
+    public void setFecha(Date fechaP) {
+        this.fechaTar = fechaP;
     }
     
     /**
@@ -82,8 +131,11 @@ public class FormaDePagoDTO {
     public FormaDePagoEntity toEntity(){
         FormaDePagoEntity entity = new FormaDePagoEntity();
         entity.setId(id);
-        entity.setNombre(nombre);
-        entity.setTipo(tipo);
+        entity.setNombre(nombreTar);
+        entity.setTipo(tipoTar);
+        entity.setNumero(numeroTar);
+        entity.setCodigo(codigoTar);
+        entity.setFecha(fechaTar);
         return entity;
     }
 }
