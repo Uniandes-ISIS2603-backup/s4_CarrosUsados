@@ -7,8 +7,9 @@ package co.edu.uniandes.csw.carrosUsados.test.logic;
 
 import co.edu.uniandes.csw.carrosUsados.ejb.FacturaLogic;
 import co.edu.uniandes.csw.carrosUsados.entities.FacturaEntity;
+import co.edu.uniandes.csw.carrosUsados.entities.FormaDePagoEntity;
 import co.edu.uniandes.csw.carrosUsados.exceptions.BusinessLogicException;
-import co.edu.uniandes.csw.carrosUsados.persistence.FichaTecnicaPersistence;
+import co.edu.uniandes.csw.carrosUsados.persistence.FacturaPersistence;
 import java.util.ArrayList;
 import java.util.List;
 import javax.inject.Inject;
@@ -28,26 +29,27 @@ import uk.co.jemos.podam.api.PodamFactoryImpl;
 
 /**
  *
- * @author estudiante
+ * @author juanestebanmendez
  */
 @RunWith(Arquillian.class)
 public class FacturaLogicTest {
-     private PodamFactory factory = new PodamFactoryImpl();
-
-    @Inject
-    private FacturaLogic facturaLogic;
-
-    @PersistenceContext
-    private EntityManager em;
-
-    @Inject
-    private UserTransaction utx;
     
-    private List<FacturaEntity> data = new ArrayList<FacturaEntity>();
+   private PodamFactory factory = new PodamFactoryImpl();
+
+   @Inject
+   FacturaLogic facturaLogic;
     
+   @PersistenceContext
+   private EntityManager em;
+
+   @Inject
+   private UserTransaction utx;
    
     
-    /**
+   private List<FacturaEntity> data = new ArrayList<FacturaEntity>();
+   
+   private List<FormaDePagoEntity> formaDePagoData = new ArrayList<FormaDePagoEntity>();
+   /**
      * @return Devuelve el jar que Arquillian va a desplegar en Payara embebido.
      * El jar contiene las clases, el descriptor de la base de datos y el
      * archivo beans.xml para resolver la inyección de dependencias.
@@ -55,7 +57,9 @@ public class FacturaLogicTest {
     @Deployment
     public static JavaArchive createDeployment() {
         return ShrinkWrap.create(JavaArchive.class)
-                .addPackage(FichaTecnicaPersistence.class.getPackage())
+                .addPackage(FacturaEntity.class.getPackage())
+                .addPackage(FacturaLogic.class.getPackage())
+                .addPackage(FacturaPersistence.class.getPackage())
                 .addAsManifestResource("META-INF/persistence.xml", "persistence.xml")
                 .addAsManifestResource("META-INF/beans.xml", "beans.xml");
     }
@@ -84,8 +88,8 @@ public class FacturaLogicTest {
      * Limpia las tablas que están implicadas en la prueba.
      */
     private void clearData() {
-        em.createQuery("delete from PagoEntity").executeUpdate();
-       
+        em.createQuery("delete from FacturaEntity").executeUpdate();
+        em.createQuery("delete from FormaDePagoEntity").executeUpdate();
     }
     
     /**
@@ -93,122 +97,190 @@ public class FacturaLogicTest {
      * pruebas.
      */
     private void insertData() {
-        
         for (int i = 0; i < 3; i++) {
-            FacturaEntity pago = factory.manufacturePojo(FacturaEntity.class);
-            em.persist(pago);
-            data.add(pago);
+            FacturaEntity entity = factory.manufacturePojo(FacturaEntity.class);
+            em.persist(entity);
+            data.add(entity);
+        }
+        for (int i = 0; i < 3; i++) {
+            FormaDePagoEntity formaDePagoEntity = factory.manufacturePojo(FormaDePagoEntity.class);
+            em.persist(formaDePagoEntity);
+            formaDePagoData.add(formaDePagoEntity);
         }
     }
     
-     /**
-     * Prueba para crear una factura
-     *
-     * @throws co.edu.uniandes.csw.carrosUsados.exceptions.BusinessLogicException
+    
+    /**
+     * Prueba para crear un Factura.
      */
     @Test
     public void createFacturaTest() throws BusinessLogicException {
+        
         FacturaEntity newEntity = factory.manufacturePojo(FacturaEntity.class);
+        newEntity.setFormaDePago(formaDePagoData.get(0));
         newEntity.setTotal(123);
         newEntity.setSubtotal(123);
+            
         FacturaEntity result = facturaLogic.createFactura(newEntity);
         Assert.assertNotNull(result);
         FacturaEntity entity = em.find(FacturaEntity.class, result.getId());
+        
         Assert.assertEquals(newEntity.getId(), entity.getId());
         Assert.assertEquals(newEntity.getTotal(), entity.getTotal());
         Assert.assertEquals(newEntity.getSubtotal(), entity.getSubtotal());
-        Assert.assertEquals(newEntity.getFormaDePago(), entity.getFormaDePago());
+        Assert.assertEquals(newEntity.getFormaDePago(), newEntity.getFormaDePago());
         
+        FacturaEntity dupEntity = newEntity;
+        
+        try{
+            newEntity.setProducto(null);            
+            result = facturaLogic.createFactura(newEntity);
+            Assert.fail();
+        }
+        catch(BusinessLogicException e){
+            Assert.assertEquals(dupEntity.getId(),newEntity.getId());
+            newEntity = dupEntity;
+            Assert.assertEquals(dupEntity.getProducto(),newEntity.getProducto());
+        }
+        try{
+            newEntity.setTotal(-3);            
+            result = facturaLogic.createFactura(newEntity);
+            Assert.fail();
+        }
+        catch(BusinessLogicException e){
+            Assert.assertEquals(dupEntity.getId(),newEntity.getId());
+            newEntity = dupEntity;
+            Assert.assertEquals(dupEntity.getTotal(),newEntity.getTotal());
+        }try{
+            newEntity.setSubtotal(-2);            
+            result = facturaLogic.createFactura(newEntity);
+            Assert.fail();
+        }
+        catch(BusinessLogicException e){            
+            Assert.assertEquals(dupEntity.getId(),newEntity.getId());
+            newEntity = dupEntity;
+            Assert.assertEquals(dupEntity.getSubtotal(),newEntity.getSubtotal());
+        }try{
+            newEntity.setFormaDePago(null);            
+            result = facturaLogic.createFactura(newEntity);
+            Assert.fail();
+        }
+        catch(BusinessLogicException e){
+            Assert.assertEquals(dupEntity.getId(),newEntity.getId());
+            newEntity = dupEntity;
+            Assert.assertEquals(dupEntity.getFormaDePago(),newEntity.getFormaDePago());
+        }
+    }
+    
+    /**
+     * Prueba para consultar la lista de Facturaes
+     */
+    @Test
+    public void getFacturasTest() throws BusinessLogicException {
+        List<FacturaEntity> list = facturaLogic.getFacturas();
+        Assert.assertEquals(data.size(), list.size());
+        for (FacturaEntity entity : list) {
+            boolean found = false;
+            for (FacturaEntity storedEntity : data) {
+                if (entity.getId().equals(storedEntity.getId())) {
+                    found = true;
+                }
+            }
+            Assert.assertTrue(found);
+        }
         
     }
     
     /**
-     * Prueba para crear un factura con un total invalido
-     *
-     * @throws co.edu.uniandes.csw.carrosUsados.exceptions.BusinessLogicException
-     */
-    @Test(expected = BusinessLogicException.class)
-    public void createFacturaConValorTotalInvalido() throws BusinessLogicException {
-        FacturaEntity newEntity = factory.manufacturePojo(FacturaEntity.class);
-        newEntity.setTotal(-2);
-        facturaLogic.createFactura(newEntity);
-    }
-    /**
-     * Prueba para crear una factura con un subtotal invalido 
-     *
-     * @throws co.edu.uniandes.csw.carrosUsados.exceptions.BusinessLogicException
-     */
-    @Test(expected = BusinessLogicException.class)
-    public void createFacturaConValorSubTotalInvalido() throws BusinessLogicException {
-        FacturaEntity newEntity = factory.manufacturePojo(FacturaEntity.class);
-        newEntity.setSubtotal(-3);
-        facturaLogic.createFactura(newEntity);
-    }
-    /**
-     * Prueba para crear un pago con una fecha invalida y un numero de tarjeta invalido
-     *
-     * @throws co.edu.uniandes.csw.carrosUsados.exceptions.BusinessLogicException
-     */
-    @Test(expected = BusinessLogicException.class)
-    public void createFacturasSinProducto() throws BusinessLogicException {
-        FacturaEntity newEntity = factory.manufacturePojo(FacturaEntity.class);
-        newEntity.setProducto(null);
-        facturaLogic.createFactura(newEntity);
-    }
-    /**
-     * Prueba para crear un pago con una fecha invalida y un numero de tarjeta invalido
-     *
-     * @throws co.edu.uniandes.csw.carrosUsados.exceptions.BusinessLogicException
-     */
-    @Test(expected = BusinessLogicException.class)
-    public void createFacturaSinFormaDePago() throws BusinessLogicException {
-        FacturaEntity newEntity = factory.manufacturePojo(FacturaEntity.class);
-        newEntity.setFormaDePago(null);
-        facturaLogic.createFactura(newEntity);
-    }
-    /**
-     * Prueba para consultar un Pago
-     * @throws co.edu.uniandes.csw.carrosUsados.exceptions.BusinessLogicException
+     * Prueba para consultar un Factura.
      */
     @Test
     public void getFacturaTest() throws BusinessLogicException {
-        FacturaEntity entity = data.get(0);
-        FacturaEntity resultEntity = facturaLogic.getFactura(entity.getId());
-        Assert.assertNotNull(resultEntity);
-        Assert.assertEquals(entity.getId(), resultEntity.getId());
-        Assert.assertEquals(entity.getTotal(), resultEntity.getTotal());
-        Assert.assertEquals(entity.getSubtotal(), resultEntity.getSubtotal());
-        Assert.assertEquals(entity.getFormaDePago(), resultEntity.getFormaDePago());
-    }
-    
-    /**
-     * Prueba para actualizar un Pago.
-     *
-     * @throws co.edu.uniandes.csw.carrosUsados.exceptions.BusinessLogicException
-     */
-    @Test
-    public void updateFacturaTest() throws BusinessLogicException {
         FacturaEntity entity = data.get(0);
         FacturaEntity pojoEntity = factory.manufacturePojo(FacturaEntity.class);
         pojoEntity.setId(entity.getId());
         pojoEntity.setTotal(123);
         pojoEntity.setSubtotal(123);
         facturaLogic.updateFactura(pojoEntity.getId(), pojoEntity);
+        
         FacturaEntity resp = em.find(FacturaEntity.class, entity.getId());
         Assert.assertEquals(pojoEntity.getId(), resp.getId());
         Assert.assertEquals(pojoEntity.getTotal(), resp.getTotal());
         Assert.assertEquals(pojoEntity.getSubtotal(), resp.getSubtotal());
         Assert.assertEquals(pojoEntity.getFormaDePago(), resp.getFormaDePago());
         
+        try{        
+            pojoEntity = facturaLogic.getFactura(null);
+            Assert.fail();
+        }
+        catch(BusinessLogicException e){  
+        pojoEntity = facturaLogic.getFactura(-123L);
+        Assert.assertNull(pojoEntity);
+        }
+              
         
     }
     
-    
+    /**
+     * Prueba para actualizar un Factura.
+     */
+    @Test
+    public void updateFacturaTest() throws BusinessLogicException {
+        FacturaEntity entity = data.get(0);
+        FacturaEntity pojoEntity = factory.manufacturePojo(FacturaEntity.class);
+
+        pojoEntity.setId(entity.getId());
+        pojoEntity.setFormaDePago(entity.getFormaDePago());
+        pojoEntity.setTotal(124);
+        pojoEntity.setSubtotal(124);
+
+        facturaLogic.updateFactura(pojoEntity.getId(), pojoEntity);
+        
+
+        FacturaEntity resp = em.find(FacturaEntity.class, entity.getId());
+
+        Assert.assertEquals(pojoEntity.getId(), resp.getId());
+        Assert.assertEquals(pojoEntity.getProducto(), resp.getProducto());
+        Assert.assertEquals(pojoEntity.getTotal(), resp.getTotal());
+        Assert.assertEquals(pojoEntity.getSubtotal(), resp.getSubtotal());
+        Assert.assertEquals(pojoEntity.getFormaDePago(), resp.getFormaDePago()); 
+        
+        FacturaEntity dupEntity = entity;
+        
+        try{
+            entity.setProducto(null);            
+            facturaLogic.updateFactura(entity.getId(),entity);
+            Assert.fail();
+        }
+        catch(BusinessLogicException e){
+            Assert.assertEquals(dupEntity.getId(),entity.getId());
+            entity = dupEntity;
+            Assert.assertEquals(dupEntity.getProducto(),entity.getProducto());
+        }try{
+            entity.setTotal(-1);            
+            facturaLogic.updateFactura(entity.getId(),entity);
+            Assert.fail();
+        }
+        catch(BusinessLogicException e){            
+            Assert.assertEquals(dupEntity.getId(),entity.getId());
+            entity = dupEntity;
+            Assert.assertEquals(dupEntity.getTotal(),entity.getTotal());
+        }try{
+            entity.setSubtotal(-2);            
+            facturaLogic.updateFactura(entity.getId(),entity);
+            Assert.fail();
+        }
+        catch(BusinessLogicException e){
+            Assert.assertEquals(dupEntity.getId(),entity.getId());
+            entity = dupEntity;
+            Assert.assertEquals(dupEntity.getSubtotal(),entity.getSubtotal());
+        }
+    }
     
     /**
-     * Prueba para eliminar un Pago.
+     * Prueba para eliminar un Factura
      *
-     * @throws co.edu.uniandes.csw.carrosUsados.exceptions.BusinessLogicException
+     * @throws co.edu.uniandes.csw.bookstore.exceptions.BusinessLogicException
      */
     @Test
     public void deleteFacturaTest() throws BusinessLogicException {
