@@ -122,7 +122,7 @@ public class AutomovilLogicTest {
         
         AutomovilEntity newEntity = factory.manufacturePojo(AutomovilEntity.class);
         newEntity.setModeloAsociado(modeloData.get(0));
-        newEntity.setPlaca("AAA111");
+        newEntity.setPlaca("AAA110");
         newEntity.setNumChasis("AAAAAAAAAAA111111");
         
         AutomovilEntity result = automovilLogic.createAutomovil(modeloData.get(0).getId(),newEntity);
@@ -189,13 +189,13 @@ public class AutomovilLogicTest {
         AutomovilEntity pojoEntity = factory.manufacturePojo(AutomovilEntity.class);
 
         pojoEntity.setId(entity.getId());
-        pojoEntity.setPlaca("AAA111");
+        pojoEntity.setPlaca("AAA" + (int) (Math.random()*999));
         pojoEntity.setNumChasis("11111111111222222");
-
-        automovilLogic.updateAutomovil(pojoEntity.getId(), pojoEntity);
-        
-        ModeloEntity modeloEntity = modeloData.get(1);
+      ModeloEntity modeloEntity = modeloData.get(1);
         pojoEntity.setModeloAsociado(modeloEntity);
+        automovilLogic.updateAutomovil(pojoEntity.getModeloAsociado().getId(), pojoEntity);
+        
+  
         automovilLogic.updateAutomovil(modeloData.get(1).getId(), pojoEntity);
         
         AutomovilEntity resp = em.find(AutomovilEntity.class, entity.getId());
