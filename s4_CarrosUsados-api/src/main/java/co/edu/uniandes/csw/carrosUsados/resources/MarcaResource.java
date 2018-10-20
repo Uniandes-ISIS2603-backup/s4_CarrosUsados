@@ -146,6 +146,27 @@ public class MarcaResource {
         //LOGGER.info("AutomovilResource deleteAutomovil: output: void");
     }
     
+     /**
+     * Conexión con el servicio de modelos para una marca. {@link ModeloResource}
+     *
+     * Este método conecta la ruta de /marcas con las rutas de /modelos que
+     * dependen del libro, es una redirección al servicio que maneja el segmento
+     * de la URL que se encarga de los modelos.
+     *
+     * @param marcaId El ID de la marca con respecto al cual se accede al
+     * servicio.
+     * @return El servicio de Modelos para esa marca en particular.\
+     * @throws WebApplicationException {@link WebApplicationExceptionMapper} -
+     * Error de lógica que se genera cuando no se encuentra la marca.
+     */
+    @Path("{marcaId: \\d+}/modelos")
+    public Class<ModeloResource> getModelResource(@PathParam("marcaId") Long marcaId) throws BusinessLogicException{
+        if (marcaLogic.getMarca(marcaId) == null) {
+            throw new WebApplicationException("El recurso /marcas/" + marcaId + "/modelos no existe.", 404);
+        }
+        return ModeloResource.class;
+    }
+    
     private List<MarcaDTO> listEntity2DTO(List<MarcaEntity> marcas) {
         List<MarcaDTO> list = new ArrayList<>();
         for (MarcaEntity entity : marcas) {

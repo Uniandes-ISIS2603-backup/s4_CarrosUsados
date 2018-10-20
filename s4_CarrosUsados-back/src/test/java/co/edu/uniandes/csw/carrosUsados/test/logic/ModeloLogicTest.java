@@ -49,6 +49,7 @@ public class ModeloLogicTest {
    private List<ModeloEntity> data = new ArrayList<ModeloEntity>();
    
    private List<MarcaEntity> marcaData = new ArrayList<MarcaEntity>();
+   
    /**
      * @return Devuelve el jar que Arquillian va a desplegar en Payara embebido.
      * El jar contiene las clases, el descriptor de la base de datos y el
@@ -99,14 +100,15 @@ public class ModeloLogicTest {
      */
     private void insertData() {
         for (int i = 0; i < 3; i++) {
-            ModeloEntity entity = factory.manufacturePojo(ModeloEntity.class);
-            em.persist(entity);
-            data.add(entity);
-        }
-        for (int i = 0; i < 3; i++) {
             MarcaEntity marcaEntity = factory.manufacturePojo(MarcaEntity.class);
             em.persist(marcaEntity);
             marcaData.add(marcaEntity);
+        }
+        for (int i = 0; i < 3; i++) {
+            ModeloEntity entity = factory.manufacturePojo(ModeloEntity.class);
+            entity.setMarca(marcaData.get(1));
+            em.persist(entity);
+            data.add(entity);
         }
     }
     
@@ -118,9 +120,8 @@ public class ModeloLogicTest {
     public void createModeloTest() throws BusinessLogicException {
         
         ModeloEntity newEntity = factory.manufacturePojo(ModeloEntity.class);
-        newEntity.setMarca(marcaData.get(0));
-            
-        ModeloEntity result = modeloLogic.createModelo(newEntity);
+        newEntity.setMarca(marcaData.get(1));
+        ModeloEntity result = modeloLogic.createModelo(marcaData.get(0).getId(),newEntity);
         Assert.assertNotNull(result);
         ModeloEntity entity = em.find(ModeloEntity.class, result.getId());
         Assert.assertEquals(newEntity.getId(), entity.getId());
@@ -134,7 +135,7 @@ public class ModeloLogicTest {
      */
     @Test
     public void getModelosTest() throws BusinessLogicException {
-        List<ModeloEntity> list = modeloLogic.getModelos();
+        List<ModeloEntity> list = modeloLogic.getModelos(marcaData.get(1).getId());
         Assert.assertEquals(data.size(), list.size());
         for (ModeloEntity entity : list) {
             boolean found = false;
@@ -153,7 +154,7 @@ public class ModeloLogicTest {
     @Test
     public void getModeloTest() throws BusinessLogicException {
         ModeloEntity entity = data.get(0);
-        ModeloEntity resultEntity = modeloLogic.getModelo(entity.getId());
+        ModeloEntity resultEntity = modeloLogic.getModelo(marcaData.get(1).getId(), entity.getId());
         Assert.assertNotNull(resultEntity);
         Assert.assertEquals(resultEntity.getId(), entity.getId());
         Assert.assertEquals(resultEntity.getNum_puertas(), entity.getNum_puertas());
@@ -173,7 +174,7 @@ public class ModeloLogicTest {
 
         MarcaEntity marcaEntity = marcaData.get(0);
         pojoEntity.setMarca(marcaEntity);
-        modeloLogic.updateModelo(pojoEntity.getId(), pojoEntity);
+        modeloLogic.updateModelo(marcaData.get(0).getId(), pojoEntity);
 
         ModeloEntity resp = em.find(ModeloEntity.class, entity.getId());
 
@@ -191,9 +192,19 @@ public class ModeloLogicTest {
     @Test
     public void deleteModeloTest() throws BusinessLogicException {
         ModeloEntity entity = data.get(0);
-        modeloLogic.deleteModelo(entity.getId());
+        modeloLogic.deleteModelo(marcaData.get(1).getId(), entity.getId());
         ModeloEntity deleted = em.find(ModeloEntity.class, entity.getId());
         Assert.assertNull(deleted);
     }
     
+    /**
+     * Prueba para eliminarle un review a un book del cual no pertenece.
+     *
+     * @throws co.edu.uniandes.csw.bookstore.exceptions.BusinessLogicException
+     */
+    @Test(expected = BusinessLogicException.class)
+    public void deleteModeloConMarcaNoAsociadaTest() throws BusinessLogicException {
+        ModeloEntity entity = data.get(0);
+        modeloLogic.deleteModelo(marcaData.get(0).getId(), entity.getId());
+    }
 }

@@ -20,7 +20,8 @@ public class MarcaDTO {
     private String pais;
     private String descripcion;
     
-
+    private String data;
+    
     public MarcaDTO() {
         
     }
