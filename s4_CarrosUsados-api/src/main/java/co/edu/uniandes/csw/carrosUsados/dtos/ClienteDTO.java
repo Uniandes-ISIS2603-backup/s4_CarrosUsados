@@ -27,10 +27,6 @@ public class ClienteDTO extends UsuarioDTO implements Serializable {
      * cliente.
      */
     private String direccion;
-    /**
-     * Lista que representa la relación OneToMany entre Cliente y Forma De Pago.
-     */
-    private List<FormaDePagoDTO> formasDePago = new ArrayList<>();
 
     /**
      * Constructor por defecto
@@ -84,21 +80,5 @@ entity.setDireccion(this.direccion);
      */
     public void setDireccion(String direccion) {
         this.direccion = direccion;
-    }
-    /**
-     * Devuelve las formas de pago del cliente.
-     *
-     * @return las formas de pago del cliente.
-     */
-    public List<FormaDePagoDTO> getFormasDePago() {
-        return formasDePago;
-    }
-    /**
-     * Modifica las formas de pago del cliente.
-     *
-     * @param formasDePago las formas de pago del cliente.
-     */
-    public void setFormasDePago(List<FormaDePagoDTO> formasDePago) {
-        this.formasDePago = formasDePago;
     }
 }

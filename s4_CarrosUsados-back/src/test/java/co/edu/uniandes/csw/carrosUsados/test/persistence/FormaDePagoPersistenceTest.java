@@ -113,7 +113,6 @@ public class FormaDePagoPersistenceTest {
 
         Assert.assertEquals(newEntity.getNombre(), entity.getNombre());
         Assert.assertEquals(newEntity.getTipo(), entity.getTipo());
-        Assert.assertEquals(newEntity.getCliente(), entity.getCliente());
         Assert.assertEquals(newEntity.getId(), entity.getId());
     }
 
@@ -145,7 +144,6 @@ public class FormaDePagoPersistenceTest {
         Assert.assertNotNull(newEntity);
         Assert.assertEquals(newEntity.getNombre(), entity.getNombre());
         Assert.assertEquals(newEntity.getTipo(), entity.getTipo());
-        Assert.assertEquals(newEntity.getCliente(), entity.getCliente());
         Assert.assertEquals(newEntity.getId(), entity.getId());
     }
 
@@ -177,7 +175,6 @@ public class FormaDePagoPersistenceTest {
 
         Assert.assertEquals(newEntity.getNombre(), entity.getNombre());
         Assert.assertEquals(newEntity.getTipo(), entity.getTipo());
-        Assert.assertEquals(newEntity.getCliente(), entity.getCliente());
         Assert.assertEquals(newEntity.getId(), entity.getId());
     }
 

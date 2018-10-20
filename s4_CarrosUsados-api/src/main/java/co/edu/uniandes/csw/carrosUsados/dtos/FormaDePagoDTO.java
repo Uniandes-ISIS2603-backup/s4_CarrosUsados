@@ -82,7 +82,6 @@ public class FormaDePagoDTO {
     public FormaDePagoEntity toEntity(){
         FormaDePagoEntity entity = new FormaDePagoEntity();
         entity.setId(id);
-        entity.setCliente(null);
         entity.setNombre(nombre);
         entity.setTipo(tipo);
         return entity;
