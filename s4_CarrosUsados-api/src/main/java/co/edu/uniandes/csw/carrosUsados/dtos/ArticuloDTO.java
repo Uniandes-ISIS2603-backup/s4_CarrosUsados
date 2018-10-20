@@ -17,6 +17,8 @@ public class ArticuloDTO {
     private String precio;
     private String descripcion;
     private boolean disponibilidad;
+    private AutomovilDTO automovil;
+    private FacturaDTO factura;
 
     /**
      * Crea un articuloDTO
@@ -28,6 +30,8 @@ public class ArticuloDTO {
         this.precio = articulo.getPrecio();
         this.descripcion = articulo.getDescripcion();
         this.disponibilidad = articulo.isDisponibilidad();
+        this.automovil = new AutomovilDTO(articulo.getAutomovil());
+        this.factura = new FacturaDTO(articulo.getFactura());
     }
 
     /**
@@ -106,6 +110,34 @@ public class ArticuloDTO {
     public void setDisponibilidad(boolean disponibilidad) {
         this.disponibilidad = disponibilidad;
     }
+    
+    /**
+     * @return retorna el automovil del articulo 
+     */
+    public AutomovilDTO getAutomovil() {
+        return automovil;
+    }
+
+    /**
+     * @param automovil el nuevo automovil del articulo 
+     */
+    public void setAutomovil(AutomovilDTO automovil) {
+        this.automovil = automovil;
+    }
+
+    /**
+     * @return retorna la factura del articulo 
+     */
+    public FacturaDTO getFactura() {
+        return factura;
+    }
+
+    /**
+     * @param factura la nueva factura del articulo
+     */
+    public void setFactura(FacturaDTO factura) {
+        this.factura = factura;
+    }
 
     /**
      * Crea un articulo entity con los datos de este articulo.
@@ -114,11 +146,12 @@ public class ArticuloDTO {
     public ArticuloEntity toEntity(){
         ArticuloEntity entity = new ArticuloEntity();
         entity.setId(id);
-        entity.setAutomovil(null);
-        entity.setClientes(null);
+        if(automovil != null)
+            entity.setAutomovil(automovil.toEntity());
         entity.setDescripcion(descripcion);
         entity.setDisponibilidad(true);
-        entity.setPago(null);
+        if(factura != null)
+            entity.setFactura(factura.toEntity());
         entity.setPrecio(precio);
         entity.setUbicacion(ubicacion);
         return entity;

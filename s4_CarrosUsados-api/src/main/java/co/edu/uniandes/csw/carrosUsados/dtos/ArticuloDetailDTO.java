@@ -5,6 +5,9 @@
  */
 package co.edu.uniandes.csw.carrosUsados.dtos;
 import co.edu.uniandes.csw.carrosUsados.entities.ArticuloEntity;
+import co.edu.uniandes.csw.carrosUsados.entities.ClienteEntity;
+import java.util.List;
+import java.util.LinkedList;
 
 /**
  *
@@ -12,14 +15,14 @@ import co.edu.uniandes.csw.carrosUsados.entities.ArticuloEntity;
  */
 public class ArticuloDetailDTO extends ArticuloDTO {
 
-    private final AutomovilDTO automovil;
+    private final List<ClienteDTO> clientes;
 
     /**
      * Crea un articulo vacio
      */
     public ArticuloDetailDTO() {
         super();
-        automovil = null;
+        clientes = null;
     }
 
     /**
@@ -28,13 +31,31 @@ public class ArticuloDetailDTO extends ArticuloDTO {
      */
     public ArticuloDetailDTO(ArticuloEntity articulo) {
         super( articulo );
-        automovil = new AutomovilDTO(articulo.getAutomovil());
+        clientes = new LinkedList<>();
+        for(int i=0; i<articulo.getClientes().size(); i++){
+            clientes.add(new ClienteDTO(articulo.getClientes().get(i)));
+        }
     }
 
     /**
-     * @return retorna el automovil asociado al articulo 
+     * @return retorna el cliente asociado al articulo 
      */
-    public AutomovilDTO getAutomovil() {
-        return automovil;
+    public List<ClienteDTO> getCliente() {
+        return clientes;
+    }
+    
+    /**
+     * Crea un articulo entity con los datos de este articulo.
+     * @return articulo entity con los datos de este articulo.
+     */
+    @Override
+    public ArticuloEntity toEntity(){
+        ArticuloEntity entity = super.toEntity();
+        List<ClienteEntity> list = new LinkedList<>();
+        for(int i=0; i<clientes.size(); i++){
+            list.add(clientes.get(i).toEntity());
+        }
+        entity.setClientes(list);
+        return entity;
     }
 }

@@ -6,9 +6,7 @@
 package co.edu.uniandes.csw.carrosUsados.test.logic;
 
 import co.edu.uniandes.csw.carrosUsados.ejb.FacturaLogic;
-import co.edu.uniandes.csw.carrosUsados.ejb.PagoLogic;
 import co.edu.uniandes.csw.carrosUsados.entities.FacturaEntity;
-import co.edu.uniandes.csw.carrosUsados.entities.PagoEntity;
 import co.edu.uniandes.csw.carrosUsados.exceptions.BusinessLogicException;
 import co.edu.uniandes.csw.carrosUsados.persistence.FichaTecnicaPersistence;
 import java.util.ArrayList;
@@ -57,8 +55,6 @@ public class FacturaLogicTest {
     @Deployment
     public static JavaArchive createDeployment() {
         return ShrinkWrap.create(JavaArchive.class)
-                .addPackage(PagoEntity.class.getPackage())
-                .addPackage(PagoLogic.class.getPackage())
                 .addPackage(FichaTecnicaPersistence.class.getPackage())
                 .addAsManifestResource("META-INF/persistence.xml", "persistence.xml")
                 .addAsManifestResource("META-INF/beans.xml", "beans.xml");

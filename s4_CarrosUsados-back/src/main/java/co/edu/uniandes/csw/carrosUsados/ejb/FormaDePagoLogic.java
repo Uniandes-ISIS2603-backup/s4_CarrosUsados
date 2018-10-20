@@ -8,12 +8,13 @@
 import co.edu.uniandes.csw.carrosUsados.entities.FormaDePagoEntity;
 import co.edu.uniandes.csw.carrosUsados.exceptions.BusinessLogicException;
 import co.edu.uniandes.csw.carrosUsados.persistence.FormaDePagoPersistence;
-import co.edu.uniandes.csw.carrosUsados.persistence.ClientePersistence;
+import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
+import java.util.regex.Pattern;
 
   /**
    *
@@ -23,12 +24,11 @@ import javax.inject.Inject;
   public class FormaDePagoLogic {
 
       private static final Logger LOGGER = Logger.getLogger(FormaDePagoLogic.class.getName());
+      
+      private static final Pattern tarjeta = Pattern.compile("^(?:4[0-9]{12}(?:[0-9]{3})?|[25][1-7][0-9]{14}|6(?:011|5[0-9][0-9])[0-9]{12}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\\d{3})\\d{11})$");
 
       @Inject
       private FormaDePagoPersistence persistence;
-
-      @Inject
-      private ClientePersistence clientePersistence;
 
       /**
      * Guardar un nuevo formaDePago
@@ -46,6 +46,15 @@ import javax.inject.Inject;
           }
           if(!validateTipo(formaDePagoEntity.getTipo())){
             throw new BusinessLogicException("El tipo de pago es invalido");
+          }
+          if(!validateNumero(formaDePagoEntity.getNumero())){
+            throw new BusinessLogicException("El numero es invalido");
+          }
+          if(!validateCodigo(formaDePagoEntity.getCodigo())){
+            throw new BusinessLogicException("El codigo es invalido");
+          }
+          if(!validateFecha(formaDePagoEntity.getFecha())){
+            throw new BusinessLogicException("La fecha es invalida");
           }
           if(persistence.findByNombre(formaDePagoEntity.getNombre()) != null){
             throw new BusinessLogicException("Ya existe una formaDePago con el mismo nombre");
@@ -104,6 +113,15 @@ import javax.inject.Inject;
           if(!validateTipo(formaDePagoEntity.getTipo())){
             throw new BusinessLogicException("El tipo de pago es invalido");
           }
+          if(!validateNumero(formaDePagoEntity.getNumero())){
+            throw new BusinessLogicException("El numero es invalido");
+          }
+          if(!validateCodigo(formaDePagoEntity.getCodigo())){
+            throw new BusinessLogicException("El codigo es invalido");
+          }
+          if(!validateFecha(formaDePagoEntity.getFecha())){
+            throw new BusinessLogicException("La fecha es invalida");
+          }
           if(persistence.findByNombre(formaDePagoEntity.getNombre()) != null){
             throw new BusinessLogicException("Ya existe una formaDePago con el mismo nombre");
           }
@@ -143,6 +161,42 @@ import javax.inject.Inject;
        */
       public boolean validateTipo(String tipo){
         if(tipo == null || tipo.isEmpty()){
+          return true;
+        }
+        return true;
+      }
+      
+      /**
+     * Valida el numero de la tarjeta
+     * @param numero numero a validar.
+     * @return retorna true si es valido, false si no es valido
+     */
+      public boolean validateNumero(String numero){
+        if(numero == null || numero.isEmpty()){
+          return true;
+        }        
+        return true;
+      }
+
+      /**
+       * Valida el codigo de la tarjeta de una forma de pago
+       * @param codigo codigo a ser validado
+       * @return retorna true si es valido, false si no es valido
+       */
+      public boolean validateCodigo(String codigo){
+        if(codigo == null || codigo.isEmpty() || codigo.length() == 3){
+          return true;
+        }
+        return true;
+      }
+      
+      /**
+     * Valida la fecha de la tarjeta de una forma de pago
+     * @param fecha fecha a validar.
+     * @return retorna true si es valido, false si no es valido
+     */
+      public boolean validateFecha(Date fecha){
+        if(fecha != null){
           return false;
         }
         return true;

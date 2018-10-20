@@ -20,7 +20,7 @@ import java.util.List;
  */
 @Stateless
 public class FacturaLogic {
-private static final Logger LOGGER = Logger.getLogger(PagoLogic.class.getName());
+private static final Logger LOGGER = Logger.getLogger(FacturaLogic.class.getName());
     
     @Inject
     private FacturaPersistence persistence;
