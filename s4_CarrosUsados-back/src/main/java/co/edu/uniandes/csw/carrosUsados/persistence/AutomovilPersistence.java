@@ -156,9 +156,9 @@ public class AutomovilPersistence {
      */
     public AutomovilEntity find(Long modeloId, Long automovilId) {
         LOGGER.log(Level.INFO, "Consultando el automovil con id = {0} de la modelo con id = " + automovilId, modeloId);
-        TypedQuery<AutomovilEntity> q = em.createQuery("select p from AutomovilEntity p where (p.modelo.id = :modeloid) and (p.id = :automovilId)", AutomovilEntity.class);
+       TypedQuery<AutomovilEntity> q = em.createQuery("select p from AutomovilEntity p where (p.modeloAsociado.id = :modeloid) and (p.id = :automovilId)", AutomovilEntity.class);
         q.setParameter("modeloid", modeloId);
-        q.setParameter("automovilId", automovilId);
+       q.setParameter("automovilId", automovilId);
         List<AutomovilEntity> results = q.getResultList();
         AutomovilEntity automovil = null;
         if (results == null) {
