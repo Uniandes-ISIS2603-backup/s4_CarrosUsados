@@ -141,7 +141,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/s4_CarrosUsados-back/src/test/java/co/edu/uniandes/csw/carrosUsados/test/logic/AutomovilLogicTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
+            <state relative-caret-position="348">
               <caret line="218" column="7" selection-start-line="218" selection-start-column="7" selection-end-line="218" selection-end-column="7" />
               <folding>
                 <element signature="e#1621#1638#0" expanded="true" />
@@ -375,7 +375,7 @@
     <property name="DatabaseDriversLRU" value="derby" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540168767016" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540168976507" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
@@ -627,7 +627,7 @@
       <workItem from="1540038447608" duration="3642000" />
       <workItem from="1540045075289" duration="3393000" />
       <workItem from="1540065670104" duration="2847000" />
-      <workItem from="1540149529785" duration="2460000" />
+      <workItem from="1540149529785" duration="2698000" />
     </task>
     <task id="LOCAL-00001" summary="Corrección Administrador, Vendedor, Cliente">
       <created>1537419108227</created>
@@ -707,7 +707,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52462000" />
+    <option name="totallyTimeSpent" value="52700000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -723,8 +723,8 @@
     <layout>
       <window_info id="Learn" order="0" />
       <window_info id="Persistence" order="1" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="2" sideWeight="0.7989691" visible="true" weight="0.24391988" />
-      <window_info id="Structure" order="3" sideWeight="0.20103092" side_tool="true" visible="true" weight="0.24391988" />
+      <window_info content_ui="combo" id="Project" order="2" sideWeight="0.79791665" visible="true" weight="0.24391988" />
+      <window_info id="Structure" order="3" sideWeight="0.20208333" side_tool="true" visible="true" weight="0.24391988" />
       <window_info id="Designer" order="4" />
       <window_info id="Image Layers" order="5" />
       <window_info id="UI Designer" order="6" />
@@ -742,10 +742,10 @@
       <window_info anchor="bottom" id="Spring" order="8" />
       <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4966443" weight="0.32891566" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50214595" side_tool="true" weight="0.32891566" />
-      <window_info active="true" anchor="bottom" id="Messages" order="11" sideWeight="0.4986577" visible="true" weight="0.2987952" />
+      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.4986577" weight="0.2987952" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" />
       <window_info anchor="bottom" id="Database Changes" order="13" sideWeight="0.49932885" weight="0.32907802" />
-      <window_info anchor="bottom" id="Version Control" order="14" sideWeight="0.49261746" weight="0.42168674" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="14" sideWeight="0.49261746" visible="true" weight="0.42168674" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24966443" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.24966443" />
@@ -1219,7 +1219,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/s4_CarrosUsados-back/src/test/java/co/edu/uniandes/csw/carrosUsados/test/logic/AutomovilLogicTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
+        <state relative-caret-position="348">
           <caret line="218" column="7" selection-start-line="218" selection-start-column="7" selection-end-line="218" selection-end-column="7" />
           <folding>
             <element signature="e#1621#1638#0" expanded="true" />
