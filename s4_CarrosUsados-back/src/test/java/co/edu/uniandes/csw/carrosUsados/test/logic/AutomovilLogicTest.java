@@ -235,6 +235,7 @@ public class AutomovilLogicTest {
     public void deleteAutomovilConModeloNoAsociadoTest() throws BusinessLogicException {
         AutomovilEntity entity = data.get(0);
         //entity.setModeloAsociado(null);
+
         automovilLogic.deleteAutomovil(null, entity.getId());
     }
 }
