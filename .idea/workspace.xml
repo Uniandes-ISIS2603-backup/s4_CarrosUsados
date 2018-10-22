@@ -7,9 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c7a0e589-e472-4569-b807-53a47d4e68e9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/s4_CarrosUsados-api/s4_carTeam-api.iml" beforeDir="false" afterPath="$PROJECT_DIR$/s4_CarrosUsados-api/s4_carTeam-api.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/s4_CarrosUsados-back/s4_carTeam-back.iml" beforeDir="false" afterPath="$PROJECT_DIR$/s4_CarrosUsados-back/s4_carTeam-back.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/s4_CarrosUsados-back/src/test/java/co/edu/uniandes/csw/carrosUsados/test/logic/AutomovilLogicTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/s4_CarrosUsados-back/src/test/java/co/edu/uniandes/csw/carrosUsados/test/logic/AutomovilLogicTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/s4_CarrosUsados-api/target/" />
     <ignored path="$PROJECT_DIR$/s4_CarrosUsados-back/target/" />
@@ -120,6 +118,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="java" value="56" />
+          <entry key="txt" value="64" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.spring.boot.mvc.usages" />
@@ -127,6 +126,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JAVA" value="56" />
+          <entry key="PLAIN_TEXT" value="64" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -141,8 +141,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/s4_CarrosUsados-back/src/test/java/co/edu/uniandes/csw/carrosUsados/test/logic/AutomovilLogicTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="301">
-              <caret line="236" column="41" lean-forward="true" selection-start-line="236" selection-start-column="41" selection-end-line="236" selection-end-column="41" />
+            <state relative-caret-position="203">
+              <caret line="218" column="7" selection-start-line="218" selection-start-column="7" selection-end-line="218" selection-end-column="7" />
+              <folding>
+                <element signature="e#1621#1638#0" expanded="true" />
+                <element signature="e#1702#1716#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -371,7 +375,7 @@
     <property name="DatabaseDriversLRU" value="derby" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540167918212" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540168767016" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
@@ -623,7 +627,7 @@
       <workItem from="1540038447608" duration="3642000" />
       <workItem from="1540045075289" duration="3393000" />
       <workItem from="1540065670104" duration="2847000" />
-      <workItem from="1540149529785" duration="1542000" />
+      <workItem from="1540149529785" duration="2460000" />
     </task>
     <task id="LOCAL-00001" summary="Corrección Administrador, Vendedor, Cliente">
       <created>1537419108227</created>
@@ -660,13 +664,17 @@
       <option name="project" value="LOCAL" />
       <updated>1537763444020</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Se terminó de corregir las pruebas de AutomovilLogicTest">
+      <created>1540168702237</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1540168702237</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="co_edu_uniandes_csw_carrosUsados_test_logic_in_s4_carTeam-back - 2018.10.20 at 15h 23m 12s.xml">
-      <configuration name="co.edu.uniandes.csw.carrosUsados.test.logic in s4_carTeam-back" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="co_edu_uniandes_csw_carrosUsados_test_logic_in_s4_carTeam-back - 2018.10.20 at 15h 29m 42s.xml">
       <configuration name="co.edu.uniandes.csw.carrosUsados.test.logic in s4_carTeam-back" configurationId="JUnit" />
     </history-entry>
@@ -694,9 +702,12 @@
     <history-entry file="co_edu_uniandes_csw_carrosUsados_test_logic_in_s4_carTeam-back - 2018.10.21 at 19h 20m 52s.xml">
       <configuration name="co.edu.uniandes.csw.carrosUsados.test.logic in s4_carTeam-back" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="co_edu_uniandes_csw_carrosUsados_test_logic_in_s4_carTeam-back - 2018.10.21 at 19h 24m 39s.xml">
+      <configuration name="co.edu.uniandes.csw.carrosUsados.test.logic in s4_carTeam-back" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51544000" />
+    <option name="totallyTimeSpent" value="52462000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -709,12 +720,11 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Learn" order="0" />
       <window_info id="Persistence" order="1" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="2" sideWeight="0.7991968" visible="true" weight="0.24391988" />
-      <window_info id="Structure" order="3" sideWeight="0.20080322" side_tool="true" visible="true" weight="0.24391988" />
+      <window_info content_ui="combo" id="Project" order="2" sideWeight="0.7989691" visible="true" weight="0.24391988" />
+      <window_info id="Structure" order="3" sideWeight="0.20103092" side_tool="true" visible="true" weight="0.24391988" />
       <window_info id="Designer" order="4" />
       <window_info id="Image Layers" order="5" />
       <window_info id="UI Designer" order="6" />
@@ -723,8 +733,8 @@
       <window_info id="Web" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.8818792" weight="0.37588653" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4966443" visible="true" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.8818792" weight="0.3746988" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4966443" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49785408" weight="0.32891566" />
@@ -732,10 +742,10 @@
       <window_info anchor="bottom" id="Spring" order="8" />
       <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4966443" weight="0.32891566" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50214595" side_tool="true" weight="0.32891566" />
-      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.4986577" weight="0.29929078" />
+      <window_info active="true" anchor="bottom" id="Messages" order="11" sideWeight="0.4986577" visible="true" weight="0.2987952" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" />
       <window_info anchor="bottom" id="Database Changes" order="13" sideWeight="0.49932885" weight="0.32907802" />
-      <window_info anchor="bottom" id="Version Control" order="14" sideWeight="0.49261746" weight="0.42269504" />
+      <window_info anchor="bottom" id="Version Control" order="14" sideWeight="0.49261746" weight="0.42168674" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24966443" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.24966443" />
@@ -787,7 +797,8 @@
     <MESSAGE value="Git add missing classes - IntelliJ" />
     <MESSAGE value="Corrección toEntity() de AdministradorDTO y ClienteDTO en setTelefono. Añadida prueba para verificar nombre de usuario" />
     <MESSAGE value="Añadidas pruebas lógica Postman Cliente/Administrador/Vendedor" />
-    <option name="LAST_COMMIT_MESSAGE" value="Añadidas pruebas lógica Postman Cliente/Administrador/Vendedor" />
+    <MESSAGE value="Se terminó de corregir las pruebas de AutomovilLogicTest" />
+    <option name="LAST_COMMIT_MESSAGE" value="Se terminó de corregir las pruebas de AutomovilLogicTest" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1208,8 +1219,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/s4_CarrosUsados-back/src/test/java/co/edu/uniandes/csw/carrosUsados/test/logic/AutomovilLogicTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="236" column="41" lean-forward="true" selection-start-line="236" selection-start-column="41" selection-end-line="236" selection-end-column="41" />
+        <state relative-caret-position="203">
+          <caret line="218" column="7" selection-start-line="218" selection-start-column="7" selection-end-line="218" selection-end-column="7" />
+          <folding>
+            <element signature="e#1621#1638#0" expanded="true" />
+            <element signature="e#1702#1716#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
