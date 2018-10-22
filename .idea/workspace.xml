@@ -6,9 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c7a0e589-e472-4569-b807-53a47d4e68e9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="c7a0e589-e472-4569-b807-53a47d4e68e9" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/s4_CarrosUsados-api/target/" />
     <ignored path="$PROJECT_DIR$/s4_CarrosUsados-back/target/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -375,7 +373,7 @@
     <property name="DatabaseDriversLRU" value="derby" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540168976507" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540169220133" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
@@ -627,7 +625,7 @@
       <workItem from="1540038447608" duration="3642000" />
       <workItem from="1540045075289" duration="3393000" />
       <workItem from="1540065670104" duration="2847000" />
-      <workItem from="1540149529785" duration="2698000" />
+      <workItem from="1540149529785" duration="2945000" />
     </task>
     <task id="LOCAL-00001" summary="Corrección Administrador, Vendedor, Cliente">
       <created>1537419108227</created>
@@ -707,7 +705,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52700000" />
+    <option name="totallyTimeSpent" value="52947000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
