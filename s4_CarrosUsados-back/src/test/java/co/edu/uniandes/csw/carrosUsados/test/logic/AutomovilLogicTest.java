@@ -191,13 +191,13 @@ public class AutomovilLogicTest {
         pojoEntity.setId(entity.getId());
         pojoEntity.setPlaca("AAA111");
         pojoEntity.setNumChasis("11111111111222222");
-      ModeloEntity modeloEntity = modeloData.get(1);
+        ModeloEntity modeloEntity = modeloData.get(1);
         pojoEntity.setModeloAsociado(modeloEntity);
         automovilLogic.updateAutomovil(pojoEntity.getModeloAsociado().getId(), pojoEntity);
-        
-  
+
+
         //automovilLogic.updateAutomovil(modeloData.get(1).getId(), pojoEntity);
-        
+
         AutomovilEntity resp = em.find(AutomovilEntity.class, entity.getId());
 
         Assert.assertEquals(pojoEntity.getId(), resp.getId());
@@ -210,13 +210,13 @@ public class AutomovilLogicTest {
         Assert.assertEquals(pojoEntity.getModelo(), resp.getModelo());
         Assert.assertEquals(pojoEntity.getNumChasis(), resp.getNumChasis());
         Assert.assertEquals(pojoEntity.getPlaca(), resp.getPlaca());
-        Assert.assertEquals(pojoEntity.getPrecioOriginal(), resp.getPrecioOriginal());   
+        Assert.assertEquals(pojoEntity.getPrecioOriginal(), resp.getPrecioOriginal());
     }
     
     /**
      * Prueba para eliminar un Automovil
      *
-     * @throws co.edu.uniandes.csw.bookstore.exceptions.BusinessLogicException
+     * @throws co.edu.uniandes.csw.carrosUsados.exceptions.BusinessLogicException
      */
     @Test
     public void deleteAutomovilTest() throws BusinessLogicException {
@@ -225,15 +225,16 @@ public class AutomovilLogicTest {
         AutomovilEntity deleted = em.find(AutomovilEntity.class, entity.getId());
         Assert.assertNull(deleted);
     }
-    
+
      /**
      * Prueba para eliminarle un automovil a un modelo del cual no pertenece.
      *
-     * @throws co.edu.uniandes.csw.bookstore.exceptions.BusinessLogicException
+     * @throws co.edu.uniandes.csw.carrosUsados.exceptions.BusinessLogicException
      */
     @Test(expected = BusinessLogicException.class)
     public void deleteAutomovilConModeloNoAsociadoTest() throws BusinessLogicException {
         AutomovilEntity entity = data.get(0);
-        automovilLogic.deleteAutomovil(modeloData.get(0).getId(), entity.getId());
+        //entity.setModeloAsociado(null);
+        automovilLogic.deleteAutomovil(null, entity.getId());
     }
 }
