@@ -224,9 +224,10 @@ public class ArticuloLogicTest {
             resultEntity = articuloLogic.getArticulo(null);
             Assert.fail();
         }
-        catch(BusinessLogicException e){}  
-        resultEntity = articuloLogic.getArticulo(-123L);
-        Assert.assertNull(resultEntity);
+        catch(BusinessLogicException e){  
+            resultEntity = articuloLogic.getArticulo(-123L);
+            Assert.assertNull(resultEntity);
+        }
               
         
     }
