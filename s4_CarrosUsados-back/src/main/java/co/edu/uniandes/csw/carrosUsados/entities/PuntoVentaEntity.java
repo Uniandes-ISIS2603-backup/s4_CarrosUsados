@@ -32,7 +32,7 @@ public class PuntoVentaEntity extends BaseEntity implements Serializable{
     
     @PodamExclude
     @OneToMany(mappedBy = "puntoVenta", cascade = CascadeType.PERSIST, orphanRemoval = true)
-    private List<CalificacionEntity> comentarios = new ArrayList<CalificacionEntity>();
+    private List<CalificacionEntity> calificaciones = new ArrayList<CalificacionEntity>();
 
     @PodamExclude
     @ManyToOne
@@ -56,7 +56,7 @@ public class PuntoVentaEntity extends BaseEntity implements Serializable{
      */
     public List<CalificacionEntity> getCalificaciones()
   {
-      return comentarios;
+      return calificaciones;
   }
   
     /**
@@ -65,7 +65,7 @@ public class PuntoVentaEntity extends BaseEntity implements Serializable{
      */
     public void setCalificaciones(List<CalificacionEntity> cal)
   {
-      this.comentarios=cal;
+      this.calificaciones=cal;
   }
 
     /**
@@ -147,14 +147,6 @@ public class PuntoVentaEntity extends BaseEntity implements Serializable{
 
     public void setLongitud(Double longitud) {
         this.longitud = longitud;
-    }
-
-    public List<CalificacionEntity> getComentarios() {
-        return comentarios;
-    }
-
-    public void setComentarios(List<CalificacionEntity> comentarios) {
-        this.comentarios = comentarios;
     }
 
     public AdministradorEntity getAdministrador() {
