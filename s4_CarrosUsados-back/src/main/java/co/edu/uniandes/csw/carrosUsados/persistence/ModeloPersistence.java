@@ -88,4 +88,32 @@ public class ModeloPersistence {
         em.remove(entity);
         LOGGER.log(Level.INFO, "Saliendo de borrar el modelo con id = {0}", modeloId);
     }
+    
+    /**
+     * Buscar un modelo
+     *
+     * Busca si hay algun modelo asociado a una marca y con un ID específico
+     *
+     * @param marcaId El ID de la marca con respecto al cual se busca
+     * @param modeloId El ID del modelo buscada
+     * @return El modelo encontrada o null. Nota: Si existe una o más modelos
+     * devuelve siempre la primera que encuentra
+     */
+    public ModeloEntity find(Long marcaId, Long modeloId) {
+        LOGGER.log(Level.INFO, "Consultando el modelo con id = {0} de la marca con id = " + marcaId, modeloId);
+        TypedQuery<ModeloEntity> q = em.createQuery("select p from ModeloEntity p where (p.marca.id = :marcaid) and (p.id = :modeloId)", ModeloEntity.class);
+        q.setParameter("marcaid", marcaId);
+        q.setParameter("modeloId", modeloId);
+        List<ModeloEntity> results = q.getResultList();
+        ModeloEntity modelo = null;
+        if (results == null) {
+            modelo = null;
+        } else if (results.isEmpty()) {
+            modelo = null;
+        } else if (results.size() >= 1) {
+            modelo = results.get(0);
+        }
+        LOGGER.log(Level.INFO, "Saliendo de consultar el modelo con id = {0} de la marca con id =" + marcaId, modeloId);
+        return modelo;
+    }
 }

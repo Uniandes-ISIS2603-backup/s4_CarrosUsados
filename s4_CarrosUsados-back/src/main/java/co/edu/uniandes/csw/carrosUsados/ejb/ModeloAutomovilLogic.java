@@ -5,100 +5,96 @@
  */
 package co.edu.uniandes.csw.carrosUsados.ejb;
 
-import co.edu.uniandes.csw.carrosUsados.persistence.AutomovilPersistence;
-import co.edu.uniandes.csw.carrosUsados.persistence.ModeloPersistence;
 import co.edu.uniandes.csw.carrosUsados.entities.ModeloEntity;
-import co.edu.uniandes.csw.carrosUsados.entities.AutomovilEntity;
 import co.edu.uniandes.csw.carrosUsados.exceptions.BusinessLogicException;
+import co.edu.uniandes.csw.carrosUsados.persistence.ModeloPersistence;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.ejb.Stateless;
 import javax.inject.Inject;
 
 /**
  *
  * @author estudiante
  */
-@Stateless
 public class ModeloAutomovilLogic {
     
-    private static final Logger LOGGER = Logger.getLogger(ModeloAutomovilLogic.class.getName());
+  private static final Logger LOGGER = Logger.getLogger(ModeloAutomovilLogic.class.getName());
 
-    @Inject
-    ModeloPersistence modeloPersistence;
-    
-    @Inject
-    AutomovilPersistence automovilPersistence;
-    
-    /**
-     * Agregar un automovil al modelo
-     *
-     * @param automovilId El id automovil a guardar
-     * @param modeloId El id del modelo en la cual se va a guardar el
-     * automovil.
-     * @return El automovil creado.
-     */
-    public AutomovilEntity addAutomovil(Long automovilId, Long modeloId) {
-        LOGGER.log(Level.INFO, "Inicia proceso de agregarle un automovil al modelo con id = {0}", modeloId);
-        ModeloEntity modeloEntity = modeloPersistence.find(modeloId);
-        AutomovilEntity automovilEntity = automovilPersistence.find(automovilId);
-        automovilEntity.setModeloAsociado(modeloEntity);
-        LOGGER.log(Level.INFO, "Termina proceso de agregarle unautomovil al modelo con id = {0}", modeloId);
-        return automovilEntity;
-    }
-    
-     /**
-     * Retorna todos los automoviles asociados a un modelo
-     *
-     * @param modeloId El ID de la editorial buscada
-     * @return La lista de automoviles del modelo
-     */
-    public List<AutomovilEntity> getAutomoviles(Long modeloId) {
-        LOGGER.log(Level.INFO, "Inicia proceso de consultar los automoviles asociados al modelo con id = {0}", modeloId);
-        return modeloPersistence.find(modeloId).getAutomoviles();
-    }
-    
-    /**
-     * Retorna un automovil asociado a un modelo
-     *
-     * @param modeloId El id del modelo a buscar.
-     * @param automovilId El id del automovil a buscar
-     * @return El automovil encontrado dentro del Modelo.
-     * @throws BusinessLogicException Si el automovil no se encuentra en el modelo
-     */
-    public AutomovilEntity getAutomovil(Long modeloId, Long automovilId) throws BusinessLogicException {
-        LOGGER.log(Level.INFO, "Inicia proceso de consultar el automovil con id = {0} del modelo con id = " + modeloId, automovilId);
-        List<AutomovilEntity> autos = modeloPersistence.find(modeloId).getAutomoviles();
-        AutomovilEntity autoEntity = automovilPersistence.find(automovilId);
-        int index = autos.indexOf(autoEntity);
-        LOGGER.log(Level.INFO, "Termina proceso de consultar el automovil con id = {0} del modelo con id = " + modeloId, automovilId);
-        if (index >= 0) {
-            return autos.get(index);
-        }
-        throw new BusinessLogicException("El automovil no está asociado al modelo");
-    }
-    
-     /**
-     * Remplazar automoviles de un modelo
-     *
-     * @param automoviles Lista de automoviles que serán los del modelo.
-     * @param modeloId El id del modelo que se quiere actualizar.
-     * @return La lista de automoviles actualizada.
-     */
-    public List<AutomovilEntity> replaceAutomoviles(Long modeloId, List<AutomovilEntity> autos) {
-        LOGGER.log(Level.INFO, "Inicia proceso de actualizar el modelo con id = {0}", modeloId);
-        ModeloEntity modeloEntity = modeloPersistence.find(modeloId);
-        List<AutomovilEntity> autosList = automovilPersistence.findAll();
-        for (AutomovilEntity auto : autosList) {
-            if (autos.contains(auto)) {
-                auto.setModeloAsociado(modeloEntity);
-            } else if (auto.getModeloAsociado() != null && auto.getModeloAsociado().equals(modeloEntity)) {
-                auto.setModeloAsociado(null);
-            }
-        }
-        LOGGER.log(Level.INFO, "Termina proceso de actualizar el Modelo con id = {0}", modeloId);
-        return autos;
-    }
+  @Inject
+  private ModeloPersistence persistence;
 
+  /**
+ * Persiste un modelo en el sistema.
+ *
+ * @param modeloEntity - La entidad del modelo a persistir.
+  * @throws BusinessLogicException Si la información del cliente es incorrecta.
+ * @return La entidad si esta pudo persistirse correctamente.
+
+ */
+  public ModeloEntity createModelo(ModeloEntity modeloEntity) throws BusinessLogicException{
+      LOGGER.log(Level.INFO, "Inicio proceso de creación de un modelo");
+      persistence.create(modeloEntity);
+      LOGGER.log(Level.INFO, "Termina proceso de creación del cliente");
+      return modeloEntity;
+  }
+  /**
+   * Devuelve todos los modelos registrados en el sistema.
+   *
+   * @return Lista de entidades de tipo modelo.
+   */
+  public List<ModeloEntity> getModelos() {
+      LOGGER.log(Level.INFO, "Inicia proceso de consultar todos los modelos");
+      List<ModeloEntity> modelos = persistence.findAll();
+      LOGGER.log(Level.INFO, "Termina proceso de consultar todos los modelos");
+      return modelos;
+  }
+  /**
+   * Consulta un modelo según su id.
+   *
+   * @param modeloId - El id del modelo a consultar.
+   * @throws BusinessLogicException Si el id enviado por parámetro es inválido.
+   * @return El modelo si fue encontrado, null en caso contrario.
+   */
+  public ModeloEntity getModelo(Long modeloId) throws BusinessLogicException{
+      LOGGER.log(Level.INFO, "Inicia proceso de consultar un modelo");
+      ModeloEntity modeloEntity = persistence.find(modeloId);
+      if(modeloEntity == null){
+        LOGGER.log(Level.INFO, "El modelo con el id = {0} no existe", modeloId);
+      }
+      LOGGER.log(Level.INFO, "Termina proceso de consultar un modelo según su Id");
+      return modeloEntity;
+  }
+  /**
+   * Actualiza un modelo según su id.
+   *
+   * @param modeloId - El id del modelo a actualizar.
+   * @param modeloEntity La entidad del modelo actualizada.
+      * @throws BusinessLogicException Si la información del modelo es incorrecta.
+   * @return Si fue exitosa la actualización, retorna La entidad del modelo actualizada.
+   */
+  public ModeloEntity updateModelo(Long modeloId, ModeloEntity modeloEntity) throws BusinessLogicException{
+      LOGGER.log(Level.INFO, "Inicia proceso de actualizar un modelo");
+      ModeloEntity newEntity = persistence.update(modeloEntity);
+      LOGGER.log(Level.INFO, "Termina proceso de actualización de un modelo");
+      return newEntity;
+  }
+
+  /**
+   * Eliminar un modelo según su id.
+   *
+   * @param modeloId - El id del modelo a eliminar.
+   * @throws BusinessLogicException Si no existe un modelo asociado al id enviado por parámetro.
+   */
+  public void deleteModelo(Long modeloId) throws BusinessLogicException {
+      LOGGER.log(Level.INFO, "Inicia proceso de borrar el modelo con id = {0}", modeloId);
+      ModeloEntity modeloEntity = persistence.find(modeloId);
+      if(modeloEntity == null){
+        LOGGER.log(Level.INFO, "El modelo con el id = {0} no existe", modeloId);
+      }
+      persistence.delete(modeloId);
+      LOGGER.log(Level.INFO, "Termina proceso de borrar el modelo con id = {0}", modeloId);
+  }
+
+    
 }

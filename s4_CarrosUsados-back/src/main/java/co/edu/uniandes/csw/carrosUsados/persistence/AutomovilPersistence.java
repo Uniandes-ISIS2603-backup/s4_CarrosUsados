@@ -143,4 +143,32 @@ public class AutomovilPersistence {
         LOGGER.log(Level.INFO, "Saliendo de consultar automoviles por numero de chasis ", numChasis);
         return result;
     }
+    
+     /**
+     * Buscar un automovil
+     *
+     * Busca si hay algun automovil asociado a un modelo y con un ID específico
+     *
+     * @param modeloId El ID de la marca con respecto al cual se busca
+     * @param automovilId El ID del modelo buscada
+     * @return El modelo encontrada o null. Nota: Si existe una o más modelos
+     * devuelve siempre la primera que encuentra
+     */
+    public AutomovilEntity find(Long modeloId, Long automovilId) {
+        LOGGER.log(Level.INFO, "Consultando el automovil con id = {0} de la modelo con id = " + automovilId, modeloId);
+       TypedQuery<AutomovilEntity> q = em.createQuery("select p from AutomovilEntity p where (p.modeloAsociado.id = :modeloid) and (p.id = :automovilId)", AutomovilEntity.class);
+        q.setParameter("modeloid", modeloId);
+       q.setParameter("automovilId", automovilId);
+        List<AutomovilEntity> results = q.getResultList();
+        AutomovilEntity automovil = null;
+        if (results == null) {
+            automovil = null;
+        } else if (results.isEmpty()) {
+            automovil = null;
+        } else if (results.size() >= 1) {
+            automovil = results.get(0);
+        }
+        LOGGER.log(Level.INFO, "Saliendo de consultar el automovil con id = {0} del modelo con id =" + automovilId, modeloId);
+        return automovil;
+    }
 }
