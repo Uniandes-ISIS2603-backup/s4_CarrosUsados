@@ -27,6 +27,8 @@ public class PuntoVentaEntity extends BaseEntity implements Serializable{
     private int numEmpleados;
     private String ciudad;
     private String ubicacion;
+    private Double latitud;
+    private Double longitud;
     
     @PodamExclude
     @OneToMany(mappedBy = "puntoVenta", cascade = CascadeType.PERSIST, orphanRemoval = true)
@@ -65,25 +67,7 @@ public class PuntoVentaEntity extends BaseEntity implements Serializable{
   {
       this.comentarios=cal;
   }
-  
-    /**
-     * Devuelve el número de empleados del punot.
-     * @return numEmpleados número de empleados del punto.
-     */
-    public int getEmpleados()
-  {
-      return numEmpleados;
-  }
-  
-    /**
-     * Modifica el número de empleados del punto.
-     * @param num número de empleados del punto.
-     */
-    public void setEmpleados(int num)
-  {
-      this.numEmpleados= num;
-  }
-  
+
     /**
      * Devuelve la ciudad del punto de venta.
      * @return ciudad del punto de venta.
@@ -135,6 +119,52 @@ public class PuntoVentaEntity extends BaseEntity implements Serializable{
     public void setAutomovil(AutomovilEntity automovil) {
         this.automovil = automovil;
     }
+
+    public int getNumEmpleados() {
+        return numEmpleados;
+    }
+
+    
+       /**
+     * Modifica el número de empleados del punto.
+     * @param numEmpleados número de empleados del punto.
+     */
+    public void setNumEmpleados(int numEmpleados) {
+        this.numEmpleados = numEmpleados;
+    }
+
+    public Double getLatitud() {
+        return latitud;
+    }
+
+    public void setLatitud(Double latitud) {
+        this.latitud = latitud;
+    }
+
+    public Double getLongitud() {
+        return longitud;
+    }
+
+    public void setLongitud(Double longitud) {
+        this.longitud = longitud;
+    }
+
+    public List<CalificacionEntity> getComentarios() {
+        return comentarios;
+    }
+
+    public void setComentarios(List<CalificacionEntity> comentarios) {
+        this.comentarios = comentarios;
+    }
+
+    public AdministradorEntity getAdministrador() {
+        return administrador;
+    }
+
+    public void setAdministrador(AdministradorEntity administrador) {
+        this.administrador = administrador;
+    }
+    
     
   
   

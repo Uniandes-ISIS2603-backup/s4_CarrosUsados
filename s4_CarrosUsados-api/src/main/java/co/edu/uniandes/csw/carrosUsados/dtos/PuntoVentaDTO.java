@@ -25,9 +25,10 @@ public class PuntoVentaDTO implements Serializable {
     private int numVendedores;
     private String ubicacion;
     private String ciudad;
+    private Double latitud;
+    private Double longitud;
     private long id;
-    private List<CalificacionEntity> calificaciones =new ArrayList<CalificacionEntity>();
-
+   
     /**
      *Constructor
      */
@@ -43,11 +44,12 @@ public class PuntoVentaDTO implements Serializable {
      * @param puntoVenta Entity: Es la entidad que se va a convertir a DTO
      */
     public PuntoVentaDTO(PuntoVentaEntity puntoVenta) {
-        this.numVendedores = puntoVenta.getEmpleados();
+        this.numVendedores = puntoVenta.getNumEmpleados();
         this.ubicacion = puntoVenta.getUbicacion();
         this.ciudad = puntoVenta.getCiudad();
         this.id = puntoVenta.getId();
-        this.calificaciones= puntoVenta.getCalificaciones();
+        this.latitud= puntoVenta.getLatitud();
+        this.longitud= puntoVenta.getLongitud();
     }
 
   
@@ -59,10 +61,11 @@ public class PuntoVentaDTO implements Serializable {
     public PuntoVentaEntity toEntity()
     {
         PuntoVentaEntity entity= new PuntoVentaEntity();
-        entity.setCalificaciones(calificaciones);
         entity.setCiudad(this.ciudad);
-        entity.setEmpleados(numVendedores);
+        entity.setNumEmpleados(numVendedores);
         entity.setUbicacion(this.ubicacion);
+        entity.setLatitud(this.latitud);
+        entity.setLongitud(this.longitud);
         entity.setId(this.id);
         
         return entity;
@@ -140,4 +143,24 @@ public class PuntoVentaDTO implements Serializable {
     public long getId() {
         return id;
     }
+
+    public Double getLatitud() {
+        return latitud;
+    }
+
+    public void setLatitud(Double latitud) {
+        this.latitud = latitud;
+    }
+
+    public Double getLongitud() {
+        return longitud;
+    }
+
+    public void setLongitud(Double longitud) {
+        this.longitud = longitud;
+    }
+
+  
+    
+    
 }
