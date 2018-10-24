@@ -11,6 +11,8 @@ import co.edu.uniandes.csw.carrosUsados.ejb.AutomovilFichaTecnicaLogic;
 import co.edu.uniandes.csw.carrosUsados.ejb.AutomovilLogic;
 import co.edu.uniandes.csw.carrosUsados.entities.AutomovilEntity;
 import co.edu.uniandes.csw.carrosUsados.exceptions.BusinessLogicException;
+import co.edu.uniandes.csw.carrosUsados.mappers.BusinessLogicExceptionMapper;
+import co.edu.uniandes.csw.carrosUsados.mappers.WebApplicationExceptionMapper;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
@@ -32,7 +34,6 @@ import javax.ws.rs.WebApplicationException;
  *
  * @author estudiante
  */
-@Path("automoviles")
 @Produces("application/json")
 @Consumes("application/json")
 @RequestScoped
@@ -60,10 +61,10 @@ public class AutomovilResource {
      * invalido.
      */
     @POST
-    public AutomovilDTO createAutomovil(AutomovilDTO automovil) throws BusinessLogicException { //Revisar si toca agregar la throws declaration
+    public AutomovilDTO createAutomovil(@PathParam("modeloId") Long modeloId, AutomovilDTO automovil) throws BusinessLogicException { //Revisar si toca agregar la throws declaration
         LOGGER.log(Level.INFO, "AutomovilResource createAutomovil: input: {0}", automovil.toString());
 
-        AutomovilDTO nuevoAutomovilDTO = new AutomovilDTO(automovilLogic.createAutomovil(automovil.toEntity()));
+        AutomovilDTO nuevoAutomovilDTO = new AutomovilDTO(automovilLogic.createAutomovil(modeloId, automovil.toEntity()));
         //chequear que hacer ocn los AUTOMOVILDETAIL
 
         LOGGER.log(Level.INFO, "AutomovilResource createAutomovil: output: {0}", nuevoAutomovilDTO.toString());
@@ -77,11 +78,11 @@ public class AutomovilResource {
      * encontrados en la aplicación. Si no hay ninguno retorna una lista vacía.
      */
     @GET
-    public List<AutomovilDetailDTO> getAutomoviles() throws BusinessLogicException {
+    public List<AutomovilDetailDTO> getAutomoviles(@PathParam("modeloId") Long modeloId) throws BusinessLogicException {
         LOGGER.info("AutomovilResource getAutomoviles: input: void");
-        List<AutomovilDetailDTO> listaBooks = listEntity2DetailDTO(automovilLogic.getAutomoviles());
-        LOGGER.log(Level.INFO, "BookResource getBooks: output: {0}", listaBooks.toString());
-        return listaBooks;
+        List<AutomovilDetailDTO> listaAutomoviles = listEntity2DetailDTO(automovilLogic.getAutomoviles(modeloId));
+        LOGGER.log(Level.INFO, "BookResource getBooks: output: {0}", listaAutomoviles.toString());
+        return listaAutomoviles;
     }
 
     /**
@@ -95,9 +96,9 @@ public class AutomovilResource {
      */
     @GET
     @Path("{automovilesId: \\d+}")
-    public AutomovilDTO getAutomovil(@PathParam("automovilesId") long automovilesId) throws BusinessLogicException {
+    public AutomovilDTO getAutomovil(@PathParam("modeloId") Long modeloId, @PathParam("automovilesId") long automovilesId) throws BusinessLogicException {
         LOGGER.log(Level.INFO, "AutomovilResource getAutomovil: input: {0}", automovilesId);
-        AutomovilEntity automovilEntity = automovilLogic.getAutomovil(automovilesId);
+        AutomovilEntity automovilEntity = automovilLogic.getAutomovil(modeloId, automovilesId);
         if (automovilEntity == null) {
             throw new WebApplicationException("El recurso /automoviles/" + automovilesId + " no existe.", 404);
         }
@@ -122,13 +123,17 @@ public class AutomovilResource {
      */
     @PUT
     @Path("{automovilesId: \\d+}")
-    public AutomovilDetailDTO updateAutomovil(@PathParam("automovilesId") Long automovilesId, AutomovilDTO automovil) throws BusinessLogicException {
-        LOGGER.log(Level.INFO, "AutomovilResource updateAutomovil: input: id: {0} , automovil: {1}", new Object[]{automovilesId, automovil.toString()});
+    public AutomovilDetailDTO updateAutomovil(@PathParam("modeloId") Long modeloId, @PathParam("automovilesId") Long automovilesId, AutomovilDTO automovil) throws BusinessLogicException {
+        LOGGER.log(Level.INFO, "AutomovilResource updateAutomovil: input: id: {0} , automovil: {1}", new Object[]{modeloId,automovilesId, automovil.toString()});
         automovil.setId(automovilesId);
-        if (automovilLogic.getAutomovil(automovilesId) == null) {
+        if (automovilesId.equals(automovil.getId())) {
+            throw new BusinessLogicException("Los IDs no coinciden");
+        }
+        AutomovilEntity automovilEntity = automovilLogic.getAutomovil(modeloId, automovilesId);
+        if (automovilEntity == null) {
             throw new WebApplicationException("El recurso /automoviles/" + automovilesId + " no existe.", 404);
         }
-        AutomovilDetailDTO detailDTO = new AutomovilDetailDTO(automovilLogic.updateAutomovil(automovilesId, automovil.toEntity()));
+        AutomovilDetailDTO detailDTO = new AutomovilDetailDTO(automovilLogic.updateAutomovil(modeloId, automovil.toEntity()));
         LOGGER.log(Level.INFO, "AutomovilResource updateAutomovil: output: {0}", detailDTO.toString());
         return detailDTO;
     }
@@ -143,14 +148,14 @@ public class AutomovilResource {
      */
     @DELETE
     @Path("{automovilesId: \\d+}")
-    public void deleteAutomovil(@PathParam("automovilesId") Long automovilesId) throws BusinessLogicException { //Chequear si es Long con mayuscula o con l minuscula
+    public void deleteAutomovil(@PathParam("modeloId") Long modeloId, @PathParam("automovilesId") Long automovilesId) throws BusinessLogicException { //Chequear si es Long con mayuscula o con l minuscula
         LOGGER.log(Level.INFO, "AutomovilResource deleteAutomovil: input: {0}", automovilesId);
-        AutomovilEntity entity = automovilLogic.getAutomovil(automovilesId);
+        AutomovilEntity entity = automovilLogic.getAutomovil(modeloId, automovilesId);
         if (entity == null) {
             throw new WebApplicationException("El recurso /automoviles/" + automovilesId + " no existe.", 404);
         }
         //La siguiente linea puede causar un error:
-        automovilLogic.deleteAutomovil(automovilesId);
+        automovilLogic.deleteAutomovil(modeloId, automovilesId);
         LOGGER.info("AutomovilResource deleteAutomovil: output: void");
 
         //Ver que queda pendientea gregar
