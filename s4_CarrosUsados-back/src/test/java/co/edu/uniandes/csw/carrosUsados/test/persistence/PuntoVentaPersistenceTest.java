@@ -114,8 +114,10 @@ public class PuntoVentaPersistenceTest {
 
         Assert.assertEquals(newEntity.getCiudad(), entity.getCiudad());
         Assert.assertEquals(newEntity.getUbicacion(), entity.getUbicacion());
-        Assert.assertEquals(newEntity.getEmpleados(), entity.getEmpleados());
+        Assert.assertEquals(newEntity.getNumEmpleados(), entity.getNumEmpleados());
         Assert.assertEquals(newEntity.getId(), entity.getId());
+        Assert.assertEquals(newEntity.getLatitud(), entity.getLatitud());
+        Assert.assertEquals(newEntity.getLongitud(), entity.getLongitud());
     }
 
     /**
@@ -147,8 +149,12 @@ public class PuntoVentaPersistenceTest {
         Assert.assertNotNull(newEntity);
         Assert.assertEquals(newEntity.getCiudad(), entity.getCiudad());
         Assert.assertEquals(newEntity.getUbicacion(), entity.getUbicacion());
-        Assert.assertEquals(newEntity.getEmpleados(), entity.getEmpleados());
+        Assert.assertEquals(newEntity.getNumEmpleados(), entity.getNumEmpleados());
         Assert.assertEquals(newEntity.getId(), entity.getId());
+        Assert.assertEquals(newEntity.getLatitud(), entity.getLatitud());
+        Assert.assertEquals(newEntity.getLongitud(), entity.getLongitud());
+    
+    
     }
 
   
@@ -176,8 +182,10 @@ public class PuntoVentaPersistenceTest {
 
        Assert.assertEquals(newEntity.getCiudad(), entity.getCiudad());
         Assert.assertEquals(newEntity.getUbicacion(), entity.getUbicacion());
-        Assert.assertEquals(newEntity.getEmpleados(), entity.getEmpleados());
+        Assert.assertEquals(newEntity.getNumEmpleados(), entity.getNumEmpleados());
         Assert.assertEquals(newEntity.getId(), entity.getId());
+        Assert.assertEquals(newEntity.getLatitud(), entity.getLatitud());
+        Assert.assertEquals(newEntity.getLongitud(), entity.getLongitud());
     }
     
 }

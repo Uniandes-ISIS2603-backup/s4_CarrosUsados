@@ -57,10 +57,19 @@ public class PuntoVentaDetailDTO extends PuntoVentaDTO {
         return entity;
     }
 
+    /**
+     *
+     * @return
+     */
+
     public List<CalificacionDetailDTO> getCalificaciones() {
         return calificaciones;
     }
 
+    /**
+     *
+     * @param calificaciones
+     */
     public void setCalificaciones(List<CalificacionDetailDTO> calificaciones) {
         this.calificaciones = calificaciones;
     }

@@ -111,9 +111,11 @@ public class PuntoVentaLogicTest {
         Assert.assertEquals(newEntity.getId(), entity.getId());
         Assert.assertEquals(newEntity.getCiudad(), entity.getCiudad());
         Assert.assertEquals(newEntity.getUbicacion(), entity.getUbicacion());
-        Assert.assertEquals(newEntity.getEmpleados(), entity.getEmpleados());
-           Assert.assertEquals(newEntity.getCalificaciones(), entity.getCalificaciones());
-           
+        Assert.assertEquals(newEntity.getNumEmpleados(), entity.getNumEmpleados());
+        Assert.assertEquals(newEntity.getCalificaciones(), entity.getCalificaciones());
+        Assert.assertEquals(newEntity.getAdministrador(), entity.getAdministrador());
+        Assert.assertEquals(newEntity.getLatitud(), entity.getLatitud());
+        Assert.assertEquals(newEntity.getLongitud(), entity.getLongitud());
     }
     
   
@@ -143,7 +145,7 @@ public class PuntoVentaLogicTest {
         Assert.assertEquals(newEntity.getCiudad(), entity.getCiudad());
         Assert.assertEquals(newEntity.getUbicacion(), entity.getUbicacion());
         Assert.assertEquals(newEntity.getCalificaciones(), entity.getCalificaciones());
-        Assert.assertEquals(newEntity.getEmpleados(), entity.getEmpleados());
+        Assert.assertEquals(newEntity.getNumEmpleados(), entity.getNumEmpleados());
     }
     
    
@@ -159,7 +161,7 @@ public class PuntoVentaLogicTest {
         PuntoVentaEntity resp = em.find(PuntoVentaEntity.class, entity.getId());
 
         Assert.assertEquals(pojoEntity.getId(), resp.getId());
-        Assert.assertEquals(pojoEntity.getEmpleados(), resp.getEmpleados());
+        Assert.assertEquals(pojoEntity.getNumEmpleados(), resp.getNumEmpleados());
         Assert.assertEquals(pojoEntity.getCiudad(), resp.getCiudad());
         Assert.assertEquals(pojoEntity.getUbicacion(), resp.getUbicacion());
         Assert.assertEquals(pojoEntity.getCalificaciones(), resp.getCalificaciones());
