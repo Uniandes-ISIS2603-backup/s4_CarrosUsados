@@ -28,3 +28,6 @@ hs_err_pid*
 /palabraclave-back/target/
 /sX_palabraclave-back/target/
 /s4_CarrosUsados-back/target/
+
+#Idea Project
+/.idea/
