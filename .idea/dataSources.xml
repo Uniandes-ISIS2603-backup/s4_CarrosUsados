@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="Derby - carTeamDB;create=true@localhost" uuid="f8f64fce-02c7-4ffe-b80f-04fc623e0e78">
+    <data-source source="LOCAL" name="carTeamDB" uuid="8dc6c79e-de76-442f-8de3-43b9db25c9e0">
       <driver-ref>derby.remote</driver-ref>
       <synchronize>true</synchronize>
       <configured-by-url>true</configured-by-url>
