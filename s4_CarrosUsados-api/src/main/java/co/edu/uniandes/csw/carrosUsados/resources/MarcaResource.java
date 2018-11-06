@@ -147,7 +147,7 @@ public class MarcaResource {
     }
     
      /**
-     * Conexión con el servicio de modelos para una marca. {@link ModeloResource}
+     * Conexión con el servicio de modelos para una marca. {@link ModeloAutomovilResource}
      *
      * Este método conecta la ruta de /marcas con las rutas de /modelos que
      * dependen del libro, es una redirección al servicio que maneja el segmento

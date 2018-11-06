@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="Derby - carTeamDB;create=true@localhost" uuid="f8f64fce-02c7-4ffe-b80f-04fc623e0e78">
+    <data-source name="carTeamDB" uuid="8dc6c79e-de76-442f-8de3-43b9db25c9e0">
       <database-info product="Apache Derby" version="10.13.1.1 - (1765088)" jdbc-version="4.2" driver-name="Apache Derby Network Client JDBC Driver" driver-version="10.14.1.0 - (1808820)" family="DERBY" exact-version="10.13">
         <identifier-quote-string>&quot;</identifier-quote-string>
       </database-info>

@@ -6,11 +6,128 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c7a0e589-e472-4569-b807-53a47d4e68e9" name="Default Changelist" comment="">
+    <list default="true" id="ff5648aa-b364-4528-94b9-b4b313ed9132" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/s4_CarrosUsados-api/src/main/java/co/edu/uniandes/csw/carrosUsados/filters/CORSFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/s4_carTeam_api_war.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/s4_carTeam_api_war_exploded.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/f8f64fce-02c7-4ffe-b80f-04fc623e0e78.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__aopalliance_aopalliance_1_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__co_edu_uniandes_csw_postman_simple_1_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_goldmansachs_gs_collections_5_1_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_goldmansachs_gs_collections_api_5_1_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_gson_gson_2_6_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_18_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_googlecode_json_simple_json_simple_1_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_lmax_disruptor_3_2_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_mail_javax_mail_1_5_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_2_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_lang_commons_lang_2_6.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__fish_payara_arquillian_arquillian_payara_server_4_embedded_1_0_Beta3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__fish_payara_extras_payara_embedded_all_4_1_2_181.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_gatling_jsr166e_1_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_activation_activation_1_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_annotation_jsr250_api_1_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_enterprise_cdi_api_1_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_inject_javax_inject_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_javaee_api_7_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_validation_validation_api_1_1_0_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_jcip_jcip_annotations_1_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_7.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_maven_aether_provider_3_2_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_maven_model_3_2_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_maven_model_builder_3_2_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_maven_repository_metadata_3_2_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_maven_settings_3_2_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_maven_settings_builder_3_2_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_wagon_wagon_file_2_6.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_wagon_wagon_http_lightweight_2_6.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_wagon_wagon_http_shared_2_6.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_maven_wagon_wagon_provider_api_2_6.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_plexus_plexus_compiler_api_2_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_plexus_plexus_compiler_javac_2_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_plexus_plexus_component_annotations_1_5_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_plexus_plexus_interpolation_1_21.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_plexus_plexus_utils_3_0_20.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_aether_aether_api_1_0_0_v20140518.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_aether_aether_connector_basic_1_0_0_v20140518.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_aether_aether_impl_1_0_0_v20140518.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_aether_aether_spi_1_0_0_v20140518.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_aether_aether_transport_wagon_1_0_0_v20140518.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_aether_aether_util_1_0_0_v20140518.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_persistence_commonj_sdo_2_1_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_persistence_eclipselink_2_6_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_persistence_javax_persistence_2_1_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_persistence_org_eclipse_persistence_asm_2_6_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_persistence_org_eclipse_persistence_core_2_6_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_persistence_org_eclipse_persistence_moxy_2_6_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_sisu_org_eclipse_sisu_inject_0_3_0_M1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_eclipse_sisu_org_eclipse_sisu_plexus_0_3_0_M1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_javax_json_1_0_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_validator_4_2_0_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_arquillian_config_arquillian_config_api_1_1_14_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_arquillian_config_arquillian_config_impl_base_1_1_14_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_arquillian_container_arquillian_container_impl_base_1_1_14_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_arquillian_container_arquillian_container_spi_1_1_14_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_arquillian_container_arquillian_container_test_api_1_1_14_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_arquillian_container_arquillian_container_test_impl_base_1_1_14_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_arquillian_container_arquillian_container_test_spi_1_1_14_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_arquillian_core_arquillian_core_api_1_1_14_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_arquillian_core_arquillian_core_impl_base_1_1_14_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_arquillian_core_arquillian_core_spi_1_1_14_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_arquillian_junit_arquillian_junit_container_1_1_14_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_arquillian_junit_arquillian_junit_core_1_1_14_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_arquillian_protocol_arquillian_protocol_servlet_1_1_14_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_arquillian_test_arquillian_test_api_1_1_14_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_arquillian_test_arquillian_test_impl_base_1_1_14_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_arquillian_test_arquillian_test_spi_1_1_14_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_arquillian_testenricher_arquillian_testenricher_cdi_1_1_14_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_arquillian_testenricher_arquillian_testenricher_ejb_1_1_14_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_arquillian_testenricher_arquillian_testenricher_initialcontext_1_1_14_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_arquillian_testenricher_arquillian_testenricher_resource_1_1_14_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_shrinkwrap_descriptors_shrinkwrap_descriptors_api_base_2_0_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_shrinkwrap_descriptors_shrinkwrap_descriptors_spi_2_0_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_shrinkwrap_resolver_shrinkwrap_resolver_api_2_2_6.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_shrinkwrap_resolver_shrinkwrap_resolver_api_maven_2_2_6.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_shrinkwrap_resolver_shrinkwrap_resolver_api_maven_archive_2_2_6.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_shrinkwrap_resolver_shrinkwrap_resolver_impl_maven_2_2_6.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_shrinkwrap_resolver_shrinkwrap_resolver_impl_maven_archive_2_2_6.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_shrinkwrap_resolver_shrinkwrap_resolver_spi_2_2_6.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_shrinkwrap_resolver_shrinkwrap_resolver_spi_maven_2_2_6.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_shrinkwrap_resolver_shrinkwrap_resolver_spi_maven_archive_2_2_6.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_shrinkwrap_shrinkwrap_api_1_2_6.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_shrinkwrap_shrinkwrap_impl_base_1_2_6.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_shrinkwrap_shrinkwrap_spi_1_2_6.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jsoup_jsoup_1_7_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectreactor_reactor_core_1_1_4_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_12.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_sonatype_plexus_plexus_cipher_1_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_sonatype_plexus_plexus_sec_dispatcher_1_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_integration_spring_integration_core_4_1_3_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_retry_spring_retry_1_1_1_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_4_1_6_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_4_1_6_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_4_1_6_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_4_1_6_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_4_1_6_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_messaging_4_1_6_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_4_1_4_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__uk_co_jemos_podam_podam_6_0_2_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/s4_CarrosUsados-api/s4_carTeam-api.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/s4_CarrosUsados-back/s4_carTeam-back.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/s4_carTeam.iml" beforeDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/s4_CarrosUsados-api/target/" />
     <ignored path="$PROJECT_DIR$/s4_CarrosUsados-back/target/" />
+    <ignored path="$PROJECT_DIR$/s4_CarrosUsados-api/target/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,19 +149,21 @@
     <expand>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="Derby - carTeamDB;create=true@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="carTeamDB" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="carTeamDB" type="feb32156:DbDataSourceImpl" />
+        <item name="APP: schema" type="6aa84934:DerbyImplModel$Schema" />
       </path>
     </expand>
     <select />
   </component>
-  <component name="ErrorTreeViewConfiguration">
-    <option name="hideWarnings" value="true" />
-    <option name="HIDE_WARNINGS" value="true" />
-  </component>
   <component name="FUSProjectUsageTrigger">
-    <session id="2102926525">
+    <session id="233928891">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+<<<<<<< HEAD
           <entry key="project.closed" value="19" />
           <entry key="project.open.time.10" value="2" />
           <entry key="project.open.time.11" value="3" />
@@ -100,21 +219,27 @@
       <usages-collector id="statistics.lifecycle.project">
         <counts>
           <entry key="project.open.time.11" value="1" />
+=======
+          <entry key="project.open.time.4" value="1" />
+>>>>>>> 86ce754b3e135ab7dc6c47235197742b1be69f32
           <entry key="project.opened" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="iml" value="1" />
+          <entry key="USUARIOENTITY" value="1" />
           <entry key="java" value="1" />
+          <entry key="sql" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="IDEA_MODULE" value="1" />
+          <entry key="Database Element" value="1" />
           <entry key="JAVA" value="1" />
+          <entry key="Scratch" value="1" />
         </counts>
       </usages-collector>
+<<<<<<< HEAD
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="java" value="56" />
@@ -129,12 +254,12 @@
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
       <usages-collector id="statistics.js.language.service.starts" />
+=======
+>>>>>>> 86ce754b3e135ab7dc6c47235197742b1be69f32
     </session>
   </component>
-  <component name="FavoritesManager">
-    <favorites_list name="s4_carTeam" />
-  </component>
   <component name="FileEditorManager">
+<<<<<<< HEAD
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/s4_CarrosUsados-back/src/main/java/co/edu/uniandes/csw/carrosUsados/entities/VendedorEntity.java">
@@ -225,6 +350,22 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="170">
               <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+=======
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/8dc6c79e-de76-442f-8de3-43b9db25c9e0/console.sql">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/s4_CarrosUsados-api/src/main/java/co/edu/uniandes/csw/carrosUsados/filters/CORSFilter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="21" column="1" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+>>>>>>> 86ce754b3e135ab7dc6c47235197742b1be69f32
             </state>
           </provider>
         </entry>
@@ -238,89 +379,14 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>private</find>
-      <find>automovilEntity</find>
-      <find>administradorEntity</find>
-      <find>del vendedor</find>
-      <find>administradorId</find>
-      <find>clientees</find>
-      <find>administrador</find>
-      <find>private final static Logger LOGGER = Logger.getLogger(AdministradorResource.class.getName());</find>
-      <find>createDeployment</find>
-      <find>p.modelo.id</find>
-    </findStrings>
-    <replaceStrings>
-      <replace>protected</replace>
-      <replace>administradorEntity</replace>
-      <replace>usuarioEntity</replace>
-      <replace>de la persona</replace>
-      <replace>administradoresId</replace>
-      <replace>clientes</replace>
-      <replace>vendedor</replace>
-    </replaceStrings>
-  </component>
   <component name="Git.Settings">
-    <option name="PREVIOUS_COMMIT_AUTHORS">
-      <list>
-        <option value="Corrección Administrador, Vendedor, Cliente" />
-      </list>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="RESET_MODE" value="MIXED" />
-    <favorite-branches>
-      <branch-storage>
-        <map>
-          <entry type="REMOTE">
-            <value>
-              <list>
-                <branch-info repo="$PROJECT_DIR$" source="origin/JuanBravo" />
-              </list>
-            </value>
-          </entry>
-        </map>
-      </branch-storage>
-    </favorite-branches>
-  </component>
-  <component name="GithubProjectSettings">
-    <option name="CREATE_PULL_REQUEST_DEFAULT_BRANCH" value="master" />
-    <option name="CREATE_PULL_REQUEST_DEFAULT_REPO_USER" value="Uniandes-isis2603" />
-    <option name="CREATE_PULL_REQUEST_DEFAULT_REPO_NAME" value="s4_CarrosUsados" />
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/s4_CarrosUsados-back/src/test/java/co/edu/uniandes/csw/carrosUsados/test/logic/AutomovilLogicTest.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/s4_CarrosUsados-back/src/main/java/co/edu/uniandes/csw/carrosUsados/entities/ModeloEntity.java" />
-        <option value="$PROJECT_DIR$/s4_CarrosUsados-api/src/main/java/co/edu/uniandes/csw/carrosUsados/dtos/AutomovilDTO.java" />
-        <option value="$PROJECT_DIR$/s4_CarrosUsados-api/src/main/java/co/edu/uniandes/csw/carrosUsados/dtos/ClienteDetailDTO.java" />
-        <option value="$PROJECT_DIR$/s4_CarrosUsados-api/src/main/java/co/edu/uniandes/csw/carrosUsados/dtos/UsuarioDTO.java" />
-        <option value="$PROJECT_DIR$/s4_CarrosUsados-api/src/main/java/co/edu/uniandes/csw/carrosUsados/dtos/PersonaDTO.java" />
-        <option value="$PROJECT_DIR$/s4_CarrosUsados-back/src/main/java/co/edu/uniandes/csw/carrosUsados/entities/PersonaEntity.java" />
-        <option value="$PROJECT_DIR$/s4_CarrosUsados-back/src/test/java/co/edu/uniandes/csw/carrosUsados/test/logic/ClienteLogicTest.java" />
-        <option value="$PROJECT_DIR$/s4_CarrosUsados-api/src/main/java/co/edu/uniandes/csw/carrosUsados/dtos/VendedorDTO.java" />
-        <option value="$PROJECT_DIR$/s4_CarrosUsados-back/src/main/java/co/edu/uniandes/csw/carrosUsados/entities/PuntoVentaEntity.java" />
-        <option value="$PROJECT_DIR$/s4_CarrosUsados-api/src/main/java/co/edu/uniandes/csw/carrosUsados/dtos/AdministradorDTO.java" />
-        <option value="$PROJECT_DIR$/s4_CarrosUsados-back/src/test/java/co/edu/uniandes/csw/carrosUsados/test/persistence/AdministradorPersistenceTest.java" />
-        <option value="$PROJECT_DIR$/s4_CarrosUsados-back/src/main/java/co/edu/uniandes/csw/carrosUsados/persistence/AdministradorPersistence.java" />
-        <option value="$PROJECT_DIR$/s4_CarrosUsados-back/src/main/java/co/edu/uniandes/csw/carrosUsados/ejb/AdministradorLogic.java" />
-        <option value="$PROJECT_DIR$/s4_CarrosUsados-back/src/test/java/co/edu/uniandes/csw/carrosUsados/test/logic/AdministradorLogicTest.java" />
-        <option value="$PROJECT_DIR$/s4_CarrosUsados-api/src/main/java/co/edu/uniandes/csw/carrosUsados/dtos/ClienteDTO.java" />
-        <option value="$PROJECT_DIR$/s4_CarrosUsados-api/src/main/java/co/edu/uniandes/csw/carrosUsados/resources/AdministradorResource.java" />
-        <option value="$PROJECT_DIR$/s4_CarrosUsados-api/src/main/java/co/edu/uniandes/csw/carrosUsados/resources/ClienteResource.java" />
-        <option value="$PROJECT_DIR$/s4_CarrosUsados-api/src/main/java/co/edu/uniandes/csw/carrosUsados/resources/VendedorResource.java" />
-        <option value="$PROJECT_DIR$/s4_CarrosUsados-api/src/test/java/co/edu/uniandes/csw/carrosUsados/tests/postman/CarTeamIT.java" />
-        <option value="$PROJECT_DIR$/s4_CarrosUsados-back/src/main/java/co/edu/uniandes/csw/carrosUsados/entities/AdministradorEntity.java" />
-        <option value="$PROJECT_DIR$/s4_CarrosUsados-back/src/main/java/co/edu/uniandes/csw/carrosUsados/entities/ClienteEntity.java" />
-        <option value="$PROJECT_DIR$/s4_CarrosUsados-back/src/main/java/co/edu/uniandes/csw/carrosUsados/entities/UsuarioEntity.java" />
-        <option value="$PROJECT_DIR$/s4_CarrosUsados-back/src/main/java/co/edu/uniandes/csw/carrosUsados/entities/VendedorEntity.java" />
-        <option value="$PROJECT_DIR$/s4_CarrosUsados-back/src/main/java/co/edu/uniandes/csw/carrosUsados/ejb/UsuarioLogic.java" />
-        <option value="$PROJECT_DIR$/s4_CarrosUsados-back/src/main/java/co/edu/uniandes/csw/carrosUsados/persistence/AutomovilPersistence.java" />
-        <option value="$PROJECT_DIR$/s4_CarrosUsados-back/src/main/java/co/edu/uniandes/csw/carrosUsados/ejb/AutomovilLogic.java" />
-        <option value="$PROJECT_DIR$/s4_CarrosUsados-back/src/test/java/co/edu/uniandes/csw/carrosUsados/test/logic/AutomovilLogicTest.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/8dc6c79e-de76-442f-8de3-43b9db25c9e0/console.sql" />
+        <option value="$PROJECT_DIR$/s4_CarrosUsados-api/src/main/java/co/edu/uniandes/csw/carrosUsados/filters/CORSFilter.java" />
       </list>
     </option>
   </component>
@@ -335,7 +401,6 @@
       <MavenImportingSettings>
         <option name="downloadDocsAutomatically" value="true" />
         <option name="downloadSourcesAutomatically" value="true" />
-        <option name="importAutomatically" value="true" />
       </MavenImportingSettings>
     </option>
   </component>
@@ -353,7 +418,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -467,6 +531,7 @@
             </path>
             <path>
               <item name="s4_carTeam" type="b2602c69:ProjectViewProjectNode" />
+<<<<<<< HEAD
               <item name="Proyecto" type="462c0819:PsiDirectoryNode" />
               <item name="s4_CarrosUsados-back" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
@@ -475,11 +540,21 @@
               <item name="s4_carTeam" type="b2602c69:ProjectViewProjectNode" />
               <item name="Proyecto" type="462c0819:PsiDirectoryNode" />
               <item name="s4_CarrosUsados-back" type="462c0819:PsiDirectoryNode" />
+=======
+              <item name="s4_CarrosUsados" type="462c0819:PsiDirectoryNode" />
+              <item name="s4_CarrosUsados-api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="s4_carTeam" type="b2602c69:ProjectViewProjectNode" />
+              <item name="s4_CarrosUsados" type="462c0819:PsiDirectoryNode" />
+              <item name="s4_CarrosUsados-api" type="462c0819:PsiDirectoryNode" />
+>>>>>>> 86ce754b3e135ab7dc6c47235197742b1be69f32
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="s4_carTeam" type="b2602c69:ProjectViewProjectNode" />
+<<<<<<< HEAD
               <item name="Proyecto" type="462c0819:PsiDirectoryNode" />
               <item name="s4_CarrosUsados-back" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
@@ -490,6 +565,17 @@
               <item name="s4_carTeam" type="b2602c69:ProjectViewProjectNode" />
               <item name="Proyecto" type="462c0819:PsiDirectoryNode" />
               <item name="s4_CarrosUsados-back" type="462c0819:PsiDirectoryNode" />
+=======
+              <item name="s4_CarrosUsados" type="462c0819:PsiDirectoryNode" />
+              <item name="s4_CarrosUsados-api" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="s4_carTeam" type="b2602c69:ProjectViewProjectNode" />
+              <item name="s4_CarrosUsados" type="462c0819:PsiDirectoryNode" />
+              <item name="s4_CarrosUsados-api" type="462c0819:PsiDirectoryNode" />
+>>>>>>> 86ce754b3e135ab7dc6c47235197742b1be69f32
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
@@ -497,12 +583,18 @@
             </path>
             <path>
               <item name="s4_carTeam" type="b2602c69:ProjectViewProjectNode" />
+<<<<<<< HEAD
               <item name="Proyecto" type="462c0819:PsiDirectoryNode" />
               <item name="s4_CarrosUsados-back" type="462c0819:PsiDirectoryNode" />
+=======
+              <item name="s4_CarrosUsados" type="462c0819:PsiDirectoryNode" />
+              <item name="s4_CarrosUsados-api" type="462c0819:PsiDirectoryNode" />
+>>>>>>> 86ce754b3e135ab7dc6c47235197742b1be69f32
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="carrosUsados" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
               <item name="ejb" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -566,11 +658,14 @@
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
+=======
+>>>>>>> 86ce754b3e135ab7dc6c47235197742b1be69f32
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -578,11 +673,19 @@
     <property name="DatabaseDriversLRU" value="derby" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+<<<<<<< HEAD
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540170297116" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+=======
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541478542960" />
+    <property name="database.console.LAST_STATE" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+>>>>>>> 86ce754b3e135ab7dc6c47235197742b1be69f32
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -596,6 +699,7 @@
       </list>
     </option>
   </component>
+<<<<<<< HEAD
   <component name="RunManager" selected="JUnit.co.edu.uniandes.csw.carrosUsados.test in s4_carTeam-back">
     <configuration name="AutomovilLogicTest" type="ArquillianJUnit" factoryName="" temporary="true" nameIsGenerated="true">
       <module name="s4_carTeam-back" />
@@ -634,34 +738,39 @@
       </method>
     </configuration>
     <configuration name="GlassFish 5.183" type="GlassfishConfiguration" factoryName="Remote" APPLICATION_SERVER_NAME="GlassFish 5.183.0" ALTERNATIVE_JRE_ENABLED="false">
+=======
+  <component name="RunManager">
+    <configuration name="Glashfish 5.183" type="GlassfishConfiguration" factoryName="Remote" APPLICATION_SERVER_NAME="GlassFish 5.183.0" ALTERNATIVE_JRE_ENABLED="false">
+>>>>>>> 86ce754b3e135ab7dc6c47235197742b1be69f32
       <option name="LOCAL" value="false" />
       <option name="BROWSER_ID" value="53e2f627-b1a7-4dfa-bfa7-5b83cc034776" />
       <option name="UPDATING_POLICY" value="hot-swap-classes" />
       <deployment>
         <artifact name="s4_carTeam-api:war">
-          <settings />
+          <settings>
+            <option name="contextRoot" value="/s4_CarrosUsados-api" />
+            <option name="defaultContextRoot" value="false" />
+          </settings>
         </artifact>
       </deployment>
       <server-settings>
         <data>
           <option name="adminServerHost" value="" />
           <option name="clusterName" value="" />
-          <option name="compatibility" value="true" />
           <option name="stagingRemotePath" value="" />
-          <option name="transportHostId" value="" />
+          <option name="transportHostId" />
           <option name="transportStagingTarget">
             <TransportTarget>
-              <option name="id" value="fe4e084f-2408-420a-a2f3-7ac5136def34" />
-              <id>fe4e084f-2408-420a-a2f3-7ac5136def34</id>
+              <option name="id" value="d6dc25a1-87a4-42b4-aba8-bc5f364d0ce9" />
+              <id>d6dc25a1-87a4-42b4-aba8-bc5f364d0ce9</id>
             </TransportTarget>
           </option>
-          <compatibility>true</compatibility>
           <admin-server-host />
           <cluster-name />
           <transport-target>
             <TransportTarget>
-              <option name="id" value="fe4e084f-2408-420a-a2f3-7ac5136def34" />
-              <id>fe4e084f-2408-420a-a2f3-7ac5136def34</id>
+              <option name="id" value="d6dc25a1-87a4-42b4-aba8-bc5f364d0ce9" />
+              <id>d6dc25a1-87a4-42b4-aba8-bc5f364d0ce9</id>
             </TransportTarget>
           </transport-target>
           <staging-path />
@@ -670,7 +779,7 @@
       </server-settings>
       <predefined_log_file id="GlassFish" enabled="true" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="57517" />
+        <option name="DEBUG_PORT" value="64871" />
         <option name="LOCAL" value="false" />
       </RunnerSettings>
       <method v="2">
@@ -680,6 +789,7 @@
         </option>
       </method>
     </configuration>
+<<<<<<< HEAD
     <configuration default="true" type="GlassfishConfiguration" factoryName="Remote" APPLICATION_SERVER_NAME="GlassFish 5.183.0" ALTERNATIVE_JRE_ENABLED="false">
       <option name="LOCAL" value="false" />
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/s4_carTeam-api-1.0/" />
@@ -800,16 +910,19 @@
         <item itemvalue="JUnit.co.edu.uniandes.csw.carrosUsados.tests.postman in s4_carTeam-api" />
       </list>
     </recent_temporary>
+=======
+>>>>>>> 86ce754b3e135ab7dc6c47235197742b1be69f32
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="c7a0e589-e472-4569-b807-53a47d4e68e9" name="Default Changelist" comment="" />
-      <created>1536862648063</created>
+      <changelist id="ff5648aa-b364-4528-94b9-b4b313ed9132" name="Default Changelist" comment="" />
+      <created>1541477486756</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
+<<<<<<< HEAD
       <updated>1536862648063</updated>
       <workItem from="1536862650765" duration="3872000" />
       <workItem from="1537140799847" duration="1487000" />
@@ -942,18 +1055,56 @@
       <window_info anchor="bottom" id="Java Enterprise" order="12" />
       <window_info anchor="bottom" id="Database Changes" order="13" sideWeight="0.49932885" weight="0.32907802" />
       <window_info anchor="bottom" id="Version Control" order="14" sideWeight="0.49261746" weight="0.42269504" />
+=======
+      <updated>1541477486756</updated>
+      <workItem from="1541477490046" duration="958000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="958000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Designer" />
+      <window_info id="Image Layers" />
+      <window_info id="UI Designer" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info id="Capture Tool" />
+      <window_info id="Web" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24966443" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Application Servers" weight="0.32907802" />
+      <window_info anchor="bottom" id="Database Console" weight="0.32907802" />
+      <window_info anchor="bottom" id="Spring" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" />
+      <window_info anchor="bottom" id="Java Enterprise" />
+      <window_info anchor="bottom" id="Database Changes" />
+      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32907802" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Palette" />
+      <window_info anchor="right" id="JSF" />
+      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="right" id="CDI" />
+      <window_info anchor="right" id="Maven Projects" />
+      <window_info anchor="right" id="Database" visible="true" weight="0.21342282" />
+      <window_info anchor="right" id="Palette&#9;" />
+      <window_info anchor="right" id="Theme Preview" />
+      <window_info anchor="right" id="Bean Validation" />
+>>>>>>> 86ce754b3e135ab7dc6c47235197742b1be69f32
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.24966443" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.24966443" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="JSF" order="4" />
-      <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="right" id="CDI" order="6" />
-      <window_info anchor="right" id="Maven Projects" order="7" />
-      <window_info anchor="right" id="Database" order="8" weight="0.3295302" />
-      <window_info anchor="right" id="Palette&#9;" order="9" />
-      <window_info anchor="right" id="Theme Preview" order="10" />
-      <window_info anchor="right" id="Bean Validation" order="11" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
     <layout-to-restore>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.807611" visible="true" weight="0.3248322" />
@@ -996,35 +1147,10 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State>
-              <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
-              </option>
-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-                <collection />
-              </option>
-              <option name="COLUMN_ORDER">
-                <list>
-                  <option value="0" />
-                  <option value="1" />
-                  <option value="2" />
-                  <option value="3" />
-                </list>
-              </option>
-            </State>
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+<<<<<<< HEAD
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Corrección Administrador, Vendedor, Cliente" />
     <MESSAGE value="Git add missing classes - IntelliJ" />
@@ -1439,106 +1565,40 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-64">
           <caret line="128" column="34" selection-start-line="128" selection-start-column="34" selection-end-line="128" selection-end-column="34" />
+=======
+  <component name="editorHistoryManager">
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/8dc6c79e-de76-442f-8de3-43b9db25c9e0/console.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="das://8dc6c79e-de76-442f-8de3-43b9db25c9e0/schema/APP/table/USUARIOENTITY">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+>>>>>>> 86ce754b3e135ab7dc6c47235197742b1be69f32
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/s4_CarrosUsados-back/src/test/java/co/edu/uniandes/csw/carrosUsados/test/logic/AutomovilLogicTest.java">
+    <entry file="file://$PROJECT_DIR$/s4_CarrosUsados-api/src/main/java/co/edu/uniandes/csw/carrosUsados/filters/CORSFilter.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="504">
           <caret line="200" column="35" selection-start-line="200" selection-start-column="35" selection-end-line="200" selection-end-column="35" />
+=======
+        <state relative-caret-position="357">
+          <caret line="21" column="1" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+>>>>>>> 86ce754b3e135ab7dc6c47235197742b1be69f32
         </state>
       </provider>
     </entry>
   </component>
   <component name="masterDetails">
     <states>
-      <state key="ArquillianSettingsConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ArtifactsStructureConfigurable.UI">
-        <settings>
-          <artifact-editor />
-          <last-edited>s4_carTeam-api:war</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-                <option value="0.5" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="FacetStructureConfigurable.UI">
-        <settings>
-          <last-edited>Spring</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="GlobalLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="JdkListConfigurable.UI">
-        <settings>
-          <last-edited>1.8</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ModuleStructureConfigurable.UI">
-        <settings>
-          <last-edited>s4_carTeam</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-                <option value="0.6" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
       <state key="ProjectJDKs.UI">
         <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectLibrariesConfigurable.UI">
-        <settings>
-          <last-edited>Maven: aopalliance:aopalliance:1.0</last-edited>
+          <last-edited>1.8</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

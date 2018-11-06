@@ -1,4 +1,4 @@
-/*
+ /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -23,7 +23,6 @@ import javax.ws.rs.*;
  *
  * @author na.morenoe
  */
-@Path("modelos")
 @Produces("application/json")
 @Consumes("application/json")
 @RequestScoped
@@ -142,27 +141,7 @@ public class ModeloResource {
         modeloLogic.deleteModelo(marcaId ,modeloId);
         
     }
-    
-    /**
-     * Conexión con el servicio de modelos para una marca. {@link ModeloResource}
-     *
-     * Este método conecta la ruta de /marcas con las rutas de /modelos que
-     * dependen del libro, es una redirección al servicio que maneja el segmento
-     * de la URL que se encarga de los modelos.
-     *
-     * @param marcaId El ID de la marca con respecto al cual se accede al
-     * servicio.
-     * @return El servicio de Modelos para esa marca en particular.\
-     * @throws WebApplicationException {@link WebApplicationExceptionMapper} -
-     * Error de lógica que se genera cuando no se encuentra la marca.
-     */
-    @Path("{modeloId: \\d+}/automoviles")
-    public Class<AutomovilResource> getAutomovilResource(@PathParam("modeloId") Long modeloId) throws BusinessLogicException{
-        if (modeloLogic.getModelo(modeloId) == null) {
-            throw new WebApplicationException("El recurso /modelo/" + modeloId + "/automoviles no existe.", 404);
-        }
-        return AutomovilResource.class;
-    }
+   
     
     private List<ModeloDTO> listEntity2DTO(List<ModeloEntity> modelos) {
         List<ModeloDTO> list = new ArrayList<>();

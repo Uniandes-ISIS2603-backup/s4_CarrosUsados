@@ -10,10 +10,5 @@
         <module name="s4_carTeam-back" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="s4_carTeam" target="1.8" />
-      <module name="s4_carTeam-api" target="1.8" />
-      <module name="s4_carTeam-back" target="1.8" />
-    </bytecodeTargetLevel>
   </component>
 </project>
