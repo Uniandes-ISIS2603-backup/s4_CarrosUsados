@@ -1,0 +1,366 @@
+{
+	"info": {
+		"_postman_id": "22980b47-359e-448b-893f-e0595103f689",
+		"name": "PRUEBAS_CALIFICACION",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "PostCalificacion",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\n  \t\"num_estrellas\":3,\n  \t\"comentario\":\"coemnto\",\n  \t\"puntoVenta\":{\"id\":21}\n  }"
+				},
+				"url": {
+					"raw": "http://localhost:8080/s4_CarrosUsados-api/api/calificaciones",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"s4_CarrosUsados-api",
+						"api",
+						"calificaciones"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "PostCalificacion",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"disabled": false
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\n  \t\"num_estrellas\":3,\n  \t\"comentario\":\"coemnto\",\n  \t\"puntoVenta\":{\"id\":21}\n  }"
+						},
+						"url": {
+							"raw": "http://localhost:8080/s4_CarrosUsados-api/api/calificaciones",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"s4_CarrosUsados-api",
+								"api",
+								"calificaciones"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "90",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 24 Sep 2018 02:23:42 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Server",
+							"value": "Payara Server  4.1.2.174 #badassfish",
+							"name": "Server",
+							"description": "A name for the server"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN",
+							"name": "X-Frame-Options",
+							"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Servlet/3.1 JSP/2.3 (Payara Server  4.1.2.174 #badassfish Java/Oracle Corporation/1.8)",
+							"name": "X-Powered-By",
+							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+						}
+					],
+					"cookie": [],
+					"body": "{\"comentario\":\"coemnto\",\"id\":5,\"num_estrellas\":3,\"puntoVenta\":{\"id\":21,\"numVendedores\":0}}"
+				}
+			]
+		},
+		{
+			"name": "GetCalificaciones",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/s4_CarrosUsados-api/api/calificaciones",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"s4_CarrosUsados-api",
+						"api",
+						"calificaciones"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GetCalificaciones",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:8080/s4_CarrosUsados-api/api/calificaciones",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"s4_CarrosUsados-api",
+								"api",
+								"calificaciones"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "485",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 24 Sep 2018 01:02:05 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Server",
+							"value": "Payara Server  4.1.2.174 #badassfish",
+							"name": "Server",
+							"description": "A name for the server"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN",
+							"name": "X-Frame-Options",
+							"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Servlet/3.1 JSP/2.3 (Payara Server  4.1.2.174 #badassfish Java/Oracle Corporation/1.8)",
+							"name": "X-Powered-By",
+							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+						}
+					],
+					"cookie": [],
+					"body": "[{\"type\":\"calificacionDetailDTO\",\"comentario\":\"coemnto\",\"id\":1,\"num_estrellas\":0,\"puntoVenta\":{\"ciudad\":\"Barranquilla\",\"id\":21,\"numVendedores\":2,\"ubicacion\":\"sds\"},\"punto\":{\"ciudad\":\"Barranquilla\",\"id\":21,\"numVendedores\":2,\"ubicacion\":\"sds\"}},{\"type\":\"calificacionDetailDTO\",\"comentario\":\"coemnto\",\"id\":2,\"num_estrellas\":3,\"puntoVenta\":{\"ciudad\":\"Barranquilla\",\"id\":21,\"numVendedores\":2,\"ubicacion\":\"sds\"},\"punto\":{\"ciudad\":\"Barranquilla\",\"id\":21,\"numVendedores\":2,\"ubicacion\":\"sds\"}}]"
+				}
+			]
+		},
+		{
+			"name": "GetCalificacion",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/s4_CarrosUsados-api/api/calificaciones/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"s4_CarrosUsados-api",
+						"api",
+						"calificaciones",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GetCalificacion",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:8080/s4_CarrosUsados-api/api/calificaciones/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"s4_CarrosUsados-api",
+								"api",
+								"calificaciones",
+								"5"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "132",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 24 Sep 2018 03:13:21 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Server",
+							"value": "Payara Server  4.1.2.174 #badassfish",
+							"name": "Server",
+							"description": "A name for the server"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN",
+							"name": "X-Frame-Options",
+							"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Servlet/3.1 JSP/2.3 (Payara Server  4.1.2.174 #badassfish Java/Oracle Corporation/1.8)",
+							"name": "X-Powered-By",
+							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+						}
+					],
+					"cookie": [],
+					"body": "{\"comentario\":\"coemnto\",\"id\":5,\"num_estrellas\":3,\"puntoVenta\":{\"ciudad\":\"Barranquilla\",\"id\":21,\"numVendedores\":2,\"ubicacion\":\"sds\"}}"
+				}
+			]
+		},
+		{
+			"name": "DeleteCalificacion",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/s4_CarrosUsados-api/api/calificaciones/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"s4_CarrosUsados-api",
+						"api",
+						"calificaciones",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "DeleteCalificacion",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:8080/s4_CarrosUsados-api/api/calificaciones/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"s4_CarrosUsados-api",
+								"api",
+								"calificaciones",
+								"5"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 24 Sep 2018 03:13:35 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Server",
+							"value": "Payara Server  4.1.2.174 #badassfish",
+							"name": "Server",
+							"description": "A name for the server"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN",
+							"name": "X-Frame-Options",
+							"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Servlet/3.1 JSP/2.3 (Payara Server  4.1.2.174 #badassfish Java/Oracle Corporation/1.8)",
+							"name": "X-Powered-By",
+							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		}
+	]
+}

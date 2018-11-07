@@ -1,0 +1,541 @@
+{
+	"id": "5a603d82-8038-42f5-bf61-de47de5e5698",
+	"name": "TuNave",
+	"allTests": [],
+	"timestamp": "2018-08-30T05:05:30.225Z",
+	"collection_id": "00a62258-72ec-4efc-853e-a3a4aaebefe4",
+	"folder_id": 0,
+	"target_type": "collection",
+	"environment_id": "0",
+	"data": [],
+	"delay": 0,
+	"count": 1,
+	"collection": {
+		"id": "00a62258-72ec-4efc-853e-a3a4aaebefe4",
+		"name": "TuNave",
+		"description": "Pruebas de los recursos Automovil y Ficha tecnica",
+		"auth": null,
+		"events": null,
+		"variables": [],
+		"order": [
+			"14410521-869e-4f0e-a761-d28f883af709",
+			"c242c94a-bc2a-461c-88cf-54b23e5dd4b6",
+			"fb739932-99de-4ab3-9461-52206e6c2aba",
+			"9c5b728c-a18d-42fc-b924-4fb9cf7856f0",
+			"d6e3305c-c08d-4669-927a-0894507b240c",
+			"a5ef86fb-7827-446e-85a3-48db6813eefe",
+			"956edbb3-8373-49b6-a7e1-124885e7130f",
+			"e913fbe3-7ef4-481c-aec5-4bb2571c1106",
+			"1cc53e45-cc80-46bd-be45-7a5cd89abc1e"
+		],
+		"folders_order": [],
+		"owner": "5207350",
+		"permissions": {},
+		"favorite": true,
+		"shared": false,
+		"type": "collection",
+		"depth": 0
+	},
+	"folder": null,
+	"environment": null,
+	"globals": [
+		{
+			"value": "Norma 461",
+			"key": "new_name_e",
+			"enabled": true
+		},
+		{
+			"value": "21",
+			"key": "new_id_e",
+			"enabled": true
+		}
+	],
+	"results": [
+		{
+			"name": "Crear Automovil",
+			"id": "14410521-869e-4f0e-a761-d28f883af709",
+			"url": "http://localhost:8080/s4_CarrosUsados-api/api/automoviles",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"name": "No genera error en el POST",
+				"status": "pass"
+			},
+			"testPassFailCounts": {
+				"No genera error en el POST": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"59"
+			],
+			"allTests": [
+				{
+					"No genera error en el POST": true
+				}
+			],
+			"time": "59",
+			"totalRequestTime": "59",
+			"iterationResults": {}
+		},
+		{
+			"name": "Obtener Automovil",
+			"id": "c242c94a-bc2a-461c-88cf-54b23e5dd4b6",
+			"url": "http://localhost:8080/s4_CarrosUsados-api/api/automoviles/123456",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"name": "No genera error en el GET individual",
+				"status": "pass"
+			},
+			"testPassFailCounts": {
+				"No genera error en el GET individual": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"5"
+			],
+			"allTests": [
+				{
+					"No genera error en el GET individual": true
+				}
+			],
+			"time": "5",
+			"totalRequestTime": "5",
+			"iterationResults": {}
+		},
+		{
+			"name": "Obtener automoviles",
+			"id": "fb739932-99de-4ab3-9461-52206e6c2aba",
+			"url": "http://localhost:8080/s4_CarrosUsados-api/api/automoviles",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"name": "No genera error en el GET todos los automoviles",
+				"status": "pass"
+			},
+			"testPassFailCounts": {
+				"No genera error en el GET todos los automoviles": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"9"
+			],
+			"allTests": [
+				{
+					"No genera error en el GET todos los automoviles": true
+				}
+			],
+			"time": "9",
+			"totalRequestTime": "9",
+			"iterationResults": {}
+		},
+		{
+			"name": "Modificar Automovil",
+			"id": "9c5b728c-a18d-42fc-b924-4fb9cf7856f0",
+			"url": "http://localhost:8080/s4_CarrosUsados-api/api/automoviles/123455",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"name": "No genera error en el Put",
+				"status": "pass"
+			},
+			"testPassFailCounts": {
+				"No genera error en el Put": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"5"
+			],
+			"allTests": [
+				{
+					"No genera error en el Put": true
+				}
+			],
+			"time": "5",
+			"totalRequestTime": "5",
+			"iterationResults": {}
+		},
+		{
+			"name": "Eliminar Automovil",
+			"id": "d6e3305c-c08d-4669-927a-0894507b240c",
+			"url": "http://localhost:8080/s4_CarrosUsados-api/api/automoviles/123455",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 204,
+				"name": "No Content",
+				"detail": {
+					"name": "No Content",
+					"detail": "The server successfully processed the request, but is not returning any content."
+				}
+			},
+			"testPassFailCounts": {},
+			"times": [
+				"4"
+			],
+			"allTests": [
+				{}
+			],
+			"time": "4",
+			"totalRequestTime": "4",
+			"iterationResults": {}
+		},
+		{
+			"name": "Crear FichaTecnica",
+			"id": "a5ef86fb-7827-446e-85a3-48db6813eefe",
+			"url": "http://localhost:8080/s4_CarrosUsados-api/api/fichastecnicas",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"name": "No genera error en el Post",
+				"status": "pass"
+			},
+			"testPassFailCounts": {
+				"No genera error en el Post": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"6"
+			],
+			"allTests": [
+				{
+					"No genera error en el Post": true
+				}
+			],
+			"time": "6",
+			"totalRequestTime": "6",
+			"iterationResults": {}
+		},
+		{
+			"name": "Obtener FichaTecnica",
+			"id": "956edbb3-8373-49b6-a7e1-124885e7130f",
+			"url": "http://localhost:8080/s4_CarrosUsados-api/api/fichastecnicas/123",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"name": "No genera error en el Get",
+				"status": "pass"
+			},
+			"testPassFailCounts": {
+				"No genera error en el Get": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"4"
+			],
+			"allTests": [
+				{
+					"No genera error en el Get": true
+				}
+			],
+			"time": "4",
+			"totalRequestTime": "4",
+			"iterationResults": {}
+		},
+		{
+			"name": "Modificar FichaTecnica",
+			"id": "e913fbe3-7ef4-481c-aec5-4bb2571c1106",
+			"url": "http://localhost:8080/s4_CarrosUsados-api/api/fichastecnicas/12345",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"name": "No genera error en el Put",
+				"status": "pass"
+			},
+			"testPassFailCounts": {
+				"No genera error en el Put": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"8"
+			],
+			"allTests": [
+				{
+					"No genera error en el Put": true
+				}
+			],
+			"time": "8",
+			"totalRequestTime": "8",
+			"iterationResults": {}
+		},
+		{
+			"name": "Eliminar FichaTecnica",
+			"id": "1cc53e45-cc80-46bd-be45-7a5cd89abc1e",
+			"url": "http://localhost:8080/s4_CarrosUsados-api/api/fichastecnicas/12345",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 204,
+				"name": "No Content",
+				"detail": {
+					"name": "No Content",
+					"detail": "The server successfully processed the request, but is not returning any content."
+				}
+			},
+			"tests": {
+				"name": "No genera error en el Delete",
+				"status": "pass"
+			},
+			"testPassFailCounts": {
+				"No genera error en el Delete": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"3"
+			],
+			"allTests": [
+				{
+					"No genera error en el Delete": true
+				}
+			],
+			"time": "3",
+			"totalRequestTime": "3",
+			"iterationResults": {}
+		}
+	],
+	"totalPass": 8,
+	"totalFail": 0,
+	"totalTime": 103,
+	"lifecycle": "done",
+	"requests": [
+		{
+			"name": "Crear Automovil",
+			"id": "14410521-869e-4f0e-a761-d28f883af709",
+			"url": "http://localhost:8080/s4_CarrosUsados-api/api/automoviles",
+			"time": "2018-08-30T05:05:30.225Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"No genera error en el POST": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Obtener Automovil",
+			"id": "c242c94a-bc2a-461c-88cf-54b23e5dd4b6",
+			"url": "http://localhost:8080/s4_CarrosUsados-api/api/automoviles/123456",
+			"time": "2018-08-30T05:05:30.225Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"No genera error en el GET individual": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Obtener automoviles",
+			"id": "fb739932-99de-4ab3-9461-52206e6c2aba",
+			"url": "http://localhost:8080/s4_CarrosUsados-api/api/automoviles",
+			"time": "2018-08-30T05:05:30.225Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"No genera error en el GET todos los automoviles": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Modificar Automovil",
+			"id": "9c5b728c-a18d-42fc-b924-4fb9cf7856f0",
+			"url": "http://localhost:8080/s4_CarrosUsados-api/api/automoviles/123455",
+			"time": "2018-08-30T05:05:30.225Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"No genera error en el Put": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Eliminar Automovil",
+			"id": "d6e3305c-c08d-4669-927a-0894507b240c",
+			"url": "http://localhost:8080/s4_CarrosUsados-api/api/automoviles/123455",
+			"time": "2018-08-30T05:05:30.225Z",
+			"responseCode": {
+				"code": 204,
+				"name": "No Content",
+				"detail": {
+					"name": "No Content",
+					"detail": "The server successfully processed the request, but is not returning any content."
+				}
+			},
+			"testPassFailCounts": {}
+		},
+		{
+			"name": "Crear FichaTecnica",
+			"id": "a5ef86fb-7827-446e-85a3-48db6813eefe",
+			"url": "http://localhost:8080/s4_CarrosUsados-api/api/fichastecnicas",
+			"time": "2018-08-30T05:05:30.225Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"No genera error en el Post": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Obtener FichaTecnica",
+			"id": "956edbb3-8373-49b6-a7e1-124885e7130f",
+			"url": "http://localhost:8080/s4_CarrosUsados-api/api/fichastecnicas/123",
+			"time": "2018-08-30T05:05:30.225Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"No genera error en el Get": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Modificar FichaTecnica",
+			"id": "e913fbe3-7ef4-481c-aec5-4bb2571c1106",
+			"url": "http://localhost:8080/s4_CarrosUsados-api/api/fichastecnicas/12345",
+			"time": "2018-08-30T05:05:30.225Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"No genera error en el Put": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Eliminar FichaTecnica",
+			"id": "1cc53e45-cc80-46bd-be45-7a5cd89abc1e",
+			"url": "http://localhost:8080/s4_CarrosUsados-api/api/fichastecnicas/12345",
+			"time": "2018-08-30T05:05:30.225Z",
+			"responseCode": {
+				"code": 204,
+				"name": "No Content",
+				"detail": {
+					"name": "No Content",
+					"detail": "The server successfully processed the request, but is not returning any content."
+				}
+			},
+			"testPassFailCounts": {
+				"No genera error en el Delete": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		}
+	],
+	"synced": false
+}
