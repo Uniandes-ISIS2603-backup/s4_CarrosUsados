@@ -1,0 +1,474 @@
+{
+	"info": {
+		"_postman_id": "4c377cd0-2715-4244-ad1e-e4019708e482",
+		"name": "PRUEBAS_PUNTOVENTA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "PostPuntoVenta",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"numVendedores\":4,\n\t\"ubicacion\":\"sds\",\n\t\"ciudad\":\"Barranquilla\",\n\t\"automovil\": [],\n\t\"calificaciones\":[]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/s4_CarrosUsados-api/api/puntos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"s4_CarrosUsados-api",
+						"api",
+						"puntos"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "PostPuntoVenta",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"disabled": false
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"numVendedores\":3,\n\t\"ubicacion\":\"sds\",\n\t\"ciudad\":\"Barranquilla\",\n\t\"calificaciones\":[{\"comentario\":\"sldkf\",\"numEstrellas\":5}]\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/s4_CarrosUsados-api/api/puntos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"s4_CarrosUsados-api",
+								"api",
+								"puntos"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "69",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 23 Sep 2018 20:39:07 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Server",
+							"value": "Payara Server  4.1.2.174 #badassfish",
+							"name": "Server",
+							"description": "A name for the server"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN",
+							"name": "X-Frame-Options",
+							"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Servlet/3.1 JSP/2.3 (Payara Server  4.1.2.174 #badassfish Java/Oracle Corporation/1.8)",
+							"name": "X-Powered-By",
+							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+						}
+					],
+					"cookie": [],
+					"body": "{\"ciudad\":\"Barranquilla\",\"id\":24,\"numVendedores\":3,\"ubicacion\":\"sds\"}"
+				}
+			]
+		},
+		{
+			"name": "GetPuntos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/s4_CarrosUsados-api/api/puntos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"s4_CarrosUsados-api",
+						"api",
+						"puntos"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GetPuntos",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:8080/s4_CarrosUsados-api/api/puntos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"s4_CarrosUsados-api",
+								"api",
+								"puntos"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "1238",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 23 Sep 2018 19:05:51 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Server",
+							"value": "Payara Server  4.1.2.174 #badassfish",
+							"name": "Server",
+							"description": "A name for the server"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN",
+							"name": "X-Frame-Options",
+							"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Servlet/3.1 JSP/2.3 (Payara Server  4.1.2.174 #badassfish Java/Oracle Corporation/1.8)",
+							"name": "X-Powered-By",
+							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+						}
+					],
+					"cookie": [],
+					"body": "[{\"type\":\"puntoVentaDetailDTO\",\"ciudad\":\"Barranquilla\",\"id\":11,\"numVendedores\":2,\"ubicacion\":\"sds\",\"calificaciones\":[]},{\"type\":\"puntoVentaDetailDTO\",\"ciudad\":\"Barranquilla\",\"id\":13,\"numVendedores\":4,\"ubicacion\":\"sds\",\"calificaciones\":[]},{\"type\":\"puntoVentaDetailDTO\",\"ciudad\":\"bogota\",\"id\":14,\"numVendedores\":5,\"calificaciones\":[]},{\"type\":\"puntoVentaDetailDTO\",\"ciudad\":\"bogota\",\"id\":15,\"numVendedores\":5,\"calificaciones\":[]},{\"type\":\"puntoVentaDetailDTO\",\"ciudad\":\"bogota\",\"id\":16,\"numVendedores\":5,\"calificaciones\":[]},{\"type\":\"puntoVentaDetailDTO\",\"ciudad\":\"Barranquilla\",\"id\":17,\"numVendedores\":3,\"ubicacion\":\"sds\",\"calificaciones\":[]},{\"type\":\"puntoVentaDetailDTO\",\"ciudad\":\"Barranquilla\",\"id\":18,\"numVendedores\":3,\"ubicacion\":\"sds\",\"calificaciones\":[]},{\"type\":\"puntoVentaDetailDTO\",\"ciudad\":\"Barranquilla\",\"id\":19,\"numVendedores\":3,\"ubicacion\":\"sds\",\"calificaciones\":[]},{\"type\":\"puntoVentaDetailDTO\",\"ciudad\":\"Barranquilla\",\"id\":20,\"numVendedores\":3,\"ubicacion\":\"sds\",\"calificaciones\":[]},{\"type\":\"puntoVentaDetailDTO\",\"ciudad\":\"Barranquilla\",\"id\":21,\"numVendedores\":2,\"ubicacion\":\"sds\",\"calificaciones\":[]},{\"type\":\"puntoVentaDetailDTO\",\"ciudad\":\"Barranquilla\",\"id\":22,\"numVendedores\":3,\"ubicacion\":\"sds\",\"calificaciones\":[]}]"
+				}
+			]
+		},
+		{
+			"name": "GetPunto",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/s4_CarrosUsados-api/api/puntos/11",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"s4_CarrosUsados-api",
+						"api",
+						"puntos",
+						"11"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GetPunto",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:8080/s4_CarrosUsados-api/api/puntos/11",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"s4_CarrosUsados-api",
+								"api",
+								"puntos",
+								"11"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "69",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 23 Sep 2018 18:36:13 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Server",
+							"value": "Payara Server  4.1.2.174 #badassfish",
+							"name": "Server",
+							"description": "A name for the server"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN",
+							"name": "X-Frame-Options",
+							"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Servlet/3.1 JSP/2.3 (Payara Server  4.1.2.174 #badassfish Java/Oracle Corporation/1.8)",
+							"name": "X-Powered-By",
+							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+						}
+					],
+					"cookie": [],
+					"body": "{\"ciudad\":\"Barranquilla\",\"id\":11,\"numVendedores\":2,\"ubicacion\":\"sds\"}"
+				}
+			]
+		},
+		{
+			"name": "DeletePunto",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/s4_CarrosUsados-api/api/puntos/10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"s4_CarrosUsados-api",
+						"api",
+						"puntos",
+						"10"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "DeletePunto",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:8080/s4_CarrosUsados-api/api/puntos/12",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"s4_CarrosUsados-api",
+								"api",
+								"puntos",
+								"12"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 19 Sep 2018 19:37:12 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Server",
+							"value": "Payara Server  4.1.2.174 #badassfish",
+							"name": "Server",
+							"description": "A name for the server"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN",
+							"name": "X-Frame-Options",
+							"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Servlet/3.1 JSP/2.3 (Payara Server  4.1.2.174 #badassfish Java/Oracle Corporation/1.8)",
+							"name": "X-Powered-By",
+							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "PutPuntoVenta",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"numVendedores\":2,\n\t\"ubicacion\":\"sds\",\n\t\"ciudad\":\"Barranquilla\",\n\t\"automovil\": [],\n\t\"calificaciones\":[]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/s4_CarrosUsados-api/api/puntos/11/calificaciones",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"s4_CarrosUsados-api",
+						"api",
+						"puntos",
+						"11",
+						"calificaciones"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "PutPuntoVenta",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"disabled": false
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"numVendedores\":2,\n\t\"ubicacion\":\"sds\",\n\t\"ciudad\":\"Cartagena\",\n\t\"calificaciones\":[]\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/s4_CarrosUsados-api/api/puntos/23",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"s4_CarrosUsados-api",
+								"api",
+								"puntos",
+								"23"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "66",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 24 Sep 2018 02:29:44 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Server",
+							"value": "Payara Server  4.1.2.174 #badassfish",
+							"name": "Server",
+							"description": "A name for the server"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN",
+							"name": "X-Frame-Options",
+							"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Servlet/3.1 JSP/2.3 (Payara Server  4.1.2.174 #badassfish Java/Oracle Corporation/1.8)",
+							"name": "X-Powered-By",
+							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+						}
+					],
+					"cookie": [],
+					"body": "{\"ciudad\":\"Cartagena\",\"id\":23,\"numVendedores\":2,\"ubicacion\":\"sds\"}"
+				}
+			]
+		}
+	]
+}

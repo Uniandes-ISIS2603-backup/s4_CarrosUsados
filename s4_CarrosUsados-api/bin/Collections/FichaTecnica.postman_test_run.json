@@ -1,0 +1,277 @@
+{
+	"id": "13de335f-f1c0-483c-ae72-c7648be392fe",
+	"name": "FichaTecnica",
+	"allTests": [],
+	"timestamp": "2018-09-24T03:03:00.292Z",
+	"collection_id": "6d1b2984-cfbd-4cfb-9423-476fa4321cd6",
+	"folder_id": 0,
+	"target_type": "collection",
+	"environment_id": "0",
+	"data": [],
+	"delay": 0,
+	"count": 1,
+	"collection": {
+		"id": "6d1b2984-cfbd-4cfb-9423-476fa4321cd6",
+		"name": "FichaTecnica",
+		"description": "",
+		"auth": null,
+		"events": null,
+		"variables": [],
+		"order": [
+			"ec7e7320-f9f4-4482-9aa2-23bc02395ba4",
+			"e0faa50c-fb5c-41be-86cd-be259471de71",
+			"ad244549-3d05-49d9-a5ec-912d7cc4059e",
+			"d0969d07-c5a4-4d27-9128-275ddeb2aec8"
+		],
+		"folders_order": [],
+		"owner": "5207350",
+		"permissions": {},
+		"favorite": false,
+		"shared": false,
+		"type": "collection",
+		"depth": 0
+	},
+	"folder": null,
+	"environment": null,
+	"globals": [
+		{
+			"value": "Norma 461",
+			"key": "new_name_e",
+			"enabled": true
+		},
+		{
+			"value": "21",
+			"key": "new_id_e",
+			"enabled": true
+		}
+	],
+	"results": [
+		{
+			"name": "Create FichaTecnica",
+			"id": "ec7e7320-f9f4-4482-9aa2-23bc02395ba4",
+			"url": "http://localhost:8080/s4_CarrosUsados-api/api/fichastecnicas",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"name": "No genera error en el POST",
+				"status": "pass"
+			},
+			"testPassFailCounts": {
+				"No genera error en el POST": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"34"
+			],
+			"allTests": [
+				{
+					"No genera error en el POST": true
+				}
+			],
+			"time": "34",
+			"totalRequestTime": "34",
+			"iterationResults": {}
+		},
+		{
+			"name": "Get FichaTecnica",
+			"id": "e0faa50c-fb5c-41be-86cd-be259471de71",
+			"url": "http://localhost:8080/s4_CarrosUsados-api/api/fichastecnicas/5",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"name": "No genera error en el GET individual",
+				"status": "pass"
+			},
+			"testPassFailCounts": {
+				"No genera error en el GET individual": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"105"
+			],
+			"allTests": [
+				{
+					"No genera error en el GET individual": true
+				}
+			],
+			"time": "105",
+			"totalRequestTime": "105",
+			"iterationResults": {}
+		},
+		{
+			"name": "Put FichaTecnica",
+			"id": "ad244549-3d05-49d9-a5ec-912d7cc4059e",
+			"url": "http://localhost:8080/s4_CarrosUsados-api/api/fichastecnicas/5",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"name": "No genera error en el Put",
+				"status": "pass"
+			},
+			"testPassFailCounts": {
+				"No genera error en el Put": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"62"
+			],
+			"allTests": [
+				{
+					"No genera error en el Put": true
+				}
+			],
+			"time": "62",
+			"totalRequestTime": "62",
+			"iterationResults": {}
+		},
+		{
+			"name": "Delete FichaTecnica",
+			"id": "d0969d07-c5a4-4d27-9128-275ddeb2aec8",
+			"url": "http://localhost:8080/s4_CarrosUsados-api/api/fichastecnicas/9",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 204,
+				"name": "No Content",
+				"detail": {
+					"name": "No Content",
+					"detail": "The server successfully processed the request, but is not returning any content."
+				}
+			},
+			"tests": {
+				"name": "No genera error en el Delete",
+				"status": "pass"
+			},
+			"testPassFailCounts": {
+				"No genera error en el Delete": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"35"
+			],
+			"allTests": [
+				{
+					"No genera error en el Delete": true
+				}
+			],
+			"time": "35",
+			"totalRequestTime": "35",
+			"iterationResults": {}
+		}
+	],
+	"totalPass": 4,
+	"totalFail": 0,
+	"totalTime": 236,
+	"lifecycle": "done",
+	"requests": [
+		{
+			"name": "Create FichaTecnica",
+			"id": "ec7e7320-f9f4-4482-9aa2-23bc02395ba4",
+			"url": "http://localhost:8080/s4_CarrosUsados-api/api/fichastecnicas",
+			"time": "2018-09-24T03:03:00.292Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"No genera error en el POST": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Get FichaTecnica",
+			"id": "e0faa50c-fb5c-41be-86cd-be259471de71",
+			"url": "http://localhost:8080/s4_CarrosUsados-api/api/fichastecnicas/5",
+			"time": "2018-09-24T03:03:00.292Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"No genera error en el GET individual": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Put FichaTecnica",
+			"id": "ad244549-3d05-49d9-a5ec-912d7cc4059e",
+			"url": "http://localhost:8080/s4_CarrosUsados-api/api/fichastecnicas/5",
+			"time": "2018-09-24T03:03:00.292Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"No genera error en el Put": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Delete FichaTecnica",
+			"id": "d0969d07-c5a4-4d27-9128-275ddeb2aec8",
+			"url": "http://localhost:8080/s4_CarrosUsados-api/api/fichastecnicas/9",
+			"time": "2018-09-24T03:03:00.292Z",
+			"responseCode": {
+				"code": 204,
+				"name": "No Content",
+				"detail": {
+					"name": "No Content",
+					"detail": "The server successfully processed the request, but is not returning any content."
+				}
+			},
+			"testPassFailCounts": {
+				"No genera error en el Delete": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		}
+	],
+	"synced": false
+}
