@@ -9,6 +9,9 @@ import co.edu.uniandes.csw.carrosUsados.dtos.FichaTecnicaDTO;
 import co.edu.uniandes.csw.carrosUsados.ejb.FichaTecnicaLogic;
 import co.edu.uniandes.csw.carrosUsados.entities.FichaTecnicaEntity;
 import co.edu.uniandes.csw.carrosUsados.exceptions.BusinessLogicException;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.faces.bean.RequestScoped;
@@ -57,7 +60,27 @@ public class FichaTecnicaResource {
         LOGGER.log(Level.INFO, "FichaTecnicaResource createFichaTecnica: output: {0}", nuevaFichaTecnicaDTO.toString());
         return nuevaFichaTecnicaDTO;
     }
-    
+
+
+    /**
+     * Busca y devuelve todos las fichas tecnicas que existen en la aplicación.
+     *
+     * @return JSONArray {@link FichaTecnicaDTO} - Las fichas tecnicas
+     * encontrados en la aplicación. Si no hay ninguno retorna una lista vacía.
+     */
+    @GET
+    public List<FichaTecnicaDTO> getFichasTecnicas() throws BusinessLogicException {
+        LOGGER.info("FichaTecnicaResource getFichasTecnicas: input: void");
+        List<FichaTecnicaDTO> lista = new ArrayList<>();
+        for (FichaTecnicaEntity entity : fichaTecnicaLogic.getFichasTecnicas())
+        {
+            lista.add(new FichaTecnicaDTO(entity));
+        }
+        LOGGER.log(Level.INFO, "FichaTecnicaResource getFichasTecnicas: output: {0}", lista.toString());
+        return lista;
+    }
+
+
     /**
      * Busca la ficha tecnica con el id asociado recibido en la URL y lo
      * devuelve.

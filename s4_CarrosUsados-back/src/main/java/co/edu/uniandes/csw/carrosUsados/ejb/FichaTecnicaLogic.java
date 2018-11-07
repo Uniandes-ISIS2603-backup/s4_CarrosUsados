@@ -5,6 +5,8 @@ import co.edu.uniandes.csw.carrosUsados.entities.FichaTecnicaEntity;
 import co.edu.uniandes.csw.carrosUsados.exceptions.BusinessLogicException;
 import co.edu.uniandes.csw.carrosUsados.persistence.AutomovilPersistence;
 import co.edu.uniandes.csw.carrosUsados.persistence.FichaTecnicaPersistence;
+
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.ejb.Stateless;
@@ -36,6 +38,18 @@ public class FichaTecnicaLogic{
         persistence.create(fichaTecnicaEntity);
         LOGGER.log(Level.INFO, "Termina proceso de creación de la ficha tecnica");
         return fichaTecnicaEntity;
+    }
+
+    /**
+     * Devuelve todos las fichas tecnicas registradas en el sistema.
+     *
+     * @return Lista de entidades de tipo ficha tecnica.
+     */
+    public List<FichaTecnicaEntity> getFichasTecnicas() {
+        LOGGER.log(Level.INFO, "Inicia proceso de consultar todas las fichas tecnicas");
+        List<FichaTecnicaEntity> fichasTecnicas = persistence.findAll();
+        LOGGER.log(Level.INFO, "Termina proceso de consultar todos los vendedores");
+        return fichasTecnicas;
     }
 
     /**
