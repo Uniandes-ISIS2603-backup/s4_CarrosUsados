@@ -3,18 +3,18 @@
    * To change this template file, choose Tools | Templates
    * and open the template in the editor.
    */
-  package co.edu.uniandes.csw.carros.usados.ejb;
+  package co.edu.uniandes.csw.carrosusados.ejb;
 
-import co.edu.uniandes.csw.carros.usados.entities.ArticuloEntity;
-import co.edu.uniandes.csw.carros.usados.exceptions.BusinessLogicException;
-import co.edu.uniandes.csw.carros.usados.persistence.ArticuloPersistence;
-import co.edu.uniandes.csw.carros.usados.persistence.AutomovilPersistence;
+  import co.edu.uniandes.csw.carrosusados.entities.ArticuloEntity;
+  import co.edu.uniandes.csw.carrosusados.exceptions.BusinessLogicException;
+  import co.edu.uniandes.csw.carrosusados.persistence.ArticuloPersistence;
+  import co.edu.uniandes.csw.carrosusados.persistence.AutomovilPersistence;
 
-import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.ejb.Stateless;
-import javax.inject.Inject;
+  import javax.ejb.Stateless;
+  import javax.inject.Inject;
+  import java.util.List;
+  import java.util.logging.Level;
+  import java.util.logging.Logger;
 
   /**
    *

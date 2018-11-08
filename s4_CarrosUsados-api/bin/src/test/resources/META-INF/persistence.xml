@@ -3,21 +3,20 @@
   <persistence-unit name="CarTeamPU" transaction-type="JTA">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <!--Toca entity por entity, exclude-unlisted-clases = false no funciona-->
-    <class>co.edu.uniandes.csw.carrosUsados.entities.AdministradorEntity</class>
-    <class>co.edu.uniandes.csw.carrosUsados.entities.ArticuloEntity</class>
-    <class>co.edu.uniandes.csw.carrosUsados.entities.AutomovilEntity</class>
-    <class>co.edu.uniandes.csw.carrosUsados.entities.CalificacionEntity</class>
-    <class>co.edu.uniandes.csw.carrosUsados.entities.ClienteEntity</class>
-    <class>co.edu.uniandes.csw.carrosUsados.entities.FacturaEntity</class>
-    <class>co.edu.uniandes.csw.carrosUsados.entities.FichaTecnicaEntity</class>
-    <class>co.edu.uniandes.csw.carrosUsados.entities.FormaDePagoEntity</class>
-    <class>co.edu.uniandes.csw.carrosUsados.entities.MarcaEntity</class>
-    <class>co.edu.uniandes.csw.carrosUsados.entities.ModeloEntity</class>
-    <class>co.edu.uniandes.csw.carrosUsados.entities.PagoEntity</class>
-    <class>co.edu.uniandes.csw.carrosUsados.entities.PersonaEntity</class>
-    <class>co.edu.uniandes.csw.carrosUsados.entities.PuntoVentaEntity</class>
-    <class>co.edu.uniandes.csw.carrosUsados.entities.UsuarioEntity</class>
-    <class>co.edu.uniandes.csw.carrosUsados.entities.VendedorEntity</class>
+    <class>co.edu.uniandes.csw.carrosusados.entities.AdministradorEntity</class>
+    <class>co.edu.uniandes.csw.carrosusados.entities.ArticuloEntity</class>
+    <class>co.edu.uniandes.csw.carrosusados.entities.AutomovilEntity</class>
+    <class>co.edu.uniandes.csw.carrosusados.entities.CalificacionEntity</class>
+    <class>co.edu.uniandes.csw.carrosusados.entities.ClienteEntity</class>
+    <class>co.edu.uniandes.csw.carrosusados.entities.FacturaEntity</class>
+    <class>co.edu.uniandes.csw.carrosusados.entities.FichaTecnicaEntity</class>
+    <class>co.edu.uniandes.csw.carrosusados.entities.FormaDePagoEntity</class>
+    <class>co.edu.uniandes.csw.carrosusados.entities.MarcaEntity</class>
+    <class>co.edu.uniandes.csw.carrosusados.entities.ModeloEntity</class>
+    <class>co.edu.uniandes.csw.carrosusados.entities.PersonaEntity</class>
+    <class>co.edu.uniandes.csw.carrosusados.entities.PuntoVentaEntity</class>
+    <class>co.edu.uniandes.csw.carrosusados.entities.UsuarioEntity</class>
+    <class>co.edu.uniandes.csw.carrosusados.entities.VendedorEntity</class>
     <exclude-unlisted-classes>true</exclude-unlisted-classes>
  <shared-cache-mode>NONE</shared-cache-mode>
     <properties>

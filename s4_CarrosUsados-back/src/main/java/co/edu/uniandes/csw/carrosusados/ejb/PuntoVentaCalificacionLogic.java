@@ -3,19 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package co.edu.uniandes.csw.carros.usados.ejb;
+ package co.edu.uniandes.csw.carrosusados.ejb;
 
-import co.edu.uniandes.csw.carros.usados.entities.CalificacionEntity;
-import co.edu.uniandes.csw.carros.usados.entities.PuntoVentaEntity;
-import co.edu.uniandes.csw.carros.usados.exceptions.BusinessLogicException;
-import co.edu.uniandes.csw.carros.usados.persistence.CalificacionPersistence;
-import co.edu.uniandes.csw.carros.usados.persistence.PuntoVentaPersistence;
+ import co.edu.uniandes.csw.carrosusados.entities.CalificacionEntity;
+ import co.edu.uniandes.csw.carrosusados.entities.PuntoVentaEntity;
+ import co.edu.uniandes.csw.carrosusados.exceptions.BusinessLogicException;
+ import co.edu.uniandes.csw.carrosusados.persistence.CalificacionPersistence;
+ import co.edu.uniandes.csw.carrosusados.persistence.PuntoVentaPersistence;
 
-import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.ejb.Stateless;
-import javax.inject.Inject;
+ import javax.ejb.Stateless;
+ import javax.inject.Inject;
+ import java.util.List;
+ import java.util.logging.Level;
+ import java.util.logging.Logger;
 
 /**
  * Clase que implementa la conexion con la persistencia para la relación entre Calificación y PuntoVenta.

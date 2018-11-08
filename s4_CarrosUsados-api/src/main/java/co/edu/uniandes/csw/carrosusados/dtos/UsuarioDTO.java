@@ -3,14 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package co.edu.uniandes.csw.carros.usados.dtos;
+package co.edu.uniandes.csw.carrosusados.dtos;
 
 /**
  *
  * @author js.bravo
  */
 
-import co.edu.uniandes.csw.carros.usados.entities.UsuarioEntity;
+import co.edu.uniandes.csw.carrosusados.entities.UsuarioEntity;
 
 import java.util.Date;
 

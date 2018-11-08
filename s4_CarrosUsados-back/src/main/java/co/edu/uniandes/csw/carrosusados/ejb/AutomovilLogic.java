@@ -3,21 +3,21 @@
    * To change this template file, choose Tools | Templates
    * and open the template in the editor.
    */
-  package co.edu.uniandes.csw.carros.usados.ejb;
+  package co.edu.uniandes.csw.carrosusados.ejb;
 
-import co.edu.uniandes.csw.carros.usados.entities.AutomovilEntity;
-import co.edu.uniandes.csw.carros.usados.entities.ModeloEntity;
-import co.edu.uniandes.csw.carros.usados.exceptions.BusinessLogicException;
-import co.edu.uniandes.csw.carros.usados.persistence.AutomovilPersistence;
-import co.edu.uniandes.csw.carros.usados.persistence.ModeloPersistence;
+  import co.edu.uniandes.csw.carrosusados.entities.AutomovilEntity;
+  import co.edu.uniandes.csw.carrosusados.entities.ModeloEntity;
+  import co.edu.uniandes.csw.carrosusados.exceptions.BusinessLogicException;
+  import co.edu.uniandes.csw.carrosusados.persistence.AutomovilPersistence;
+  import co.edu.uniandes.csw.carrosusados.persistence.ModeloPersistence;
 
-import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-import javax.ejb.Stateless;
-import javax.inject.Inject;
+  import javax.ejb.Stateless;
+  import javax.inject.Inject;
+  import java.util.List;
+  import java.util.logging.Level;
+  import java.util.logging.Logger;
+  import java.util.regex.Matcher;
+  import java.util.regex.Pattern;
 
   /**
    *

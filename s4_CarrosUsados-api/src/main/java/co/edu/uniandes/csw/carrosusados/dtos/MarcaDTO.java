@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package co.edu.uniandes.csw.carros.usados.dtos;
+package co.edu.uniandes.csw.carrosusados.dtos;
 
-import co.edu.uniandes.csw.carros.usados.entities.MarcaEntity;
+import co.edu.uniandes.csw.carrosusados.entities.MarcaEntity;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 

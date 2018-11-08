@@ -3,14 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package co.edu.uniandes.csw.carros.usados.entities;
-
-import java.io.Serializable;
-import java.util.List;
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
+package co.edu.uniandes.csw.carrosusados.entities;
 
 import uk.co.jemos.podam.common.PodamExclude;
+
+import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+import java.io.Serializable;
+import java.util.List;
 
 /**
  *

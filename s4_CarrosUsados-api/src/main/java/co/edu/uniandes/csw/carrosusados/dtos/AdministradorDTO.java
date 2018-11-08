@@ -4,10 +4,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package co.edu.uniandes.csw.carros.usados.dtos;
+package co.edu.uniandes.csw.carrosusados.dtos;
 
-import co.edu.uniandes.csw.carros.usados.entities.AdministradorEntity;
-import co.edu.uniandes.csw.carros.usados.entities.PuntoVentaEntity;
+import co.edu.uniandes.csw.carrosusados.entities.AdministradorEntity;
+import co.edu.uniandes.csw.carrosusados.entities.PuntoVentaEntity;
 
 import java.io.Serializable;
 import java.util.ArrayList;

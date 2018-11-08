@@ -3,15 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package co.edu.uniandes.csw.carros.usados.entities;
+package co.edu.uniandes.csw.carrosusados.entities;
 
-import java.io.Serializable;
-import java.util.Date;
+import uk.co.jemos.podam.common.PodamExclude;
+
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import uk.co.jemos.podam.common.PodamExclude;
+import java.io.Serializable;
+import java.util.Date;
 
 /**
  * Clase que representa una calificación en la persistencia y permite su

@@ -3,19 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package co.edu.uniandes.csw.carros.usados.test.logic;
+package co.edu.uniandes.csw.carrosusados.test.logic;
 
 
-import co.edu.uniandes.csw.carros.usados.ejb.CalificacionLogic;
-import co.edu.uniandes.csw.carros.usados.entities.CalificacionEntity;
-import co.edu.uniandes.csw.carros.usados.exceptions.BusinessLogicException;
-import co.edu.uniandes.csw.carros.usados.persistence.CalificacionPersistence;
-import java.util.ArrayList;
-import java.util.List;
-import javax.inject.Inject;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.transaction.UserTransaction;
+import co.edu.uniandes.csw.carrosusados.ejb.CalificacionLogic;
+import co.edu.uniandes.csw.carrosusados.entities.CalificacionEntity;
+import co.edu.uniandes.csw.carrosusados.exceptions.BusinessLogicException;
+import co.edu.uniandes.csw.carrosusados.persistence.CalificacionPersistence;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.shrinkwrap.api.ShrinkWrap;
@@ -26,6 +20,13 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import uk.co.jemos.podam.api.PodamFactory;
 import uk.co.jemos.podam.api.PodamFactoryImpl;
+
+import javax.inject.Inject;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.transaction.UserTransaction;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *

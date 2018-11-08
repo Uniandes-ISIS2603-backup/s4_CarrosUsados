@@ -3,16 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package co.edu.uniandes.csw.carros.usados.persistence;
+package co.edu.uniandes.csw.carrosusados.persistence;
 
-import co.edu.uniandes.csw.carros.usados.entities.ArticuloEntity;
-import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import co.edu.uniandes.csw.carrosusados.entities.ArticuloEntity;
+
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 /**
  *
  * @author estudiante

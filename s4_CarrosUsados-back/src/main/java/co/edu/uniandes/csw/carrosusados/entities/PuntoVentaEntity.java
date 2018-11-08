@@ -3,17 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package co.edu.uniandes.csw.carros.usados.entities;
+package co.edu.uniandes.csw.carrosusados.entities;
 
+import uk.co.jemos.podam.common.PodamExclude;
+
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
-import javax.persistence.ManyToOne;
-import uk.co.jemos.podam.common.PodamExclude;
 
 /**
   * Clase que representa un punto de venta en la persistencia y permite su

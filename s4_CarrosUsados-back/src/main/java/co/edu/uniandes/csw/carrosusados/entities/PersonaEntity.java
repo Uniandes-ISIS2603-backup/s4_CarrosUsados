@@ -1,4 +1,4 @@
-package co.edu.uniandes.csw.carros.usados.entities;
+package co.edu.uniandes.csw.carrosusados.entities;
 
 import javax.persistence.Entity;
 import java.io.Serializable;
