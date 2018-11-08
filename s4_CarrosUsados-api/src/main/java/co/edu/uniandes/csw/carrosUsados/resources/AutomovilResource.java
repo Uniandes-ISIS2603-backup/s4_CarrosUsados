@@ -126,7 +126,7 @@ public class AutomovilResource {
     public AutomovilDetailDTO updateAutomovil(@PathParam("modeloId") Long modeloId, @PathParam("automovilesId") Long automovilesId, AutomovilDTO automovil) throws BusinessLogicException {
         LOGGER.log(Level.INFO, "AutomovilResource updateAutomovil: input: id: {0} , automovil: {1}", new Object[]{modeloId,automovilesId, automovil.toString()});
         automovil.setId(automovilesId);
-        if (automovilesId.equals(automovil.getId())) {
+        if (!automovilesId.equals(automovil.getId())) {
             throw new BusinessLogicException("Los IDs no coinciden");
         }
         AutomovilEntity automovilEntity = automovilLogic.getAutomovil(modeloId, automovilesId);
