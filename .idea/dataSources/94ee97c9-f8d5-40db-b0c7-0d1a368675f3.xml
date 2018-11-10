@@ -53,12 +53,12 @@
       <Position>5</Position>
       <DataType>VARCHAR(255)|12s</DataType>
     </column>
-    <index id="29" parent="13" name="SQL181020122101830">
+    <index id="29" parent="13" name="SQL181106160053550">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="30" parent="13" name="SQL181020122101830">
+    <key id="30" parent="13" name="SQL181106160053550">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
@@ -73,21 +73,21 @@
       <DataType>BIGINT|-5s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="33" parent="14" name="SQL181020122101880">
+    <index id="33" parent="14" name="SQL181106160053810">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>CLIENTES_ID
 ARTICULOS_ID</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="34" parent="14" name="SQL181020122102080">
+    <index id="34" parent="14" name="SQL181106160054310">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>CLIENTES_ID</ColNames>
     </index>
-    <index id="35" parent="14" name="SQL181020122102110">
+    <index id="35" parent="14" name="SQL181106160054410">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ARTICULOS_ID</ColNames>
     </index>
-    <key id="36" parent="14" name="SQL181020122101880">
+    <key id="36" parent="14" name="SQL181106160053810">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>CLIENTES_ID
 ARTICULOS_ID</ColNames>
@@ -97,14 +97,14 @@ ARTICULOS_ID</ColNames>
       <ColNames>CLIENTES_ID</ColNames>
       <RefSchemaName>APP</RefSchemaName>
       <RefTableName>PERSONAENTITY</RefTableName>
-      <RefKeyName>SQL181020122101650</RefKeyName>
+      <RefKeyName>SQL181106160051730</RefKeyName>
       <RefColNames>ID</RefColNames>
     </foreign-key>
     <foreign-key id="38" parent="14" name="RTCLNTTYPRSNRTCLSD">
       <ColNames>ARTICULOS_ID</ColNames>
       <RefSchemaName>APP</RefSchemaName>
       <RefTableName>ARTICULOENTITY</RefTableName>
-      <RefKeyName>SQL181020122101830</RefKeyName>
+      <RefKeyName>SQL181106160053550</RefKeyName>
       <RefColNames>ID</RefColNames>
     </foreign-key>
     <column id="39" parent="15" name="ID">
@@ -166,32 +166,32 @@ ARTICULOS_ID</ColNames>
       <Position>14</Position>
       <DataType>BIGINT|-5s</DataType>
     </column>
-    <index id="53" parent="15" name="SQL181020122101730">
+    <index id="53" parent="15" name="SQL181106160052790">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="54" parent="15" name="SQL181020122101950">
+    <index id="54" parent="15" name="SQL181106160053970">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>MODELOASOCIADO_ID</ColNames>
     </index>
-    <index id="55" parent="15" name="SQL181020122101930">
+    <index id="55" parent="15" name="SQL181106160053850">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>VENDEDOR_ID</ColNames>
     </index>
-    <index id="56" parent="15" name="SQL181020122101990">
+    <index id="56" parent="15" name="SQL181106160054050">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ARTICULO_ID</ColNames>
     </index>
-    <index id="57" parent="15" name="SQL181020122101940">
+    <index id="57" parent="15" name="SQL181106160053910">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>FICHATECNICA_ID</ColNames>
     </index>
-    <index id="58" parent="15" name="SQL181020122101970">
+    <index id="58" parent="15" name="SQL181106160054010">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>PUNTOVENTA_ID</ColNames>
     </index>
-    <key id="59" parent="15" name="SQL181020122101730">
+    <key id="59" parent="15" name="SQL181106160052790">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
@@ -200,35 +200,35 @@ ARTICULOS_ID</ColNames>
       <ColNames>MODELOASOCIADO_ID</ColNames>
       <RefSchemaName>APP</RefSchemaName>
       <RefTableName>MODELOENTITY</RefTableName>
-      <RefKeyName>SQL181020122101860</RefKeyName>
+      <RefKeyName>SQL181106160053680</RefKeyName>
       <RefColNames>ID</RefColNames>
     </foreign-key>
     <foreign-key id="61" parent="15" name="TMVILENTITYVNDDRID">
       <ColNames>VENDEDOR_ID</ColNames>
       <RefSchemaName>APP</RefSchemaName>
       <RefTableName>PERSONAENTITY</RefTableName>
-      <RefKeyName>SQL181020122101650</RefKeyName>
+      <RefKeyName>SQL181106160051730</RefKeyName>
       <RefColNames>ID</RefColNames>
     </foreign-key>
     <foreign-key id="62" parent="15" name="TMVILENTITYRTCLOID">
       <ColNames>ARTICULO_ID</ColNames>
       <RefSchemaName>APP</RefSchemaName>
       <RefTableName>ARTICULOENTITY</RefTableName>
-      <RefKeyName>SQL181020122101830</RefKeyName>
+      <RefKeyName>SQL181106160053550</RefKeyName>
       <RefColNames>ID</RefColNames>
     </foreign-key>
     <foreign-key id="63" parent="15" name="TMVLNTITYFCHTCNCID">
       <ColNames>FICHATECNICA_ID</ColNames>
       <RefSchemaName>APP</RefSchemaName>
       <RefTableName>FICHATECNICAENTITY</RefTableName>
-      <RefKeyName>SQL181020122101790</RefKeyName>
+      <RefKeyName>SQL181106160053110</RefKeyName>
       <RefColNames>ID</RefColNames>
     </foreign-key>
     <foreign-key id="64" parent="15" name="TMVLNTITYPNTVNTAID">
       <ColNames>PUNTOVENTA_ID</ColNames>
       <RefSchemaName>APP</RefSchemaName>
       <RefTableName>PUNTOVENTAENTITY</RefTableName>
-      <RefKeyName>SQL181020122101750</RefKeyName>
+      <RefKeyName>SQL181106160053040</RefKeyName>
       <RefColNames>ID</RefColNames>
     </foreign-key>
     <column id="65" parent="16" name="ID">
@@ -258,20 +258,20 @@ ARTICULOS_ID</ColNames>
       <Position>6</Position>
       <DataType>BIGINT|-5s</DataType>
     </column>
-    <index id="71" parent="16" name="SQL181020122101810">
+    <index id="71" parent="16" name="SQL181106160053330">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="72" parent="16" name="SQL181020122102040">
+    <index id="72" parent="16" name="SQL181106160054210">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>AUTOMOVIL_ID</ColNames>
     </index>
-    <index id="73" parent="16" name="SQL181020122102050">
+    <index id="73" parent="16" name="SQL181106160054240">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>PUNTOVENTA_ID</ColNames>
     </index>
-    <key id="74" parent="16" name="SQL181020122101810">
+    <key id="74" parent="16" name="SQL181106160053330">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
@@ -280,14 +280,14 @@ ARTICULOS_ID</ColNames>
       <ColNames>AUTOMOVIL_ID</ColNames>
       <RefSchemaName>APP</RefSchemaName>
       <RefTableName>AUTOMOVILENTITY</RefTableName>
-      <RefKeyName>SQL181020122101730</RefKeyName>
+      <RefKeyName>SQL181106160052790</RefKeyName>
       <RefColNames>ID</RefColNames>
     </foreign-key>
     <foreign-key id="76" parent="16" name="CLFCCNNTITYPNTVNTD">
       <ColNames>PUNTOVENTA_ID</ColNames>
       <RefSchemaName>APP</RefSchemaName>
       <RefTableName>PUNTOVENTAENTITY</RefTableName>
-      <RefKeyName>SQL181020122101750</RefKeyName>
+      <RefKeyName>SQL181106160053040</RefKeyName>
       <RefColNames>ID</RefColNames>
     </foreign-key>
     <column id="77" parent="17" name="ID">
@@ -317,16 +317,16 @@ ARTICULOS_ID</ColNames>
       <Position>6</Position>
       <DataType>BIGINT|-5s</DataType>
     </column>
-    <index id="83" parent="17" name="SQL181020122101700">
+    <index id="83" parent="17" name="SQL181106160052970">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="84" parent="17" name="SQL181020122101920">
+    <index id="84" parent="17" name="SQL181106160054100">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ARTICULO_ID</ColNames>
     </index>
-    <key id="85" parent="17" name="SQL181020122101700">
+    <key id="85" parent="17" name="SQL181106160052970">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
@@ -335,7 +335,7 @@ ARTICULOS_ID</ColNames>
       <ColNames>ARTICULO_ID</ColNames>
       <RefSchemaName>APP</RefSchemaName>
       <RefTableName>ARTICULOENTITY</RefTableName>
-      <RefKeyName>SQL181020122101830</RefKeyName>
+      <RefKeyName>SQL181106160053550</RefKeyName>
       <RefColNames>ID</RefColNames>
     </foreign-key>
     <column id="87" parent="18" name="ID">
@@ -372,12 +372,12 @@ ARTICULOS_ID</ColNames>
       <Position>7</Position>
       <DataType>VARCHAR(255)|12s</DataType>
     </column>
-    <index id="94" parent="18" name="SQL181020122101790">
+    <index id="94" parent="18" name="SQL181106160053110">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="95" parent="18" name="SQL181020122101790">
+    <key id="95" parent="18" name="SQL181106160053110">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
@@ -413,16 +413,16 @@ ARTICULOS_ID</ColNames>
       <Position>7</Position>
       <DataType>BIGINT|-5s</DataType>
     </column>
-    <index id="103" parent="19" name="SQL181020122101770">
+    <index id="103" parent="19" name="SQL181106160053250">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="104" parent="19" name="SQL181020122102030">
+    <index id="104" parent="19" name="SQL181106160054180">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>FACTURA_ID</ColNames>
     </index>
-    <key id="105" parent="19" name="SQL181020122101770">
+    <key id="105" parent="19" name="SQL181106160053250">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
@@ -431,7 +431,7 @@ ARTICULOS_ID</ColNames>
       <ColNames>FACTURA_ID</ColNames>
       <RefSchemaName>APP</RefSchemaName>
       <RefTableName>FACTURAENTITY</RefTableName>
-      <RefKeyName>SQL181020122101700</RefKeyName>
+      <RefKeyName>SQL181106160052970</RefKeyName>
       <RefColNames>ID</RefColNames>
     </foreign-key>
     <column id="107" parent="20" name="ID">
@@ -453,12 +453,12 @@ ARTICULOS_ID</ColNames>
       <Position>4</Position>
       <DataType>VARCHAR(255)|12s</DataType>
     </column>
-    <index id="111" parent="20" name="SQL181020122101820">
+    <index id="111" parent="20" name="SQL181106160053440">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="112" parent="20" name="SQL181020122101820">
+    <key id="112" parent="20" name="SQL181106160053440">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
@@ -486,16 +486,16 @@ ARTICULOS_ID</ColNames>
       <Position>5</Position>
       <DataType>BIGINT|-5s</DataType>
     </column>
-    <index id="118" parent="21" name="SQL181020122101860">
+    <index id="118" parent="21" name="SQL181106160053680">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="119" parent="21" name="SQL181020122102070">
+    <index id="119" parent="21" name="SQL181106160054270">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>MARCA_ID</ColNames>
     </index>
-    <key id="120" parent="21" name="SQL181020122101860">
+    <key id="120" parent="21" name="SQL181106160053680">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
@@ -504,7 +504,7 @@ ARTICULOS_ID</ColNames>
       <ColNames>MARCA_ID</ColNames>
       <RefSchemaName>APP</RefSchemaName>
       <RefTableName>MARCAENTITY</RefTableName>
-      <RefKeyName>SQL181020122101820</RefKeyName>
+      <RefKeyName>SQL181106160053440</RefKeyName>
       <RefColNames>ID</RefColNames>
     </foreign-key>
     <column id="122" parent="22" name="ID">
@@ -558,12 +558,12 @@ ARTICULOS_ID</ColNames>
       <Position>12</Position>
       <DataType>TIMESTAMP|93s</DataType>
     </column>
-    <index id="134" parent="22" name="SQL181020122101650">
+    <index id="134" parent="22" name="SQL181106160051730">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="135" parent="22" name="SQL181020122101650">
+    <key id="135" parent="22" name="SQL181106160051730">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
@@ -579,36 +579,36 @@ ARTICULOS_ID</ColNames>
       <Position>2</Position>
       <DataType>VARCHAR(255)|12s</DataType>
     </column>
-    <column id="138" parent="23" name="NUMEMPLEADOS">
+    <column id="138" parent="23" name="LATITUD">
       <Position>3</Position>
+      <DataType>DOUBLE|8s</DataType>
+    </column>
+    <column id="139" parent="23" name="LONGITUD">
+      <Position>4</Position>
+      <DataType>DOUBLE|8s</DataType>
+    </column>
+    <column id="140" parent="23" name="NUMEMPLEADOS">
+      <Position>5</Position>
       <DataType>INTEGER|4s</DataType>
     </column>
-    <column id="139" parent="23" name="UBICACION">
-      <Position>4</Position>
+    <column id="141" parent="23" name="UBICACION">
+      <Position>6</Position>
       <DataType>VARCHAR(255)|12s</DataType>
     </column>
-    <column id="140" parent="23" name="ADMINISTRADOR_ID">
-      <Position>5</Position>
+    <column id="142" parent="23" name="ADMINISTRADOR_ID">
+      <Position>7</Position>
       <DataType>BIGINT|-5s</DataType>
     </column>
-    <column id="141" parent="23" name="LATITUD">
-      <Position>6</Position>
-      <DataType>DOUBLE|8s</DataType>
-    </column>
-    <column id="142" parent="23" name="LONGITUD">
-      <Position>7</Position>
-      <DataType>DOUBLE|8s</DataType>
-    </column>
-    <index id="143" parent="23" name="SQL181020122101750">
+    <index id="143" parent="23" name="SQL181106160053040">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="144" parent="23" name="SQL181020122102020">
+    <index id="144" parent="23" name="SQL181106160054140">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ADMINISTRADOR_ID</ColNames>
     </index>
-    <key id="145" parent="23" name="SQL181020122101750">
+    <key id="145" parent="23" name="SQL181106160053040">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
@@ -617,7 +617,7 @@ ARTICULOS_ID</ColNames>
       <ColNames>ADMINISTRADOR_ID</ColNames>
       <RefSchemaName>APP</RefSchemaName>
       <RefTableName>PERSONAENTITY</RefTableName>
-      <RefKeyName>SQL181020122101650</RefKeyName>
+      <RefKeyName>SQL181106160051730</RefKeyName>
       <RefColNames>ID</RefColNames>
     </foreign-key>
   </database-model>

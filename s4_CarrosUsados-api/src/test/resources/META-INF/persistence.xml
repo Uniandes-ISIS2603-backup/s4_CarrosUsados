@@ -13,7 +13,6 @@
       <class>co.edu.uniandes.csw.carrosusados.entities.FormaDePagoEntity</class>
       <class>co.edu.uniandes.csw.carrosusados.entities.MarcaEntity</class>
       <class>co.edu.uniandes.csw.carrosusados.entities.ModeloEntity</class>
-    <class>co.edu.uniandes.csw.carrosUsados.entities.PagoEntity</class>
       <class>co.edu.uniandes.csw.carrosusados.entities.PersonaEntity</class>
       <class>co.edu.uniandes.csw.carrosusados.entities.PuntoVentaEntity</class>
       <class>co.edu.uniandes.csw.carrosusados.entities.UsuarioEntity</class>
