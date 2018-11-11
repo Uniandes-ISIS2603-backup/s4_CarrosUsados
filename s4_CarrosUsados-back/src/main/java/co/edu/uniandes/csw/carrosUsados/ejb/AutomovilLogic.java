@@ -132,13 +132,13 @@ import javax.inject.Inject;
         }
         if(!validateNumChasis(automovilEntity.getNumChasis())){
           throw new BusinessLogicException("El numero de chasis del automovil no es valido");
-        }
+        }/*
         if(persistence.findByPlaca(automovilEntity.getPlaca()) != null){
           throw new BusinessLogicException("Ya existe un automovil con la misma placa");
         }
         if(persistence.findByNumChasis(automovilEntity.getNumChasis()) != null){
           throw new BusinessLogicException("Ya existe un automovil con el mismo numero de chasis");
-        }
+        }*/
         
         persistence.update(automovilEntity);
         LOGGER.log(Level.INFO, "Termina proceso de actualizacion de un automovil");
