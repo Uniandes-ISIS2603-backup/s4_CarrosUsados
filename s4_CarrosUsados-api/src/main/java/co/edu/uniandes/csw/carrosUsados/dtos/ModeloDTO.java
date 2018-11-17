@@ -15,6 +15,7 @@ import java.io.Serializable;
 public class ModeloDTO implements Serializable{
     
     private Long id;
+    private String nombre;
     private int num_puertas;
     private String transmision;
     private int centimetros_cubicos;
@@ -29,6 +30,7 @@ public class ModeloDTO implements Serializable{
     public ModeloDTO(ModeloEntity modeloEntity){
         
         this.id = modeloEntity.getId();
+        this.nombre = modeloEntity.getNombre();
         this.num_puertas = modeloEntity.getNum_puertas();
         this.transmision = modeloEntity.getTransmision();
         this.centimetros_cubicos = modeloEntity.getCentrimetros_cubicos();
@@ -43,6 +45,7 @@ public class ModeloDTO implements Serializable{
         ModeloEntity entity = new ModeloEntity();
         
         entity.setId(this.id);
+        entity.setNombre(this.nombre);
         entity.setNum_puertas(this.num_puertas);
         entity.setTransmision(this.transmision);
         entity.setCentrimetros_cubicos(this.centimetros_cubicos);
@@ -85,6 +88,15 @@ public class ModeloDTO implements Serializable{
     public void setCentimetros_cubicos(int centimetros_cubicos) {
         this.centimetros_cubicos = centimetros_cubicos;
     }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+    
 
     public MarcaDTO getMarca() {
         return marca;
