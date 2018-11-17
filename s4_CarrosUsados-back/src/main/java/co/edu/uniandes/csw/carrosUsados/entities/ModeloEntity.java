@@ -21,6 +21,11 @@ import uk.co.jemos.podam.common.PodamExclude;
 public class ModeloEntity extends BaseEntity implements Serializable{
     
     /**
+     * nombre del modelo del automovil.
+    */
+    private String nombre;
+    
+    /**
      * numero de puertas del automovil.
     */
     private int num_puertas;
@@ -117,6 +122,24 @@ public class ModeloEntity extends BaseEntity implements Serializable{
     public void setMarca(MarcaEntity marca){
         this.marca = marca;
     }
+
+    /**
+     * Retorna el nombre del modelo del automovil.
+     * @return el nombre
+     */
+    public String getNombre() {
+        return nombre;
+    }
+
+    /**
+     * Actualiza el nombre del modelo del automovil.
+     * @param marca
+     */
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+    
+    
     
     /**
      * Retorna los automoviles relacionados con el modelo.
