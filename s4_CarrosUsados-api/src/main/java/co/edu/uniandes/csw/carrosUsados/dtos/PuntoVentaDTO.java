@@ -22,7 +22,7 @@ import java.util.List;
  */
 public class PuntoVentaDTO implements Serializable {
 
-    private int numVendedores;
+    private int numeroVendedores;
     private String ubicacion;
     private String ciudad;
     private Double latitud;
@@ -44,7 +44,7 @@ public class PuntoVentaDTO implements Serializable {
      * @param puntoVenta Entity: Es la entidad que se va a convertir a DTO
      */
     public PuntoVentaDTO(PuntoVentaEntity puntoVenta) {
-        this.numVendedores = puntoVenta.getNumEmpleados();
+        this.numeroVendedores = puntoVenta.getNumEmpleados();
         this.ubicacion = puntoVenta.getUbicacion();
         this.ciudad = puntoVenta.getCiudad();
         this.id = puntoVenta.getId();
@@ -62,7 +62,7 @@ public class PuntoVentaDTO implements Serializable {
     {
         PuntoVentaEntity entity= new PuntoVentaEntity();
         entity.setCiudad(this.ciudad);
-        entity.setNumEmpleados(numVendedores);
+        entity.setNumEmpleados(numeroVendedores);
         entity.setUbicacion(this.ubicacion);
         entity.setLatitud(this.latitud);
         entity.setLongitud(this.longitud);
@@ -77,7 +77,7 @@ public class PuntoVentaDTO implements Serializable {
      * @param num  número nuevo de vendedores
      */
     public void setNumVendedores(int num) {
-        this.numVendedores = num;
+        this.numeroVendedores = num;
     }
 
    /**
@@ -87,7 +87,7 @@ public class PuntoVentaDTO implements Serializable {
      * 
      */
     public int getNumVendedores() {
-        return numVendedores;
+        return numeroVendedores;
     }
 
       /**
