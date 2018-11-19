@@ -6,7 +6,12 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c7a0e589-e472-4569-b807-53a47d4e68e9" name="Default Changelist" comment="" />
+    <list default="true" id="c7a0e589-e472-4569-b807-53a47d4e68e9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/s4_CarrosUsados-api/s4_carTeam-api.iml" beforeDir="false" afterPath="$PROJECT_DIR$/s4_CarrosUsados-api/s4_carTeam-api.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/s4_CarrosUsados-back/s4_carTeam-back.iml" beforeDir="false" afterPath="$PROJECT_DIR$/s4_CarrosUsados-back/s4_carTeam-back.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/s4_CarrosUsados-back/src/main/java/co/edu/uniandes/csw/carrosUsados/entities/PuntoVentaEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/s4_CarrosUsados-back/src/main/java/co/edu/uniandes/csw/carrosUsados/entities/PuntoVentaEntity.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/s4_CarrosUsados-api/target/" />
     <ignored path="$PROJECT_DIR$/s4_CarrosUsados-back/target/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -130,21 +135,63 @@
       <usages-collector id="statistics.vcs.git.usages" />
       <usages-collector id="statistics.js.language.service.starts" />
     </session>
+    <session id="-973273614">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="java" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JAVA" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="25" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="25" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FavoritesManager">
     <favorites_list name="s4_carTeam" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/s4_CarrosUsados-back/src/test/java/co/edu/uniandes/csw/carrosUsados/test/logic/AutomovilLogicTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="283">
-              <caret line="237" lean-forward="true" selection-start-line="237" selection-end-line="237" />
-              <folding>
-                <element signature="e#1621#1638#0" expanded="true" />
-                <element signature="e#1702#1716#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="324">
+              <caret line="237" selection-start-line="237" selection-end-line="237" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/s4_CarrosUsados-back/src/main/java/co/edu/uniandes/csw/carrosUsados/entities/PuntoVentaEntity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1305">
+              <caret line="132" column="26" selection-start-line="132" selection-start-column="26" selection-end-line="132" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/s4_CarrosUsados-api/src/main/java/co/edu/uniandes/csw/carrosUsados/dtos/PuntoVentaDTO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-439">
+              <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -152,7 +199,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/s4_CarrosUsados-back/src/main/java/co/edu/uniandes/csw/carrosUsados/ejb/AutomovilLogic.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
+            <state relative-caret-position="2115">
               <caret line="156" column="65" selection-start-line="156" selection-start-column="65" selection-end-line="156" selection-end-column="65" />
             </state>
           </provider>
@@ -161,26 +208,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/s4_CarrosUsados-back/src/main/java/co/edu/uniandes/csw/carrosUsados/persistence/AutomovilPersistence.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2010">
+            <state relative-caret-position="2430">
               <caret line="174" selection-start-line="174" selection-end-line="174" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/fish/payara/extras/payara-embedded-all/4.1.2.181/payara-embedded-all-4.1.2.181-sources.jar!/org/glassfish/ejb/security/application/EJBSecurityManager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15765">
-              <caret line="1152" selection-start-line="1152" selection-end-line="1152" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/fish/payara/extras/payara-embedded-all/4.1.2.181/payara-embedded-all-4.1.2.181-sources.jar!/com/sun/ejb/containers/interceptors/InterceptorManager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="12360">
-              <caret line="894" selection-start-line="894" selection-end-line="894" />
             </state>
           </provider>
         </entry>
@@ -258,7 +287,6 @@
         <option value="$PROJECT_DIR$/s4_CarrosUsados-back/src/main/java/co/edu/uniandes/csw/carrosUsados/entities/PersonaEntity.java" />
         <option value="$PROJECT_DIR$/s4_CarrosUsados-back/src/test/java/co/edu/uniandes/csw/carrosUsados/test/logic/ClienteLogicTest.java" />
         <option value="$PROJECT_DIR$/s4_CarrosUsados-api/src/main/java/co/edu/uniandes/csw/carrosUsados/dtos/VendedorDTO.java" />
-        <option value="$PROJECT_DIR$/s4_CarrosUsados-back/src/main/java/co/edu/uniandes/csw/carrosUsados/entities/PuntoVentaEntity.java" />
         <option value="$PROJECT_DIR$/s4_CarrosUsados-api/src/main/java/co/edu/uniandes/csw/carrosUsados/dtos/AdministradorDTO.java" />
         <option value="$PROJECT_DIR$/s4_CarrosUsados-back/src/test/java/co/edu/uniandes/csw/carrosUsados/test/persistence/AdministradorPersistenceTest.java" />
         <option value="$PROJECT_DIR$/s4_CarrosUsados-back/src/main/java/co/edu/uniandes/csw/carrosUsados/persistence/AdministradorPersistence.java" />
@@ -277,6 +305,7 @@
         <option value="$PROJECT_DIR$/s4_CarrosUsados-back/src/main/java/co/edu/uniandes/csw/carrosUsados/persistence/AutomovilPersistence.java" />
         <option value="$PROJECT_DIR$/s4_CarrosUsados-back/src/main/java/co/edu/uniandes/csw/carrosUsados/ejb/AutomovilLogic.java" />
         <option value="$PROJECT_DIR$/s4_CarrosUsados-back/src/test/java/co/edu/uniandes/csw/carrosUsados/test/logic/AutomovilLogicTest.java" />
+        <option value="$PROJECT_DIR$/s4_CarrosUsados-back/src/main/java/co/edu/uniandes/csw/carrosUsados/entities/PuntoVentaEntity.java" />
       </list>
     </option>
   </component>
@@ -309,64 +338,109 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="s4_carTeam" type="b2602c69:ProjectViewProjectNode" />
+              <item name="s4_CarrosUsados" type="b2602c69:ProjectViewProjectNode" />
               <item name="s4_CarrosUsados" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="s4_carTeam" type="b2602c69:ProjectViewProjectNode" />
+              <item name="s4_CarrosUsados" type="b2602c69:ProjectViewProjectNode" />
               <item name="s4_CarrosUsados" type="462c0819:PsiDirectoryNode" />
-              <item name="s4_CarrosUsados-back" type="462c0819:PsiDirectoryNode" />
+              <item name="s4_CarrosUsados-api" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="s4_carTeam" type="b2602c69:ProjectViewProjectNode" />
+              <item name="s4_CarrosUsados" type="b2602c69:ProjectViewProjectNode" />
               <item name="s4_CarrosUsados" type="462c0819:PsiDirectoryNode" />
-              <item name="s4_CarrosUsados-back" type="462c0819:PsiDirectoryNode" />
+              <item name="s4_CarrosUsados-api" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="s4_carTeam" type="b2602c69:ProjectViewProjectNode" />
+              <item name="s4_CarrosUsados" type="b2602c69:ProjectViewProjectNode" />
               <item name="s4_CarrosUsados" type="462c0819:PsiDirectoryNode" />
-              <item name="s4_CarrosUsados-back" type="462c0819:PsiDirectoryNode" />
+              <item name="s4_CarrosUsados-api" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="s4_carTeam" type="b2602c69:ProjectViewProjectNode" />
+              <item name="s4_CarrosUsados" type="b2602c69:ProjectViewProjectNode" />
               <item name="s4_CarrosUsados" type="462c0819:PsiDirectoryNode" />
-              <item name="s4_CarrosUsados-back" type="462c0819:PsiDirectoryNode" />
+              <item name="s4_CarrosUsados-api" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="s4_carTeam" type="b2602c69:ProjectViewProjectNode" />
+              <item name="s4_CarrosUsados" type="b2602c69:ProjectViewProjectNode" />
               <item name="s4_CarrosUsados" type="462c0819:PsiDirectoryNode" />
-              <item name="s4_CarrosUsados-back" type="462c0819:PsiDirectoryNode" />
+              <item name="s4_CarrosUsados-api" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="carrosUsados" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="s4_carTeam" type="b2602c69:ProjectViewProjectNode" />
+              <item name="s4_CarrosUsados" type="b2602c69:ProjectViewProjectNode" />
+              <item name="s4_CarrosUsados" type="462c0819:PsiDirectoryNode" />
+              <item name="s4_CarrosUsados-api" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="carrosUsados" type="462c0819:PsiDirectoryNode" />
+              <item name="dtos" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="s4_CarrosUsados" type="b2602c69:ProjectViewProjectNode" />
+              <item name="s4_CarrosUsados" type="462c0819:PsiDirectoryNode" />
+              <item name="s4_CarrosUsados-back" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="s4_CarrosUsados" type="b2602c69:ProjectViewProjectNode" />
               <item name="s4_CarrosUsados" type="462c0819:PsiDirectoryNode" />
               <item name="s4_CarrosUsados-back" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="s4_CarrosUsados" type="b2602c69:ProjectViewProjectNode" />
+              <item name="s4_CarrosUsados" type="462c0819:PsiDirectoryNode" />
+              <item name="s4_CarrosUsados-back" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="s4_CarrosUsados" type="b2602c69:ProjectViewProjectNode" />
+              <item name="s4_CarrosUsados" type="462c0819:PsiDirectoryNode" />
+              <item name="s4_CarrosUsados-back" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="logic" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="s4_CarrosUsados" type="b2602c69:ProjectViewProjectNode" />
+              <item name="s4_CarrosUsados" type="462c0819:PsiDirectoryNode" />
+              <item name="s4_CarrosUsados-back" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="carrosUsados" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="s4_CarrosUsados" type="b2602c69:ProjectViewProjectNode" />
+              <item name="s4_CarrosUsados" type="462c0819:PsiDirectoryNode" />
+              <item name="s4_CarrosUsados-back" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="carrosUsados" type="462c0819:PsiDirectoryNode" />
+              <item name="entities" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -626,6 +700,7 @@
       <workItem from="1540045075289" duration="3393000" />
       <workItem from="1540065670104" duration="2847000" />
       <workItem from="1540149529785" duration="3113000" />
+      <workItem from="1542588107258" duration="125000" />
     </task>
     <task id="LOCAL-00001" summary="Corrección Administrador, Vendedor, Cliente">
       <created>1537419108227</created>
@@ -705,7 +780,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53115000" />
+    <option name="totallyTimeSpent" value="53240000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -718,11 +793,12 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Learn" order="0" />
       <window_info id="Persistence" order="1" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="2" sideWeight="0.79791665" visible="true" weight="0.24391988" />
-      <window_info id="Structure" order="3" sideWeight="0.20208333" side_tool="true" visible="true" weight="0.24391988" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" sideWeight="0.7960089" visible="true" weight="0.30114448" />
+      <window_info id="Structure" order="3" sideWeight="0.20399113" side_tool="true" visible="true" weight="0.30114448" />
       <window_info id="Designer" order="4" />
       <window_info id="Image Layers" order="5" />
       <window_info id="UI Designer" order="6" />
@@ -743,7 +819,7 @@
       <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.4986577" weight="0.2987952" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" />
       <window_info anchor="bottom" id="Database Changes" order="13" sideWeight="0.49932885" weight="0.32907802" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="14" sideWeight="0.49261746" visible="true" weight="0.42168674" />
+      <window_info anchor="bottom" id="Version Control" order="14" sideWeight="0.49261746" visible="true" weight="0.4566265" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24966443" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.24966443" />
@@ -874,27 +950,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/s4_CarrosUsados-back/src/main/java/co/edu/uniandes/csw/carrosUsados/entities/PuntoVentaEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1003">
-          <caret line="80" column="7" selection-start-line="80" selection-start-column="7" selection-end-line="80" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/s4_CarrosUsados-back/src/test/java/co/edu/uniandes/csw/carrosUsados/test/logic/ClienteLogicTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="71" column="25" selection-start-line="71" selection-start-column="25" selection-end-line="71" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/s4_CarrosUsados-api/src/main/java/co/edu/uniandes/csw/carrosUsados/dtos/CalificacionDetailDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/s4_CarrosUsados-api/src/main/java/co/edu/uniandes/csw/carrosUsados/resources/MarcaResource.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
@@ -1144,13 +1199,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
           <caret line="298" selection-start-line="298" selection-end-line="298" />
-          <folding>
-            <element signature="e#4304#4305#0" expanded="true" />
-            <element signature="e#4336#4337#0" expanded="true" />
-            <element signature="e#4620#4621#0" expanded="true" />
-            <element signature="e#4648#4649#0" expanded="true" />
-            <element signature="e#7595#7596#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1184,45 +1232,62 @@
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_172/jre/lib/rt.jar!/sun/reflect/DelegatingMethodAccessorImpl.class" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_172/src.zip!/java/lang/reflect/Method.java" />
+    <entry file="file://$PROJECT_DIR$/s4_CarrosUsados-api/s4_carTeam-api.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/s4_CarrosUsados-back/src/test/java/co/edu/uniandes/csw/carrosUsados/test/logic/AutomovilLogicTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="237" selection-start-line="237" selection-end-line="237" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/s4_CarrosUsados-back/src/main/java/co/edu/uniandes/csw/carrosUsados/ejb/AutomovilLogic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2115">
+          <caret line="156" column="65" selection-start-line="156" selection-start-column="65" selection-end-line="156" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/s4_CarrosUsados-back/src/main/java/co/edu/uniandes/csw/carrosUsados/persistence/AutomovilPersistence.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2010">
+        <state relative-caret-position="2430">
           <caret line="174" selection-start-line="174" selection-end-line="174" />
         </state>
       </provider>
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/fish/payara/extras/payara-embedded-all/4.1.2.181/payara-embedded-all-4.1.2.181-sources.jar!/org/glassfish/ejb/security/application/EJBSecurityManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15765">
+        <state relative-caret-position="15645">
           <caret line="1152" selection-start-line="1152" selection-end-line="1152" />
         </state>
       </provider>
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/fish/payara/extras/payara-embedded-all/4.1.2.181/payara-embedded-all-4.1.2.181-sources.jar!/com/sun/ejb/containers/interceptors/InterceptorManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="12360">
+        <state relative-caret-position="12315">
           <caret line="894" selection-start-line="894" selection-end-line="894" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/s4_CarrosUsados-api/s4_carTeam-api.iml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/s4_CarrosUsados-back/src/main/java/co/edu/uniandes/csw/carrosUsados/ejb/AutomovilLogic.java">
+    <entry file="file://$PROJECT_DIR$/s4_CarrosUsados-api/src/main/java/co/edu/uniandes/csw/carrosUsados/resources/PuntoVentaResource.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="156" column="65" selection-start-line="156" selection-start-column="65" selection-end-line="156" selection-end-column="65" />
+        <state relative-caret-position="-253">
+          <caret line="40" column="13" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/s4_CarrosUsados-back/src/test/java/co/edu/uniandes/csw/carrosUsados/test/logic/AutomovilLogicTest.java">
+    <entry file="file://$PROJECT_DIR$/s4_CarrosUsados-api/src/main/java/co/edu/uniandes/csw/carrosUsados/dtos/PuntoVentaDTO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="237" lean-forward="true" selection-start-line="237" selection-end-line="237" />
-          <folding>
-            <element signature="e#1621#1638#0" expanded="true" />
-            <element signature="e#1702#1716#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-439">
+          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/s4_CarrosUsados-back/src/main/java/co/edu/uniandes/csw/carrosUsados/entities/PuntoVentaEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1305">
+          <caret line="132" column="26" selection-start-line="132" selection-start-column="26" selection-end-line="132" selection-end-column="26" />
         </state>
       </provider>
     </entry>
