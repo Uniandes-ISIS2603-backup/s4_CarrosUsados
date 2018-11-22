@@ -13,6 +13,7 @@ import co.edu.uniandes.csw.carrosUsados.entities.ArticuloEntity;
 public class ArticuloDTO {
 
     private long id;
+    private String imagen;
     private String ubicacion;
     private String precio;
     private String descripcion;
@@ -32,6 +33,7 @@ public class ArticuloDTO {
         this.disponibilidad = articulo.isDisponibilidad();
         this.automovil = new AutomovilDTO(articulo.getAutomovil());
         this.factura = new FacturaDTO(articulo.getFactura());
+        this.imagen = articulo.getImagen();
     }
 
     /**
@@ -67,6 +69,13 @@ public class ArticuloDTO {
      */
     public String getDescripcion() {
         return descripcion;
+    }
+    
+    /**
+     * @return retorna la imagen del articulo 
+     */
+    public String getImagen() {
+        return imagen;
     }
 
     /**
@@ -154,6 +163,7 @@ public class ArticuloDTO {
             entity.setFactura(factura.toEntity());
         entity.setPrecio(precio);
         entity.setUbicacion(ubicacion);
+        entity.setImagen(imagen);
         return entity;
     }
 }

@@ -28,6 +28,9 @@ public class ArticuloEntity extends BaseEntity implements Serializable {
     // Una breve descripcion del articulo para los vendedores
     private String descripcion;
     
+    // El link hacia la imagen del automovil
+    private String imagen;
+    
     // Si el articulo esta disponible para comprar
     private boolean disponibilidad;
     
@@ -86,6 +89,20 @@ public class ArticuloEntity extends BaseEntity implements Serializable {
     */
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
+    }
+    
+    /**
+    @Return retorna la imagen del articulo
+    */
+    public String getImagen() {
+        return imagen;
+    }
+
+    /**
+    @param imagen Cambia la anterior imagen por una nueva
+    */
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
     }
 
     /**
