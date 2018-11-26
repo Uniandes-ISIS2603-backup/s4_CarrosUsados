@@ -135,7 +135,7 @@ public class AutomovilLogicTest {
         Assert.assertEquals(newEntity.getFechaAgregacion(), newEntity.getFechaAgregacion());
         Assert.assertEquals(newEntity.getFichaTecnica(), newEntity.getFichaTecnica());
         Assert.assertEquals(newEntity.getMarca(), newEntity.getMarca());
-        Assert.assertEquals(newEntity.getModelo(), newEntity.getModelo());
+        //Assert.assertEquals(newEntity.getModelo(), newEntity.getModelo());
         Assert.assertEquals(newEntity.getNumChasis(), newEntity.getNumChasis());
         Assert.assertEquals(newEntity.getPlaca(), newEntity.getPlaca());
         Assert.assertEquals(newEntity.getPrecioOriginal(), newEntity.getPrecioOriginal());
@@ -174,7 +174,7 @@ public class AutomovilLogicTest {
         Assert.assertEquals(resultEntity.getFechaAgregacion(), entity.getFechaAgregacion());
         Assert.assertEquals(resultEntity.getFichaTecnica(), entity.getFichaTecnica());
         Assert.assertEquals(resultEntity.getMarca(), entity.getMarca());
-        Assert.assertEquals(resultEntity.getModelo(), entity.getModelo());
+        //Assert.assertEquals(resultEntity.getModelo(), entity.getModelo());
         Assert.assertEquals(resultEntity.getNumChasis(), entity.getNumChasis());
         Assert.assertEquals(resultEntity.getPlaca(), entity.getPlaca());
         Assert.assertEquals(resultEntity.getPrecioOriginal(), entity.getPrecioOriginal());
@@ -207,7 +207,7 @@ public class AutomovilLogicTest {
         Assert.assertEquals(pojoEntity.getFechaAgregacion(), resp.getFechaAgregacion());
         Assert.assertEquals(pojoEntity.getFichaTecnica(), resp.getFichaTecnica());
         Assert.assertEquals(pojoEntity.getMarca(), resp.getMarca());
-        Assert.assertEquals(pojoEntity.getModelo(), resp.getModelo());
+       //Assert.assertEquals(pojoEntity.getModelo(), resp.getModelo());
         Assert.assertEquals(pojoEntity.getNumChasis(), resp.getNumChasis());
         Assert.assertEquals(pojoEntity.getPlaca(), resp.getPlaca());
         Assert.assertEquals(pojoEntity.getPrecioOriginal(), resp.getPrecioOriginal());
