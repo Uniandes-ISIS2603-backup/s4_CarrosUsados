@@ -109,7 +109,7 @@ public class ModeloResource {
     public ModeloDTO updateModelo(@PathParam("marcaId") Long marcaId, @PathParam("modeloId") Long modeloId, ModeloDTO modelo) throws BusinessLogicException {
         LOGGER.log(Level.INFO, "ModeloResource updateModelo: input: id: {0} , modelo: {1}", new Object[]{marcaId, modeloId, modelo.toString()});
         modelo.setId(modeloId);
-        if (modeloId.equals(modelo.getId())) {
+        if (!modeloId.equals(modelo.getId())) {
             throw new BusinessLogicException("Los IDs no coinciden");
         }
         ModeloEntity modeloEntity = modeloLogic.getModelo(marcaId, modeloId);
