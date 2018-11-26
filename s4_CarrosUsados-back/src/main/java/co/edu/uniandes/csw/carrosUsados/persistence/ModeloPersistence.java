@@ -102,7 +102,7 @@ public class ModeloPersistence {
     public ModeloEntity find(Long marcaId, Long modeloId) {
         LOGGER.log(Level.INFO, "Consultando el modelo con id = {0} de la marca con id = " + marcaId, modeloId);
         TypedQuery<ModeloEntity> q = em.createQuery("select p from ModeloEntity p where (p.marca.id = :marcaid) and (p.id = :modeloId)", ModeloEntity.class);
-        q.setParameter("marcaid", marcaId);
+        q.setParameter("marcaId", marcaId);
         q.setParameter("modeloId", modeloId);
         List<ModeloEntity> results = q.getResultList();
         ModeloEntity modelo = null;
