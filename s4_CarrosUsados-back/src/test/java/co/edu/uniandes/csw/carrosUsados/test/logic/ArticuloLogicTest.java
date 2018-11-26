@@ -132,7 +132,6 @@ public class ArticuloLogicTest {
         
         Assert.assertEquals(newEntity.getId(), entity.getId());
         Assert.assertEquals(newEntity.getDescripcion(), entity.getDescripcion());
-        Assert.assertEquals(newEntity.getUbicacion(), entity.getUbicacion());
         Assert.assertEquals(newEntity.getPrecio(), entity.getPrecio());
         Assert.assertEquals(newEntity.getAutomovil(), newEntity.getAutomovil());
         
@@ -152,20 +151,12 @@ public class ArticuloLogicTest {
             newEntity.setDescripcion(null);            
             result = articuloLogic.createArticulo(newEntity);
             Assert.fail();
+            
         }
         catch(BusinessLogicException e){
             Assert.assertEquals(dupEntity.getId(),newEntity.getId());
             newEntity = dupEntity;
             Assert.assertEquals(dupEntity.getDescripcion(),newEntity.getDescripcion());
-        }try{
-            newEntity.setUbicacion(null);            
-            result = articuloLogic.createArticulo(newEntity);
-            Assert.fail();
-        }
-        catch(BusinessLogicException e){            
-            Assert.assertEquals(dupEntity.getId(),newEntity.getId());
-            newEntity = dupEntity;
-            Assert.assertEquals(dupEntity.getUbicacion(),newEntity.getUbicacion());
         }try{
             newEntity.setPrecio(null);            
             result = articuloLogic.createArticulo(newEntity);
@@ -216,7 +207,6 @@ public class ArticuloLogicTest {
         Assert.assertNotNull(resultEntity);
         Assert.assertEquals(resultEntity.getId(), entity.getId());
         Assert.assertEquals(resultEntity.getDescripcion(), entity.getDescripcion());
-        Assert.assertEquals(resultEntity.getUbicacion(), entity.getUbicacion());
         Assert.assertEquals(resultEntity.getPrecio(), entity.getPrecio());
         Assert.assertEquals(resultEntity.getAutomovil(), resultEntity.getAutomovil());
         
@@ -251,7 +241,6 @@ public class ArticuloLogicTest {
 
         Assert.assertEquals(pojoEntity.getId(), resp.getId());
         Assert.assertEquals(pojoEntity.getDescripcion(), resp.getDescripcion());
-        Assert.assertEquals(pojoEntity.getUbicacion(), resp.getUbicacion());
         Assert.assertEquals(pojoEntity.getPrecio(), resp.getPrecio());
         Assert.assertEquals(pojoEntity.getAutomovil(), resp.getAutomovil()); 
         
@@ -266,15 +255,6 @@ public class ArticuloLogicTest {
             Assert.assertEquals(dupEntity.getId(),entity.getId());
             entity = dupEntity;
             Assert.assertEquals(dupEntity.getDescripcion(),entity.getDescripcion());
-        }try{
-            entity.setUbicacion("");            
-            articuloLogic.updateArticulo(entity.getId(),entity);
-            Assert.fail();
-        }
-        catch(BusinessLogicException e){            
-            Assert.assertEquals(dupEntity.getId(),entity.getId());
-            entity = dupEntity;
-            Assert.assertEquals(dupEntity.getUbicacion(),entity.getUbicacion());
         }try{
             entity.setPrecio("");            
             articuloLogic.updateArticulo(entity.getId(),entity);

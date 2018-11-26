@@ -19,9 +19,6 @@ import uk.co.jemos.podam.common.PodamExclude;
 @Entity
 public class ArticuloEntity extends BaseEntity implements Serializable {
     
-    // La ubicacion del articulo
-    private String ubicacion;
-    
     // El precio del articulo
     private String precio;
     
@@ -48,20 +45,6 @@ public class ArticuloEntity extends BaseEntity implements Serializable {
     @PodamExclude
     @ManyToMany
     private List<ClienteEntity> clientes;
-
-    /**
-    @Return retorna la ubicacion del carro
-    */
-    public String getUbicacion() {
-        return ubicacion;
-    }
-
-    /**
-    @param ubicacion Nueva ubicacion a ser reemplazada
-    */
-    public void setUbicacion(String ubicacion) {
-        this.ubicacion = ubicacion;
-    }
 
     /**
     @Return retorna el precio del carro en el articulo

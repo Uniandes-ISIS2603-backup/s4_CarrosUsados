@@ -112,7 +112,6 @@ public class ArticuloPersistenceTest {
 
         ArticuloEntity entity = em.find(ArticuloEntity.class, result.getId());
 
-        Assert.assertEquals(newEntity.getUbicacion(), entity.getUbicacion());
         Assert.assertEquals(newEntity.getPrecio(), entity.getPrecio());
         Assert.assertEquals(newEntity.getDescripcion(), entity.getDescripcion());
         Assert.assertEquals(newEntity.getId(), entity.getId());
@@ -147,7 +146,6 @@ public class ArticuloPersistenceTest {
         ArticuloEntity entity = data.get(0);
         ArticuloEntity newEntity = articuloPersistence.find(entity.getId());
         Assert.assertNotNull(newEntity);
-        Assert.assertEquals(newEntity.getUbicacion(), entity.getUbicacion());
         Assert.assertEquals(newEntity.getPrecio(), entity.getPrecio());
         Assert.assertEquals(newEntity.getDescripcion(), entity.getDescripcion());
         Assert.assertEquals(newEntity.getId(), entity.getId());
@@ -182,7 +180,6 @@ public class ArticuloPersistenceTest {
 
         ArticuloEntity resp = em.find(ArticuloEntity.class, entity.getId());
 
-        Assert.assertEquals(newEntity.getUbicacion(), entity.getUbicacion());
         Assert.assertEquals(newEntity.getPrecio(), entity.getPrecio());
         Assert.assertEquals(newEntity.getDescripcion(), entity.getDescripcion());
         Assert.assertEquals(newEntity.getId(), entity.getId());
