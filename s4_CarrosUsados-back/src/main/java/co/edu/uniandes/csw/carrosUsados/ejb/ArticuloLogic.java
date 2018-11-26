@@ -40,10 +40,8 @@ import javax.inject.Inject;
      */
       public ArticuloEntity createArticulo(ArticuloEntity articuloEntity) throws BusinessLogicException{
           LOGGER.log(Level.INFO, "Inicio proceso de creacion de una forma de pago");
-                    
-          if((articuloEntity.getAutomovil() == null) || (automovilPersistence.find(articuloEntity.getAutomovil().getId()) == null )){
-              throw new BusinessLogicException("El automovil es invalido o no fue asociado correctamente");
-          }
+          LOGGER.log(Level.INFO, "Entity: " + articuloEntity +  ", " + articuloEntity.getDescripcion() +  ", " +  articuloEntity.getUbicacion() +  ", " +  articuloEntity.getPrecio() +  ", " +  articuloEntity.isDisponibilidad() );
+
           if(!validateDescripcion(articuloEntity.getDescripcion())){
             throw new BusinessLogicException("La descripcion no es invalida");
           }

@@ -31,8 +31,8 @@ public class ArticuloDTO {
         this.precio = articulo.getPrecio();
         this.descripcion = articulo.getDescripcion();
         this.disponibilidad = articulo.isDisponibilidad();
-        this.automovil = new AutomovilDTO(articulo.getAutomovil());
-        this.factura = new FacturaDTO(articulo.getFactura());
+        //this.automovil = new AutomovilDTO(articulo.getAutomovil());
+        //this.factura = new FacturaDTO(articulo.getFactura());
         this.imagen = articulo.getImagen();
     }
 
