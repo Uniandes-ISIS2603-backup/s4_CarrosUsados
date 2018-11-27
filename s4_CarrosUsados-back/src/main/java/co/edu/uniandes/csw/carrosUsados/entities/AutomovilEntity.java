@@ -72,7 +72,7 @@ public class AutomovilEntity extends BaseEntity implements Serializable {
      * Mapea la relacion con un punto de venta. U automovil tiene un unico punto de venta.
      */
     @PodamExclude
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private PuntoVentaEntity puntoVenta;
 
     /**
