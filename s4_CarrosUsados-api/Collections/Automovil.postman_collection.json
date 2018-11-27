@@ -1,0 +1,144 @@
+{
+	"info": {
+		"_postman_id": "144041ef-2771-4bba-9fc7-8a31fb6d5f6f",
+		"name": "Automovil",
+		"description": "Prueba del recurso Automovil del proyecto TuNave",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Automovil",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "3b44131d-f572-41a3-b2f5-f9a87268c9dc",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\t\r\n\t\"modelo\":\"X3\",\r\n\t\"marca\":\"BMW\", \r\n\t\"anio\": 2018,\r\n\t\"color\":\"cafe\",\r\n\t\"numChasis\":\"CBAACCCAAAA111111\",\r\n\t\"placa\":\"AKC193\",\r\n\t\"fechaAgregacion\":\"2018-11-26T17:50:42.379Z\",\r\n\t\"precioOriginal\" : \"180'000,000\"\r\n}"
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/s4_CarrosUsados-api/api/modelos/1/automoviles",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"s4_CarrosUsados-api",
+						"api",
+						"modelos",
+						"1",
+						"automoviles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put Automovil",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\t\r\n\t\"modelo\":\"X3\",\r\n\t\"marca\":\"BMW\", \r\n\t\"anio\": 2018,\r\n\t\"color\":\"cafe\",\r\n\t\"numChasis\":\"AAAAAAAAAAA111111\",\r\n\t\"placa\":\"ABC123\",\r\n\t\"fechaAgregacion\":\"2018-11-06T19:10:31.585Z\",\r\n\t\"precioOriginal\" : \"180'000,000\",\r\n\t\"fichaTecnica\": {\r\n\t\t\t\"id\": 3,\r\n\t\t\t\"vidrios\": \"gruesos\",\r\n\t\t\t\"camaraReversa\": false,\r\n\t\t\t\"sensores\" : false,\r\n\t\t\t\"rines\" : \"normales\",\r\n\t\t\t\"aireAcondicionado\" : true,\r\n\t\t\t\"numAirbags\" : 5\r\n\t}\r\n}"
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/s4_CarrosUsados-api/api/modelos/1/automoviles/1",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"s4_CarrosUsados-api",
+						"api",
+						"modelos",
+						"1",
+						"automoviles",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get automoviles",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/s4_CarrosUsados-api/api/modelos/1/automoviles",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"s4_CarrosUsados-api",
+						"api",
+						"modelos",
+						"1",
+						"automoviles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get automovil",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{puerto}}/s4_CarrosUsados-api/api/modelos/1/automoviles/1",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{puerto}}",
+					"path": [
+						"s4_CarrosUsados-api",
+						"api",
+						"modelos",
+						"1",
+						"automoviles",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
