@@ -29,14 +29,15 @@ public class FichaTecnicaDTO implements Serializable {
     }
 
     public FichaTecnicaDTO(FichaTecnicaEntity fichaTecnicaEntity) {
-        this.id = fichaTecnicaEntity.getId();
-        this.vidrios = fichaTecnicaEntity.getVidrios();
-        this.camaraReversa = fichaTecnicaEntity.isCamaraReversa();
-        this.sensores = fichaTecnicaEntity.isSensores();
-        this.rines = fichaTecnicaEntity.getRines();
-        this.aireAcondicionado = fichaTecnicaEntity.isAireAcondicionado();
-        this.numAirbags = fichaTecnicaEntity.getNumAirbags();
-
+        if(fichaTecnicaEntity != null){
+            this.id = fichaTecnicaEntity.getId();
+            this.vidrios = fichaTecnicaEntity.getVidrios();
+            this.camaraReversa = fichaTecnicaEntity.isCamaraReversa();
+            this.sensores = fichaTecnicaEntity.isSensores();
+            this.rines = fichaTecnicaEntity.getRines();
+            this.aireAcondicionado = fichaTecnicaEntity.isAireAcondicionado();
+            this.numAirbags = fichaTecnicaEntity.getNumAirbags();
+        }
     }
 
     public FichaTecnicaEntity toEntity() {
