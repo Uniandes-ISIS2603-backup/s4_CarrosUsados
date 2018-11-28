@@ -7,6 +7,7 @@ package co.edu.uniandes.csw.carrosUsados.dtos;
 
 import co.edu.uniandes.csw.carrosUsados.entities.CalificacionEntity;
 import co.edu.uniandes.csw.carrosUsados.entities.PuntoVentaEntity;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,7 +15,7 @@ import java.util.List;
  *
  * @author estudiante
  */
-public class PuntoVentaDetailDTO extends PuntoVentaDTO {
+public class PuntoVentaDetailDTO extends PuntoVentaDTO implements Serializable {
  
     //lista de calificaciones del punto de venta. relación de cero a muchas calificaciones.
     private List<CalificacionDetailDTO> calificaciones;

@@ -68,21 +68,24 @@ public class AutomovilDTO implements Serializable {
      * @param automovilEntity La entidad que contiene los datos
      */
     public AutomovilDTO(AutomovilEntity automovilEntity) {
-        this.id = automovilEntity.getId();
-        //this.modelo = automovilEntity.getModelo();
-        this.marca = automovilEntity.getMarca();
-        this.anio = automovilEntity.getAnio();
-        this.color = automovilEntity.getColor();
-        this.numChasis = automovilEntity.getNumChasis();
-        this.placa = automovilEntity.getPlaca();
-        this.fechaAgregacion = automovilEntity.getFechaAgregacion();
-        this.precioOriginal = automovilEntity.getPrecioOriginal();
 
-        if (automovilEntity.getFichaTecnica() != null) {
-            this.fichaTecnica = new FichaTecnicaDTO(automovilEntity.getFichaTecnica());
-        }
-        if (automovilEntity.getPuntoVenta() != null) {
-            this.puntoVenta = new PuntoVentaDTO(automovilEntity.getPuntoVenta());
+        if(automovilEntity != null){
+            this.id = automovilEntity.getId();
+            //this.modelo = automovilEntity.getModelo();
+            this.marca = automovilEntity.getMarca();
+            this.anio = automovilEntity.getAnio();
+            this.color = automovilEntity.getColor();
+            this.numChasis = automovilEntity.getNumChasis();
+            this.placa = automovilEntity.getPlaca();
+            this.fechaAgregacion = automovilEntity.getFechaAgregacion();
+            this.precioOriginal = automovilEntity.getPrecioOriginal();
+
+            if (automovilEntity.getFichaTecnica() != null) {
+                this.fichaTecnica = new FichaTecnicaDTO(automovilEntity.getFichaTecnica());
+            }
+            if (automovilEntity.getPuntoVenta() != null) {
+                this.puntoVenta = new PuntoVentaDTO(automovilEntity.getPuntoVenta());
+            }
         }
     }
 
