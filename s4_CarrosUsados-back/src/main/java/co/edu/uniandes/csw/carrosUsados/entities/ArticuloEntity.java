@@ -33,12 +33,12 @@ public class ArticuloEntity extends BaseEntity implements Serializable {
     
     // Relacion con el factura hecho
     @PodamExclude
-    @OneToOne(mappedBy = "articulo")
+    @OneToOne
     private FacturaEntity factura;
     
     // Relacion con el automovil que vende el articulo
     @PodamExclude
-    @OneToOne(mappedBy = "articulo")
+    @OneToOne
     private AutomovilEntity automovil;
     
     // Relacion con los clientes que desean comprar el articulo
@@ -138,10 +138,10 @@ public class ArticuloEntity extends BaseEntity implements Serializable {
     }
 
     /**
-    @param cliente Actualiza a los clientes asociados al articulo
+    @param clientes Actualiza a los clientes asociados al articulo
     */
-    public void setClientes(List<ClienteEntity> cliente) {
-        this.clientes = cliente;
+    public void setClientes(List<ClienteEntity> clientes) {
+        this.clientes = clientes;
     }
     
     

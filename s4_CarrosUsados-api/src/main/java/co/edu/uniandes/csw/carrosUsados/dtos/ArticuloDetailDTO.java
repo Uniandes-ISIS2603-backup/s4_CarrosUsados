@@ -15,7 +15,7 @@ import java.util.LinkedList;
  */
 public class ArticuloDetailDTO extends ArticuloDTO {
 
-    private final List<ClienteDTO> clientes;
+    private  List<ClienteDTO> clientes;
 
     /**
      * Crea un articulo vacio
@@ -38,12 +38,19 @@ public class ArticuloDetailDTO extends ArticuloDTO {
     }
 
     /**
-     * @return retorna el cliente asociado al articulo 
+     * @return retorna el cliente asociado al articulo
      */
-    public List<ClienteDTO> getCliente() {
+    public List<ClienteDTO> getClientes() {
         return clientes;
     }
-    
+
+    /**
+     * @return retorna el cliente asociado al articulo
+     */
+    public void setClientes(List<ClienteDTO> clientes) {
+        this.clientes =  clientes;
+    }
+
     /**
      * Crea un articulo entity con los datos de este articulo.
      * @return articulo entity con los datos de este articulo.

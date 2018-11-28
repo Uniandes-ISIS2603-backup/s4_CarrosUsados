@@ -8,7 +8,10 @@
   <component name="ChangeListManager">
     <list default="true" id="ff5648aa-b364-4528-94b9-b4b313ed9132" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/s4_CarrosUsados-api/src/main/java/co/edu/uniandes/csw/carrosUsados/dtos/ArticuloDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/s4_CarrosUsados-api/src/main/java/co/edu/uniandes/csw/carrosUsados/dtos/ArticuloDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/s4_CarrosUsados-api/src/main/java/co/edu/uniandes/csw/carrosUsados/dtos/ArticuloDetailDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/s4_CarrosUsados-api/src/main/java/co/edu/uniandes/csw/carrosUsados/dtos/ArticuloDetailDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/s4_CarrosUsados-api/src/main/java/co/edu/uniandes/csw/carrosUsados/resources/ArticuloResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/s4_CarrosUsados-api/src/main/java/co/edu/uniandes/csw/carrosUsados/resources/ArticuloResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/s4_CarrosUsados-back/src/main/java/co/edu/uniandes/csw/carrosUsados/ejb/ArticuloAutomovilLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/s4_CarrosUsados-back/src/main/java/co/edu/uniandes/csw/carrosUsados/ejb/ArticuloAutomovilLogic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/s4_CarrosUsados-back/src/main/java/co/edu/uniandes/csw/carrosUsados/entities/ArticuloEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/s4_CarrosUsados-back/src/main/java/co/edu/uniandes/csw/carrosUsados/entities/ArticuloEntity.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/s4_CarrosUsados-back/target/" />
     <ignored path="$PROJECT_DIR$/s4_CarrosUsados-api/target/" />
@@ -44,6 +47,12 @@
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="carTeamDB" type="feb32156:DbDataSourceImpl" />
         <item name="APP: schema" type="12aa88c4:DerbyImplModel$Schema" />
+        <item name="ARTICULOENTITY: table" type="7a557cd6:DerbyImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="carTeamDB" type="feb32156:DbDataSourceImpl" />
+        <item name="APP: schema" type="12aa88c4:DerbyImplModel$Schema" />
         <item name="MARCAENTITY: table" type="7a557cd6:DerbyImplModel$Table" />
       </path>
       <path>
@@ -55,78 +64,112 @@
     </expand>
     <select />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="s4_carTeam" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/s4_CarrosUsados-back/src/main/java/co/edu/uniandes/csw/carrosUsados/persistence/ModeloPersistence.java">
+        <entry file="file://$PROJECT_DIR$/s4_CarrosUsados-back/src/main/java/co/edu/uniandes/csw/carrosUsados/persistence/ArticuloPersistence.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="393">
-              <caret line="103" column="106" selection-start-line="103" selection-end-line="104" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/s4_CarrosUsados-api/src/main/java/co/edu/uniandes/csw/carrosUsados/dtos/AdministradorDTO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="427">
-              <caret line="49" column="32" selection-start-line="49" selection-start-column="32" selection-end-line="49" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/s4_CarrosUsados-back/src/main/java/co/edu/uniandes/csw/carrosUsados/entities/AdministradorEntity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="19" column="46" lean-forward="true" selection-start-line="19" selection-start-column="46" selection-end-line="19" selection-end-column="46" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/s4_CarrosUsados-back/src/main/java/co/edu/uniandes/csw/carrosUsados/entities/UsuarioEntity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/s4_CarrosUsados-api/src/main/java/co/edu/uniandes/csw/carrosUsados/dtos/AutomovilDetailDTO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/s4_CarrosUsados-api/src/main/java/co/edu/uniandes/csw/carrosUsados/dtos/CalificacionDetailDTO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/s4_CarrosUsados-api/src/main/java/co/edu/uniandes/csw/carrosUsados/dtos/AutomovilDTO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="32" selection-start-line="32" selection-end-line="32" />
+            <state relative-caret-position="142">
+              <caret line="34" column="38" lean-forward="true" selection-start-line="34" selection-start-column="38" selection-end-line="34" selection-end-column="38" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/s4_CarrosUsados-api/src/main/java/co/edu/uniandes/csw/carrosUsados/resources/ArticuloResource.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="218">
+              <caret line="71" column="53" selection-start-line="71" selection-start-column="37" selection-end-line="71" selection-end-column="53" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/s4_CarrosUsados-back/src/main/java/co/edu/uniandes/csw/carrosUsados/ejb/ArticuloAutomovilLogic.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="242">
+              <caret line="47" column="8" selection-start-line="47" selection-start-column="8" selection-end-line="47" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="das://94ee97c9-f8d5-40db-b0c7-0d1a368675f3/schema/APP/table/AUTOMOVILENTITY">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="das://94ee97c9-f8d5-40db-b0c7-0d1a368675f3/schema/APP/table/ARTICULOENTITY">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/s4_CarrosUsados-api/src/main/java/co/edu/uniandes/csw/carrosUsados/dtos/ArticuloDetailDTO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-459">
+              <caret line="17" column="12" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
+              <folding>
+                <element signature="e#1175#1176#0" expanded="true" />
+                <element signature="e#1206#1207#0" expanded="true" />
+                <element signature="e#1336#1337#0" expanded="true" />
+                <element signature="e#1377#1378#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/s4_CarrosUsados-api/src/main/java/co/edu/uniandes/csw/carrosUsados/dtos/ArticuloDTO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1">
-              <caret line="148" column="16" lean-forward="true" selection-start-line="148" selection-start-column="16" selection-end-line="148" selection-end-column="16" />
+            <state relative-caret-position="171">
+              <caret line="171" column="7" lean-forward="true" selection-start-line="171" selection-start-column="7" selection-end-line="171" selection-end-column="7" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1474#1475#0" expanded="true" />
+                <element signature="e#1499#1500#0" expanded="true" />
+                <element signature="e#1602#1603#0" expanded="true" />
+                <element signature="e#1631#1632#0" expanded="true" />
+                <element signature="e#1733#1734#0" expanded="true" />
+                <element signature="e#1765#1766#0" expanded="true" />
+                <element signature="e#1861#1862#0" expanded="true" />
+                <element signature="e#1890#1891#0" expanded="true" />
+                <element signature="e#2000#2001#0" expanded="true" />
+                <element signature="e#2034#2035#0" expanded="true" />
+                <element signature="e#2134#2135#0" expanded="true" />
+                <element signature="e#2163#2164#0" expanded="true" />
+                <element signature="e#2275#2276#0" expanded="true" />
+                <element signature="e#2312#2313#0" expanded="true" />
+                <element signature="e#2402#2403#0" expanded="true" />
+                <element signature="e#2430#2431#0" expanded="true" />
+                <element signature="e#2550#2551#0" expanded="true" />
+                <element signature="e#2592#2593#0" expanded="true" />
+                <element signature="e#2700#2701#0" expanded="true" />
+                <element signature="e#2736#2737#0" expanded="true" />
+                <element signature="e#2864#2865#0" expanded="true" />
+                <element signature="e#2910#2911#0" expanded="true" />
+                <element signature="e#3054#3055#0" expanded="true" />
+                <element signature="e#3106#3107#0" expanded="true" />
+                <element signature="e#3217#3218#0" expanded="true" />
+                <element signature="e#3253#3254#0" expanded="true" />
+                <element signature="e#3365#3366#0" expanded="true" />
+                <element signature="e#3397#3398#0" expanded="true" />
+                <element signature="e#3526#3527#0" expanded="true" />
+                <element signature="e#3568#3569#0" expanded="true" />
+                <element signature="e#3670#3671#0" expanded="true" />
+                <element signature="e#3700#3701#0" expanded="true" />
+                <element signature="e#3818#3819#0" expanded="true" />
+                <element signature="e#3856#3857#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -135,8 +178,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/s4_CarrosUsados-back/src/main/java/co/edu/uniandes/csw/carrosUsados/entities/ArticuloEntity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+            <state relative-caret-position="-441">
+              <caret line="35" column="13" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
               <folding>
                 <element signature="e#2857#2858#0" expanded="true" />
                 <element signature="e#2909#2910#0" expanded="true" />
@@ -146,10 +189,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/s4_CarrosUsados-api/src/main/java/co/edu/uniandes/csw/carrosUsados/resources/ModeloResource.java">
+        <entry file="file://$PROJECT_DIR$/s4_CarrosUsados-api/src/main/java/co/edu/uniandes/csw/carrosUsados/dtos/ModeloDTO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1666">
-              <caret line="114" column="51" selection-start-line="114" selection-start-column="51" selection-end-line="114" selection-end-column="51" />
+            <state relative-caret-position="391">
+              <caret line="29" column="29" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/s4_CarrosUsados-back/src/main/java/co/edu/uniandes/csw/carrosUsados/entities/ModeloEntity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-203">
+              <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -170,6 +222,9 @@
       <find>IDs no</find>
       <find>El recurso /</find>
       <find>El recurso /marca</find>
+      <find>HAAAAAAAAAAAAAAA</find>
+      <find>Inicia</find>
+      <find>Inicia proceso de agregar</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -191,6 +246,10 @@
         <option value="$PROJECT_DIR$/s4_CarrosUsados-api/src/main/java/co/edu/uniandes/csw/carrosUsados/resources/ModeloResource.java" />
         <option value="$PROJECT_DIR$/s4_CarrosUsados-back/src/main/java/co/edu/uniandes/csw/carrosUsados/ejb/ArticuloLogic.java" />
         <option value="$PROJECT_DIR$/s4_CarrosUsados-api/src/main/java/co/edu/uniandes/csw/carrosUsados/dtos/ArticuloDTO.java" />
+        <option value="$PROJECT_DIR$/s4_CarrosUsados-back/src/main/java/co/edu/uniandes/csw/carrosUsados/entities/ArticuloEntity.java" />
+        <option value="$PROJECT_DIR$/s4_CarrosUsados-api/src/main/java/co/edu/uniandes/csw/carrosUsados/dtos/ArticuloDetailDTO.java" />
+        <option value="$PROJECT_DIR$/s4_CarrosUsados-back/src/main/java/co/edu/uniandes/csw/carrosUsados/ejb/ArticuloAutomovilLogic.java" />
+        <option value="$PROJECT_DIR$/s4_CarrosUsados-api/src/main/java/co/edu/uniandes/csw/carrosUsados/resources/ArticuloResource.java" />
       </list>
     </option>
   </component>
@@ -199,7 +258,7 @@
     <option name="FILTER_WARNINGS" value="false" />
     <option name="FILTER_INFO" value="false" />
     <option name="FILTER_DEBUG" value="false" />
-    <option name="CUSTOM_FILTER" />
+    <option name="CUSTOM_FILTER" value="" />
   </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
@@ -391,7 +450,7 @@
     <property name="DatabaseDriversLRU" value="derby" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543377108675" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543379864509" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Parcial/s4_parcial3_animes" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -464,7 +523,7 @@
           <option name="adminServerHost" value="" />
           <option name="clusterName" value="" />
           <option name="stagingRemotePath" value="" />
-          <option name="transportHostId" value="" />
+          <option name="transportHostId" />
           <option name="transportStagingTarget">
             <TransportTarget>
               <option name="id" value="d6dc25a1-87a4-42b4-aba8-bc5f364d0ce9" />
@@ -480,10 +539,9 @@
             </TransportTarget>
           </transport-target>
           <staging-path />
-          <host-id />
         </data>
       </server-settings>
-      <log_file alias="GlassFish.log" path="$PROJECT_DIR$/../../../payara5/glassfish/domains/domain1/logs/server.log" />
+      <log_file alias="GlassFish.log" path="U:/payara5/glassfish/domains/domain1/logs/server.log" skipped="false" />
       <predefined_log_file enabled="true" id="GlassFish" />
       <RunnerSettings RunnerId="Debug">
         <option name="DEBUG_PORT" value="64871" />
@@ -661,7 +719,7 @@
       <workItem from="1543250891466" duration="4581000" />
       <workItem from="1543279762083" duration="668000" />
       <workItem from="1543331140957" duration="249000" />
-      <workItem from="1543376124107" duration="1059000" />
+      <workItem from="1543376124107" duration="3645000" />
     </task>
     <task id="LOCAL-00001" summary="Corrección Administrador, Vendedor, Cliente">
       <created>1537419108227</created>
@@ -705,7 +763,14 @@
       <option name="project" value="LOCAL" />
       <updated>1543253714403</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Arreglo imagen Artículo">
+      <created>1543377265136</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1543377265136</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -741,7 +806,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="80730000" />
+    <option name="totallyTimeSpent" value="83316000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -754,32 +819,31 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Learn" order="0" />
       <window_info id="Persistence" order="1" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="2" sideWeight="0.5801688" visible="true" weight="0.24161074" />
-      <window_info id="Structure" order="3" sideWeight="0.41983122" side_tool="true" visible="true" weight="0.24161074" />
+      <window_info content_ui="combo" id="Project" order="2" sideWeight="0.5801688" visible="true" weight="0.24161074" />
+      <window_info id="Structure" order="3" sideWeight="0.41983122" side_tool="true" weight="0.24161074" />
       <window_info id="Designer" order="4" />
       <window_info id="Image Layers" order="5" />
       <window_info id="UI Designer" order="6" />
-      <window_info id="Favorites" order="7" sideWeight="0.50070924" side_tool="true" weight="0.22818792" />
+      <window_info id="Favorites" order="7" sideWeight="0.41983122" side_tool="true" weight="0.24161074" />
       <window_info id="Capture Tool" order="8" />
-      <window_info id="Web" order="9" side_tool="true" />
+      <window_info id="Web" order="9" sideWeight="0.41983122" side_tool="true" weight="0.24161074" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.63020134" visible="true" weight="0.3286119" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.6281879" visible="true" weight="0.43909347" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49597314" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49713877" weight="0.32891566" />
-      <window_info anchor="bottom" id="Application Servers" order="7" sideWeight="0.49928468" weight="0.3269494" />
-      <window_info anchor="bottom" id="Spring" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49261746" weight="0.32719547" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.36979866" side_tool="true" visible="true" weight="0.3286119" />
-      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.4986577" weight="0.29929078" />
-      <window_info anchor="bottom" id="Java Enterprise" order="12" />
-      <window_info anchor="bottom" id="Database Changes" order="13" sideWeight="0.49932885" weight="0.32907802" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49597314" weight="0.3286119" />
+      <window_info anchor="bottom" id="Application Servers" order="7" sideWeight="0.49798658" weight="0.32577905" />
+      <window_info anchor="bottom" id="Spring" order="8" sideWeight="0.49932885" weight="0.3286119" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49127516" weight="0.32719547" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.37181208" side_tool="true" visible="true" weight="0.43909347" />
+      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.49731544" weight="0.29886687" />
+      <window_info anchor="bottom" id="Java Enterprise" order="12" sideWeight="0.49932885" weight="0.3286119" />
+      <window_info anchor="bottom" id="Database Changes" order="13" sideWeight="0.4986577" weight="0.3286119" />
       <window_info anchor="bottom" id="Version Control" order="14" sideWeight="0.41543624" weight="0.47308782" />
       <window_info anchor="bottom" id="Database Console" order="15" sideWeight="0.49713877" weight="0.32891566" />
       <window_info anchor="bottom" id="Statistic" order="16" sideWeight="0.49798658" weight="0.1898017" />
@@ -790,7 +854,7 @@
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="right" id="JSF" order="5" />
-      <window_info anchor="right" id="Database" order="6" weight="0.3295302" />
+      <window_info anchor="right" id="Database" order="6" visible="true" weight="0.3295302" />
       <window_info anchor="right" id="Maven Projects" order="7" weight="0.3295302" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info anchor="right" id="Theme Preview" order="9" />
@@ -840,12 +904,15 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="Corrección Administrador, Vendedor, Cliente" />
     <MESSAGE value="Git add missing classes - IntelliJ" />
     <MESSAGE value="Corrección toEntity() de AdministradorDTO y ClienteDTO en setTelefono. Añadida prueba para verificar nombre de usuario" />
     <MESSAGE value="Añadidas pruebas lógica Postman Cliente/Administrador/Vendedor" />
     <MESSAGE value="Arreglo PUT Modelo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Arreglo PUT Modelo" />
+    <MESSAGE value="Arreglo imagen Artículo" />
+    <option name="LAST_COMMIT_MESSAGE" value="Arreglo imagen Artículo" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -881,15 +948,9 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/s4_CarrosUsados-api/src/main/java/co/edu/uniandes/csw/carrosUsados/resources/ArticuloResource.java</url>
-          <line>64</line>
+          <line>65</line>
           <properties />
           <option name="timeStamp" value="25" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/s4_CarrosUsados-back/src/main/java/co/edu/uniandes/csw/carrosUsados/ejb/ArticuloLogic.java</url>
-          <line>41</line>
-          <properties />
-          <option name="timeStamp" value="26" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -904,50 +965,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/fish/payara/extras/payara-embedded-all/4.1.2.181/payara-embedded-all-4.1.2.181.jar!/org/jboss/weld/ejb/SessionBeanInterceptor.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/fish/payara/extras/payara-embedded-all/4.1.2.181/payara-embedded-all-4.1.2.181-sources.jar!/com/sun/ejb/EjbInvocation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="607" selection-start-line="607" selection-end-line="607" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/fish/payara/extras/payara-embedded-all/4.1.2.181/payara-embedded-all-4.1.2.181.jar!/org/jboss/weld/ejb/AbstractEJBRequestScopeActivationInterceptor.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="41" selection-start-line="41" selection-end-line="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/fish/payara/extras/payara-embedded-all/4.1.2.181/payara-embedded-all-4.1.2.181-sources.jar!/com/sun/ejb/containers/interceptors/SystemInterceptorProxy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="139" selection-start-line="139" selection-end-line="139" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_172/jre/lib/rt.jar!/sun/reflect/DelegatingMethodAccessorImpl.class" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_172/src.zip!/java/lang/reflect/Method.java" />
-    <entry file="jar://$MAVEN_REPOSITORY$/fish/payara/extras/payara-embedded-all/4.1.2.181/payara-embedded-all-4.1.2.181-sources.jar!/org/glassfish/ejb/security/application/EJBSecurityManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15765">
-          <caret line="1152" selection-start-line="1152" selection-end-line="1152" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/fish/payara/extras/payara-embedded-all/4.1.2.181/payara-embedded-all-4.1.2.181-sources.jar!/com/sun/ejb/containers/interceptors/InterceptorManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="12360">
-          <caret line="894" selection-start-line="894" selection-end-line="894" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/s4_CarrosUsados-api/s4_carTeam-api.iml" />
     <entry file="das://8dc6c79e-de76-442f-8de3-43b9db25c9e0/schema/APP/table/VENDEDORENTITY" />
     <entry file="das://8dc6c79e-de76-442f-8de3-43b9db25c9e0/schema/APP/table/MARCAENTITY" />
@@ -1035,13 +1052,6 @@
       </provider>
     </entry>
     <entry file="das://8dc6c79e-de76-442f-8de3-43b9db25c9e0/schema/APP/table/PERSONAENTITY" />
-    <entry file="das://94ee97c9-f8d5-40db-b0c7-0d1a368675f3/schema/APP/table/AUTOMOVILENTITY">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://94ee97c9-f8d5-40db-b0c7-0d1a368675f3/schema/APP/table/FICHATECNICAENTITY">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -1091,20 +1101,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/s4_CarrosUsados-api/src/main/java/co/edu/uniandes/csw/carrosUsados/resources/ArticuloResource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="64" column="45" selection-start-line="64" selection-start-column="45" selection-end-line="64" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/s4_CarrosUsados-back/src/main/java/co/edu/uniandes/csw/carrosUsados/ejb/ArticuloLogic.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="42" column="192" selection-start-line="42" selection-start-column="192" selection-end-line="42" selection-end-column="192" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/s4_CarrosUsados-api/src/main/java/co/edu/uniandes/csw/carrosUsados/dtos/FichaTecnicaDTO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -1140,17 +1136,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/s4_CarrosUsados-back/src/main/java/co/edu/uniandes/csw/carrosUsados/entities/ArticuloEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-          <folding>
-            <element signature="e#2857#2858#0" expanded="true" />
-            <element signature="e#2909#2910#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/s4_CarrosUsados-back/src/main/java/co/edu/uniandes/csw/carrosUsados/entities/UsuarioEntity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -1162,13 +1147,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/s4_CarrosUsados-api/src/main/java/co/edu/uniandes/csw/carrosUsados/dtos/CalificacionDetailDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1195,18 +1173,153 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/s4_CarrosUsados-back/src/main/java/co/edu/uniandes/csw/carrosUsados/entities/AdministradorEntity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="19" column="46" lean-forward="true" selection-start-line="19" selection-start-column="46" selection-end-line="19" selection-end-column="46" />
+        <state relative-caret-position="-85">
+          <caret line="19" column="46" selection-start-line="19" selection-start-column="46" selection-end-line="19" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/s4_CarrosUsados-api/src/main/java/co/edu/uniandes/csw/carrosUsados/dtos/MarcaDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/s4_CarrosUsados-back/src/main/java/co/edu/uniandes/csw/carrosUsados/entities/AutomovilEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1075">
+          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/s4_CarrosUsados-back/src/main/java/co/edu/uniandes/csw/carrosUsados/ejb/ArticuloLogic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="52" column="26" selection-start-line="52" selection-start-column="26" selection-end-line="52" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/s4_CarrosUsados-back/src/main/java/co/edu/uniandes/csw/carrosUsados/persistence/ArticuloPersistence.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="34" column="38" lean-forward="true" selection-start-line="34" selection-start-column="38" selection-end-line="34" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/s4_CarrosUsados-api/src/main/java/co/edu/uniandes/csw/carrosUsados/dtos/ModeloDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="29" column="29" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/s4_CarrosUsados-back/src/main/java/co/edu/uniandes/csw/carrosUsados/entities/ModeloEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-203">
+          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/s4_CarrosUsados-api/src/main/java/co/edu/uniandes/csw/carrosUsados/dtos/ArticuloDetailDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-459">
+          <caret line="17" column="12" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
+          <folding>
+            <element signature="e#1175#1176#0" expanded="true" />
+            <element signature="e#1206#1207#0" expanded="true" />
+            <element signature="e#1336#1337#0" expanded="true" />
+            <element signature="e#1377#1378#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/s4_CarrosUsados-back/src/main/java/co/edu/uniandes/csw/carrosUsados/entities/ArticuloEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-441">
+          <caret line="35" column="13" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
+          <folding>
+            <element signature="e#2857#2858#0" expanded="true" />
+            <element signature="e#2909#2910#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/s4_CarrosUsados-api/src/main/java/co/edu/uniandes/csw/carrosUsados/dtos/CalificacionDetailDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-564">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/s4_CarrosUsados-api/src/main/java/co/edu/uniandes/csw/carrosUsados/dtos/ArticuloDTO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1">
-          <caret line="148" column="16" lean-forward="true" selection-start-line="148" selection-start-column="16" selection-end-line="148" selection-end-column="16" />
+        <state relative-caret-position="171">
+          <caret line="171" column="7" lean-forward="true" selection-start-line="171" selection-start-column="7" selection-end-line="171" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1474#1475#0" expanded="true" />
+            <element signature="e#1499#1500#0" expanded="true" />
+            <element signature="e#1602#1603#0" expanded="true" />
+            <element signature="e#1631#1632#0" expanded="true" />
+            <element signature="e#1733#1734#0" expanded="true" />
+            <element signature="e#1765#1766#0" expanded="true" />
+            <element signature="e#1861#1862#0" expanded="true" />
+            <element signature="e#1890#1891#0" expanded="true" />
+            <element signature="e#2000#2001#0" expanded="true" />
+            <element signature="e#2034#2035#0" expanded="true" />
+            <element signature="e#2134#2135#0" expanded="true" />
+            <element signature="e#2163#2164#0" expanded="true" />
+            <element signature="e#2275#2276#0" expanded="true" />
+            <element signature="e#2312#2313#0" expanded="true" />
+            <element signature="e#2402#2403#0" expanded="true" />
+            <element signature="e#2430#2431#0" expanded="true" />
+            <element signature="e#2550#2551#0" expanded="true" />
+            <element signature="e#2592#2593#0" expanded="true" />
+            <element signature="e#2700#2701#0" expanded="true" />
+            <element signature="e#2736#2737#0" expanded="true" />
+            <element signature="e#2864#2865#0" expanded="true" />
+            <element signature="e#2910#2911#0" expanded="true" />
+            <element signature="e#3054#3055#0" expanded="true" />
+            <element signature="e#3106#3107#0" expanded="true" />
+            <element signature="e#3217#3218#0" expanded="true" />
+            <element signature="e#3253#3254#0" expanded="true" />
+            <element signature="e#3365#3366#0" expanded="true" />
+            <element signature="e#3397#3398#0" expanded="true" />
+            <element signature="e#3526#3527#0" expanded="true" />
+            <element signature="e#3568#3569#0" expanded="true" />
+            <element signature="e#3670#3671#0" expanded="true" />
+            <element signature="e#3700#3701#0" expanded="true" />
+            <element signature="e#3818#3819#0" expanded="true" />
+            <element signature="e#3856#3857#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://94ee97c9-f8d5-40db-b0c7-0d1a368675f3/schema/APP/table/AUTOMOVILENTITY">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://94ee97c9-f8d5-40db-b0c7-0d1a368675f3/schema/APP/table/ARTICULOENTITY">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/s4_CarrosUsados-back/src/main/java/co/edu/uniandes/csw/carrosUsados/ejb/ArticuloAutomovilLogic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="47" column="8" selection-start-line="47" selection-start-column="8" selection-end-line="47" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/s4_CarrosUsados-api/src/main/java/co/edu/uniandes/csw/carrosUsados/resources/ArticuloResource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="71" column="53" selection-start-line="71" selection-start-column="37" selection-end-line="71" selection-end-column="53" />
         </state>
       </provider>
     </entry>

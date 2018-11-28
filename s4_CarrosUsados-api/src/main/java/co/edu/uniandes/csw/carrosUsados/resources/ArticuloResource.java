@@ -66,11 +66,12 @@ public class ArticuloResource {
         
         ArticuloDTO nuevoArticuloDTO = new ArticuloDTO(articuloLogic.createArticulo(articulo.toEntity()));
         AutomovilDTO nuevoAutomovil = null;
-        if(articuloAutomovilLogic.addAutomovil(articulo.getIdAuto(), nuevoArticuloDTO.getId()) != null)
-            nuevoAutomovil = new AutomovilDTO(articuloAutomovilLogic.addAutomovil(articulo.getIdAuto(), nuevoArticuloDTO.getId()));
-        else
-            LOGGER.log(Level.INFO,"HAAAAAAAAAAAAAAA");
-        nuevoArticuloDTO.setAutomovil(nuevoAutomovil);
+      //  if(articuloAutomovilLogic.addAutomovil(articulo.getIdAuto(), nuevoArticuloDTO.getId()) != null)
+      //      nuevoAutomovil = new AutomovilDTO(articuloAutomovilLogic.addAutomovil(articulo.getIdAuto(), nuevoArticuloDTO.getId()));
+       // else
+            //LOGGER.log(Level.INFO,"HAAAAAAAAAAAAAAA");
+
+        nuevoArticuloDTO.setAutomovil(articulo.getAutomovil());
         return nuevoArticuloDTO;
     }
 
