@@ -41,15 +41,15 @@ public class PuntoVentaCalificacionLogic {
      * la calificación.
      * @return El libro creado.
      */
-    public CalificacionEntity addCalificacion(Long puntoId,Long calificacionId) 
+    public CalificacionEntity addCalificacion(Long puntoId, CalificacionEntity calificacionEntity)
     {
         LOGGER.log(Level.INFO, "Inicia proceso de agregarle una calificación al punto de venta con id{0}",puntoId);
-        CalificacionEntity calificacionent= calificacionPersistence.find(calificacionId);
         PuntoVentaEntity puntoent= puntoPersistence.find(puntoId);
-        puntoent.getCalificaciones().add(calificacionent);
-        calificacionent.setPuntoVenta(puntoent);
-      
-        return calificacionent;
+        calificacionEntity.setPuntoVenta(puntoent);
+        puntoent.getCalificaciones().add(calificacionEntity);
+        calificacionPersistence.create(calificacionEntity);
+
+        return calificacionEntity;
     }
     
         /**
@@ -87,7 +87,8 @@ public class PuntoVentaCalificacionLogic {
     public List<CalificacionEntity> getCalificaciones(Long puntoId)
     {
         LOGGER.log(Level.INFO,"Inicia proceso de consulta de calificaciones del punto de venta con id:{0}",puntoId);
-        List<CalificacionEntity> listaCalificaciones= calificacionPersistence.findCalPunto(puntoId);
+        PuntoVentaEntity puntoVentaEntity = puntoPersistence.find(puntoId);
+        List<CalificacionEntity> listaCalificaciones= calificacionPersistence.findCalPunto(puntoVentaEntity);
         LOGGER.log(Level.INFO,"Inicia proceso de consulta de calificaciones del punto de venta con id:{0}",puntoId);
         return listaCalificaciones;
  

@@ -6,6 +6,8 @@
 package co.edu.uniandes.csw.carrosUsados.persistence;
 
 import co.edu.uniandes.csw.carrosUsados.entities.CalificacionEntity;
+import co.edu.uniandes.csw.carrosUsados.entities.PuntoVentaEntity;
+
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -85,11 +87,12 @@ public class CalificacionPersistence {
         return q.getResultList();
     }
     
-    public List<CalificacionEntity> findCalPunto(Long puntoId)
+    public List<CalificacionEntity> findCalPunto(PuntoVentaEntity puntoVenta)
     {
-        LOGGER.log(Level.INFO, "Consultando todos las calificaciones con punto de venta: {0}"+puntoId);
-        TypedQuery q= em.createNamedQuery("select u from CalificacionEntity WHERE u.puntoventa_id = : id", CalificacionEntity.class);
-        q.setParameter("id",puntoId);
+        LOGGER.log(Level.INFO, "Consultando todos las calificaciones con punto de venta: {0}"+puntoVenta);
+        TypedQuery q= em.createQuery("select c from CalificacionEntity c WHERE c.puntoVenta = :punto", CalificacionEntity.class);
+
+        q.setParameter("punto", puntoVenta);
         return q.getResultList();
        
     }

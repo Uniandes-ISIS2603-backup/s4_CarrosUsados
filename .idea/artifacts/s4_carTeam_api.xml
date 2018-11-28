@@ -1,6 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="exploded-war" name="s4_carTeam-api">
-    <output-path>$PROJECT_DIR$/out/artifacts/s4_carTeam_api</output-path>
-    <root id="root" />
-  </artifact>
-</component>
