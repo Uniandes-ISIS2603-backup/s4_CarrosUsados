@@ -68,7 +68,8 @@ public class UsuarioLogic extends BaseLogic {
      * contrario.
      */
     public static boolean validateCorreo(String correo) {
-        return correo != null && CORREO_REGEX.matcher(correo).find();
+        boolean valid = correo != null && CORREO_REGEX.matcher(correo).find();
+        return valid;
     }
 
     /**
@@ -81,7 +82,8 @@ public class UsuarioLogic extends BaseLogic {
      * contrario.
      */
     public static boolean validateTelefono(String telefono) {
-        return telefono != null && TELEFONO_REGEX.matcher(telefono).matches();
+        boolean valid = telefono != null && TELEFONO_REGEX.matcher(telefono).matches();
+        return valid;
     }
 
     /**
@@ -92,7 +94,8 @@ public class UsuarioLogic extends BaseLogic {
      * @return true si el login no tiene espacios, false de lo contrario.
      */
     public static boolean validateNombreUsuario(String usuario) {
-        return usuario != null && !NOMBRE_USUARIO_REGEX.matcher(usuario).find();
+        boolean valid = usuario != null && !NOMBRE_USUARIO_REGEX.matcher(usuario).find();
+        return valid;
     }
 
     /**
@@ -105,7 +108,8 @@ public class UsuarioLogic extends BaseLogic {
      * contrario.
      */
     public static boolean validateContrasena(String contrasena) {
-        return contrasena == null ? false :CONTRASENA_REGEX.matcher(contrasena).find();
+        boolean valid = contrasena == null ? false :CONTRASENA_REGEX.matcher(contrasena).find();
+        return valid;
     }
 
 

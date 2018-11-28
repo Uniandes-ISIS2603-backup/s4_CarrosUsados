@@ -8,7 +8,7 @@ import java.io.Serializable;
  * Clase Data Transfer Object Usuario que contiene atributos que utilizan tanto
  * ClienteDTO, AdministradorDTO y VendedorDTO.
  */
-public class PersonaDTO {
+public class PersonaDTO implements Serializable {
     /**
      * Cadena de caracteres que representa el id del usuario en el sistema.
      */
@@ -32,9 +32,11 @@ public class PersonaDTO {
 
     public PersonaDTO(PersonaEntity personaEntity)
     {
-        this.id = personaEntity.getId();
-        this.nombre = personaEntity.getNombre();
-        this.apellido = personaEntity.getApellido();
+        if (personaEntity != null) {
+            this.id = personaEntity.getId();
+            this.nombre = personaEntity.getNombre();
+            this.apellido = personaEntity.getApellido();
+        }
     }
 
     /**
@@ -89,6 +91,15 @@ public class PersonaDTO {
      */
     public void setApellido(String apellido) {
         this.apellido = apellido;
+    }
+
+    public PersonaEntity toEntity ()
+    {
+        PersonaEntity entity = new PersonaEntity();
+        entity.setId(this.id);
+        entity.setNombre(this.nombre);
+        entity.setApellido(this.apellido);
+        return entity;
     }
 
 }

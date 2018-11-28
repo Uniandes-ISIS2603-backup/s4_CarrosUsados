@@ -145,7 +145,8 @@ public class AdministradorLogic extends UsuarioLogic {
      * @return true no existe el usuario, false de lo contrario
      */
     public boolean validateNuevoUsuarioAdministrador(String nombreUsuario) {
-        return persistence.findByNombreUsuario(nombreUsuario) == null;
+        boolean valid = persistence.findByNombreUsuario(nombreUsuario) == null;
+        return valid;
     }
 
 

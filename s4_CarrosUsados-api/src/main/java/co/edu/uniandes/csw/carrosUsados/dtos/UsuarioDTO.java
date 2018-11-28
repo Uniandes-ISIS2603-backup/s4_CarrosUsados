@@ -12,13 +12,14 @@ package co.edu.uniandes.csw.carrosUsados.dtos;
 
 import co.edu.uniandes.csw.carrosUsados.entities.UsuarioEntity;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  * Clase Data Transfer Object Usuario que contiene atributos que utilizan tanto
  * ClienteDTO como AdministradorDTO.
  */
-public class UsuarioDTO extends PersonaDTO {
+public class UsuarioDTO extends PersonaDTO implements Serializable {
 
     protected String correo;
     /**
@@ -55,11 +56,13 @@ public class UsuarioDTO extends PersonaDTO {
     public UsuarioDTO(UsuarioEntity usuarioEntity)
     {
         super(usuarioEntity);
-        this.correo = usuarioEntity.getCorreo();
-        this.contrasena = usuarioEntity.getContrasena();
-        this.nombreUsuario = usuarioEntity.getNombreUsuario();
-        this.fechaNacimiento = usuarioEntity.getFechaNacimiento();
-        this.telefono = usuarioEntity.getTelefono();
+        if (usuarioEntity != null) {
+            this.correo = usuarioEntity.getCorreo();
+            this.contrasena = usuarioEntity.getContrasena();
+            this.nombreUsuario = usuarioEntity.getNombreUsuario();
+            this.fechaNacimiento = usuarioEntity.getFechaNacimiento();
+            this.telefono = usuarioEntity.getTelefono();
+        }
     }
 
 
@@ -152,5 +155,22 @@ public class UsuarioDTO extends PersonaDTO {
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
+
+    public UsuarioEntity toEntity ()
+    {
+        UsuarioEntity entity = new UsuarioEntity();
+        //PersonaDTO
+        entity.setId(this.id);
+        entity.setNombre(this.nombre);
+        entity.setApellido(this.apellido);
+        //UsuarioDTO
+        entity.setTelefono(this.telefono);
+        entity.setNombreUsuario(this.nombreUsuario);
+        entity.setContrasena(this.contrasena);
+        entity.setFechaNacimiento(this.fechaNacimiento);
+        entity.setCorreo(this.correo);
+        return entity;
+    }
+
 
 }
