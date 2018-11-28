@@ -192,12 +192,12 @@ public class PuntoVentaResource {
      * Error de lógica que se genera cuando no se encuentra el punto de venta.
      */
     @Path("{puntoId: \\d+}/calificaciones")
-    public Class<CalificacionResource> getCalificacionResource(@PathParam("puntoId") Long puntoId) throws BusinessLogicException {
+    public Class<PuntoVentaCalificacionResource> getCalificacionPuntoVentaResource(@PathParam("puntoId") Long puntoId) throws BusinessLogicException {
         
         if (puntologic.getPuntoVenta(puntoId)== null) {
             throw new WebApplicationException("El recurso /puntos/" +puntoId + "/calificaciones no existe.", 404);
         }
-        return CalificacionResource.class;
+        return PuntoVentaCalificacionResource.class;
     }
 
 }

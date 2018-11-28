@@ -120,13 +120,14 @@ public class PuntoVentaCalificacionTest {
         }
     }
     
-    
+
       /**
      * Prueba para asociar un punto a una calificación.
      *
      *
      * @throws co.edu.uniandes.csw.carrosUsados.exceptions.BusinessLogicException
      */
+      /*
      @Test
     public void addCalificacion() throws BusinessLogicException
             
@@ -160,7 +161,7 @@ public class PuntoVentaCalificacionTest {
         Assert.assertEquals(lastCal.getpublishedDate(), newcal.getpublishedDate());
         Assert.assertEquals(lastCal.getId(), newcal.getId());
     }
-
+    */
     
      /**
      * Prueba para consultar la lista de calificaciones de un punto.
