@@ -24,7 +24,7 @@ import uk.co.jemos.podam.common.PodamExclude;
 @Entity
 public class PuntoVentaEntity extends BaseEntity implements Serializable{
     
-    private int numEmpleados;
+    private int numeroVendedores;
     private String ciudad;
     private String ubicacion;
     private Double latitud;
@@ -124,7 +124,7 @@ public class PuntoVentaEntity extends BaseEntity implements Serializable{
     }*/
 
     public int getNumEmpleados() {
-        return numEmpleados;
+        return numeroVendedores;
     }
 
     
@@ -133,7 +133,7 @@ public class PuntoVentaEntity extends BaseEntity implements Serializable{
      * @param numEmpleados número de empleados del punto.
      */
     public void setNumEmpleados(int numEmpleados) {
-        this.numEmpleados = numEmpleados;
+        this.numeroVendedores = numEmpleados;
     }
 
     public Double getLatitud() {
