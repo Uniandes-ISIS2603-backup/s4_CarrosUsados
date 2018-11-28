@@ -87,7 +87,7 @@ public class PuntoVentaCalificacionLogic {
     public List<CalificacionEntity> getCalificaciones(Long puntoId)
     {
         LOGGER.log(Level.INFO,"Inicia proceso de consulta de calificaciones del punto de venta con id:{0}",puntoId);
-        List<CalificacionEntity> listaCalificaciones= puntoPersistence.find(puntoId).getCalificaciones();
+        List<CalificacionEntity> listaCalificaciones= calificacionPersistence.findCalPunto(puntoId);
         LOGGER.log(Level.INFO,"Inicia proceso de consulta de calificaciones del punto de venta con id:{0}",puntoId);
         return listaCalificaciones;
  

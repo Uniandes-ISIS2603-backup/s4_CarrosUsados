@@ -85,6 +85,15 @@ public class CalificacionPersistence {
         return q.getResultList();
     }
     
+    public List<CalificacionEntity> findCalPunto(Long puntoId)
+    {
+        LOGGER.log(Level.INFO, "Consultando todos las calificaciones con punto de venta: {0}"+puntoId);
+        TypedQuery q= em.createNamedQuery("select u from CalificacionEntity WHERE u.puntoventa_id = : id", CalificacionEntity.class);
+        q.setParameter("id",puntoId);
+        return q.getResultList();
+       
+    }
+    
     /**
      * Busca si hay alguna calificación con el id que se envía de argumento
      *
