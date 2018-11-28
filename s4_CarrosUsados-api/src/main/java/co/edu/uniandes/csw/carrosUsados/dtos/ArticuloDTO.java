@@ -4,13 +4,15 @@
  * and open the template in the editor.
  */
 package co.edu.uniandes.csw.carrosUsados.dtos;
-import co.edu.uniandes.csw.carrosUsados.entities.ArticuloEntity; 
+import co.edu.uniandes.csw.carrosUsados.entities.ArticuloEntity;
+
+import java.io.Serializable;
 
 /**
  *
  * @author estudiante
  */
-public class ArticuloDTO {
+public class ArticuloDTO implements Serializable {
 
     private long id;
     private String imagen;
@@ -118,6 +120,13 @@ public class ArticuloDTO {
      */
     public void setDisponibilidad(boolean disponibilidad) {
         this.disponibilidad = disponibilidad;
+    }
+
+    /**
+     * @param imagen cambia la imagen del articulo
+     */
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
     }
     
     /**
