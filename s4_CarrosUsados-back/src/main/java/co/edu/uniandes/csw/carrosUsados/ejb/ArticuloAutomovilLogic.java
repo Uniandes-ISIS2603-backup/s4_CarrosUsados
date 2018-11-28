@@ -42,7 +42,10 @@ public class ArticuloAutomovilLogic {
         LOGGER.log(Level.INFO, "Inicia proceso de agregarle un automovil a la articulo con id = {0}", articuloId);
         ArticuloEntity articuloEntity = articuloPersistence.find(articuloId);
         AutomovilEntity automovilEntity = automovilPersistence.find(automovilId);
+        if(articuloEntity != null)
         articuloEntity.setAutomovil(automovilEntity);
+        else
+        LOGGER.log(Level.INFO, "EL ARTICULO NO SE ENCONTRO HAAAAAAAAAAAAAAAAAAAAAAAAA");
         LOGGER.log(Level.INFO, "Termina proceso de agregarle un automovil a la articulo con id = {0}", articuloId);
         return automovilEntity;
     }

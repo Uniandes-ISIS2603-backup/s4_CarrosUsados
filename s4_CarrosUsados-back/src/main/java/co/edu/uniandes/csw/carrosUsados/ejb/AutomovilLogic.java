@@ -6,10 +6,13 @@
   package co.edu.uniandes.csw.carrosUsados.ejb;
 
 import co.edu.uniandes.csw.carrosUsados.entities.AutomovilEntity;
+import co.edu.uniandes.csw.carrosUsados.entities.PuntoVentaEntity;
 import co.edu.uniandes.csw.carrosUsados.exceptions.BusinessLogicException;
 import co.edu.uniandes.csw.carrosUsados.persistence.AutomovilPersistence;
 import co.edu.uniandes.csw.carrosUsados.persistence.ModeloPersistence;
 import co.edu.uniandes.csw.carrosUsados.entities.ModeloEntity;
+import co.edu.uniandes.csw.carrosUsados.persistence.PuntoVentaPersistence;
+
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -32,6 +35,9 @@ import javax.inject.Inject;
 
       @Inject
       private ModeloPersistence modeloPersistence;
+
+      @Inject
+      private PuntoVentaPersistence puntoVentaPersistence;
 
       /**
      * Guardar un nuevo automovil
@@ -61,7 +67,16 @@ import javax.inject.Inject;
           if(persistence.findByNumChasis(automovilEntity.getNumChasis()) != null){
             throw new BusinessLogicException("Ya existe un automovil con el mismo numero de chasis");
           }
-          
+
+          //Añadi desde aca
+          if(automovilEntity.getPuntoVenta() != null){
+
+              PuntoVentaEntity puntoVentaEntity = puntoVentaPersistence.find(automovilEntity.getPuntoVenta().getId());
+              if(puntoVentaEntity != null){
+                  automovilEntity.setPuntoVenta(puntoVentaEntity);
+              }
+          }
+
           persistence.create(automovilEntity);
           LOGGER.log(Level.INFO, "Termina proceso de creación del automovil");
 
