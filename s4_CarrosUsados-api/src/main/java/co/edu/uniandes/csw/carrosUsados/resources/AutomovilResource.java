@@ -96,7 +96,7 @@ public class AutomovilResource {
      */
     @GET
     @Path("{automovilesId: \\d+}")
-    public AutomovilDTO getAutomovil(@PathParam("modeloId") Long modeloId, @PathParam("automovilesId") long automovilesId) throws BusinessLogicException {
+    public AutomovilDetailDTO getAutomovil(@PathParam("modeloId") Long modeloId, @PathParam("automovilesId") long automovilesId) throws BusinessLogicException {
         LOGGER.log(Level.INFO, "AutomovilResource getAutomovil: input: {0}", automovilesId);
         AutomovilEntity automovilEntity = automovilLogic.getAutomovil(modeloId, automovilesId);
         if (automovilEntity == null) {
