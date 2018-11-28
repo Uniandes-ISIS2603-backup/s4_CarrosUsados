@@ -16,7 +16,7 @@ import java.util.Date;
 public class AutomovilDTO implements Serializable {
 
     private Long id;
-    private String modelo;
+    //private String modelo;
     private String marca;
     private int anio;
     private String color;
@@ -40,7 +40,7 @@ public class AutomovilDTO implements Serializable {
 
     public AutomovilDTO(AutomovilEntity automovilEntity) {
         this.id = automovilEntity.getId();
-        this.modelo = automovilEntity.getModelo();
+        //this.modelo = automovilEntity.getModelo();
         this.marca = automovilEntity.getMarca();
         this.anio = automovilEntity.getAnio();
         this.color = automovilEntity.getColor();
@@ -61,7 +61,7 @@ public class AutomovilDTO implements Serializable {
         AutomovilEntity entity = new AutomovilEntity();
 
         entity.setId(this.id);
-        entity.setModelo(this.modelo);
+        //entity.setModelo(this.modelo);
         entity.setMarca(this.marca);
         entity.setAnio(this.anio);
         entity.setColor(this.color);
@@ -86,14 +86,14 @@ public class AutomovilDTO implements Serializable {
     public void setId(Long id) {
         this.id = id;
     }
-
+    /*
     public String getModelo() {
         return modelo;
     }
 
     public void setModelo(String modelo) {
         this.modelo = modelo;
-    }
+    }*/
 
     public String getMarca() {
         return marca;

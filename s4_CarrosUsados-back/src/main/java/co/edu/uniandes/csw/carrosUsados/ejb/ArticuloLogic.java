@@ -40,15 +40,9 @@ import javax.inject.Inject;
      */
       public ArticuloEntity createArticulo(ArticuloEntity articuloEntity) throws BusinessLogicException{
           LOGGER.log(Level.INFO, "Inicio proceso de creacion de una forma de pago");
-                    
-          if((articuloEntity.getAutomovil() == null) || (automovilPersistence.find(articuloEntity.getAutomovil().getId()) == null )){
-              throw new BusinessLogicException("El automovil es invalido o no fue asociado correctamente");
-          }
+          
           if(!validateDescripcion(articuloEntity.getDescripcion())){
             throw new BusinessLogicException("La descripcion no es invalida");
-          }
-          if(!validateUbicacion(articuloEntity.getUbicacion())){
-            throw new BusinessLogicException("La ubicacion no es invalida");
           }
           if(!validatePrecio(articuloEntity.getPrecio())){
             throw new BusinessLogicException("El precio no es invalido");
@@ -107,8 +101,8 @@ import javax.inject.Inject;
         if(!validateDescripcion(articuloEntity.getDescripcion())){
             throw new BusinessLogicException("La descripcion no es invalida");
           }
-          if(!validateUbicacion(articuloEntity.getUbicacion())){
-            throw new BusinessLogicException("La ubicacion no es invalida");
+          if(articuloEntity.getAutomovil() != null){
+            throw new BusinessLogicException("El automovil no es invalido");
           }
           if(!validatePrecio(articuloEntity.getPrecio())){
             throw new BusinessLogicException("El precio no es invalido");
@@ -140,17 +134,6 @@ import javax.inject.Inject;
      */
       public boolean validateDescripcion(String nombre){
         if(nombre == null || nombre.isEmpty()){
-          return false;
-        }
-        return true;
-      }
-      /**
-       * Valida la ubicacion de un articulo
-       * @param ubi ubicacion a validar.
-       * @return retorna true si es valido, false si no es valido.
-       */
-      public boolean validateUbicacion(String ubi){
-        if(ubi == null || ubi.isEmpty()){
           return false;
         }
         return true;

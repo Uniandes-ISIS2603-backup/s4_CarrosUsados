@@ -5,6 +5,7 @@
  */
 package co.edu.uniandes.csw.carrosUsados.resources;
 
+import co.edu.uniandes.csw.carrosUsados.dtos.AutomovilDTO;
 import co.edu.uniandes.csw.carrosUsados.dtos.ArticuloDTO;
 import co.edu.uniandes.csw.carrosUsados.dtos.ArticuloDetailDTO;
 import co.edu.uniandes.csw.carrosUsados.ejb.ArticuloAutomovilLogic;
@@ -62,8 +63,14 @@ public class ArticuloResource {
     @POST
     public ArticuloDTO createArticulo(ArticuloDTO articulo) throws BusinessLogicException { //Revisar si toca agregar la throws declaration
         
-        ArticuloDTO nuevoArticuloDTO = new ArticuloDTO(articuloLogic.createArticulo(articulo.toEntity()));
         
+        ArticuloDTO nuevoArticuloDTO = new ArticuloDTO(articuloLogic.createArticulo(articulo.toEntity()));
+        AutomovilDTO nuevoAutomovil = null;
+        if(articuloAutomovilLogic.addAutomovil(articulo.getIdAuto(), nuevoArticuloDTO.getId()) != null)
+            nuevoAutomovil = new AutomovilDTO(articuloAutomovilLogic.addAutomovil(articulo.getIdAuto(), nuevoArticuloDTO.getId()));
+        else
+            LOGGER.log(Level.INFO,"HAAAAAAAAAAAAAAA");
+        nuevoArticuloDTO.setAutomovil(nuevoAutomovil);
         return nuevoArticuloDTO;
     }
 
@@ -75,8 +82,8 @@ public class ArticuloResource {
      */
     @GET
     public List<ArticuloDetailDTO> getArticuloes() throws BusinessLogicException {
-        List<ArticuloDetailDTO> listaBooks = listEntity2DetailDTO(articuloLogic.getArticulos());
-        return listaBooks;
+        List<ArticuloDetailDTO> articulos = listEntity2DetailDTO(articuloLogic.getArticulos());
+        return articulos;
     }
 
     /**

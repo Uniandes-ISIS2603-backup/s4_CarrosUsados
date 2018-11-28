@@ -62,7 +62,7 @@ public class PuntoVentaDTO implements Serializable {
     {
         PuntoVentaEntity entity= new PuntoVentaEntity();
         entity.setCiudad(this.ciudad);
-        entity.setNumEmpleados(numVendedores);
+        entity.setNumEmpleados(this.numVendedores);
         entity.setUbicacion(this.ubicacion);
         entity.setLatitud(this.latitud);
         entity.setLongitud(this.longitud);

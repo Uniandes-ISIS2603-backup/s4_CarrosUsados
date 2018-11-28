@@ -27,7 +27,7 @@ public class AutomovilEntity extends BaseEntity implements Serializable {
     /**
      * modelo del automovil.
     */
-    private String modelo;
+    //private String modelo;
     /**
      * marca del automovil.
      */
@@ -72,7 +72,7 @@ public class AutomovilEntity extends BaseEntity implements Serializable {
      * Mapea la relacion con un punto de venta. U automovil tiene un unico punto de venta.
      */
     @PodamExclude
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private PuntoVentaEntity puntoVenta;
 
     /**
@@ -112,17 +112,18 @@ public class AutomovilEntity extends BaseEntity implements Serializable {
      * Retorna el modelo del automovil.
      * @return el modelo
      */
+    /*
     public String getModelo() {
         return modelo;
-    }
+    }*/
 
     /**
      * Actualiza el modelo del automovil.
      * @param modelo
      */
-    public void setModelo(String modelo) {
+    /*public void setModelo(String modelo) {
         this.modelo = modelo;
-    }
+    }*/
 
     /**
      * Retorna la marca del automovil.
