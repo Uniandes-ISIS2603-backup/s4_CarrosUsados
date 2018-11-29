@@ -31,7 +31,7 @@ import javax.ws.rs.WebApplicationException;
 
 /**
  *
- * @author estudiante
+ * @author jd.tamara
  */
 @Path("articulos")
 @Produces("application/json")
@@ -66,10 +66,10 @@ public class ArticuloResource {
         
         ArticuloDTO nuevoArticuloDTO = new ArticuloDTO(articuloLogic.createArticulo(articulo.toEntity()));
         AutomovilDTO nuevoAutomovil = null;
-      //  if(articuloAutomovilLogic.addAutomovil(articulo.getIdAuto(), nuevoArticuloDTO.getId()) != null)
-      //      nuevoAutomovil = new AutomovilDTO(articuloAutomovilLogic.addAutomovil(articulo.getIdAuto(), nuevoArticuloDTO.getId()));
-       // else
-            //LOGGER.log(Level.INFO,"HAAAAAAAAAAAAAAA");
+        if(articuloAutomovilLogic.addAutomovil(articulo.getIdAuto(), nuevoArticuloDTO.getId()) != null)
+              nuevoAutomovil = new AutomovilDTO(articuloAutomovilLogic.addAutomovil(articulo.getIdAuto(), nuevoArticuloDTO.getId()));
+        else
+            LOGGER.log(Level.INFO,"El automovil pedido no existe");
 
         nuevoArticuloDTO.setAutomovil(articulo.getAutomovil());
         return nuevoArticuloDTO;
@@ -98,7 +98,7 @@ public class ArticuloResource {
      */
     @GET
     @Path("{articulosId: \\d+}")
-    public ArticuloDTO getArticulo(@PathParam("articulosId") long articulosId) throws BusinessLogicException {
+    public ArticuloDetailDTO getArticulo(@PathParam("articulosId") long articulosId) throws BusinessLogicException {
         ArticuloEntity articuloEntity = articuloLogic.getArticulo(articulosId);
         if (articuloEntity == null) {
             throw new WebApplicationException("El recurso /articulos/" + articulosId + " no existe.", 404);

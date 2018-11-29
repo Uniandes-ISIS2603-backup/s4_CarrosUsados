@@ -140,10 +140,8 @@ public class MarcaResource {
         if (entity == null) {
             throw new WebApplicationException("El recurso /marca/" + marcaId + " no existe.", 404);
         }
-        //La siguiente linea puede causar un error:
-        //automovilFichaTecnicaLogic.removeFichaTecnica(automovilesId);
-        //automovilLogic.deleteAutomovil(automovilesId);
-        //LOGGER.info("AutomovilResource deleteAutomovil: output: void");
+        marcaLogic.deleteMarca(marcaId);
+        LOGGER.info("AutomovilResource deleteMarca: output: void");
     }
     
      /**

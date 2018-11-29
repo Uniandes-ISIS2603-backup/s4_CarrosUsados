@@ -20,12 +20,18 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.WebApplicationException;
 import java.util.List;
+import javax.faces.bean.RequestScoped;
+import javax.ws.rs.Consumes;
+import javax.ws.rs.Produces;
 
 /**
  *
- * @author estudiante
+ * @author jd.tamara
  */
 @Path("factura")
+@Produces("application/json")
+@Consumes("application/json")
+@RequestScoped
 public class FacturaResource {
 
     @Inject
@@ -43,10 +49,10 @@ public class FacturaResource {
      * aplicación. Si no hay ninguno retorna una lista vacía.
      */
     @GET
-    public List<FacturaEntity> getFacturas() throws BusinessLogicException {
+    public List<FacturaDetailDTO> getFacturas() throws BusinessLogicException {
 
         //LOGGER.info("BookResource getBooks: input: void");
-        List<FacturaEntity> listaBooks = facturaLogic.getFacturas();
+        List<FacturaDetailDTO> listaBooks = listEntity2DetailDTO(facturaLogic.getFacturas());
         //LOGGER.log(Level.INFO, "BookResource getBooks: output: {0}", listaBooks.toString());
         return listaBooks;
     }
@@ -61,13 +67,13 @@ public class FacturaResource {
      */
      @GET
     @Path("{facturaId: \\d+}")
-    public FacturaDTO getBook(@PathParam("facturaId") Long facturaId) throws BusinessLogicException {
+    public FacturaDetailDTO getFactura(@PathParam("facturaId") Long facturaId) throws BusinessLogicException {
         //LOGGER.log(Level.INFO, "BookResource getBook: input: {0}", booksId);
         FacturaEntity facturaEntity = facturaLogic.getFactura(facturaId);
         if (facturaEntity == null) {
             throw new WebApplicationException("El recurso /books/" + facturaId + " no existe.", 404);
         }
-        FacturaDTO facturaDTO = new FacturaDTO(facturaEntity);
+        FacturaDetailDTO facturaDTO = new FacturaDetailDTO(facturaEntity);
        // LOGGER.log(Level.INFO, "BookResource getBook: output: {0}", bookDetailDTO.toString());
         return facturaDTO;
     }
