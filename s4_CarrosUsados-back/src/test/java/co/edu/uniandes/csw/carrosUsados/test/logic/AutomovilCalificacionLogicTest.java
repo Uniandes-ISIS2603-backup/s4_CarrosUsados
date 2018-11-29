@@ -131,7 +131,7 @@ public class AutomovilCalificacionLogicTest {
      * @throws co.edu.uniandes.csw.carrosUsados.exceptions.BusinessLogicException
      */
 
-      /*
+
      @Test
     public void addCalificacion() throws BusinessLogicException
             
@@ -141,8 +141,8 @@ public class AutomovilCalificacionLogicTest {
          newcal.setEstrellas(5);
          newcal.setAutomovil(automovil);
          
-        calificacionLogic.createCalificacion(newcal);
-        CalificacionEntity calent= automovilCalificacionLogic.addCalificacion(automovil.getId(), newcal.getId());
+        CalificacionEntity cale = calificacionLogic.createCalificacion(newcal);
+        CalificacionEntity calent= automovilCalificacionLogic.addCalificacion(automovil.getId(), cale);
         calent.setEstrellas(5);
         calent.setAutomovil(automovil);
         Assert.assertNotNull(newcal);
@@ -167,7 +167,7 @@ public class AutomovilCalificacionLogicTest {
         Assert.assertEquals(lastCal.getpublishedDate(), newcal.getpublishedDate());
         Assert.assertEquals(lastCal.getId(), newcal.getId());
     }
-    */
+
     
      /**
      * Prueba para consultar la lista de calificaciones de un automovil.
