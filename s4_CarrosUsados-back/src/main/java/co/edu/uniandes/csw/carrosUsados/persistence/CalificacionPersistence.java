@@ -5,6 +5,7 @@
  */
 package co.edu.uniandes.csw.carrosUsados.persistence;
 
+import co.edu.uniandes.csw.carrosUsados.entities.AutomovilEntity;
 import co.edu.uniandes.csw.carrosUsados.entities.CalificacionEntity;
 import java.util.List;
 import java.util.logging.Level;
@@ -95,5 +96,12 @@ public class CalificacionPersistence {
         LOGGER.log(Level.INFO, "Consultando la calificacion con id = {0}", calificacionId);
         
         return em.find(CalificacionEntity.class, calificacionId);
+    }
+
+    public List<CalificacionEntity> findCalificacionAutomovil(AutomovilEntity automovilEntity){
+        LOGGER.log(Level.INFO, "Consultando todos las calificaciones del automovil: {0}"+automovilEntity);
+        TypedQuery q= em.createQuery("select c from CalificacionEntity c WHERE c.automovil = :auto", CalificacionEntity.class);
+        q.setParameter("auto", automovilEntity);
+        return q.getResultList();
     }
 }
