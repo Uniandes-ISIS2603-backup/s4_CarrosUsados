@@ -58,7 +58,7 @@ public class CalificacionResource {
      */
     @GET
     @Path("{calificacionId: \\d+}")
-    public CalificacionDTO getCalificacion(@PathParam("calificacionId") long calificacionId) throws BusinessLogicException {
+    public CalificacionDetailDTO getCalificacion(@PathParam("calificacionId") long calificacionId) throws BusinessLogicException {
        
         LOGGER.log(Level.INFO, "CalificacionResource getCalificacion: input:{0}",calificacionId);
         CalificacionEntity calificacionEntity= calificacionLogic.getCalificacion(calificacionId);
@@ -66,7 +66,7 @@ public class CalificacionResource {
         {
             throw new WebApplicationException("El recurso /calificaciones/"+calificacionId+"no existe.",404);
         }
-        CalificacionDTO calificacion= new CalificacionDTO(calificacionEntity);
+        CalificacionDetailDTO calificacion= new CalificacionDetailDTO(calificacionEntity);
         LOGGER.log(Level.INFO, "CalificacionResource getCalificacion: output:{0}",calificacion.toString());
         
         return calificacion;

@@ -70,13 +70,13 @@ public class PuntoVentaResource {
      */
     @GET
     @Path("{puntoId: \\d+}")
-    public PuntoVentaDTO getPuntoVenta(@PathParam("puntoId") long id) throws BusinessLogicException {
+    public PuntoVentaDetailDTO getPuntoVenta(@PathParam("puntoId") long id) throws BusinessLogicException {
         LOGGER.log(Level.INFO, "PuntoVentaResource getPunto: input: {0}",id);
         PuntoVentaEntity entity= puntologic.getPuntoVenta(id);
          if (entity == null) {
             throw new WebApplicationException("El recurso /puntos/" + id + " no existe.", 404);
         }
-         PuntoVentaDTO punto= new PuntoVentaDTO(entity);
+         PuntoVentaDetailDTO punto= new PuntoVentaDetailDTO(entity);
         LOGGER.log(Level.SEVERE, "PuntoVentaResource getPuntos: ouput:", punto.toString());
         return  punto;
 
