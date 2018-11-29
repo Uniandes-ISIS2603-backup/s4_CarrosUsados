@@ -6,6 +6,7 @@
 package co.edu.uniandes.csw.carrosUsados.dtos;
 
 import co.edu.uniandes.csw.carrosUsados.entities.MarcaEntity;
+import java.io.Serializable;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
@@ -13,7 +14,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  *
  * @author estudiante
  */
-public class MarcaDTO {
+public class MarcaDTO implements Serializable{
 
     private Long id;
     private String nombre;
@@ -79,6 +80,15 @@ public class MarcaDTO {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
+
+    public String getData() {
+        return data;
+    }
+
+    public void setData(String data) {
+        this.data = data;
+    }
+    
     
         @Override
     public String toString() {
