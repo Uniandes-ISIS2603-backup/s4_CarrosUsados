@@ -127,7 +127,7 @@ public class PuntoVentaCalificacionTest {
      *
      * @throws co.edu.uniandes.csw.carrosUsados.exceptions.BusinessLogicException
      */
-      /*
+      
      @Test
     public void addCalificacion() throws BusinessLogicException
             
@@ -137,8 +137,8 @@ public class PuntoVentaCalificacionTest {
          newcal.setEstrellas(5);
          newcal.setPuntoVenta(punto);
          
-        calificacionLogic.createCalificacion(newcal);
-        CalificacionEntity calent= puntocalificacionLogic.addCalificacion(punto.getId(), newcal.getId());
+        CalificacionEntity cale=calificacionLogic.createCalificacion(newcal);
+        CalificacionEntity calent= puntocalificacionLogic.addCalificacion(punto.getId(), cale);
         calent.setEstrellas(5);
         calent.setPuntoVenta(punto);
         Assert.assertNotNull(newcal);
@@ -161,7 +161,7 @@ public class PuntoVentaCalificacionTest {
         Assert.assertEquals(lastCal.getpublishedDate(), newcal.getpublishedDate());
         Assert.assertEquals(lastCal.getId(), newcal.getId());
     }
-    */
+    
     
      /**
      * Prueba para consultar la lista de calificaciones de un punto.
