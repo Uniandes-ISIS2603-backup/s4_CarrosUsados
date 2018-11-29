@@ -6,12 +6,13 @@
 package co.edu.uniandes.csw.carrosUsados.dtos;
 import co.edu.uniandes.csw.carrosUsados.entities.FormaDePagoEntity;
 import java.util.Date;
+import java.io.Serializable;
 
 /**
  *
  * @author estudiante
  */
-public class FormaDePagoDTO {
+public class FormaDePagoDTO implements Serializable{
 
     private long id;
     private String nombreTar;

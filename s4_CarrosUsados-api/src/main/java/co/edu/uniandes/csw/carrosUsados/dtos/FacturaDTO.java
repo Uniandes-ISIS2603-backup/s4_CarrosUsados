@@ -6,13 +6,13 @@
 package co.edu.uniandes.csw.carrosUsados.dtos;
 
 import co.edu.uniandes.csw.carrosUsados.entities.FacturaEntity;
-
+import java.io.Serializable;
 
 /**
  *
  * @author estudiante
  */
-public class FacturaDTO {
+public class FacturaDTO implements Serializable{
 
     public Long getId() {
         return id;
@@ -60,6 +60,7 @@ public class FacturaDTO {
     private int subtotal;
     private int total;
     private FormaDePagoDTO formaDepago;
+    
     public FacturaDTO() {
 
     }
@@ -73,6 +74,7 @@ public class FacturaDTO {
         this.producto = facturaEntity.getProducto();
         this.total = facturaEntity.getTotal();
         this.subtotal = facturaEntity.getSubtotal();
+            if(facturaEntity.getFormaDePago() != null)
         this.formaDepago = new FormaDePagoDTO(facturaEntity.getFormaDePago());
         
     }
