@@ -14,15 +14,41 @@ import java.io.Serializable;
  */
 public class ArticuloDTO implements Serializable {
 
+    /**
+     * el id del articulo
+     */
     private long id;
+    /**
+     * el id del autovil que llega del servidor una vez para poder buscarlo
+     */
     private long idAuto;
+    /**
+     * el id del modelo del automovil que llega del servidor una vez para poder buscar el automovil
+     */
     private long idMod;
+    /**
+     * la url de la imagen del articulo
+     */
     private String imagen;
-    private String ubicacion;
+    /**
+     * el precio del articulo
+     */
     private String precio;
+    /**
+     * la descripcion del articulo
+     */
     private String descripcion;
+    /**
+     * la disponibilidad del articulo
+     */
     private boolean disponibilidad;
+    /**
+     * el automovil del articulo
+     */
     private AutomovilDTO automovil;
+    /**
+     * la factura del articulo
+     */
     private FacturaDTO factura;
 
     /**
@@ -84,13 +110,6 @@ public class ArticuloDTO implements Serializable {
     }
 
     /**
-     * @return retorna la ubicacion del articulo 
-     */
-    public String getUbicacion() {
-        return ubicacion;
-    }
-
-    /**
      * @return retorna el precio del articulo 
      */
     public String getPrecio() {
@@ -123,13 +142,6 @@ public class ArticuloDTO implements Serializable {
      */
     public void setId(long id) {
         this.id = id;
-    }
-
-    /**
-     * @param ubicacion nueva ubicacion del articulo 
-     */
-    public void setUbicacion(String ubicacion) {
-        this.ubicacion = ubicacion;
     }
 
     /**

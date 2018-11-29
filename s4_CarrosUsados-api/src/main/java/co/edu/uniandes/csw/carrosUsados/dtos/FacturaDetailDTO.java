@@ -25,6 +25,10 @@ public class FacturaDetailDTO extends FacturaDTO implements Serializable{
     }
     private List<FacturaDTO> reviews;
     
+    public FacturaDetailDTO(){
+        
+    }
+    
     public FacturaDetailDTO(FacturaEntity facturaEntity) {
         super(facturaEntity);
     }

@@ -8,13 +8,17 @@ import co.edu.uniandes.csw.carrosUsados.entities.ArticuloEntity;
 import co.edu.uniandes.csw.carrosUsados.entities.ClienteEntity;
 import java.util.List;
 import java.util.LinkedList;
+import java.io.Serializable;
 
 /**
  *
  * @author estudiante
  */
-public class ArticuloDetailDTO extends ArticuloDTO {
+public class ArticuloDetailDTO extends ArticuloDTO implements Serializable {
 
+    /**
+     * Los clientes que tienen asociado un articulo
+     */
     private  List<ClienteDTO> clientes;
 
     /**
@@ -33,6 +37,7 @@ public class ArticuloDetailDTO extends ArticuloDTO {
         super( articulo );
         clientes = new LinkedList<>();
         for(int i=0; i<articulo.getClientes().size(); i++){
+            if(articulo.getClientes().get(i) != null)
             clientes.add(new ClienteDTO(articulo.getClientes().get(i)));
         }
     }
