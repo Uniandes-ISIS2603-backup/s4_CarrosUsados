@@ -36,20 +36,21 @@ public class AutomovilCalificacionLogic {
      /**
      * Agregar una calificación al automovil. 
      *
-     * @param calificacionId El id de la calificación a guardar.
+     * @param calificacionEntity El entity de la calificación a guardar.
      * @param automovilId El id del automovil en el cual se va a guardar
      * la calificación.
      * @return El libro creado.
      */
-    public CalificacionEntity addCalificacion(Long automovilId,Long calificacionId) 
+    public CalificacionEntity addCalificacion(Long automovilId,CalificacionEntity calificacionEntity)
     {
         LOGGER.log(Level.INFO, "Inicia proceso de agregarle una calificación al automovil con id{0}",automovilId);
-        CalificacionEntity calificacionent= calificacionPersistence.find(calificacionId);
+
         AutomovilEntity automovilEntity= automovilPersistence.find(automovilId);
-        automovilEntity.getCalificaciones().add(calificacionent);
-        calificacionent.setAutomovil(automovilEntity);
-      
-        return calificacionent;
+
+        calificacionEntity.setAutomovil(automovilEntity);
+        automovilEntity.getCalificaciones().add(calificacionEntity);
+        calificacionPersistence.create(calificacionEntity);
+        return calificacionEntity;
     }
     
         /**
@@ -87,10 +88,11 @@ public class AutomovilCalificacionLogic {
     public List<CalificacionEntity> getCalificaciones(Long automovilId) throws BusinessLogicException
     {
         LOGGER.log(Level.INFO,"Inicia proceso de consulta de calificaciones del automovil con id:{0}", automovilId);
-        if(automovilPersistence.find(automovilId) == null){
+        AutomovilEntity automovilEntity = automovilPersistence.find(automovilId);
+        if(automovilEntity == null){
             throw new BusinessLogicException("El automovil no existe");
         }
-        List<CalificacionEntity> listaCalificaciones= automovilPersistence.find(automovilId).getCalificaciones();
+        List<CalificacionEntity> listaCalificaciones = calificacionPersistence.findCalificacionAutomovil(automovilEntity);
         LOGGER.log(Level.INFO,"Inicia proceso de consulta de calificaciones del automovil con id:{0}",automovilId);
         return listaCalificaciones;
  

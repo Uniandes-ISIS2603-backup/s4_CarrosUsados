@@ -11,6 +11,7 @@ import co.edu.uniandes.csw.carrosUsados.ejb.CalificacionLogic;
 import co.edu.uniandes.csw.carrosUsados.ejb.PuntoVentaCalificacionLogic;
 import co.edu.uniandes.csw.carrosUsados.ejb.PuntoVentaLogic;
 import co.edu.uniandes.csw.carrosUsados.entities.CalificacionEntity;
+import co.edu.uniandes.csw.carrosUsados.entities.PuntoVentaEntity;
 import co.edu.uniandes.csw.carrosUsados.exceptions.BusinessLogicException;
 import java.util.ArrayList;
 import java.util.List;
@@ -38,7 +39,7 @@ import javax.ws.rs.core.MediaType;
 
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
-class PuntoVentaCalificacionResource {
+public class PuntoVentaCalificacionResource {
     
     private static final Logger LOGGER = Logger.getLogger(PuntoVentaResource.class.getName());
     
@@ -62,18 +63,15 @@ class PuntoVentaCalificacionResource {
      * Error de lógica que se genera cuando no se encuentra la calificación.
      */
     @POST
-    @Path("{calificacionId: \\d+}")
-    public CalificacionDTO addCalificacion(@PathParam("puntoId") Long puntoId, @PathParam("calificacionId") Long calificacionId) throws BusinessLogicException {
-        LOGGER.log(Level.INFO, "PuntoVentaCalificacionResource addCalificacion: input: puntoId {0} , calificacionId {1}", new Object[]{puntoId, calificacionId});
-        
-        if(puntologic.getPuntoVenta(puntoId)==null)
+    public CalificacionDTO addCalificacion(@PathParam("puntoId") Long puntoId, CalificacionDTO calificacionDTO) throws BusinessLogicException {
+        LOGGER.log(Level.INFO, "PuntoVentaCalificacionResource addCalificacion: input: puntoId {0} , calificacionId {1}", new Object[]{puntoId});
+        PuntoVentaEntity puntoVentaEntity = puntologic.getPuntoVenta(puntoId);
+        if(puntoVentaEntity==null)
         {
             throw new WebApplicationException("El recurso puntos/"+ puntoId+ " no existe.", 404);
         }
-        if (calificacionlogic.getCalificacion(calificacionId) == null) {
-            throw new WebApplicationException("El recurso /calificaciones/" + calificacionId + " no existe.", 404);
-        }
-        CalificacionDTO calificacionDTO = new CalificacionDTO(puntocallogic.addCalificacion(puntoId, calificacionId));
+
+        calificacionDTO = new CalificacionDTO(puntocallogic.addCalificacion(puntoId, calificacionDTO.toEntity()));
         LOGGER.log(Level.INFO, "PuntoVentaCalificacionResource addCalificacion: output: {0}", calificacionDTO);
         return calificacionDTO;
     }
