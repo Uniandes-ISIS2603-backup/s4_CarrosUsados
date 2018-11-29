@@ -42,15 +42,17 @@ public class ClienteDTO extends UsuarioDTO implements Serializable {
     public ClienteEntity toEntity()
     {
         ClienteEntity entity = new ClienteEntity();
-        entity.setId(this.id);
+        //PersonaDTO
         entity.setNombre(this.nombre);
+        entity.setId(this.id);
         entity.setApellido(this.apellido);
+        //UsuarioDTO
+        entity.setContrasena(this.contrasena);
         entity.setTelefono(this.telefono);
         entity.setNombreUsuario(this.nombreUsuario);
-        entity.setContrasena(this.contrasena);
         entity.setFechaNacimiento(this.fechaNacimiento);
         entity.setCorreo(this.correo);
-entity.setDireccion(this.direccion);
+        entity.setDireccion(this.direccion);
         return entity;
     }
 

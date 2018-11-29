@@ -96,7 +96,7 @@ public class AutomovilResource {
      */
     @GET
     @Path("{automovilesId: \\d+}")
-    public AutomovilDTO getAutomovil(@PathParam("modeloId") Long modeloId, @PathParam("automovilesId") long automovilesId) throws BusinessLogicException {
+    public AutomovilDetailDTO getAutomovil(@PathParam("modeloId") Long modeloId, @PathParam("automovilesId") long automovilesId) throws BusinessLogicException {
         LOGGER.log(Level.INFO, "AutomovilResource getAutomovil: input: {0}", automovilesId);
         AutomovilEntity automovilEntity = automovilLogic.getAutomovil(modeloId, automovilesId);
         if (automovilEntity == null) {
@@ -159,6 +159,28 @@ public class AutomovilResource {
         LOGGER.info("AutomovilResource deleteAutomovil: output: void");
 
         //Ver que queda pendientea gregar
+    }
+
+    /**
+     * Conexión con el servicio de calificaciones para un automovil. {@link CalificacionResource}
+     *
+     * Este método conecta la ruta de /automoviles con las rutas de /calificaciones que
+     * dependen del automovil, es una redirección al servicio que maneja el segmento
+     * de la URL que se encarga de las calificaciones.
+     *
+     * @param automovilId El ID del automovil con respecto al cual se accede al
+     * servicio.
+     * @return El servicio de Calificaciones para ese automovil en paricular.\
+     * @throws WebApplicationException {@link WebApplicationExceptionMapper} -
+     * Error de lógica que se genera cuando no se encuentra el automovil.
+     */
+    @Path("{automovilId: \\d+}/calificaciones")
+    public Class<AutomovilCalificacionResource> getAutomovilCalificacionResource(@PathParam("automovilId") Long automovilId) throws BusinessLogicException {
+
+        if (automovilLogic.getAutomovil(automovilId)== null) {
+            throw new WebApplicationException("El recurso /automoviles/" +automovilId+ "/calificaciones no existe.", 404);
+        }
+        return AutomovilCalificacionResource.class;
     }
 
     private List<AutomovilDetailDTO> listEntity2DetailDTO(List<AutomovilEntity> automoviles) {

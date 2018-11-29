@@ -48,14 +48,15 @@ public class AdministradorDTO extends UsuarioDTO implements Serializable {
      * @param administradorEntity Entidad que representa al administrador.
      */
     public AdministradorDTO(AdministradorEntity administradorEntity) {
-     super(administradorEntity);
-        this.fechaInicio = administradorEntity.getFechaInicio();
-        this.cargo = administradorEntity.getCargo();
+        super(administradorEntity);
+        if (administradorEntity != null) {
+            this.fechaInicio = administradorEntity.getFechaInicio();
+            this.cargo = administradorEntity.getCargo();
 
-        if (administradorEntity.getPuntosDeVenta() != null) {
-           for(PuntoVentaEntity puntoVenta : administradorEntity.getPuntosDeVenta())
-            {
-                puntosVenta.add(new PuntoVentaDTO(puntoVenta));
+            if (administradorEntity.getPuntosDeVenta() != null) {
+                for (PuntoVentaEntity puntoVenta : administradorEntity.getPuntosDeVenta()) {
+                    puntosVenta.add(new PuntoVentaDTO(puntoVenta));
+                }
             }
         }
     }

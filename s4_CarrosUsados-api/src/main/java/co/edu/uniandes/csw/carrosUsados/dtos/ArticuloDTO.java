@@ -4,16 +4,19 @@
  * and open the template in the editor.
  */
 package co.edu.uniandes.csw.carrosUsados.dtos;
-import co.edu.uniandes.csw.carrosUsados.entities.ArticuloEntity; 
+import co.edu.uniandes.csw.carrosUsados.entities.ArticuloEntity;
+
+import java.io.Serializable;
 
 /**
  *
  * @author estudiante
  */
-public class ArticuloDTO {
+public class ArticuloDTO implements Serializable {
 
     private long id;
     private long idAuto;
+    private long idMod;
     private String imagen;
     private String ubicacion;
     private String precio;
@@ -57,6 +60,27 @@ public class ArticuloDTO {
      */
     public long getIdAuto() {
         return idAuto;
+    }
+    
+    /**
+     * @param idAuto nueva id del automovil del articulo 
+     */
+    public void setIdAuto(long idAuto) {
+        this.idAuto = idAuto;
+    }
+    
+    /**
+     * @return retorna la id del modelo del automovil del articulo 
+     */
+    public long getIdModelo() {
+        return idMod;
+    }
+    
+    /**
+     * @param idMod nueva id del modelo del automovil del articulo 
+     */
+    public void setIdMod(long idMod) {
+        this.idMod = idMod;
     }
 
     /**
@@ -127,6 +151,13 @@ public class ArticuloDTO {
      */
     public void setDisponibilidad(boolean disponibilidad) {
         this.disponibilidad = disponibilidad;
+    }
+
+    /**
+     * @param imagen cambia la imagen del articulo
+     */
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
     }
     
     /**

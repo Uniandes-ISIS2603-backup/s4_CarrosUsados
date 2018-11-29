@@ -77,7 +77,7 @@ public class PuntoVentaResource {
             throw new WebApplicationException("El recurso /puntos/" + id + " no existe.", 404);
         }
          PuntoVentaDTO punto= new PuntoVentaDTO(entity);
-        LOGGER.log(Level.SEVERE, "PuntoVentaResource getPuntos: OUTput:", punto.toString());
+        LOGGER.log(Level.SEVERE, "PuntoVentaResource getPuntos: ouput:", punto.toString());
         return  punto;
 
     }
@@ -97,9 +97,9 @@ public class PuntoVentaResource {
      */
     @POST
     public PuntoVentaDTO createPuntoVenta(PuntoVentaDTO punto)throws BusinessLogicException {
-        LOGGER.log(Level.INFO, "PuntoVentaResource createPunto: input:", punto.toString());
+        LOGGER.log(Level.INFO, "PuntoVentaResource createPunto: input:{0}", punto.toString());
         PuntoVentaDTO nuevo= new PuntoVentaDTO(puntologic.createPuntoVenta(punto.toEntity()));
-        LOGGER.log(Level.INFO, "PuntoVentaDTO createPuntoVenta: output:", nuevo.toString());
+        LOGGER.log(Level.INFO, "PuntoVentaDTO createPuntoVenta: output:{0}", nuevo.toString());
         return nuevo;
     }
 
@@ -128,7 +128,7 @@ public class PuntoVentaResource {
        
        PuntoVentaDTO puntoDTO= new PuntoVentaDTO(puntologic.updatePuntoVenta(puntoId, punto.toEntity()));
       
-       LOGGER.log(Level.INFO, "PuntoVentaResource updatePunto: output:", puntoDTO.toString());
+       LOGGER.log(Level.INFO, "PuntoVentaResource updatePunto: output:{0}", puntoDTO.toString());
         
        return puntoDTO;
 
@@ -192,12 +192,12 @@ public class PuntoVentaResource {
      * Error de lógica que se genera cuando no se encuentra el punto de venta.
      */
     @Path("{puntoId: \\d+}/calificaciones")
-    public Class<CalificacionResource> getCalificacionResource(@PathParam("puntoId") Long puntoId) throws BusinessLogicException {
+    public Class<PuntoVentaCalificacionResource> getCalificacionPuntoVentaResource(@PathParam("puntoId") Long puntoId) throws BusinessLogicException {
         
         if (puntologic.getPuntoVenta(puntoId)== null) {
             throw new WebApplicationException("El recurso /puntos/" +puntoId + "/calificaciones no existe.", 404);
         }
-        return CalificacionResource.class;
+        return PuntoVentaCalificacionResource.class;
     }
 
 }
